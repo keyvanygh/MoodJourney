@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C01A374A299D5AF3001856BA /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3749299D5AF3001856BA /* UserEntity.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* ContentView.swift */; };
 		C0B834F1299D2BF7001436E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B834F0299D2BF7001436E8 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C01A3749299D5AF3001856BA /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		C0B834E9299D2BF5001436E8 /* MoodJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
 		C0B834EE299D2BF5001436E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 		C01A3742299D2D1D001856BA /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				C01A3743299D2D26001856BA /* Domain */,
+				C01A3744299D3050001856BA /* Sign in */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -82,8 +84,48 @@
 		C01A3743299D2D26001856BA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				C01A3748299D3133001856BA /* Use Case */,
+				C01A3747299D3129001856BA /* Repository */,
+				C01A3746299D3122001856BA /* Entity */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		C01A3744299D3050001856BA /* Sign in */ = {
+			isa = PBXGroup;
+			children = (
+				C01A3743299D2D26001856BA /* Domain */,
+			);
+			path = "Sign in";
+			sourceTree = "<group>";
+		};
+		C01A3745299D3074001856BA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C01A3746299D3122001856BA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C01A3749299D5AF3001856BA /* UserEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C01A3747299D3129001856BA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		C01A3748299D3133001856BA /* Use Case */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Use Case";
 			sourceTree = "<group>";
 		};
 		C0B834E0299D2BF5001436E8 = {
@@ -109,6 +151,7 @@
 		C0B834EB299D2BF5001436E8 /* MoodJourney */ = {
 			isa = PBXGroup;
 			children = (
+				C01A3745299D3074001856BA /* Core */,
 				C01A3742299D2D1D001856BA /* Feature */,
 				C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */,
 				C0B834EE299D2BF5001436E8 /* ContentView.swift */,
@@ -274,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0B834EF299D2BF5001436E8 /* ContentView.swift in Sources */,
+				C01A374A299D5AF3001856BA /* UserEntity.swift in Sources */,
 				C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
