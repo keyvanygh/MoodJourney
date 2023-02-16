@@ -18,5 +18,6 @@ class ThirdPartySigninUsecase{
         userID : String,hasImage : Bool?,
         name : String?,family : String?,
         givenName : String?,mageURL : URL?) {
+            return UserEntity(hasImage: true, userID: "")
     }
 }
