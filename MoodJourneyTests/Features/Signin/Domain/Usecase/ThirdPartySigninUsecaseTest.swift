@@ -14,6 +14,7 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
         let mockedRepostiry = MockedRepository(isSuccess: true)
         let sut = sut(repository: mockedRepostiry)
         let result = sut.execute(
+            thirdParty : .Google,
             userID : "String",
             hasImage : false,
             name : "name",
@@ -31,6 +32,7 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
         let mockedRepostiry = MockedRepository(isSuccess: false)
         let sut = sut(repository: mockedRepostiry)
         let result = sut.execute(
+            thirdParty : .Google,
             userID : "String",
             hasImage : false,
             name : "name",

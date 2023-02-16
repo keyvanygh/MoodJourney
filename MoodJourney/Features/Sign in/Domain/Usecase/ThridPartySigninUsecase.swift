@@ -15,9 +15,13 @@ class ThirdPartySigninUsecase {
     }
     
     func execute(
-        userID : String,hasImage : Bool?,
-        name : String?,family : String?,
-        givenName : String?,imageURL : URL?) -> Result<UserEntity,Error> {
+        thirdParty : ThirdParty,
+        userID : String,
+        hasImage : Bool?,
+        name : String?,
+        family : String?,
+        givenName : String?,
+        imageURL : URL?) -> Result<UserEntity,Error> {
             return repository.signin(withThirdParty: .Google, userID: userID, hasImage: hasImage, name: name, family: family, givenName: givenName, imageURL: imageURL)
     }
 }
