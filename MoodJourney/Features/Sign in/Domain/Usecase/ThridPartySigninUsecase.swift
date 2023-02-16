@@ -17,7 +17,7 @@ class ThirdPartySigninUsecase{
     func execute(
         userID : String,hasImage : Bool?,
         name : String?,family : String?,
-        givenName : String?,mageURL : URL?) -> UserEntity {
-            return UserEntity(hasImage: true, userID: "")
+        givenName : String?,mageURL : URL?) -> Result<UserEntity,Error> {
+            return .success(UserEntity(hasImage: true, userID: ""))
     }
 }

@@ -33,4 +33,18 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
         return ThirdPartySigninUsecase(repository : repository)
     }
     
+    class MockedRepository : ISigninRepository{
+        func signin(
+            withThirdParty thirdParty: MoodJourney.ThirdParty,
+            userID: String,
+            hasImage: Bool?,
+            name: String?,
+            family: String?,
+            givenName: String?,
+            mageURL: URL?) -> Result<UserEntity,Error> {
+                return .success(UserEntity(hasImage: true, userID: ""))
+        }
+        
+        
+    }
 }

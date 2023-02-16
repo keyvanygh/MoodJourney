@@ -12,7 +12,7 @@ protocol ISigninRepository {
     func signin(withThirdParty thirdParty: ThirdParty,
                 userID : String,hasImage : Bool?,
                 name : String?,family : String?,
-                givenName : String?,mageURL : URL?) -> UserEntity
+                givenName : String?,mageURL : URL?) -> Result<UserEntity,Error>
 }
 
 enum ThirdParty{
