@@ -11,6 +11,7 @@ import XCTest
 final class ThirdPartySigninUsecaseTest: XCTestCase {
     
     func test_reciveUserEntity_whenAuthIsSuccess() {
+        let mockedRepostiry = MockedRepository()
         let sut = sut(repository: mockedRepostiry)
         let result = sut.execute(
             userID : "String",
