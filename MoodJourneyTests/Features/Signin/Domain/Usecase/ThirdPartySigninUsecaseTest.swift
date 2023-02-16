@@ -39,8 +39,7 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
             imageURL : URL(string: "string"))
         switch(result){
         case .failure(let error):
-            print(error)
-            XCTAssert(true)
+            XCTAssert((error is AnyError))
             break
         case .success(_):
             XCTFail()
