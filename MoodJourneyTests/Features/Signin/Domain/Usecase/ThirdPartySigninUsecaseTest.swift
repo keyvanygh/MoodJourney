@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import MoodJourney
 
 final class ThirdPartySigninUsecaseTest: XCTestCase {
     
@@ -29,7 +30,7 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
     // MARK: Helpers
     
     final private func sut(repository : ISigninRepository) -> ThirdPartySigninUsecase {
-        return ThirdPartySigninUsecase(repository : ISigninRepository)
+        return ThirdPartySigninUsecase(repository : repository)
     }
     
 }

@@ -2,12 +2,12 @@
 //  File.swift
 //  MoodJourney
 //
-//  Created by sh on 2/15/23.
+//  Created by Keyvan on 2/15/23.
 //
 
 import Foundation
 
-protocol ISinginRepository {
+protocol ISigninRepository {
     
     func signin(withThirdParty thirdParty: ThirdParty,
                 userID : String,hasImage : Bool?,
