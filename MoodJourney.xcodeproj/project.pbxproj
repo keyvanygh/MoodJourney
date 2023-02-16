@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C01A374A299D5AF3001856BA /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3749299D5AF3001856BA /* UserEntity.swift */; };
 		C01A3753299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3752299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift */; };
+		C01A3755299DC782001856BA /* ISigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3754299DC782001856BA /* ISigninRepository.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* ContentView.swift */; };
 		C0B834F1299D2BF7001436E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B834F0299D2BF7001436E8 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		C01A3749299D5AF3001856BA /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		C01A3752299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartySigninUsecaseTest.swift; sourceTree = "<group>"; };
+		C01A3754299DC782001856BA /* ISigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISigninRepository.swift; sourceTree = "<group>"; };
 		C0B834E9299D2BF5001436E8 /* MoodJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
 		C0B834EE299D2BF5001436E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		C01A3747299D3129001856BA /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				C01A3754299DC782001856BA /* ISigninRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0B834EF299D2BF5001436E8 /* ContentView.swift in Sources */,
+				C01A3755299DC782001856BA /* ISigninRepository.swift in Sources */,
 				C01A374A299D5AF3001856BA /* UserEntity.swift in Sources */,
 				C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */,
 			);
