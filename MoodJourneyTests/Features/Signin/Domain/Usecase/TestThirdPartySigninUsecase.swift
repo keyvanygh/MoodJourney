@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class TestThirdPartySigninUsecase: XCTestCase {
+final class ThirdPartySigninUsecaseTest: XCTestCase {
     
     func test_reciveUserEntity_whenAuthIsSuccess() {
         let sut = sut(repository: mockedRepostiry)
