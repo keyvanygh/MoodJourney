@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ThirdPartySigninUsecase{
+class ThirdPartySigninUsecase {
     let repository : ISigninRepository
     
     init(repository: ISigninRepository) {
@@ -18,6 +18,6 @@ class ThirdPartySigninUsecase{
         userID : String,hasImage : Bool?,
         name : String?,family : String?,
         givenName : String?,imageURL : URL?) -> Result<UserEntity,Error> {
-            return .success(UserEntity(hasImage: true, userID: ""))
+            return repository.signin(withThirdParty: .Google, userID: userID, hasImage: hasImage, name: name, family: family, givenName: givenName, imageURL: imageURL)
     }
 }

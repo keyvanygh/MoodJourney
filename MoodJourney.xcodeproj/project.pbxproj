@@ -18,6 +18,7 @@
 		C0B834FE299D2BF7001436E8 /* MoodJourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834FD299D2BF7001436E8 /* MoodJourneyTests.swift */; };
 		C0B83508299D2BF7001436E8 /* MoodJourneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B83507299D2BF7001436E8 /* MoodJourneyUITests.swift */; };
 		C0B8350A299D2BF7001436E8 /* MoodJourneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B83509299D2BF7001436E8 /* MoodJourneyUITestsLaunchTests.swift */; };
+		C0C31740299E8E1200B998C5 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C3173F299E8E1200B998C5 /* AnyError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		C0B83503299D2BF7001436E8 /* MoodJourneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodJourneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B83507299D2BF7001436E8 /* MoodJourneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyUITests.swift; sourceTree = "<group>"; };
 		C0B83509299D2BF7001436E8 /* MoodJourneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C0C3173F299E8E1200B998C5 /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		C01A3745299D3074001856BA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C0C3173F299E8E1200B998C5 /* AnyError.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				C0B834EF299D2BF5001436E8 /* ContentView.swift in Sources */,
 				C01A3755299DC782001856BA /* ISigninRepository.swift in Sources */,
 				C01A3757299DC9CA001856BA /* ThridPartySigninUsecase.swift in Sources */,
+				C0C31740299E8E1200B998C5 /* AnyError.swift in Sources */,
 				C01A374A299D5AF3001856BA /* UserEntity.swift in Sources */,
 				C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */,
 			);

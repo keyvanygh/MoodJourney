@@ -11,7 +11,7 @@ import XCTest
 final class ThirdPartySigninUsecaseTest: XCTestCase {
     
     func test_reciveUserEntity_whenAuthIsSuccess() {
-        let mockedRepostiry = MockedRepository()
+        let mockedRepostiry = MockedRepository(isSuccess: true)
         let sut = sut(repository: mockedRepostiry)
         let result = sut.execute(
             userID : "String",
@@ -27,14 +27,41 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
             XCTFail()
         }
     }
+    func test_reciveError_whenAuthIsFailed() {
+        let mockedRepostiry = MockedRepository(isSuccess: false)
+        let sut = sut(repository: mockedRepostiry)
+        let result = sut.execute(
+            userID : "String",
+            hasImage : false,
+            name : "name",
+            family : "fname",
+            givenName : "gname",
+            imageURL : URL(string: "string"))
+        switch(result){
+        case .failure(let error):
+            print(error)
+            XCTAssert(true)
+            break
+        case .success(_):
+            XCTFail()
+            break
+        }
+    }
     
-    // MARK: Helpers
-    
+    // MARK: Helpers:
     final private func sut(repository : ISigninRepository) -> ThirdPartySigninUsecase {
         return ThirdPartySigninUsecase(repository : repository)
     }
     
     class MockedRepository : ISigninRepository{
+        let isSuccess : Bool
+        let successResponse = UserEntity(hasImage: true, userID: "ID")
+        
+        init(isSuccess: Bool) {
+            self.isSuccess = isSuccess
+            print("HI IS SUCSess \(isSuccess)")
+        }
+        
         func signin(
             withThirdParty thirdParty: MoodJourney.ThirdParty,
             userID: String,
@@ -42,10 +69,9 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
             name: String?,
             family: String?,
             givenName: String?,
-            mageURL: URL?) -> Result<UserEntity,Error> {
-                return .success(UserEntity(hasImage: true, userID: ""))
-        }
-        
-        
+            imageURL mageURL: URL?) -> Result<UserEntity,Error> {
+                if isSuccess {return .success(UserEntity(hasImage: true, userID: ""))}
+                else { return .failure(AnyError.error) }
+            }
     }
 }
