@@ -2,7 +2,7 @@
 //  SigninWithAppleButton.swift
 //  MoodJourney
 //
-//  Created by sh on 2/16/23.
+//  Created by Keyvan on 2/16/23.
 //
 
 import SwiftUI
@@ -14,7 +14,15 @@ struct SigninWithAppleButton: View {
         SignInWithAppleButton(.signIn) { request in
             request.requestedScopes = [.fullName,.email]
         } onCompletion: { result in
-            //notify viewModel
+            switch(result){
+            case .success(let authorization) :
+                if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+                    viewModel.signin(userID: appleIDCredential.user)
+                }
+                break
+            case .failure(_):
+                break
+            }
         }
     }
 }

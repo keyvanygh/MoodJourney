@@ -8,9 +8,18 @@
 import Foundation
 
 class SigninRepository : ISigninRepository {
-    func signin(withThirdParty thirdParty: ThirdParty, userID: String, hasImage: Bool?, name: String?, family: String?, givenName: String?, imageURL: URL?) -> Result<UserEntity, Error> {
-        return .failure(AnyError.error)
+    let thirdPartyRemoteDataSource : ThirdPartySigninRemoteDataSource
+    init(thirdPartyRemoteDataSource: ThirdPartySigninRemoteDataSource) {
+        self.thirdPartyRemoteDataSource = thirdPartyRemoteDataSource
     }
     
+    func signin(
+        withThirdParty thirdParty: ThirdParty,
+        userID: String, hasImage: Bool?,
+        name: String?, family: String?,
+        givenName: String?,
+        imageURL: URL?) -> Result<UserEntity, Error> {
+        return .failure(AnyError.error)
+    }
     
 }

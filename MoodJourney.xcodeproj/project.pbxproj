@@ -26,6 +26,8 @@
 		C0F05A5E299F032700385F65 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A5D299F032700385F65 /* NetworkManager.swift */; };
 		C0F05A64299F073E00385F65 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A63299F073E00385F65 /* SigninViewModel.swift */; };
 		C0F05A66299F07C100385F65 /* SigninWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A65299F07C100385F65 /* SigninWithAppleButton.swift */; };
+		C0F05A6A299F10CA00385F65 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C0F05A69299F10CA00385F65 /* GoogleSignInSwift */; };
+		C0F05A6C299F110C00385F65 /* SigninWithGoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A6B299F110C00385F65 /* SigninWithGoogleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,7 @@
 		C0F05A63299F073E00385F65 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		C0F05A65299F07C100385F65 /* SigninWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithAppleButton.swift; sourceTree = "<group>"; };
 		C0F05A67299F08B600385F65 /* MoodJourney.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodJourney.entitlements; sourceTree = "<group>"; };
+		C0F05A6B299F110C00385F65 /* SigninWithGoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithGoogleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F05A6A299F10CA00385F65 /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				C0F05A65299F07C100385F65 /* SigninWithAppleButton.swift */,
+				C0F05A6B299F110C00385F65 /* SigninWithGoogleButton.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 			);
 			name = MoodJourney;
 			packageProductDependencies = (
+				C0F05A69299F10CA00385F65 /* GoogleSignInSwift */,
 			);
 			productName = MoodJourney;
 			productReference = C0B834E9299D2BF5001436E8 /* MoodJourney.app */;
@@ -417,6 +423,7 @@
 			);
 			mainGroup = C0B834E0299D2BF5001436E8;
 			packageReferences = (
+				C0F05A68299F10CA00385F65 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = C0B834EA299D2BF5001436E8 /* Products */;
 			projectDirPath = "";
@@ -491,6 +498,7 @@
 				C01A374A299D5AF3001856BA /* UserEntity.swift in Sources */,
 				C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */,
 				C0F05A64299F073E00385F65 /* SigninViewModel.swift in Sources */,
+				C0F05A6C299F110C00385F65 /* SigninWithGoogleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +827,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C0F05A68299F10CA00385F65 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C0F05A69299F10CA00385F65 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0F05A68299F10CA00385F65 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C0B834E1299D2BF5001436E8 /* Project object */;
 }

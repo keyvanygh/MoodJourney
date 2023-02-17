@@ -12,9 +12,17 @@ struct SigninView: View {
     var body: some View {
         VStack {
             SigninWithAppleButton(viewModel: viewModel)
-                .frame(height : 44)
+                .frame(height: 44)
+                .padding(.top,188)
+                .padding(.bottom,12)
+
+                .padding(.horizontal,32)
+            SigninWithGoogleButton(viewModel: viewModel)
+                .frame(height: 44)
+                .padding(.bottom,188)
+
         }
-        .padding()
+        .background(Color.green)
     }
 }
 
