@@ -13,7 +13,7 @@
 		C01A3757299DC9CA001856BA /* ThridPartySigninUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3756299DC9CA001856BA /* ThridPartySigninUsecase.swift */; };
 		C0461176299ECC5F0050ABFD /* SigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0461175299ECC5F0050ABFD /* SigninRepository.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
-		C0B834EF299D2BF5001436E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* ContentView.swift */; };
+		C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* SigninView.swift */; };
 		C0B834F1299D2BF7001436E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B834F0299D2BF7001436E8 /* Assets.xcassets */; };
 		C0B834F4299D2BF7001436E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B834F3299D2BF7001436E8 /* Preview Assets.xcassets */; };
 		C0B834FE299D2BF7001436E8 /* MoodJourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834FD299D2BF7001436E8 /* MoodJourneyTests.swift */; };
@@ -24,6 +24,8 @@
 		C0F05A5A299EFF5100385F65 /* ThirdPartySigninRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A59299EFF5100385F65 /* ThirdPartySigninRemoteDataSource.swift */; };
 		C0F05A5C299F00B700385F65 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A5B299F00B700385F65 /* UserDataModel.swift */; };
 		C0F05A5E299F032700385F65 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A5D299F032700385F65 /* NetworkManager.swift */; };
+		C0F05A64299F073E00385F65 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A63299F073E00385F65 /* SigninViewModel.swift */; };
+		C0F05A66299F07C100385F65 /* SigninWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A65299F07C100385F65 /* SigninWithAppleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +53,7 @@
 		C0461175299ECC5F0050ABFD /* SigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepository.swift; sourceTree = "<group>"; };
 		C0B834E9299D2BF5001436E8 /* MoodJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
-		C0B834EE299D2BF5001436E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C0B834EE299D2BF5001436E8 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		C0B834F0299D2BF7001436E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0B834F3299D2BF7001436E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C0B834F9299D2BF7001436E8 /* MoodJourneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodJourneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +66,9 @@
 		C0F05A59299EFF5100385F65 /* ThirdPartySigninRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartySigninRemoteDataSource.swift; sourceTree = "<group>"; };
 		C0F05A5B299F00B700385F65 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		C0F05A5D299F032700385F65 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C0F05A63299F073E00385F65 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
+		C0F05A65299F07C100385F65 /* SigninWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithAppleButton.swift; sourceTree = "<group>"; };
+		C0F05A67299F08B600385F65 /* MoodJourney.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodJourney.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,7 @@
 		C01A3744299D3050001856BA /* Sign in */ = {
 			isa = PBXGroup;
 			children = (
+				C0F05A5F299F055D00385F65 /* Presentation */,
 				C0461172299ECC2F0050ABFD /* Data */,
 				C01A3743299D2D26001856BA /* Domain */,
 			);
@@ -249,10 +255,10 @@
 		C0B834EB299D2BF5001436E8 /* MoodJourney */ = {
 			isa = PBXGroup;
 			children = (
+				C0F05A67299F08B600385F65 /* MoodJourney.entitlements */,
 				C01A3745299D3074001856BA /* Core */,
 				C01A3742299D2D1D001856BA /* Features */,
 				C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */,
-				C0B834EE299D2BF5001436E8 /* ContentView.swift */,
 				C0B834F0299D2BF7001436E8 /* Assets.xcassets */,
 				C0B834F2299D2BF7001436E8 /* Preview Content */,
 			);
@@ -283,6 +289,40 @@
 				C0B83509299D2BF7001436E8 /* MoodJourneyUITestsLaunchTests.swift */,
 			);
 			path = MoodJourneyUITests;
+			sourceTree = "<group>";
+		};
+		C0F05A5F299F055D00385F65 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05A62299F057000385F65 /* SubView */,
+				C0F05A61299F056900385F65 /* ViewModel */,
+				C0F05A60299F056300385F65 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C0F05A60299F056300385F65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C0B834EE299D2BF5001436E8 /* SigninView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0F05A61299F056900385F65 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05A63299F073E00385F65 /* SigninViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C0F05A62299F057000385F65 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05A65299F07C100385F65 /* SigninWithAppleButton.swift */,
+			);
+			path = SubView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,15 +480,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0461176299ECC5F0050ABFD /* SigninRepository.swift in Sources */,
-				C0B834EF299D2BF5001436E8 /* ContentView.swift in Sources */,
+				C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */,
 				C0F05A5E299F032700385F65 /* NetworkManager.swift in Sources */,
 				C01A3755299DC782001856BA /* ISigninRepository.swift in Sources */,
+				C0F05A66299F07C100385F65 /* SigninWithAppleButton.swift in Sources */,
 				C0F05A5A299EFF5100385F65 /* ThirdPartySigninRemoteDataSource.swift in Sources */,
 				C01A3757299DC9CA001856BA /* ThridPartySigninUsecase.swift in Sources */,
 				C0C31740299E8E1200B998C5 /* AnyError.swift in Sources */,
 				C0F05A5C299F00B700385F65 /* UserDataModel.swift in Sources */,
 				C01A374A299D5AF3001856BA /* UserEntity.swift in Sources */,
 				C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */,
+				C0F05A64299F073E00385F65 /* SigninViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +648,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MoodJourney/MoodJourney.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MoodJourney/Preview Content\"";
@@ -635,6 +678,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MoodJourney/MoodJourney.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MoodJourney/Preview Content\"";

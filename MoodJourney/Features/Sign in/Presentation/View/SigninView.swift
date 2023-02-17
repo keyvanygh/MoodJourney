@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SigninView: View {
+    @StateObject var viewModel : SigninViewModel = SigninViewModel()
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            SigninWithAppleButton(viewModel: viewModel)
+                .frame(height : 44)
         }
         .padding()
     }
@@ -21,6 +20,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SigninView()
     }
 }
