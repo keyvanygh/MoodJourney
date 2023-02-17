@@ -72,6 +72,7 @@
 		C0F05A65299F07C100385F65 /* SigninWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithAppleButton.swift; sourceTree = "<group>"; };
 		C0F05A67299F08B600385F65 /* MoodJourney.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodJourney.entitlements; sourceTree = "<group>"; };
 		C0F05A6B299F110C00385F65 /* SigninWithGoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithGoogleButton.swift; sourceTree = "<group>"; };
+		C0F05A6D299F154A00385F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +260,7 @@
 		C0B834EB299D2BF5001436E8 /* MoodJourney */ = {
 			isa = PBXGroup;
 			children = (
+				C0F05A6D299F154A00385F65 /* Info.plist */,
 				C0F05A67299F08B600385F65 /* MoodJourney.entitlements */,
 				C01A3745299D3074001856BA /* Core */,
 				C01A3742299D2D1D001856BA /* Features */,
@@ -663,6 +665,7 @@
 				DEVELOPMENT_TEAM = 597HX97FLJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MoodJourney/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -693,6 +696,7 @@
 				DEVELOPMENT_TEAM = 597HX97FLJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MoodJourney/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

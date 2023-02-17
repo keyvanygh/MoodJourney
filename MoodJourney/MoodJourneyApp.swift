@@ -6,12 +6,16 @@
 
 
 import SwiftUI
+import GoogleSignIn
 
 @main
 struct MoodJourneyApp: App {
     var body: some Scene {
         WindowGroup {
             SigninView()
+                .onOpenURL { url in
+                  GIDSignIn.sharedInstance.handle(url)
+                }
         }
     }
 }
