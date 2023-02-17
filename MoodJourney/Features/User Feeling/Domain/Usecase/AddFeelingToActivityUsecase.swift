@@ -2,7 +2,7 @@
 //  AddMoodUsecase.swift
 //  MoodJourney
 //
-//  Created Keyvan sh on 2/16/23.
+//  Created Keyvan Keyvan on 2/16/23.
 //
 
 import Foundation
@@ -13,11 +13,11 @@ class AddFeelingToActivityUsecase {
         self.repository = repository
     }
     func execute(
-        activity: ActivityEntity,
+        activityID: String,
         feeling: Feeling,
-        message: String) {
-            repository.addFeeling(
-                toActivity : activity,
+        message: String) -> Result<Bool,Error> {
+            return repository.addFeeling(
+                activityID: activityID,
                 feeling: FeelingEntity(feeling: feeling,message: message))
         }
 }

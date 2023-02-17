@@ -12,4 +12,9 @@ struct ActivityEntity {
     let internalID : UUID = UUID()
     let name : String
     let image : URL?
+    init(activityID: String, name: String = "defual", image: URL? = nil) {
+        self.activityID = activityID
+        self.name = name
+        self.image = image
+    }
 }
