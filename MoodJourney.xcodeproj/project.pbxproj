@@ -28,6 +28,13 @@
 		C0F05A66299F07C100385F65 /* SigninWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A65299F07C100385F65 /* SigninWithAppleButton.swift */; };
 		C0F05A6A299F10CA00385F65 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C0F05A69299F10CA00385F65 /* GoogleSignInSwift */; };
 		C0F05A6C299F110C00385F65 /* SigninWithGoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A6B299F110C00385F65 /* SigninWithGoogleButton.swift */; };
+		C0F05A73299F1BBF00385F65 /* FeelingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A72299F1BBF00385F65 /* FeelingEntity.swift */; };
+		C0F05A77299F1D5A00385F65 /* IFeelingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A76299F1D5A00385F65 /* IFeelingRepository.swift */; };
+		C0F05A79299F1DF200385F65 /* AddFeelingToActivityUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A78299F1DF200385F65 /* AddFeelingToActivityUsecase.swift */; };
+		C0F05A7B299FF37500385F65 /* ActivityEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A7A299FF37500385F65 /* ActivityEntity.swift */; };
+		C0F05A81299FF79100385F65 /* FeelingRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A80299FF79100385F65 /* FeelingRepositoryImp.swift */; };
+		C0F05A84299FF87600385F65 /* FeelingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A83299FF87600385F65 /* FeelingDataModel.swift */; };
+		C0F05A86299FF89800385F65 /* FeelingLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A85299FF89800385F65 /* FeelingLocalDatasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +80,13 @@
 		C0F05A67299F08B600385F65 /* MoodJourney.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodJourney.entitlements; sourceTree = "<group>"; };
 		C0F05A6B299F110C00385F65 /* SigninWithGoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithGoogleButton.swift; sourceTree = "<group>"; };
 		C0F05A6D299F154A00385F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C0F05A72299F1BBF00385F65 /* FeelingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingEntity.swift; sourceTree = "<group>"; };
+		C0F05A76299F1D5A00385F65 /* IFeelingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFeelingRepository.swift; sourceTree = "<group>"; };
+		C0F05A78299F1DF200385F65 /* AddFeelingToActivityUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeelingToActivityUsecase.swift; sourceTree = "<group>"; };
+		C0F05A7A299FF37500385F65 /* ActivityEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEntity.swift; sourceTree = "<group>"; };
+		C0F05A80299FF79100385F65 /* FeelingRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingRepositoryImp.swift; sourceTree = "<group>"; };
+		C0F05A83299FF87600385F65 /* FeelingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingDataModel.swift; sourceTree = "<group>"; };
+		C0F05A85299FF89800385F65 /* FeelingLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingLocalDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +118,8 @@
 		C01A3742299D2D1D001856BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				C0F05A6F299F1B6500385F65 /* User Feeling */,
+				C0F05A6E299F1B3900385F65 /* Explore */,
 				C01A3744299D3050001856BA /* Sign in */,
 			);
 			path = Features;
@@ -332,6 +348,83 @@
 			path = SubView;
 			sourceTree = "<group>";
 		};
+		C0F05A6E299F1B3900385F65 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		C0F05A6F299F1B6500385F65 /* User Feeling */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05A70299F1BAA00385F65 /* Domain */,
+			);
+			path = "User Feeling";
+			sourceTree = "<group>";
+		};
+		C0F05A70299F1BAA00385F65 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05A7C299FF71D00385F65 /* Data */,
+				C0F05A75299F1D4700385F65 /* Repository */,
+				C0F05A74299F1D3900385F65 /* Usecase */,
+				C0F05A71299F1BB200385F65 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C0F05A71299F1BB200385F65 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05A72299F1BBF00385F65 /* FeelingEntity.swift */,
+				C0F05A7A299FF37500385F65 /* ActivityEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C0F05A74299F1D3900385F65 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05A78299F1DF200385F65 /* AddFeelingToActivityUsecase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		C0F05A75299F1D4700385F65 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05A76299F1D5A00385F65 /* IFeelingRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		C0F05A7C299FF71D00385F65 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05A7E299FF75800385F65 /* DataModel */,
+				C0F05A7D299FF74F00385F65 /* Datasource */,
+				C0F05A80299FF79100385F65 /* FeelingRepositoryImp.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C0F05A7D299FF74F00385F65 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05A85299FF89800385F65 /* FeelingLocalDatasource.swift */,
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		C0F05A7E299FF75800385F65 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05A83299FF87600385F65 /* FeelingDataModel.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -488,18 +581,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F05A79299F1DF200385F65 /* AddFeelingToActivityUsecase.swift in Sources */,
 				C0461176299ECC5F0050ABFD /* SigninRepository.swift in Sources */,
 				C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */,
 				C0F05A5E299F032700385F65 /* NetworkManager.swift in Sources */,
 				C01A3755299DC782001856BA /* ISigninRepository.swift in Sources */,
 				C0F05A66299F07C100385F65 /* SigninWithAppleButton.swift in Sources */,
 				C0F05A5A299EFF5100385F65 /* ThirdPartySigninRemoteDataSource.swift in Sources */,
+				C0F05A86299FF89800385F65 /* FeelingLocalDatasource.swift in Sources */,
 				C01A3757299DC9CA001856BA /* ThridPartySigninUsecase.swift in Sources */,
+				C0F05A77299F1D5A00385F65 /* IFeelingRepository.swift in Sources */,
+				C0F05A73299F1BBF00385F65 /* FeelingEntity.swift in Sources */,
 				C0C31740299E8E1200B998C5 /* AnyError.swift in Sources */,
 				C0F05A5C299F00B700385F65 /* UserDataModel.swift in Sources */,
 				C01A374A299D5AF3001856BA /* UserEntity.swift in Sources */,
 				C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */,
+				C0F05A81299FF79100385F65 /* FeelingRepositoryImp.swift in Sources */,
 				C0F05A64299F073E00385F65 /* SigninViewModel.swift in Sources */,
+				C0F05A7B299FF37500385F65 /* ActivityEntity.swift in Sources */,
+				C0F05A84299FF87600385F65 /* FeelingDataModel.swift in Sources */,
 				C0F05A6C299F110C00385F65 /* SigninWithGoogleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
