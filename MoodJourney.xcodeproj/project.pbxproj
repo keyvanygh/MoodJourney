@@ -11,6 +11,8 @@
 		C01A3753299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3752299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift */; };
 		C01A3755299DC782001856BA /* ISigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3754299DC782001856BA /* ISigninRepository.swift */; };
 		C01A3757299DC9CA001856BA /* ThridPartySigninUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3756299DC9CA001856BA /* ThridPartySigninUsecase.swift */; };
+		C022FE5329A11B0200F53B0B /* LocalDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C022FE5129A11B0200F53B0B /* LocalDatabase.xcdatamodeld */; };
+		C022FE5929A122E200F53B0B /* LocalDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE5829A122E200F53B0B /* LocalDatabaseManager.swift */; };
 		C0461176299ECC5F0050ABFD /* SigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0461175299ECC5F0050ABFD /* SigninRepository.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* SigninView.swift */; };
@@ -66,15 +68,17 @@
 		C01A3752299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartySigninUsecaseTest.swift; sourceTree = "<group>"; };
 		C01A3754299DC782001856BA /* ISigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISigninRepository.swift; sourceTree = "<group>"; };
 		C01A3756299DC9CA001856BA /* ThridPartySigninUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThridPartySigninUsecase.swift; sourceTree = "<group>"; };
+		C022FE3D29A1153500F53B0B /* MoodJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C022FE3E29A1153500F53B0B /* MoodJourneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodJourneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C022FE3F29A1153500F53B0B /* MoodJourneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodJourneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C022FE5229A11B0200F53B0B /* LocalDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalDatabase.xcdatamodel; sourceTree = "<group>"; };
+		C022FE5829A122E200F53B0B /* LocalDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseManager.swift; sourceTree = "<group>"; };
 		C0461175299ECC5F0050ABFD /* SigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepository.swift; sourceTree = "<group>"; };
-		C0B834E9299D2BF5001436E8 /* MoodJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MoodJourney.app; path = "/Users/keyvanyaghoubian/WorkSpace/GitHub/MoodJourney/build/Debug-iphoneos/MoodJourney.app"; sourceTree = "<absolute>"; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
 		C0B834EE299D2BF5001436E8 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		C0B834F0299D2BF7001436E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0B834F3299D2BF7001436E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C0B834F9299D2BF7001436E8 /* MoodJourneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoodJourneyTests.xctest; path = "/Users/keyvanyaghoubian/WorkSpace/GitHub/MoodJourney/build/Debug-iphoneos/MoodJourneyTests.xctest"; sourceTree = "<absolute>"; };
 		C0B834FD299D2BF7001436E8 /* MoodJourneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyTests.swift; sourceTree = "<group>"; };
-		C0B83503299D2BF7001436E8 /* MoodJourneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoodJourneyUITests.xctest; path = "/Users/keyvanyaghoubian/WorkSpace/GitHub/MoodJourney/build/Debug-iphoneos/MoodJourneyUITests.xctest"; sourceTree = "<absolute>"; };
 		C0B83507299D2BF7001436E8 /* MoodJourneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyUITests.swift; sourceTree = "<group>"; };
 		C0B83509299D2BF7001436E8 /* MoodJourneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C0C3173F299E8E1200B998C5 /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				C0C3173F299E8E1200B998C5 /* AnyError.swift */,
 				C0F05A5D299F032700385F65 /* NetworkManager.swift */,
 				C0F05AB429A0624B00385F65 /* AnyViewModel.swift */,
+				C022FE5829A122E200F53B0B /* LocalDatabaseManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -278,6 +283,9 @@
 				C0B834FC299D2BF7001436E8 /* MoodJourneyTests */,
 				C0B83506299D2BF7001436E8 /* MoodJourneyUITests */,
 				C0F05A9729A0001F00385F65 /* Frameworks */,
+				C022FE3D29A1153500F53B0B /* MoodJourney.app */,
+				C022FE3E29A1153500F53B0B /* MoodJourneyTests.xctest */,
+				C022FE3F29A1153500F53B0B /* MoodJourneyUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -286,9 +294,10 @@
 			children = (
 				C0F05A6D299F154A00385F65 /* Info.plist */,
 				C0F05A67299F08B600385F65 /* MoodJourney.entitlements */,
+				C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */,
+				C022FE5129A11B0200F53B0B /* LocalDatabase.xcdatamodeld */,
 				C01A3745299D3074001856BA /* Core */,
 				C01A3742299D2D1D001856BA /* Features */,
-				C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */,
 				C0B834F0299D2BF7001436E8 /* Assets.xcassets */,
 				C0B834F2299D2BF7001436E8 /* Preview Content */,
 			);
@@ -536,7 +545,7 @@
 				C0F05AB729A064D400385F65 /* Factory */,
 			);
 			productName = MoodJourney;
-			productReference = C0B834E9299D2BF5001436E8 /* MoodJourney.app */;
+			productReference = C022FE3D29A1153500F53B0B /* MoodJourney.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C0B834F8299D2BF7001436E8 /* MoodJourneyTests */ = {
@@ -557,7 +566,7 @@
 				C0F05AA829A0101100385F65 /* GoogleSignInSwift */,
 			);
 			productName = MoodJourneyTests;
-			productReference = C0B834F9299D2BF7001436E8 /* MoodJourneyTests.xctest */;
+			productReference = C022FE3E29A1153500F53B0B /* MoodJourneyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		C0B83502299D2BF7001436E8 /* MoodJourneyUITests */ = {
@@ -575,7 +584,7 @@
 			);
 			name = MoodJourneyUITests;
 			productName = MoodJourneyUITests;
-			productReference = C0B83503299D2BF7001436E8 /* MoodJourneyUITests.xctest */;
+			productReference = C022FE3F29A1153500F53B0B /* MoodJourneyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -656,6 +665,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C022FE5329A11B0200F53B0B /* LocalDatabase.xcdatamodeld in Sources */,
 				C0F05AB529A0624B00385F65 /* AnyViewModel.swift in Sources */,
 				C0F05A79299F1DF200385F65 /* AddFeelingToActivityUsecase.swift in Sources */,
 				C0461176299ECC5F0050ABFD /* SigninRepository.swift in Sources */,
@@ -675,6 +685,7 @@
 				C0F05A5C299F00B700385F65 /* UserDataModel.swift in Sources */,
 				C01A374A299D5AF3001856BA /* UserEntity.swift in Sources */,
 				C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */,
+				C022FE5929A122E200F53B0B /* LocalDatabaseManager.swift in Sources */,
 				C0F05A81299FF79100385F65 /* FeelingRepositoryImp.swift in Sources */,
 				C0F05A64299F073E00385F65 /* SigninViewModel.swift in Sources */,
 				C0F05A7B299FF37500385F65 /* ActivityEntity.swift in Sources */,
@@ -1050,6 +1061,19 @@
 			productName = Factory;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		C022FE5129A11B0200F53B0B /* LocalDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C022FE5229A11B0200F53B0B /* LocalDatabase.xcdatamodel */,
+			);
+			currentVersion = C022FE5229A11B0200F53B0B /* LocalDatabase.xcdatamodel */;
+			path = LocalDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C0B834E1299D2BF5001436E8 /* Project object */;
 }

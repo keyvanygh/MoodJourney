@@ -8,20 +8,23 @@
 import Foundation
 
 struct FeelingEntity{
-    let feeling : Feeling
-    let date : Data = Data()
+    let feeling : Feelings
+    let date : Date = Date()
     let message : String?
     //Should change to voice
     let voice : String?
     let image : [URL?]
+    let internalID = UUID()
+    let feelingID : String
     
-    init(feeling: Feeling, message: String? = "" , voice: String? = "" , image: [URL?] = []) {
+    init(feeling: Feelings, message: String? = "" , voice: String? = "" , image: [URL?] = []) {
         self.feeling = feeling
         self.message = message
         self.voice = voice
         self.image = image
+        feelingID = "ID"
     }
 }
-enum Feeling {
+enum Feelings {
     case Happy,Sad,Depressed
 }

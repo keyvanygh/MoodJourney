@@ -14,7 +14,7 @@ class AddFeelingToActivityUsecase {
     }
     func execute(
         activityID: String,
-        feeling: Feeling,
+        feeling: Feelings,
         message: String) -> Result<Bool,Error> {
             return repository.addFeeling(
                 activityID: activityID,

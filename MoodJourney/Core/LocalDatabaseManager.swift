@@ -1,0 +1,36 @@
+//
+//  LocalDatabaseManager.swift
+//  MoodJourney
+//
+//  Created by Keyvan on 2/18/23.
+//
+
+import Foundation
+import CoreData
+
+class LocalDatabaseManager {
+    let container = NSPersistentContainer(name: "LocalDatabase")
+    init() {
+        container.loadPersistentStores { description, error in
+            if let error = error {
+                print("Core Data failed to load: \(error.localizedDescription)")
+            }
+        }
+    }
+    func fetch(entity: Entity) throws -> [NSFetchRequestResult] {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity.rawValue)
+        return try container.viewContext.fetch(request)
+    }
+    
+    func add(entity: Entity) -> NSManagedObject {
+        return NSEntityDescription.insertNewObject(forEntityName: entity.rawValue, into: container.viewContext)
+    }
+    func save() throws {
+        try container.viewContext.save()
+    }
+}
+public enum Entity: String{
+    case Activity = "Activity"
+    case Feeling = "Feeling"
+}
+
