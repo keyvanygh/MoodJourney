@@ -40,6 +40,7 @@
 		C0F05AB129A0330A00385F65 /* AddFeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05AB029A0330A00385F65 /* AddFeelingView.swift */; };
 		C0F05AB329A0332400385F65 /* AddFeelingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05AB229A0332400385F65 /* AddFeelingViewModel.swift */; };
 		C0F05AB529A0624B00385F65 /* AnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05AB429A0624B00385F65 /* AnyViewModel.swift */; };
+		C0F05AB829A064D400385F65 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = C0F05AB729A064D400385F65 /* Factory */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0F05AA729A00FAD00385F65 /* GoogleSignInSwift in Frameworks */,
+				C0F05AB829A064D400385F65 /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +522,7 @@
 			name = MoodJourney;
 			packageProductDependencies = (
 				C0F05AA629A00FAD00385F65 /* GoogleSignInSwift */,
+				C0F05AB729A064D400385F65 /* Factory */,
 			);
 			productName = MoodJourney;
 			productReference = C0B834E9299D2BF5001436E8 /* MoodJourney.app */;
@@ -598,6 +601,7 @@
 			mainGroup = C0B834E0299D2BF5001436E8;
 			packageReferences = (
 				C0F05AA529A00FAD00385F65 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				C0F05AB629A064D400385F65 /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = C0B834E0299D2BF5001436E8;
 			projectDirPath = "";
@@ -1007,6 +1011,14 @@
 				kind = branch;
 			};
 		};
+		C0F05AB629A064D400385F65 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1019,6 +1031,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C0F05AA529A00FAD00385F65 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		C0F05AB729A064D400385F65 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0F05AB629A064D400385F65 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
