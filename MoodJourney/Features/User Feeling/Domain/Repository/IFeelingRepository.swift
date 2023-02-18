@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FeelingRepository {
-    func addFeeling(activityID: String,feeling: FeelingEntity) -> Result<Bool,Error>
+    func addFeeling(activityID: String,feeling: Feelings) -> Result<Bool,Error>
 }

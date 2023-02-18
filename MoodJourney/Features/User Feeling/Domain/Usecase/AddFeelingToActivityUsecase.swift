@@ -16,8 +16,9 @@ class AddFeelingToActivityUsecase {
         activityID: String,
         feeling: Feelings,
         message: String) -> Result<Bool,Error> {
+            
             return repository.addFeeling(
                 activityID: activityID,
-                feeling: FeelingEntity(feeling: feeling,message: message))
+                feeling: feeling)
         }
 }

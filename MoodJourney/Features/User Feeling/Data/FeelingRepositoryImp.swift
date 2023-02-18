@@ -12,9 +12,9 @@ class FeelingRepositoryImp : FeelingRepository {
     init(localDatasource: FeelingLocalDatasource) {
         self.localDatasource = localDatasource
     }
-    func addFeeling(activityID: String, feeling: FeelingEntity) -> Result<Bool,Error> {
+    func addFeeling(activityID: String, feeling: Feelings) -> Result<Bool,Error> {
         do{
-            try localDatasource.addFeeling(FeelingDataModel(feeling: feeling.feeling))
+            try localDatasource.addFeeling(FeelingDataModel(feeling: feeling))
             try localDatasource.fetchFeelings()
             return .success(true)
         }catch(let error) {

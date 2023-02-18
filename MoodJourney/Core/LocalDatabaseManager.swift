@@ -30,7 +30,7 @@ class LocalDatabaseManager {
     }
 }
 public enum Entity: String{
-    case Activity = "Activity"
-    case Feeling = "Feeling"
+    case Activity = "ActivityEntity"
+    case Feeling = "FeelingEntity"
 }
 
