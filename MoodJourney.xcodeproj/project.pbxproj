@@ -41,6 +41,7 @@
 		C0F05AB329A0332400385F65 /* AddFeelingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05AB229A0332400385F65 /* AddFeelingViewModel.swift */; };
 		C0F05AB529A0624B00385F65 /* AnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05AB429A0624B00385F65 /* AnyViewModel.swift */; };
 		C0F05AB829A064D400385F65 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = C0F05AB729A064D400385F65 /* Factory */; };
+		C0F05ABD29A0650B00385F65 /* Container+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05ABB29A0650B00385F65 /* Container+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		C0F05AB029A0330A00385F65 /* AddFeelingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeelingView.swift; sourceTree = "<group>"; };
 		C0F05AB229A0332400385F65 /* AddFeelingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeelingViewModel.swift; sourceTree = "<group>"; };
 		C0F05AB429A0624B00385F65 /* AnyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyViewModel.swift; sourceTree = "<group>"; };
+		C0F05ABB29A0650B00385F65 /* Container+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		C01A3745299D3074001856BA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C0F05ABA29A0650B00385F65 /* DI */,
 				C0C3173F299E8E1200B998C5 /* AnyError.swift */,
 				C0F05A5D299F032700385F65 /* NetworkManager.swift */,
 				C0F05AB429A0624B00385F65 /* AnyViewModel.swift */,
@@ -504,6 +507,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C0F05ABA29A0650B00385F65 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05ABB29A0650B00385F65 /* Container+extension.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -656,6 +667,7 @@
 				C0F05A66299F07C100385F65 /* SigninWithAppleButton.swift in Sources */,
 				C0F05A5A299EFF5100385F65 /* ThirdPartySigninRemoteDataSource.swift in Sources */,
 				C0F05A86299FF89800385F65 /* FeelingLocalDatasource.swift in Sources */,
+				C0F05ABD29A0650B00385F65 /* Container+extension.swift in Sources */,
 				C01A3757299DC9CA001856BA /* ThridPartySigninUsecase.swift in Sources */,
 				C0F05A77299F1D5A00385F65 /* IFeelingRepository.swift in Sources */,
 				C0F05A73299F1BBF00385F65 /* FeelingEntity.swift in Sources */,

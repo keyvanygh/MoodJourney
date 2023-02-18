@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import Factory
 
 class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingViewModelOutput {
-    var addFeelingToActivityUsecase: AddFeelingToActivityUsecase = AddFeelingToActivityUsecase(repository: FeelingRepositoryImp(localDatasource: FeelingLocalDatasource()))
-
+    @Injected(Container.addFeelingToActivityUsecase) private(set) var addFeelingToActivityUsecase
+    
     public var inputs: AddFeelingViewModelInput { return self }
     public var outputs: AddFeelingViewModelOutput { return self }
 
