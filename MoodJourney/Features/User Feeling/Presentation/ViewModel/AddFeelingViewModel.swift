@@ -8,6 +8,7 @@
 import Foundation
 
 class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingViewModelOutput {
+    var addFeelingToActivityUsecase: AddFeelingToActivityUsecase = AddFeelingToActivityUsecase(repository: FeelingRepositoryImp(localDatasource: FeelingLocalDatasource()))
 
     public var inputs: AddFeelingViewModelInput { return self }
     public var outputs: AddFeelingViewModelOutput { return self }
@@ -15,14 +16,14 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingView
     @Published private(set) var selectedFeelingIndex: Int = 0
 
     func didTapSubmitButton() {
-        print(selectedFeelingIndex)
+        _ = addFeelingToActivityUsecase.execute(activityID: "", feeling: .Happy, message: "")
     }
     func didSelectFeeling(atIndex index: Int) {
         selectedFeelingIndex = index
     }
 }
-
-public protocol AddFeelingViewModelInput {
+protocol AddFeelingViewModelInput {
+    var addFeelingToActivityUsecase : AddFeelingToActivityUsecase { get }
     func didSelectFeeling(atIndex index: Int)
     func didTapSubmitButton()
 }
