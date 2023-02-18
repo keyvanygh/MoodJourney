@@ -9,13 +9,17 @@ import Foundation
 import Factory
 
 class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingViewModelOutput {
-    @Injected(Container.addFeelingToActivityUsecase) private(set) var addFeelingToActivityUsecase
     
     public var inputs: AddFeelingViewModelInput { return self }
     public var outputs: AddFeelingViewModelOutput { return self }
-
+    @Injected(Container.addFeelingToActivityUsecase) private(set) var addFeelingToActivityUsecase
+    
+   
+    // MARK: - Outputs
     @Published private(set) var selectedFeelingIndex: Int = 0
 
+    
+    // MARK: - Inputs
     func didTapSubmitButton() {
         _ = addFeelingToActivityUsecase.execute(activityID: "", feeling: .Happy, message: "")
     }
