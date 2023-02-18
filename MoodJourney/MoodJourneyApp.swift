@@ -12,7 +12,7 @@ import GoogleSignIn
 struct MoodJourneyApp: App {
     var body: some Scene {
         WindowGroup {
-            SigninView()
+            AddFeelingView()
                 .onOpenURL { url in
                   GIDSignIn.sharedInstance.handle(url)
                 }
