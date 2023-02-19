@@ -17,32 +17,45 @@ class CheerleadersViewModel:
     public var outputs: CheerleadersViewModelOutputs {return self}
     
     @LazyInjected(Container.fetchCheerleadersUsecase) private var fetchCheerleadersUsecase
-    private let userID: String
-    
-    init(userID: String) {
-        self.userID = userID
-    }
-    
+    @LazyInjected(Container.cheerLeadersLocalDatasource) private var cheerLeadersLocalDatasource
+
+//    private let user: UserEntity
+//
+//    init(user: UserEntity) {
+//        self.user = user
+//    }
+//
     //MARK: - Outputs
     @Published private(set) var cheerLeaders: [UserEntity] = []
     
     
     //MARK: - Inputs
     func fetchCheerLeaders() {
-        let result = fetchCheerleadersUsecase.execute(userID: "userId")
-        switch result{
-        case .success(let result):
-            cheerLeaders = result
-            break
-        case .failure(_):
-            break
+        do {
+            /// helper
+            let user = try cheerLeadersLocalDatasource.getUser(userID: "Me")
+            ///
+            let result = fetchCheerleadersUsecase.execute(of: user)
+            switch result{
+            case .success(let result):
+                cheerLeaders = result
+                break
+            case .failure(_):
+                break
+            }
+
+        }catch{
+            
         }
     }
     
 //    //MARK: - Helper
-//    func addCheerleader(){
-//        
-//    }
+    func addUser(){
+        guard let user = try? cheerLeadersLocalDatasource.getUser(userID: "Me") else {return}
+        guard let cheerleader = try? cheerLeadersLocalDatasource.addUser(userID: "TAra") else {return}
+
+        cheerLeadersLocalDatasource.addCheerleader(cheerLeader: cheerleader, to: user)
+    }
 
     
 }

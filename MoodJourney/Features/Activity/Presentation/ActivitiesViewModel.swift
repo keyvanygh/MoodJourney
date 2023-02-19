@@ -20,7 +20,6 @@ class ActivitiesViewModel:
     // MARK: - Outputs
     @Published var activities: [ActivityEntity] = []
     
-    
     // MARK: - Inputs
     func fetchActivies() {
         let result = fetchActivitiesUsecase.execute()

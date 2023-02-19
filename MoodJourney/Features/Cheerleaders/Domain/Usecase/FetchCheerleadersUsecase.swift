@@ -12,7 +12,7 @@ class FetchCheerleadersUsecase {
     init(repository: CheerleadersRepository) {
         self.repository = repository
     }
-    func execute(userID: String) -> Result<[UserEntity],Error> {
-        return repository.fetchCheerleaders(userID: userID)
+    func execute(of user: UserEntity) -> Result<[UserEntity],Error> {
+        return repository.fetchCheerleaders(of: user)
     }
 }

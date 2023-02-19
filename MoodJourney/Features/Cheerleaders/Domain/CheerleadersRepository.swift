@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CheerleadersRepository {
-    func fetchCheerleaders(userID: String) -> Result<[UserEntity],Error>
+    func fetchCheerleaders(of user: UserEntity) -> Result<[UserEntity],Error>
 }
