@@ -21,4 +21,9 @@ extension Container {
     static let activityLocalDatasource = Factory {ActivityLocalDatasource() }
     static let activityRepository = Factory{ ActivityRepositoryImp(localDs: activityLocalDatasource()) }
     static let fetchActivitiesUsecase = Factory { FetchActivitiesUsecase(repository: activityRepository()) }
+    
+    // MARK: - Cheerleaders :
+    static let cheerLeadersLocalDatasource = Factory {CheerleadersLocalDatasource() }
+    static let cheerLeadersRepository = Factory{ CheerleadersRepositoryImp(localDatasource: cheerLeadersLocalDatasource()) }
+    static let fetchCheerleadersUsecase = Factory { FetchCheerleadersUsecase(repository: cheerLeadersRepository()) }
 }
