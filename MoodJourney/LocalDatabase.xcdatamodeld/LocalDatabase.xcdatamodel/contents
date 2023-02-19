@@ -7,8 +7,11 @@
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <entity name="FeelingEntity" representedClassName="FeelingEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="activityID" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="feelingType" optional="YES" attributeType="String"/>
         <attribute name="imageURLString" optional="YES" attributeType="String"/>
+        <attribute name="internalID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="message" optional="YES" attributeType="String"/>
     </entity>
 </model>
