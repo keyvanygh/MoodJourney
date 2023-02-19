@@ -26,7 +26,39 @@ struct AddFeelingView: View {
             .onAppear(){
                 vm.inputs.fetchFeelings()
             }
-
+            HStack(spacing: 16){
+                ForEach((1...3), id: \.self) { i in
+                    ZStack{
+                        if i == 1{
+                            Text("😭")
+                                .zIndex(2)
+                                .font(.system(.largeTitle))
+                        }
+                        if i == 2{
+                            Text("😂")
+                                .zIndex(2)
+                                .font(.system(.largeTitle))
+                        }
+                        if i == 3{
+                            Text("😞")
+                                .zIndex(2)
+                                .font(.system(.largeTitle))
+                        }
+                        
+                        RoundedRectangle(cornerRadius: 8)
+                            .foregroundColor((i==vm.outputs.selectedFeelingIndex) ? Color.green : Color.gray.opacity(0.3) )
+                            .frame(width: 80)
+                            .frame(height: 80)
+                    }.onTapGesture {
+                        withAnimation {
+                            vm.inputs.didSelectFeeling(atIndex: i)
+                        }
+                    }
+                }
+            }
+            .padding(.horizontal,16)
+            
+            
             Button {
                 vm.didTapSubmitButton()
             } label: {
@@ -50,20 +82,4 @@ struct AddFeelingView_Previews: PreviewProvider {
     }
 }
 
-//            HStack(spacing: 16){
-//                ForEach((1...3), id: \.self) { i in
-//                    ZStack{
-//                            .zIndex(2)
-//                            .font(.system(.largeTitle))
-//                        RoundedRectangle(cornerRadius: 8)
-//                            .foregroundColor((i==vm.outputs.selectedFeelingIndex) ? Color.green : Color.gray.opacity(0.3) )
-//                            .frame(width: 80)
-//                            .frame(height: 80)
-//                    }.onTapGesture {
-//                        withAnimation {
-//                            vm.inputs.didSelectFeeling(atIndex: i)
-//                        }
-//                    }
-//                }
-//            }
-//            .padding(.horizontal,16)
+
