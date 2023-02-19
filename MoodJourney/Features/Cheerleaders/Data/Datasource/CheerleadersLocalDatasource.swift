@@ -13,6 +13,6 @@ class CheerleadersLocalDatasource {
     
     func fetchCheerleaders(userID: String) throws -> [UserEntity] {
         guard let cheerleaders = try dbm.fetch(entity: .User) as? [UserEntity] else {throw(AnyError.error)}
-        return cheerleaders
+        return cheerleaders.filter({$0.userID == userID})
     }
 }

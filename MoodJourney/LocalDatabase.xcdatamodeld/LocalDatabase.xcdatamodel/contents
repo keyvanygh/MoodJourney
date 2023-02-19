@@ -20,5 +20,6 @@
         <attribute name="imageURLString" optional="YES" attributeType="String"/>
         <attribute name="internalID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="String"/>
     </entity>
 </model>
