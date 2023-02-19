@@ -15,10 +15,19 @@ class CheerleadersViewModel:
     
     public var inputs: CheerleadersViewModelInputs {return self}
     public var outputs: CheerleadersViewModelOutputs {return self}
-    @LazyInjected(Container.fetchCheerleadersUsecase) private var fetchCheerleadersUsecase
     
+    @LazyInjected(Container.fetchCheerleadersUsecase) private var fetchCheerleadersUsecase
+    private let userID: String
+    
+    init(userID: String) {
+        self.userID = userID
+    }
+    
+    //MARK: - Outputs
     @Published private(set) var cheerLeaders: [UserEntity] = []
     
+    
+    //MARK: - Inputs
     func fetchCheerLeaders() {
         let result = fetchCheerleadersUsecase.execute(userID: "userId")
         switch result{
