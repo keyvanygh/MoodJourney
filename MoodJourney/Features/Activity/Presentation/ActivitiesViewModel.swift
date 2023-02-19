@@ -30,6 +30,19 @@ class ActivitiesViewModel:
             break
         }
     }
+    // MARK: -  HELPER
+    func addActivity(){
+        let lds = ActivityLocalDatasource()
+        _ = try? lds.addActivity(
+            activityID: "1",
+            name: "Gain Weight",
+            imageURLString: "https://legionathletics.com/wp-content/uploads/2021/04/clean-bulking-1.jpg")
+        _ = try? lds.addActivity(
+            activityID: "2",
+            name: "Loose Weight",
+            imageURLString: "https://i.kinja-img.com/gawker-media/image/upload/c_fit,f_auto,g_center,pg_1,q_60,w_1600/uztbf1vxh2eic9z01ojn.jpg")
+        
+    }
 }
 protocol ActivitiesViewModelInput{
     func fetchActivies()
@@ -38,3 +51,5 @@ protocol ActivitiesViewModelInput{
 protocol ActivitiesViewModelOutput{
     var activities: [ActivityEntity] { get }
 }
+
+

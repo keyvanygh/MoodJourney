@@ -11,12 +11,15 @@ import Foundation
 class ActivityLocalDatasource {
     
     let dbm = LocalDatabaseManager()
-    func addActivity(_ feeling: ActivityDataModel) throws -> ActivityEntity {
+    func addActivity(
+        activityID: String,
+        name: String,
+        imageURLString: String? = nil) throws -> ActivityEntity {
         guard let entitiy = dbm.add(entity: .Activity) as? ActivityEntity else {throw(URLError(.badURL))}
-        entitiy.name = "smoking"
-        entitiy.activityID = "1"
+        entitiy.name = name
+        entitiy.activityID = activityID
         entitiy.internalID = UUID()
-        entitiy.imageURLString = ""
+        entitiy.imageURLString = imageURLString
         try dbm.save()
         return entitiy
     }
