@@ -9,6 +9,8 @@ import Foundation
 import Factory
 
 extension Container {
+    static let dbm = Factory {LocalDatabaseManager() }
+    
     // MARK: - Feelings :
     static let feelingLocalDatasource = Factory {FeelingLocalDatasource() }
     static let feelingRepository = Factory{ FeelingRepositoryImp(localDatasource: feelingLocalDatasource()) }

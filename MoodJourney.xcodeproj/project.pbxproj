@@ -21,6 +21,11 @@
 		C022FE7229A1A34900F53B0B /* ActivitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE7129A1A34900F53B0B /* ActivitiesViewModel.swift */; };
 		C022FE7429A1A35500F53B0B /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE7329A1A35500F53B0B /* ActivitiesView.swift */; };
 		C022FE7729A1D1E900F53B0B /* FetchFeelingsForActivityUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE7629A1D1E900F53B0B /* FetchFeelingsForActivityUsecase.swift */; };
+		C022FE7E29A282F500F53B0B /* UserEntity+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE7D29A282F500F53B0B /* UserEntity+extension.swift */; };
+		C022FE8029A2833B00F53B0B /* FetchCheerleadersUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE7F29A2833B00F53B0B /* FetchCheerleadersUsecase.swift */; };
+		C022FE8229A283D800F53B0B /* CheerleadersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE8129A283D800F53B0B /* CheerleadersRepository.swift */; };
+		C022FE8829A2852500F53B0B /* CheerleadersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE8729A2852500F53B0B /* CheerleadersLocalDatasource.swift */; };
+		C022FE8A29A2878F00F53B0B /* CheerleadersRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE8929A2878F00F53B0B /* CheerleadersRepositoryImp.swift */; };
 		C0461176299ECC5F0050ABFD /* SigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0461175299ECC5F0050ABFD /* SigninRepository.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* SigninView.swift */; };
@@ -89,6 +94,11 @@
 		C022FE7129A1A34900F53B0B /* ActivitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModel.swift; sourceTree = "<group>"; };
 		C022FE7329A1A35500F53B0B /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
 		C022FE7629A1D1E900F53B0B /* FetchFeelingsForActivityUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFeelingsForActivityUsecase.swift; sourceTree = "<group>"; };
+		C022FE7D29A282F500F53B0B /* UserEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+extension.swift"; sourceTree = "<group>"; };
+		C022FE7F29A2833B00F53B0B /* FetchCheerleadersUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCheerleadersUsecase.swift; sourceTree = "<group>"; };
+		C022FE8129A283D800F53B0B /* CheerleadersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerleadersRepository.swift; sourceTree = "<group>"; };
+		C022FE8729A2852500F53B0B /* CheerleadersLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerleadersLocalDatasource.swift; sourceTree = "<group>"; };
+		C022FE8929A2878F00F53B0B /* CheerleadersRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerleadersRepositoryImp.swift; sourceTree = "<group>"; };
 		C0461175299ECC5F0050ABFD /* SigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepository.swift; sourceTree = "<group>"; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
 		C0B834EE299D2BF5001436E8 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
@@ -153,6 +163,8 @@
 		C01A3742299D2D1D001856BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				C022FE7929A27DE100F53B0B /* Cheerleaders */,
+				C022FE7829A27BE600F53B0B /* Profile */,
 				C022FE5E29A19D3200F53B0B /* Activity */,
 				C0F05A6F299F1B6500385F65 /* Feeling */,
 				C0F05A6E299F1B3900385F65 /* Explore */,
@@ -328,6 +340,81 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C022FE7829A27BE600F53B0B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C022FE7929A27DE100F53B0B /* Cheerleaders */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE8429A284B500F53B0B /* Presentation */,
+				C022FE8329A284B000F53B0B /* Data */,
+				C022FE7A29A280E500F53B0B /* Domain */,
+			);
+			path = Cheerleaders;
+			sourceTree = "<group>";
+		};
+		C022FE7A29A280E500F53B0B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE7C29A280F500F53B0B /* Usecase */,
+				C022FE7B29A280EE00F53B0B /* Entity */,
+				C022FE8129A283D800F53B0B /* CheerleadersRepository.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C022FE7B29A280EE00F53B0B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE7D29A282F500F53B0B /* UserEntity+extension.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C022FE7C29A280F500F53B0B /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE7F29A2833B00F53B0B /* FetchCheerleadersUsecase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		C022FE8329A284B000F53B0B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE8629A284CD00F53B0B /* DataModel */,
+				C022FE8529A284C300F53B0B /* Datasource */,
+				C022FE8929A2878F00F53B0B /* CheerleadersRepositoryImp.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C022FE8429A284B500F53B0B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C022FE8529A284C300F53B0B /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE8729A2852500F53B0B /* CheerleadersLocalDatasource.swift */,
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		C022FE8629A284CD00F53B0B /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		C0461172299ECC2F0050ABFD /* Data */ = {
@@ -775,10 +862,15 @@
 				C022FE6529A19DE900F53B0B /* ActivityDataModel.swift in Sources */,
 				C022FE7429A1A35500F53B0B /* ActivitiesView.swift in Sources */,
 				C0F05A66299F07C100385F65 /* SigninWithAppleButton.swift in Sources */,
+				C022FE8229A283D800F53B0B /* CheerleadersRepository.swift in Sources */,
 				C022FE7729A1D1E900F53B0B /* FetchFeelingsForActivityUsecase.swift in Sources */,
+				C022FE8029A2833B00F53B0B /* FetchCheerleadersUsecase.swift in Sources */,
 				C0F05A5A299EFF5100385F65 /* ThirdPartySigninRemoteDataSource.swift in Sources */,
 				C0F05A86299FF89800385F65 /* FeelingLocalDatasource.swift in Sources */,
+				C022FE8A29A2878F00F53B0B /* CheerleadersRepositoryImp.swift in Sources */,
+				C022FE8829A2852500F53B0B /* CheerleadersLocalDatasource.swift in Sources */,
 				C0F05ABD29A0650B00385F65 /* Container+extension.swift in Sources */,
+				C022FE7E29A282F500F53B0B /* UserEntity+extension.swift in Sources */,
 				C01A3757299DC9CA001856BA /* ThridPartySigninUsecase.swift in Sources */,
 				C0F05A77299F1D5A00385F65 /* IFeelingRepository.swift in Sources */,
 				C0F05A73299F1BBF00385F65 /* FeelingEntity+extension.swift in Sources */,
