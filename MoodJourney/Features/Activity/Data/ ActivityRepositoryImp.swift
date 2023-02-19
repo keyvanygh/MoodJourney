@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class ActivityRepositoryImp: ActivityRepository {
+    let localDs = ActivityLocalDatasource()
+    func fetchActivities() -> Result<[ActivityEntity],Error> {
+        do{return .success(try localDs.fetchActivies())}
+        catch {return .failure(AnyError.error)}
+    }
+}

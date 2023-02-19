@@ -18,6 +18,8 @@
 		C022FE6729A19EAE00F53B0B /*  ActivityRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6629A19EAE00F53B0B /*  ActivityRepositoryImp.swift */; };
 		C022FE6D29A19F5000F53B0B /* ActivityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6C29A19F5000F53B0B /* ActivityRepository.swift */; };
 		C022FE6F29A19FF900F53B0B /* FetchActivitiesUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6E29A19FF900F53B0B /* FetchActivitiesUsecase.swift */; };
+		C022FE7229A1A34900F53B0B /* ActivitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE7129A1A34900F53B0B /* ActivitiesViewModel.swift */; };
+		C022FE7429A1A35500F53B0B /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE7329A1A35500F53B0B /* ActivitiesView.swift */; };
 		C0461176299ECC5F0050ABFD /* SigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0461175299ECC5F0050ABFD /* SigninRepository.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* SigninView.swift */; };
@@ -83,6 +85,8 @@
 		C022FE6629A19EAE00F53B0B /*  ActivityRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ActivityRepositoryImp.swift"; sourceTree = "<group>"; };
 		C022FE6C29A19F5000F53B0B /* ActivityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRepository.swift; sourceTree = "<group>"; };
 		C022FE6E29A19FF900F53B0B /* FetchActivitiesUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchActivitiesUsecase.swift; sourceTree = "<group>"; };
+		C022FE7129A1A34900F53B0B /* ActivitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModel.swift; sourceTree = "<group>"; };
+		C022FE7329A1A35500F53B0B /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
 		C0461175299ECC5F0050ABFD /* SigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepository.swift; sourceTree = "<group>"; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
 		C0B834EE299D2BF5001436E8 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 		C022FE5E29A19D3200F53B0B /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				C022FE7029A1A32900F53B0B /* Presentation */,
 				C022FE6829A19ED100F53B0B /* Domain */,
 				C022FE5F29A19D5300F53B0B /* Data */,
 			);
@@ -304,6 +309,23 @@
 				C0F05A7A299FF37500385F65 /* ActivityEntity+extension.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		C022FE7029A1A32900F53B0B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE7529A1A35900F53B0B /* Views */,
+				C022FE7129A1A34900F53B0B /* ActivitiesViewModel.swift */,
+				C022FE7329A1A35500F53B0B /* ActivitiesView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C022FE7529A1A35900F53B0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C0461172299ECC2F0050ABFD /* Data */ = {
@@ -748,6 +770,7 @@
 				C0F05AB129A0330A00385F65 /* AddFeelingView.swift in Sources */,
 				C022FE6329A19D8C00F53B0B /* ActivityLocalDatasource.swift in Sources */,
 				C022FE6529A19DE900F53B0B /* ActivityDataModel.swift in Sources */,
+				C022FE7429A1A35500F53B0B /* ActivitiesView.swift in Sources */,
 				C0F05A66299F07C100385F65 /* SigninWithAppleButton.swift in Sources */,
 				C0F05A5A299EFF5100385F65 /* ThirdPartySigninRemoteDataSource.swift in Sources */,
 				C0F05A86299FF89800385F65 /* FeelingLocalDatasource.swift in Sources */,
@@ -757,6 +780,7 @@
 				C0F05A73299F1BBF00385F65 /* FeelingEntity+extension.swift in Sources */,
 				C0C31740299E8E1200B998C5 /* AnyError.swift in Sources */,
 				C0F05A5C299F00B700385F65 /* UserDataModel.swift in Sources */,
+				C022FE7229A1A34900F53B0B /* ActivitiesViewModel.swift in Sources */,
 				C022FE6F29A19FF900F53B0B /* FetchActivitiesUsecase.swift in Sources */,
 				C022FE6729A19EAE00F53B0B /*  ActivityRepositoryImp.swift in Sources */,
 				C01A374A299D5AF3001856BA /* UserEntity.swift in Sources */,

@@ -21,7 +21,8 @@ class ActivityLocalDatasource {
         return entitiy
     }
     
-    func fetchActivies() throws {
-        let fetchResutl = try dbm.fetch(entity: .Activity) as? [ActivityEntity]
+    func fetchActivies() throws -> [ActivityEntity]{
+        guard let result = try dbm.fetch(entity: .Activity) as? [ActivityEntity] else {throw(AnyError.error)}
+        return result
     }
 }

@@ -13,6 +13,6 @@ class FetchActivitiesUsecase {
         self.repository = repository
     }
     func execute() -> Result<[ActivityEntity],Error> {
-        return .success(repository.fetchActivities())
+        return repository.fetchActivities()
     }
 }
