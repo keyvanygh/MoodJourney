@@ -11,15 +11,40 @@ struct ActivitiesView: View {
     @StateObject var vm = ActivitiesViewModel()
     
     var body: some View {
-        List {
-            ForEach(vm.outputs.activities) { activity in
-                Text("acticity: \(activity.name ?? "H")" )
+        VStack{
+            List {
+                ForEach(vm.outputs.activities) { activity in
+                    ZStack{
+                        if let url = URL(string: activity.imageURLString ?? "") {
+                            AsyncImage(url: url){ image in
+                                image.image?
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(height: 150)
+                                    .cornerRadius(15)
+                            }
+                        }
+                        RoundedRectangle(cornerRadius: 16)
+                            .frame(height: 150)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(Color.black.opacity(0.2))
+                        
+                        Text( "\(activity.name ?? "H")" )
+                            .foregroundColor(.white)
+                            .font(.largeTitle)
+                            .bold()
+                    }
+                    .cornerRadius(16)
+                }
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+                .listStyle(.plain)
             }
+            Text("")
+                .onAppear(){
+                    vm.inputs.fetchActivies()
+                }
         }
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .onAppear(){
-                vm.inputs.fetchActivies()
-            }
     }
     
 }
