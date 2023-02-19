@@ -12,9 +12,9 @@ class CheerleadersRepositoryImp: CheerleadersRepository {
     init(localDatasource: CheerleadersLocalDatasource) {
         self.localDatasource = localDatasource
     }
-    func fetchCheerleaders(userID: String) -> Result<[UserEntity], Error> {
+    func fetchCheerleaders(of user: UserEntity) -> Result<[UserEntity], Error> {
         do{
-            return .success(try localDatasource.fetchCheerleaders(userID: userID))
+            return .success(try localDatasource.fetchCheerleaders(of: user))
         }catch{return .failure(AnyError.error)}
     }
     
