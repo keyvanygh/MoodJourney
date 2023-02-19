@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Factory
 
 class ActivitiesViewModel:
     AnyViewModel,
@@ -14,7 +15,7 @@ class ActivitiesViewModel:
     
     public var inputs: ActivitiesViewModelInput { return self }
     public var outputs: ActivitiesViewModelOutput { return self }
-    let fetchActivitiesUsecase : FetchActivitiesUsecase = FetchActivitiesUsecase(repository: ActivityRepositoryImp())
+    @Injected(Container.fetchActivitiesUsecase) private(set) var fetchActivitiesUsecase
     
     // MARK: - Outputs
     @Published var activities: [ActivityEntity] = []
