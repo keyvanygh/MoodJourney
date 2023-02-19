@@ -15,6 +15,9 @@
 		C022FE5929A122E200F53B0B /* LocalDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE5829A122E200F53B0B /* LocalDatabaseManager.swift */; };
 		C022FE6329A19D8C00F53B0B /* ActivityLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6229A19D8C00F53B0B /* ActivityLocalDatasource.swift */; };
 		C022FE6529A19DE900F53B0B /* ActivityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6429A19DE900F53B0B /* ActivityDataModel.swift */; };
+		C022FE6729A19EAE00F53B0B /*  ActivityRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6629A19EAE00F53B0B /*  ActivityRepositoryImp.swift */; };
+		C022FE6D29A19F5000F53B0B /* ActivityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6C29A19F5000F53B0B /* ActivityRepository.swift */; };
+		C022FE6F29A19FF900F53B0B /* FetchActivitiesUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6E29A19FF900F53B0B /* FetchActivitiesUsecase.swift */; };
 		C0461176299ECC5F0050ABFD /* SigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0461175299ECC5F0050ABFD /* SigninRepository.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* SigninView.swift */; };
@@ -77,6 +80,9 @@
 		C022FE5829A122E200F53B0B /* LocalDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseManager.swift; sourceTree = "<group>"; };
 		C022FE6229A19D8C00F53B0B /* ActivityLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalDatasource.swift; sourceTree = "<group>"; };
 		C022FE6429A19DE900F53B0B /* ActivityDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDataModel.swift; sourceTree = "<group>"; };
+		C022FE6629A19EAE00F53B0B /*  ActivityRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ActivityRepositoryImp.swift"; sourceTree = "<group>"; };
+		C022FE6C29A19F5000F53B0B /* ActivityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRepository.swift; sourceTree = "<group>"; };
+		C022FE6E29A19FF900F53B0B /* FetchActivitiesUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchActivitiesUsecase.swift; sourceTree = "<group>"; };
 		C0461175299ECC5F0050ABFD /* SigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepository.swift; sourceTree = "<group>"; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
 		C0B834EE299D2BF5001436E8 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 		C022FE5E29A19D3200F53B0B /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				C022FE6829A19ED100F53B0B /* Domain */,
 				C022FE5F29A19D5300F53B0B /* Data */,
 			);
 			path = Activity;
@@ -252,6 +259,7 @@
 			children = (
 				C022FE6129A19D6200F53B0B /* DataModel */,
 				C022FE6029A19D5A00F53B0B /* Datasource */,
+				C022FE6629A19EAE00F53B0B /*  ActivityRepositoryImp.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -270,6 +278,32 @@
 				C022FE6429A19DE900F53B0B /* ActivityDataModel.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		C022FE6829A19ED100F53B0B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE6A29A19F3500F53B0B /* Entity */,
+				C022FE6929A19F2A00F53B0B /* Usecase */,
+				C022FE6C29A19F5000F53B0B /* ActivityRepository.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C022FE6929A19F2A00F53B0B /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE6E29A19FF900F53B0B /* FetchActivitiesUsecase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		C022FE6A29A19F3500F53B0B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C0F05A7A299FF37500385F65 /* ActivityEntity+extension.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		C0461172299ECC2F0050ABFD /* Data */ = {
@@ -434,7 +468,6 @@
 			isa = PBXGroup;
 			children = (
 				C0F05A72299F1BBF00385F65 /* FeelingEntity+extension.swift */,
-				C0F05A7A299FF37500385F65 /* ActivityEntity+extension.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -709,6 +742,7 @@
 				C0461176299ECC5F0050ABFD /* SigninRepository.swift in Sources */,
 				C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */,
 				C0F05A5E299F032700385F65 /* NetworkManager.swift in Sources */,
+				C022FE6D29A19F5000F53B0B /* ActivityRepository.swift in Sources */,
 				C01A3755299DC782001856BA /* ISigninRepository.swift in Sources */,
 				C0F05AB329A0332400385F65 /* AddFeelingViewModel.swift in Sources */,
 				C0F05AB129A0330A00385F65 /* AddFeelingView.swift in Sources */,
@@ -723,6 +757,8 @@
 				C0F05A73299F1BBF00385F65 /* FeelingEntity+extension.swift in Sources */,
 				C0C31740299E8E1200B998C5 /* AnyError.swift in Sources */,
 				C0F05A5C299F00B700385F65 /* UserDataModel.swift in Sources */,
+				C022FE6F29A19FF900F53B0B /* FetchActivitiesUsecase.swift in Sources */,
+				C022FE6729A19EAE00F53B0B /*  ActivityRepositoryImp.swift in Sources */,
 				C01A374A299D5AF3001856BA /* UserEntity.swift in Sources */,
 				C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */,
 				C022FE5929A122E200F53B0B /* LocalDatabaseManager.swift in Sources */,
