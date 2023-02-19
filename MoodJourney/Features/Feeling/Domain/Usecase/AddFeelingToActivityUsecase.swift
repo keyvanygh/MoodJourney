@@ -15,10 +15,13 @@ class AddFeelingToActivityUsecase {
     func execute(
         activityID: String,
         feeling: Feelings,
-        message: String) -> Result<Bool,Error> {
+        message: String? = "",
+        imageURLString: String? = "") -> Result<Bool,Error> {
             
             return repository.addFeeling(
                 activityID: activityID,
-                feeling: feeling)
+                feeling: feeling,
+                message: message,
+                imageURLString: imageURLString)
         }
 }

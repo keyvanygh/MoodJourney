@@ -12,12 +12,17 @@ class FeelingRepositoryImp : FeelingRepository {
     init(localDatasource: FeelingLocalDatasource) {
         self.localDatasource = localDatasource
     }
-    func addFeeling(activityID: String, feeling: Feelings) -> Result<Bool,Error> {
+    func addFeeling(
+        activityID: String,
+        feeling: Feelings,
+        message: String?,
+        imageURLString: String?) -> Result<Bool,Error> {
         do {
             _ = try localDatasource.addFeeling(
                 toActicity: activityID,
-                feeling: "", message: "",
-                imageURLString: "")
+                feeling: feeling.rawValue,
+                message: message,
+                imageURLString: imageURLString)
             return .success(true)
         }catch(let error) {
             return .failure(error)

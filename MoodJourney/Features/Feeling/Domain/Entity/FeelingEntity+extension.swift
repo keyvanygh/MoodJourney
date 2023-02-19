@@ -7,7 +7,11 @@
 
 import Foundation
 
-extension FeelingEntity {}
-enum Feelings {
+extension FeelingEntity {
+    var feelingTypeEnum: Feelings{
+        return Feelings(rawValue: self.feelingType ?? "") ?? .Happy
+    }
+}
+enum Feelings: String{
     case Happy,Sad,Depressed
 }

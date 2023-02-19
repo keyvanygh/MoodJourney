@@ -27,13 +27,13 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingView
     
     // MARK: - Inputs
     func didTapSubmitButton() {
-        _ = addFeelingToActivityUsecase.execute(activityID: "", feeling: .Happy, message: "")
+        _ = addFeelingToActivityUsecase.execute(activityID: activityID, feeling: .Depressed,message: "HI GOOZOO")
     }
     func didSelectFeeling(atIndex index: Int) {
         selectedFeelingIndex = index
     }
     func fetchFeelings() {
-        let result = fetchFeelingsForActivityUsecase.execute(activityID: "activityID")
+        let result = fetchFeelingsForActivityUsecase.execute(activityID: activityID)
         switch result {
         case .success(let result):
             feelings = result

@@ -11,24 +11,22 @@ struct AddFeelingView: View {
     @StateObject var vm : AddFeelingViewModel
     var body: some View {
         VStack{
-            HStack(spacing: 16){
-                ForEach((1...3), id: \.self) { i in
-                    ZStack{
+            List(){
+                ForEach(vm.outputs.feelings){ feeling in
+                    switch(feeling.feelingTypeEnum){
+                    case .Happy:
                         Text("😂")
-                            .zIndex(2)
-                            .font(.system(.largeTitle))
-                        RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor((i==vm.outputs.selectedFeelingIndex) ? Color.green : Color.gray.opacity(0.3) )
-                            .frame(width: 80)
-                            .frame(height: 80)
-                    }.onTapGesture {
-                        withAnimation {
-                            vm.inputs.didSelectFeeling(atIndex: i)
-                        }
+                    case .Sad:
+                        Text("😭")
+                    case .Depressed:
+                        Text("😞")
                     }
                 }
             }
-            .padding(.horizontal,16)
+            .onAppear(){
+                vm.inputs.fetchFeelings()
+            }
+
             Button {
                 vm.didTapSubmitButton()
             } label: {
@@ -42,7 +40,7 @@ struct AddFeelingView: View {
             }
             .padding(.horizontal,16)
         }
-
+        
     }
 }
 
@@ -51,3 +49,21 @@ struct AddFeelingView_Previews: PreviewProvider {
         AddFeelingView(vm: AddFeelingViewModel(activityID: ""))
     }
 }
+
+//            HStack(spacing: 16){
+//                ForEach((1...3), id: \.self) { i in
+//                    ZStack{
+//                            .zIndex(2)
+//                            .font(.system(.largeTitle))
+//                        RoundedRectangle(cornerRadius: 8)
+//                            .foregroundColor((i==vm.outputs.selectedFeelingIndex) ? Color.green : Color.gray.opacity(0.3) )
+//                            .frame(width: 80)
+//                            .frame(height: 80)
+//                    }.onTapGesture {
+//                        withAnimation {
+//                            vm.inputs.didSelectFeeling(atIndex: i)
+//                        }
+//                    }
+//                }
+//            }
+//            .padding(.horizontal,16)

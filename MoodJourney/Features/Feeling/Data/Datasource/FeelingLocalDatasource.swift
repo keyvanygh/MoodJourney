@@ -12,8 +12,8 @@ class FeelingLocalDatasource {
     
     func addFeeling(
         toActicity activityID: String,
-        feeling: String,message: String,
-        imageURLString: String) throws -> FeelingEntity {
+        feeling: String,message: String?,
+        imageURLString: String?) throws -> FeelingEntity {
             guard let entitiy = dbm.add(entity: .Feeling) as? FeelingEntity else {throw(URLError(.badURL))}
             entitiy.message = message
             entitiy.activityID = activityID
