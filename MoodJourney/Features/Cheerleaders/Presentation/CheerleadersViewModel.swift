@@ -21,6 +21,13 @@ class CheerleadersViewModel:
     
     func fetchCheerLeaders() {
         let result = fetchCheerleadersUsecase.execute(userID: "userId")
+        switch result{
+        case .success(let result):
+            cheerLeaders = result
+            break
+        case .failure(_):
+            break
+        }
     }
     
 }
