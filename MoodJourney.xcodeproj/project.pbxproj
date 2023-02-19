@@ -13,6 +13,8 @@
 		C01A3757299DC9CA001856BA /* ThridPartySigninUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3756299DC9CA001856BA /* ThridPartySigninUsecase.swift */; };
 		C022FE5329A11B0200F53B0B /* LocalDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C022FE5129A11B0200F53B0B /* LocalDatabase.xcdatamodeld */; };
 		C022FE5929A122E200F53B0B /* LocalDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE5829A122E200F53B0B /* LocalDatabaseManager.swift */; };
+		C022FE6329A19D8C00F53B0B /* ActivityLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6229A19D8C00F53B0B /* ActivityLocalDatasource.swift */; };
+		C022FE6529A19DE900F53B0B /* ActivityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6429A19DE900F53B0B /* ActivityDataModel.swift */; };
 		C0461176299ECC5F0050ABFD /* SigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0461175299ECC5F0050ABFD /* SigninRepository.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* SigninView.swift */; };
@@ -73,6 +75,8 @@
 		C022FE3F29A1153500F53B0B /* MoodJourneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodJourneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C022FE5229A11B0200F53B0B /* LocalDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalDatabase.xcdatamodel; sourceTree = "<group>"; };
 		C022FE5829A122E200F53B0B /* LocalDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseManager.swift; sourceTree = "<group>"; };
+		C022FE6229A19D8C00F53B0B /* ActivityLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalDatasource.swift; sourceTree = "<group>"; };
+		C022FE6429A19DE900F53B0B /* ActivityDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDataModel.swift; sourceTree = "<group>"; };
 		C0461175299ECC5F0050ABFD /* SigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepository.swift; sourceTree = "<group>"; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
 		C0B834EE299D2BF5001436E8 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
@@ -137,7 +141,8 @@
 		C01A3742299D2D1D001856BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				C0F05A6F299F1B6500385F65 /* User Feeling */,
+				C022FE5E29A19D3200F53B0B /* Activity */,
+				C0F05A6F299F1B6500385F65 /* Feeling */,
 				C0F05A6E299F1B3900385F65 /* Explore */,
 				C01A3744299D3050001856BA /* Sign in */,
 			);
@@ -232,6 +237,39 @@
 				C01A3752299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift */,
 			);
 			path = Usecase;
+			sourceTree = "<group>";
+		};
+		C022FE5E29A19D3200F53B0B /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE5F29A19D5300F53B0B /* Data */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		C022FE5F29A19D5300F53B0B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE6129A19D6200F53B0B /* DataModel */,
+				C022FE6029A19D5A00F53B0B /* Datasource */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C022FE6029A19D5A00F53B0B /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE6229A19D8C00F53B0B /* ActivityLocalDatasource.swift */,
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		C022FE6129A19D6200F53B0B /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE6429A19DE900F53B0B /* ActivityDataModel.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		C0461172299ECC2F0050ABFD /* Data */ = {
@@ -372,14 +410,14 @@
 			path = Explore;
 			sourceTree = "<group>";
 		};
-		C0F05A6F299F1B6500385F65 /* User Feeling */ = {
+		C0F05A6F299F1B6500385F65 /* Feeling */ = {
 			isa = PBXGroup;
 			children = (
 				C0F05AAD29A0281500385F65 /* Presentation */,
 				C0F05A7C299FF71D00385F65 /* Data */,
 				C0F05A70299F1BAA00385F65 /* Domain */,
 			);
-			path = "User Feeling";
+			path = Feeling;
 			sourceTree = "<group>";
 		};
 		C0F05A70299F1BAA00385F65 /* Domain */ = {
@@ -674,6 +712,8 @@
 				C01A3755299DC782001856BA /* ISigninRepository.swift in Sources */,
 				C0F05AB329A0332400385F65 /* AddFeelingViewModel.swift in Sources */,
 				C0F05AB129A0330A00385F65 /* AddFeelingView.swift in Sources */,
+				C022FE6329A19D8C00F53B0B /* ActivityLocalDatasource.swift in Sources */,
+				C022FE6529A19DE900F53B0B /* ActivityDataModel.swift in Sources */,
 				C0F05A66299F07C100385F65 /* SigninWithAppleButton.swift in Sources */,
 				C0F05A5A299EFF5100385F65 /* ThirdPartySigninRemoteDataSource.swift in Sources */,
 				C0F05A86299FF89800385F65 /* FeelingLocalDatasource.swift in Sources */,
