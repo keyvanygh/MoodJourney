@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddFeelingView: View {
-    @StateObject var vm : AddFeelingViewModel = AddFeelingViewModel()
+    @StateObject var vm : AddFeelingViewModel
     var body: some View {
         VStack{
             HStack(spacing: 16){
@@ -48,6 +48,6 @@ struct AddFeelingView: View {
 
 struct AddFeelingView_Previews: PreviewProvider {
     static var previews: some View {
-        AddFeelingView(vm: AddFeelingViewModel())
+        AddFeelingView(vm: AddFeelingViewModel(activityID: ""))
     }
 }
