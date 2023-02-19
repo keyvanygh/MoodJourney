@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ThirdPartySigninRemoteDataSource {
+class SigninRemoteDataSource {
     let networkManager : INetworkManager
     init(networkManager: INetworkManager) {
         self.networkManager = networkManager
@@ -25,3 +25,5 @@ class ThirdPartySigninRemoteDataSource {
         }
     
 }
+// signin -> add user
+// splash -> get user

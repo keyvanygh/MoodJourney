@@ -8,9 +8,12 @@
 import Foundation
 
 class SigninRepository : ISigninRepository {
-    let thirdPartyRemoteDataSource : ThirdPartySigninRemoteDataSource
-    init(thirdPartyRemoteDataSource: ThirdPartySigninRemoteDataSource) {
-        self.thirdPartyRemoteDataSource = thirdPartyRemoteDataSource
+    let rds : SigninRemoteDataSource
+    let lds : SigninLocalDatasource
+    
+    init(rds: SigninRemoteDataSource, lds: SigninLocalDatasource) {
+        self.rds = rds
+        self.lds = lds
     }
     
     func signin(
@@ -19,7 +22,13 @@ class SigninRepository : ISigninRepository {
         name: String?, family: String?,
         givenName: String?,
         imageURL: URL?) -> Result<UserEntity, Error> {
-        return .failure(AnyError.error)
-    }
-    
+            do{
+                let user = try lds.signin(
+                    userID: userID,
+                    name: name,
+                    lastName: "",
+                    imageURLString: imageURL?.absoluteString ?? "")
+                return .success(user)
+            }catch{return .failure(AnyError.error)}
+        }
 }

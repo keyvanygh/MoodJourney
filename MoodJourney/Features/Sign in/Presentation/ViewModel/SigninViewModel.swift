@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Factory
 
 class SigninViewModel : ObservableObject {
-    let thirdPartySigninUsecase = ThirdPartySigninUsecase(repository: SigninRepository(thirdPartyRemoteDataSource: ThirdPartySigninRemoteDataSource(networkManager: NetworkManager(willSucceed: true))))
+    @Injected(Container.thirdPartySigninUsecase) var thirdPartySigninUsecase
     
     func signin(userID : String){
         let result = thirdPartySigninUsecase.execute(
