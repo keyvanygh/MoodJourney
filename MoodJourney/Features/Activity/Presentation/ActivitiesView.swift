@@ -19,6 +19,7 @@ struct ActivitiesView: View {
                     .bold()
                     .padding(.leading,16)
                     .padding(.top,8)
+                NavigationLink(destination: CheerleadersView(vm: CheerleadersViewModel(userID: "userID"))) { Text("Profile") }
                 List {
                     ForEach(vm.outputs.activities) { activity in
                         ZStack(alignment: .center){

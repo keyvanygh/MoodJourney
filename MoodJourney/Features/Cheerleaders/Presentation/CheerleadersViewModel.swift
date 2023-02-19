@@ -39,6 +39,12 @@ class CheerleadersViewModel:
         }
     }
     
+//    //MARK: - Helper
+//    func addCheerleader(){
+//        
+//    }
+
+    
 }
 protocol CheerleadersViewModelInputs {
     func fetchCheerLeaders()
