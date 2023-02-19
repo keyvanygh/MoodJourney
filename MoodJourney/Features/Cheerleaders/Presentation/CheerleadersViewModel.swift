@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Factory
 
 class CheerleadersViewModel:
     AnyViewModel,
@@ -14,12 +15,12 @@ class CheerleadersViewModel:
     
     public var inputs: CheerleadersViewModelInputs {return self}
     public var outputs: CheerleadersViewModelOutputs {return self}
-    
+    @LazyInjected(Container.fetchCheerleadersUsecase) private var fetchCheerleadersUsecase
     
     @Published private(set) var cheerLeaders: [UserEntity] = []
     
     func fetchCheerLeaders() {
-        
+        let result = fetchCheerleadersUsecase.execute(userID: "userId")
     }
     
 }
