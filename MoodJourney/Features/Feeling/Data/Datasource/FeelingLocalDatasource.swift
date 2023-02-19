@@ -23,10 +23,11 @@ class FeelingLocalDatasource {
             return entitiy
         }
     
-    func fetchFeelings() throws -> [FeelingEntity] {
+    func fetchFeelings(fromActivity activityID: String) throws -> [FeelingEntity] {
         guard var fetchResutl = try dbm.fetch(entity: .Feeling) as? [FeelingEntity] else{return []}
-        fetchResutl.sort(by:{$0.date ?? Date() < $1.date ?? Date()})
-        return fetchResutl
+        fetchResutl
+            .sort(by:{$0.date ?? Date() < $1.date ?? Date()})
+        return fetchResutl.filter({$0.activityID == activityID})
         
     }
 }

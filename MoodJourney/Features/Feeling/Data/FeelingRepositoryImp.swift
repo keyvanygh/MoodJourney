@@ -13,7 +13,7 @@ class FeelingRepositoryImp : FeelingRepository {
         self.localDatasource = localDatasource
     }
     func addFeeling(activityID: String, feeling: Feelings) -> Result<Bool,Error> {
-        do{
+        do {
             _ = try localDatasource.addFeeling(
                 toActicity: activityID,
                 feeling: "", message: "",
@@ -21,6 +21,14 @@ class FeelingRepositoryImp : FeelingRepository {
             return .success(true)
         }catch(let error) {
             return .failure(error)
+        }
+    }
+    func fetchFeelings(fromActivity activityID: String) -> Result<[FeelingEntity],Error>{
+        do {
+            let result = try localDatasource.fetchFeelings(fromActivity: activityID)
+            return .success(result)
+        }catch{
+            return .failure(AnyError.error)
         }
     }
 }
