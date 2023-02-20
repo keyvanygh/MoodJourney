@@ -214,12 +214,11 @@
 		C01A3745299D3074001856BA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C03FB32D29A3C0CD00D0E781 /* Any */,
+				C03FB32C29A3C0B900D0E781 /* Managers */,
 				C03FB32729A3C01300D0E781 /* Coordinator */,
 				C0F05ABA29A0650B00385F65 /* DI */,
-				C0C3173F299E8E1200B998C5 /* AnyError.swift */,
 				C0F05A5D299F032700385F65 /* NetworkManager.swift */,
-				C0F05AB429A0624B00385F65 /* AnyViewModel.swift */,
-				C022FE5829A122E200F53B0B /* LocalDatabaseManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -488,6 +487,23 @@
 				C03FB32A29A3C07100D0E781 /* AppView.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		C03FB32C29A3C0B900D0E781 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C022FE5829A122E200F53B0B /* LocalDatabaseManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C03FB32D29A3C0CD00D0E781 /* Any */ = {
+			isa = PBXGroup;
+			children = (
+				C0C3173F299E8E1200B998C5 /* AnyError.swift */,
+				C0F05AB429A0624B00385F65 /* AnyViewModel.swift */,
+			);
+			path = Any;
 			sourceTree = "<group>";
 		};
 		C0461172299ECC2F0050ABFD /* Data */ = {
