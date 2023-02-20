@@ -16,6 +16,13 @@ class ActivitiesViewModel:
     public var inputs: ActivitiesViewModelInput { return self }
     public var outputs: ActivitiesViewModelOutput { return self }
     @Injected(Container.fetchActivitiesUsecase) private(set) var fetchActivitiesUsecase
+    var user: UserEntity? = nil
+    init(user: UserEntity) {
+        self.user = user
+    }
+    //for preview
+    init() {}
+    
     
     // MARK: - Outputs
     @Published var activities: [ActivityEntity] = []

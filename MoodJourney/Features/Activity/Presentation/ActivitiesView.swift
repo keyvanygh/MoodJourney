@@ -8,7 +8,7 @@
 import SwiftUI
 //TODO: - User coordinator to navigate
 struct ActivitiesView: View {
-    @StateObject var vm = ActivitiesViewModel()
+    @StateObject var vm : ActivitiesViewModel
     @State var selection: String? = nil
     var body: some View {
         NavigationStack {
@@ -66,6 +66,6 @@ struct ActivitiesView: View {
 
 struct ActivitiesView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivitiesView()
+        ActivitiesView(vm: ActivitiesViewModel())
     }
 }

@@ -7,4 +7,6 @@
 
 import Foundation
 
-extension UserEntity{}
+extension UserEntity{
+    
+}
