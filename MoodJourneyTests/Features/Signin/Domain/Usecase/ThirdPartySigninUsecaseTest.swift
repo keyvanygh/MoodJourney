@@ -56,7 +56,7 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
     
     class MockedRepository : ISigninRepository{
         let isSuccess : Bool
-        let successResponse = UserEntity(hasImage: true, userID: "ID")
+//        let successResponse = UserEntity.self
         
         init(isSuccess: Bool) {
             self.isSuccess = isSuccess
@@ -71,8 +71,8 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
             family: String?,
             givenName: String?,
             imageURL mageURL: URL?) -> Result<UserEntity,Error> {
-                if isSuccess {return .success(UserEntity(hasImage: true, userID: ""))}
-                else { return .failure(AnyError.error) }
+//                if isSuccess {return .success()}
+               return .failure(AnyError.error) 
             }
     }
 }
