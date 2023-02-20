@@ -17,7 +17,7 @@ class FeelingLocalDatasource {
             guard let entitiy = dbm.add(entity: .Feeling) as? FeelingEntity else {throw(URLError(.badURL))}
             entitiy.message = message
             entitiy.activityID = activityID
-            entitiy.feelingType = feeling
+            entitiy.feelingTypeValue = feeling
             entitiy.date = Date()
             try dbm.save()
             return entitiy

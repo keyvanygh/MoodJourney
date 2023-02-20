@@ -8,7 +8,7 @@
 import Foundation
 
 struct FeelingDataModel{
-    let feeling : Feelings
+    let feeling : Feeling
     let date : Date = Date()
     let message : String?
     //Should change to voice
@@ -17,7 +17,7 @@ struct FeelingDataModel{
     let internalID = UUID()
     let feelingID : String = "ID"
     
-    init(feeling: Feelings, message: String? = "" , voice: String? = "" , image: [URL?] = []) {
+    init(feeling: Feeling, message: String? = "" , voice: String? = "" , image: [URL?] = []) {
         self.feeling = feeling
         self.message = message
         self.voice = voice

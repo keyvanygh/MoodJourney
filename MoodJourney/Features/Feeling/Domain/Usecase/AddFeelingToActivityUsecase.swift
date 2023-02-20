@@ -12,9 +12,18 @@ class AddFeelingToActivityUsecase {
     init(repository: FeelingRepository) {
         self.repository = repository
     }
+    /// execute the usecae
+    /// - Parameters:
+    ///   - activityID: activity id
+    ///   - feeling: feeling
+    ///   - message: some explanation for the feeling
+    ///   - imageURLString: image url absoluteString
+    /// - Returns:
+    ///   - success: array of FeelingEntitys
+    ///   - fail: FeelingError
     func execute(
         activityID: String,
-        feeling: Feelings,
+        feeling: Feeling,
         message: String? = "",
         imageURLString: String? = "") -> Result<Bool,Error> {
             

@@ -14,7 +14,7 @@ class FeelingRepositoryImp : FeelingRepository {
     }
     func addFeeling(
         activityID: String,
-        feeling: Feelings,
+        feeling: Feeling,
         message: String?,
         imageURLString: String?) -> Result<Bool,Error> {
         do {
