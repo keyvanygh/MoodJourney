@@ -33,6 +33,13 @@ class FeelingLocalDatasource {
             return entitiy
         }
     
+    /// fetch feelings from activity with activityID
+    /// - Parameters:
+    ///   - activityID: activity id
+    /// - Returns:
+    ///   - success: array of FeelingEntitys
+    /// - Throws:
+    ///   - FeelingError
     func fetchFeelings(fromActivity activityID: String) throws -> [FeelingEntity] {
         guard var fetchResutl = try dbm.fetch(entity: .Feeling) as? [FeelingEntity] else{return []}
         fetchResutl
