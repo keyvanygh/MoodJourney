@@ -28,12 +28,7 @@ struct SigninView: View {
         .onChange(of: viewModel.user) { user in
             guard let user = viewModel.user else {return}
             coordinator.push(.Activity(user: user))
-        }
-//        NavigationLink(
-//            isActive: $navigateToActvities,
-//            destination: CheerleadersView(vm: CheerleadersViewModel())){EmptyView()}
-
-        
+        }        
     }
     
 }

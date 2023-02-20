@@ -33,11 +33,9 @@ class CheerleadersViewModel:
     //MARK: - Inputs
     func fetchCheerLeaders() {
         guard let user = user else {return}
-        cheerLeaders = []
         let result = fetchCheerleadersUsecase.execute(of: user)
         switch result{
         case .success(let result):
-            print(result.last?.userID)
             cheerLeaders = result
             break
         case .failure(_):
@@ -49,18 +47,16 @@ class CheerleadersViewModel:
     //    //MARK: - Helper
     var index = 0
     func addCheerleader(){
-        fetchCheerLeaders()
 
-        let names = ["Parham","Tara"]
+        let names = ["Fati","Fateme"]
         if index < names.count{
-//            print("HI")
-            print((user?.cheerleaders?.allObjects as? [UserEntity])?.count)
             guard let cheerleader = try? cheerLeadersLocalDatasource.addUser(userID: names[index]) else {return}
-            print(cheerleader)
             guard let user = user else {return}
             cheerLeadersLocalDatasource.addCheerleader(cheerLeader: cheerleader, to: user)
             index += 1
         }
+        fetchCheerLeaders()
+
 
     }
     

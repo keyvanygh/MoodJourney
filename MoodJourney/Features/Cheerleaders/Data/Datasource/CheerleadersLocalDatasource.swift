@@ -12,14 +12,11 @@ class CheerleadersLocalDatasource {
     @Injected(Container.dbm) private var dbm
     
     func fetchCheerleaders(of user: UserEntity) throws -> [UserEntity] {
-//        print(user.cheerleaders?.count)
-//        print(user.objectIDs(forRelationshipNamed: "cheerleaders"))
         guard let cheerLeaders = user.cheerleaders?.allObjects as? [UserEntity] else {throw(AnyError.error)}
         return cheerLeaders
     }
     func addCheerleader(cheerLeader: UserEntity, to user: UserEntity) {
-//        user.addToCheerleaders(cheerLeader)
-        user.cheerleaders = [cheerLeader]
+        user.addToCheerleaders(cheerLeader)
         try? dbm.save()
     }
     func getUser(userID: String) throws -> UserEntity {
