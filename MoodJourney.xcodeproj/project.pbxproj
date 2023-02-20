@@ -218,7 +218,6 @@
 				C03FB32C29A3C0B900D0E781 /* Managers */,
 				C03FB32729A3C01300D0E781 /* Coordinator */,
 				C0F05ABA29A0650B00385F65 /* DI */,
-				C0F05A5D299F032700385F65 /* NetworkManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -492,6 +491,7 @@
 		C03FB32C29A3C0B900D0E781 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				C0F05A5D299F032700385F65 /* NetworkManager.swift */,
 				C022FE5829A122E200F53B0B /* LocalDatabaseManager.swift */,
 			);
 			path = Managers;
