@@ -24,13 +24,13 @@ extension Container {
     
     // MARK: - Cheerleaders :
     static let cheerLeadersLocalDatasource = Factory {CheerleadersLocalDatasource() }
-    static let cheerLeadersRepository = Factory{ CheerleadersRepositoryImp(localDatasource: cheerLeadersLocalDatasource()) }
+    static let cheerLeadersRepository = Factory{ CheerleadersRepositoryImp(lds: cheerLeadersLocalDatasource()) }
     static let fetchCheerleadersUsecase = Factory { FetchCheerleadersUsecase(repository: cheerLeadersRepository()) }
     
     // MARK: - Signin :
     static let signinLocalDatasource = Factory {SigninLocalDatasource() }
     static let signinRemoteDataSource = Factory {SigninRemoteDataSource(networkManager: NetworkManager(willSucceed: true)) }
-    static let signinRepository = Factory{ SigninRepository(rds: signinRemoteDataSource(), lds: signinLocalDatasource()) }
+    static let signinRepository = Factory{ SigninRepositoryImp(rds: signinRemoteDataSource(), lds: signinLocalDatasource()) }
     static let thirdPartySigninUsecase = Factory { ThirdPartySigninUsecase(repository: signinRepository()) }
 
 }

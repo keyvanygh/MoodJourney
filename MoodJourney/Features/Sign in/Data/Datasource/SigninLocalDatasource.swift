@@ -14,7 +14,7 @@ class SigninLocalDatasource {
     
     /// Signin
     /// - Parameters:
-    ///   - thirdParty: 3'rd party type rawValue e.g: Google
+    ///   - with: signinType rawValue e.g: PhoneNumber, Apple
     ///   - userID: userID provided by 3'rd party
     ///   - name: name provided by 3'rd party
     ///   - hasImage if user has an image or not

@@ -8,9 +8,9 @@
 import Foundation
 
 class ThirdPartySigninUsecase {
-    let repository : ISigninRepository
+    let repository : SigninRepository
     
-    init(repository: ISigninRepository) {
+    init(repository: SigninRepository) {
         self.repository = repository
     }
     
