@@ -12,19 +12,19 @@ struct SigninView: View {
     @EnvironmentObject private var coordinator:  Coordinator
     var body: some View {
         VStack {
-            SigninWithAppleButton(viewModel: viewModel)
+            SigninWithAppleButton(vm: viewModel)
                 .frame(height: 44)
                 .padding(.top,188)
                 .padding(.bottom,12)
                 .padding(.horizontal,32)
-            SigninWithGoogleButton(viewModel: viewModel)
+            SigninWithGoogleButton(vm: viewModel)
                 .frame(height: 44)
                 .padding(.bottom,188)
             
         }
         .background(Color.green.ignoresSafeArea())
-        .onChange(of: viewModel.outputs.user) { user in
-            guard let user = viewModel.user else {return}
+        .onChange(of: viewModel.outputs.user) { _ in
+            guard let user = viewModel.outputs.user else {return}
             coordinator.push(.Activity(user: user))
         }        
     }
