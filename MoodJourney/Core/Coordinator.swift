@@ -20,6 +20,10 @@ class Coordinator: ObservableObject {
             ActivitiesView(vm: ActivitiesViewModel(user: user))
         case .Feeling(let activity):
             AddFeelingView(vm: AddFeelingViewModel(activity: activity))
+        case .Profile(_):
+            CheerleadersView(vm: CheerleadersViewModel())
+        case .Signin:
+            SigninView()
         }
     }
 }
@@ -28,7 +32,7 @@ struct CoordinatorView: View {
     @StateObject var coordinator : Coordinator = Coordinator()
     var body: some View {
         NavigationStack(path: $coordinator.path) {
-            SigninView()
+            coordinator.build(view: .Signin)
                 .navigationDestination(for: AppView.self) { view in
                     coordinator.build(view: view)
                 }
@@ -41,5 +45,7 @@ enum AppView: Hashable {
     
     case Activity(user: UserEntity)
     case Feeling(activity: ActivityEntity)
+    case Profile(user: UserEntity)
+    case Signin
     var id: UUID {UUID()}
 }

@@ -22,7 +22,8 @@ struct ActivitiesView: View {
                     .padding(.top,8)
                 Text("Profile")
                     .onTapGesture {
-                        coordinator.push(.Profile())
+                        guard let user = vm.user else {return}
+                        coordinator.push(.Profile(user: user))
                     }
 //                NavigationLink(destination: CheerleadersView(vm: CheerleadersViewModel())) { Text("Profile") }
                 List {
@@ -52,7 +53,8 @@ struct ActivitiesView: View {
                                 .bold()
                         }
                         .onTapGesture {
-                            selection = activity.activityID
+//                            selection = activity.activityID
+                            coordinator.push(.Feeling(activity: activity))
                         }
                     }
                     .listRowSeparator(.hidden)

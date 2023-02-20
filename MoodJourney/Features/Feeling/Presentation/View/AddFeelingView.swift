@@ -78,7 +78,7 @@ struct AddFeelingView: View {
 
 struct AddFeelingView_Previews: PreviewProvider {
     static var previews: some View {
-        AddFeelingView(vm: AddFeelingViewModel(activityID: ""))
+        AddFeelingView(vm: AddFeelingViewModel())
     }
 }
 
