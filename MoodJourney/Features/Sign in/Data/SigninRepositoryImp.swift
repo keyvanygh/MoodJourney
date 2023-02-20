@@ -8,14 +8,29 @@
 import Foundation
 
 class SigninRepositoryImp : SigninRepository {
-    let rds : SigninRemoteDataSource
-    let lds : SigninLocalDatasource
+    
+    /// remote data source
+    fileprivate let rds : SigninRemoteDataSource
+    /// local data source
+    fileprivate let lds : SigninLocalDatasource
     
     init(rds: SigninRemoteDataSource, lds: SigninLocalDatasource) {
         self.rds = rds
         self.lds = lds
     }
     
+    /// Signin using  **3'rd Party**
+    /// - Parameters:
+    ///   - thirdParty: 3'rd party type e.g: .Google
+    ///   - userID: userID provided by 3'rd party
+    ///   - name: name provided by 3'rd party
+    ///   - hasImage if user has an image or not
+    ///   - family: last name provided by 3'rd party
+    ///   - givenName: given name provided by 3'rd party
+    ///   - imageURL: user image url
+    /// - Returns:
+    ///   - success: UserEntity
+    ///   - fail: SigninError
     func signin(
         withThirdParty thirdParty: ThirdParty,
         userID: String, hasImage: Bool?,
