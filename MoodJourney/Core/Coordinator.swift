@@ -2,7 +2,7 @@
 //  Coordinator.swift
 //  MoodJourney
 //
-//  Created by sh on 2/19/23.
+//  Created by Keyvan on 2/19/23.
 //
 
 import SwiftUI
@@ -13,6 +13,10 @@ class Coordinator: ObservableObject {
     func push(_ view: AppView){
         path.append(view)
     }
+    func pop(){
+        path.removeLast()
+    }
+    
     @ViewBuilder
     func build(view: AppView) -> some View{
         switch(view){
@@ -47,5 +51,13 @@ enum AppView: Hashable {
     case Feeling(activity: ActivityEntity)
     case Profile(user: UserEntity)
     case Signin
-    var id: UUID {UUID()}
+    var id: String {
+        switch(self){
+        case .Activity(_): return "Activity"
+        case .Feeling(_): return "Feeling"
+        case .Profile(_): return "Profile"
+        case .Signin: return "Signin"
+        }
+    }
+    
 }

@@ -18,6 +18,7 @@ class ActivitiesViewModel:
     @Injected(Container.fetchActivitiesUsecase) private(set) var fetchActivitiesUsecase
     var user: UserEntity? = nil
     init(user: UserEntity) {
+        print("HIII \(user)")
         self.user = user
     }
     //for preview
@@ -29,6 +30,7 @@ class ActivitiesViewModel:
     
     // MARK: - Inputs
     func fetchActivies() {
+        activities = []
         let result = fetchActivitiesUsecase.execute()
         switch result{
         case .success(let result):
