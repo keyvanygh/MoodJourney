@@ -20,8 +20,14 @@ struct CheerleadersView: View {
                 vm.addCheerleader()
             } label: {
                 Text("add cheears")
-                    .padding(16)
+                    .frame(maxWidth: .infinity)
                     .background(Color.green)
+                    .cornerRadius(16)
+                    .padding(16)
+                    .foregroundColor(.white)
+
+
+                
             }
 
             Text("\(vm.outputs.cheerLeaders.count) people are cheering you on")
