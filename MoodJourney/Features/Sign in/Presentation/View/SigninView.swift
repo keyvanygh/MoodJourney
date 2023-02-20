@@ -23,7 +23,7 @@ struct SigninView: View {
             
         }
         .background(Color.green.ignoresSafeArea())
-        .onChange(of: viewModel.user) { user in
+        .onChange(of: viewModel.outputs.user) { user in
             guard let user = viewModel.user else {return}
             coordinator.push(.Activity(user: user))
         }        

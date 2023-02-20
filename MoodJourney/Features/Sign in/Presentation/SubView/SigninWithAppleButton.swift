@@ -9,18 +9,26 @@ import SwiftUI
 import AuthenticationServices
 
 struct SigninWithAppleButton: View {
-    @ObservedObject var viewModel : SigninViewModel
+    @ObservedObject var vm : SigninViewModel
     var body: some View {
         SignInWithAppleButton(.signIn) { request in
             request.requestedScopes = [.fullName,.email]
         } onCompletion: { result in
             switch(result){
             case .success(let authorization) :
-                if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-                    viewModel.signin(userID: appleIDCredential.user)
+                if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
+                    vm.inputs.didSucceed3rdPartySignin(
+                        thirdParty: .Apple,
+                        userID: credential.user,
+                        hasImage: false,
+                        name: credential.fullName?.givenName,
+                        family: credential.fullName?.familyName,
+                        imageURL: nil)
                 }
                 break
-            case .failure(_):
+            case .failure(let error):
+                vm.inputs.didFailed3rdPartySignin(
+                    thirdParty: .Apple, error: error)
                 break
             }
         }
@@ -30,6 +38,6 @@ struct SigninWithAppleButton: View {
 struct SigninWithAppleButton_Previews: PreviewProvider {
     static var previews: some View {
         SigninWithAppleButton(
-            viewModel: SigninViewModel())
+            vm: SigninViewModel())
     }
 }

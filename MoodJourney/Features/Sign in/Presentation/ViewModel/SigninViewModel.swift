@@ -17,9 +17,9 @@ class SigninViewModel :
     public var outputs: SigninViewModelOutputs {return self}
     
     @Injected(Container.thirdPartySigninUsecase) var thirdPartySigninUsecase
-    @Published var user : UserEntity? = nil
+    @Published private(set) var user : UserEntity? = nil
     
-    func didSucceed3rdPartySignin(thirdParty: ThirdParty, userID: String, hasImage: Bool, name: String?, family: String?, imageURL: URL?) {
+    public func didSucceed3rdPartySignin(thirdParty: ThirdParty, userID: String, hasImage: Bool, name: String?, family: String?, imageURL: URL?) {
         signin(thirdParty: thirdParty,
                userID: userID,
                hasImage: hasImage,
@@ -27,7 +27,7 @@ class SigninViewModel :
                family: family, imageURL: imageURL)
     }
     
-    func didFailed3rdPartySignin(thirdParty: ThirdParty, error: Error) {
+    public func didFailed3rdPartySignin(thirdParty: ThirdParty, error: Error) {
         //TODO: - implemnt fail
     }
     
