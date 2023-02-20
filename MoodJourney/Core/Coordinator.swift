@@ -24,8 +24,8 @@ class Coordinator: ObservableObject {
             ActivitiesView(vm: ActivitiesViewModel(user: user))
         case .Feeling(let activity):
             AddFeelingView(vm: AddFeelingViewModel(activity: activity))
-        case .Profile(_):
-            CheerleadersView(vm: CheerleadersViewModel())
+        case .Profile(let user):
+            CheerleadersView(vm: CheerleadersViewModel(user: user))
         case .Signin:
             SigninView()
         }
