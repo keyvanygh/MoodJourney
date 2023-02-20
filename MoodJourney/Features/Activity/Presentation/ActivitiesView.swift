@@ -20,7 +20,8 @@ struct ActivitiesView: View {
                 .padding(.top,8)
             Text("Profile")
                 .onTapGesture {
-                    guard let user = vm.user else {return}
+                    guard let user = vm.user else{return}
+                    print("By \(user.cheerleaders?.allObjects.count)")
                     coordinator.push(.Profile(user: user))
                 }
             List {

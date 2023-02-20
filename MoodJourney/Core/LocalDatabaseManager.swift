@@ -19,6 +19,7 @@ class LocalDatabaseManager {
     }
     func fetch(entity: Entity) throws -> [NSFetchRequestResult] {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity.rawValue)
+            request.relationshipKeyPathsForPrefetching = ["cheerleaders"]
         return try container.viewContext.fetch(request)
     }
     
@@ -26,6 +27,8 @@ class LocalDatabaseManager {
         return NSEntityDescription.insertNewObject(forEntityName: entity.rawValue, into: container.viewContext)
     }
     func save() throws {
+        self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+        container.viewContext.automaticallyMergesChangesFromParent = true
         try container.viewContext.save()
     }
 }

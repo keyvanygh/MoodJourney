@@ -16,11 +16,24 @@ class SigninLocalDatasource {
         name: String? = "",
         lastName: String? = "",
         imageURLString: String? = "") throws -> UserEntity {
+            if let exsitingUser = (try dbm.fetch(entity: .User) as? [UserEntity])?.first(where: {$0.userID == userID}) {
+                print("HI" )
+                let x = try dbm.fetch(entity: .User) as? [UserEntity]
+                print("gooz \(x?.count)")
+
+//                print(exsitingUser.objectIDs(forRelationshipNamed: ""))
+                return exsitingUser
+            }
+            print("gooz2 \(try dbm.fetch(entity: .User) as? [UserEntity])")
+
             guard let user = dbm.add(entity: .User) as? UserEntity else{throw(AnyError.error)}
             user.userID = userID
             user.name = name
             user.familyName = lastName
             user.imageURLString = imageURLString
+            user.internalID = UUID()
+            try? dbm.save()
             return user
     }
+    
 }

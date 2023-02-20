@@ -9,14 +9,17 @@ import Foundation
 import Factory
 
 class CheerleadersLocalDatasource {
-    @LazyInjected(Container.dbm) private var dbm
+    @Injected(Container.dbm) private var dbm
     
     func fetchCheerleaders(of user: UserEntity) throws -> [UserEntity] {
-        guard let cheerLeaders = user.cheerleaders?.array as? [UserEntity] else {throw(AnyError.error)}
+//        print(user.cheerleaders?.count)
+//        print(user.objectIDs(forRelationshipNamed: "cheerleaders"))
+        guard let cheerLeaders = user.cheerleaders?.allObjects as? [UserEntity] else {throw(AnyError.error)}
         return cheerLeaders
     }
     func addCheerleader(cheerLeader: UserEntity, to user: UserEntity) {
-        user.addToCheerleaders(cheerLeader)
+//        user.addToCheerleaders(cheerLeader)
+        user.cheerleaders = [cheerLeader]
         try? dbm.save()
     }
     func getUser(userID: String) throws -> UserEntity {
@@ -25,7 +28,11 @@ class CheerleadersLocalDatasource {
     }
     func addUser(userID: String) throws -> UserEntity {
         guard let user = dbm.add(entity: .User) as? UserEntity else {throw(AnyError.error)}
+        user.name = userID
+        user.internalID = UUID()
         user.userID = userID
+        user.imageURLString = "b"
+        user.familyName = "a"
         try? dbm.save()
         return user
     }

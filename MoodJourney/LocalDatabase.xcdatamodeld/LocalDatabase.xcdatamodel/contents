@@ -20,6 +20,6 @@
         <attribute name="internalID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
-        <relationship name="cheerleaders" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="UserEntity" inverseName="cheerleaders" inverseEntity="UserEntity"/>
+        <relationship name="cheerleaders" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="UserEntity"/>
     </entity>
 </model>

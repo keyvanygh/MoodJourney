@@ -16,6 +16,14 @@ struct CheerleadersView: View {
                     Text(cheerleader.userID ?? "")
                 }
             }
+            Button {
+                vm.addCheerleader()
+            } label: {
+                Text("add cheears")
+                    .padding(16)
+                    .background(Color.green)
+            }
+
             Text("\(vm.outputs.cheerLeaders.count) people are cheering you on")
         }
         .onAppear(){

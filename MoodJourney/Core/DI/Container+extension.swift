@@ -9,7 +9,7 @@ import Foundation
 import Factory
 
 extension Container {
-    static let dbm = Factory {LocalDatabaseManager() }
+    static let dbm = Factory(scope: .singleton) {LocalDatabaseManager() }
     
     // MARK: - Feelings :
     static let feelingLocalDatasource = Factory {FeelingLocalDatasource() }

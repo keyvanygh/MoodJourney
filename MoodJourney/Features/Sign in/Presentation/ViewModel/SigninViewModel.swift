@@ -16,8 +16,8 @@ class SigninViewModel : ObservableObject {
             thirdParty: .Apple,
             userID: userID,
             hasImage: false,
-            name: "",
-            family: "",
+            name: "Keyvan",
+            family: "Yaghoubian",
             givenName: "",
             imageURL: nil)
         switch(result){

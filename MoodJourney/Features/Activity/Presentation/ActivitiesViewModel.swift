@@ -18,7 +18,6 @@ class ActivitiesViewModel:
     @Injected(Container.fetchActivitiesUsecase) private(set) var fetchActivitiesUsecase
     var user: UserEntity? = nil
     init(user: UserEntity) {
-        print("HIII \(user)")
         self.user = user
     }
     //for preview
