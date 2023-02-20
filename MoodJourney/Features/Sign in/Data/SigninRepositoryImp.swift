@@ -39,7 +39,7 @@ class SigninRepositoryImp : SigninRepository {
         imageURL: URL?) -> Result<UserEntity, Error> {
             do{
                 let user = try lds.signin(
-                    with: thirdParty.rawValue,
+                    with: SigninType.ThirdParty(thirdParty),
                     userID: userID,
                     name: name,
                     family: family,

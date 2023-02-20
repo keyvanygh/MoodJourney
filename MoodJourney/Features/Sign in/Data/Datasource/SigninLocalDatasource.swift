@@ -14,7 +14,7 @@ class SigninLocalDatasource {
     
     /// Signin
     /// - Parameters:
-    ///   - with: signinType rawValue e.g: PhoneNumber, Apple
+    ///   - with: signinType e.g: PhoneNumber, Apple
     ///   - userID: userID provided by 3'rd party
     ///   - name: name provided by 3'rd party
     ///   - hasImage if user has an image or not
@@ -26,7 +26,7 @@ class SigninLocalDatasource {
     /// - Throws:
     ///   - throw SigninError
     func signin(
-        with signinType: String,
+        with signinType: SigninType,
         userID: String,
         name: String? = "",
         family: String? = "",
@@ -37,7 +37,7 @@ class SigninLocalDatasource {
             user.name = name
             user.familyName = family
             user.imageURLString = imageURLString
-            user.signedWith = signinType
+            user.signedWith = signinType.rawValue
             try? dbm.save()
             return user
         }
