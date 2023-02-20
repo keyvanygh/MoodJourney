@@ -18,6 +18,7 @@
         <attribute name="familyName" optional="YES" attributeType="String"/>
         <attribute name="imageURLString" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="signedWith" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
         <relationship name="cheerleaders" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="UserEntity"/>
     </entity>

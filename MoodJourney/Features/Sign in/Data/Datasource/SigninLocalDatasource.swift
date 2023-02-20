@@ -9,23 +9,42 @@ import Foundation
 import Factory
 
 class SigninLocalDatasource {
+    /// singelton database manager
     @Injected(Container.dbm) var dbm: LocalDatabaseManager
     
+    /// Signin
+    /// - Parameters:
+    ///   - thirdParty: 3'rd party type rawValue e.g: Google
+    ///   - userID: userID provided by 3'rd party
+    ///   - name: name provided by 3'rd party
+    ///   - hasImage if user has an image or not
+    ///   - family: last name provided by 3'rd party
+    ///   - imageURLString: user image url absoluteString
+    /// - Returns:
+    ///   - if user exsit, return existing user
+    ///   - if user dose not exist create user and return it
+    /// - Throws:
+    ///   - throw SigninError
     func signin(
+        with signinType: String,
         userID: String,
         name: String? = "",
-        lastName: String? = "",
+        family: String? = "",
         imageURLString: String? = "") throws -> UserEntity {
-            if let exsitingUser = (try dbm.fetch(entity: .User) as? [UserEntity])?.first(where: {$0.userID == userID}) {
-                return exsitingUser
-            }
+            if let exsitingUser = fetchUser(with: userID) {return exsitingUser}
             guard let user = dbm.add(entity: .User) as? UserEntity else{throw(AnyError.error)}
             user.userID = userID
             user.name = name
-            user.familyName = lastName
+            user.familyName = family
             user.imageURLString = imageURLString
+            user.signedWith = signinType
             try? dbm.save()
             return user
+        }
+    
+    func fetchUser(with userID: String) -> UserEntity? {
+        return try? (dbm.fetch(entity: .User) as? [UserEntity])?
+            .first(where: {$0.userID == userID})
     }
     
 }
