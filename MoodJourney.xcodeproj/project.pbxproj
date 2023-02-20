@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C01A3753299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3752299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift */; };
-		C01A3755299DC782001856BA /* ISigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3754299DC782001856BA /* ISigninRepository.swift */; };
+		C01A3755299DC782001856BA /* SigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3754299DC782001856BA /* SigninRepository.swift */; };
 		C01A3757299DC9CA001856BA /* ThridPartySigninUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3756299DC9CA001856BA /* ThridPartySigninUsecase.swift */; };
 		C022FE5329A11B0200F53B0B /* LocalDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C022FE5129A11B0200F53B0B /* LocalDatabase.xcdatamodeld */; };
 		C022FE5929A122E200F53B0B /* LocalDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE5829A122E200F53B0B /* LocalDatabaseManager.swift */; };
@@ -33,7 +33,7 @@
 		C03FB32629A2EA0C00D0E781 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB32529A2EA0C00D0E781 /* Coordinator.swift */; };
 		C03FB32929A3C03700D0E781 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB32829A3C03700D0E781 /* CoordinatorView.swift */; };
 		C03FB32B29A3C07100D0E781 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB32A29A3C07100D0E781 /* AppView.swift */; };
-		C0461176299ECC5F0050ABFD /* SigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0461175299ECC5F0050ABFD /* SigninRepository.swift */; };
+		C0461176299ECC5F0050ABFD /* SigninRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0461175299ECC5F0050ABFD /* SigninRepositoryImp.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* SigninView.swift */; };
 		C0B834F1299D2BF7001436E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B834F0299D2BF7001436E8 /* Assets.xcassets */; };
@@ -85,7 +85,7 @@
 
 /* Begin PBXFileReference section */
 		C01A3752299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartySigninUsecaseTest.swift; sourceTree = "<group>"; };
-		C01A3754299DC782001856BA /* ISigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISigninRepository.swift; sourceTree = "<group>"; };
+		C01A3754299DC782001856BA /* SigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepository.swift; sourceTree = "<group>"; };
 		C01A3756299DC9CA001856BA /* ThridPartySigninUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThridPartySigninUsecase.swift; sourceTree = "<group>"; };
 		C022FE3D29A1153500F53B0B /* MoodJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C022FE3E29A1153500F53B0B /* MoodJourneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodJourneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +113,7 @@
 		C03FB32529A2EA0C00D0E781 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C03FB32829A3C03700D0E781 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		C03FB32A29A3C07100D0E781 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
-		C0461175299ECC5F0050ABFD /* SigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepository.swift; sourceTree = "<group>"; };
+		C0461175299ECC5F0050ABFD /* SigninRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepositoryImp.swift; sourceTree = "<group>"; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
 		C0B834EE299D2BF5001436E8 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		C0B834F0299D2BF7001436E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 		C01A3747299D3129001856BA /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				C01A3754299DC782001856BA /* ISigninRepository.swift */,
+				C01A3754299DC782001856BA /* SigninRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -506,7 +506,7 @@
 			children = (
 				C0461177299ECC6D0050ABFD /* DataModel */,
 				C0461173299ECC3F0050ABFD /* Datasource */,
-				C0461175299ECC5F0050ABFD /* SigninRepository.swift */,
+				C0461175299ECC5F0050ABFD /* SigninRepositoryImp.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -936,12 +936,12 @@
 				C022FE5329A11B0200F53B0B /* LocalDatabase.xcdatamodeld in Sources */,
 				C0F05AB529A0624B00385F65 /* AnyViewModel.swift in Sources */,
 				C0F05A79299F1DF200385F65 /* AddFeelingToActivityUsecase.swift in Sources */,
-				C0461176299ECC5F0050ABFD /* SigninRepository.swift in Sources */,
+				C0461176299ECC5F0050ABFD /* SigninRepositoryImp.swift in Sources */,
 				C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */,
 				C03FB32429A2C5A900D0E781 /* SigninLocalDatasource.swift in Sources */,
 				C0F05A5E299F032700385F65 /* NetworkManager.swift in Sources */,
 				C022FE6D29A19F5000F53B0B /* ActivityRepository.swift in Sources */,
-				C01A3755299DC782001856BA /* ISigninRepository.swift in Sources */,
+				C01A3755299DC782001856BA /* SigninRepository.swift in Sources */,
 				C0F05AB329A0332400385F65 /* AddFeelingViewModel.swift in Sources */,
 				C0F05AB129A0330A00385F65 /* AddFeelingView.swift in Sources */,
 				C022FE6329A19D8C00F53B0B /* ActivityLocalDatasource.swift in Sources */,

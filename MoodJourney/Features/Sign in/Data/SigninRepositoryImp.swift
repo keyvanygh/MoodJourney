@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SigninRepository : ISigninRepository {
+class SigninRepositoryImp : SigninRepository {
     let rds : SigninRemoteDataSource
     let lds : SigninLocalDatasource
     
