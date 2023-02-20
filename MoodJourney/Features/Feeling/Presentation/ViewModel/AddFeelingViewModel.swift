@@ -14,28 +14,29 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingView
     public var outputs: AddFeelingViewModelOutput { return self }
     @Injected(Container.addFeelingToActivityUsecase) private(set) var addFeelingToActivityUsecase
     @Injected(Container.fetchFeelingsForActivityUsecase) private(set) var fetchFeelingsForActivityUsecase
-
-    private var activityID: String
-    init(activityID: String) {
-        self.activityID = activityID
+    
+    private var activity: ActivityEntity? = nil
+    init(activity: ActivityEntity) {
+        self.activity = activity
     }
+    init(){}
     
     // MARK: - Outputs
     @Published private(set) var selectedFeelingIndex: Int = 0
     @Published private(set) var feelings: [FeelingEntity] = []
-
+    
     
     // MARK: - Inputs
     func didTapSubmitButton() {
         switch(selectedFeelingIndex){
         case 1:
-            _ = addFeelingToActivityUsecase.execute(activityID: activityID, feeling: .Sad,message: "HI GOOZOO")
+            _ = addFeelingToActivityUsecase.execute(activityID: activity?.activityID ?? "", feeling: .Sad,message: "HI GOOZOO")
             break
         case 2:
-            _ = addFeelingToActivityUsecase.execute(activityID: activityID, feeling: .Happy,message: "HI GOOZOO")
+            _ = addFeelingToActivityUsecase.execute(activityID:  activity?.activityID ?? "", feeling: .Happy,message: "HI GOOZOO")
             break
         case 3:
-            _ = addFeelingToActivityUsecase.execute(activityID: activityID, feeling: .Depressed,message: "HI GOOZOO")
+            _ = addFeelingToActivityUsecase.execute(activityID:  activity?.activityID ?? "", feeling: .Depressed,message: "HI GOOZOO")
         default :
             break
         }
@@ -45,7 +46,7 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingView
         selectedFeelingIndex = index
     }
     func fetchFeelings() {
-        let result = fetchFeelingsForActivityUsecase.execute(activityID: activityID)
+        let result = fetchFeelingsForActivityUsecase.execute(activityID:  activity?.activityID ?? "")
         switch result {
         case .success(let result):
             feelings = result

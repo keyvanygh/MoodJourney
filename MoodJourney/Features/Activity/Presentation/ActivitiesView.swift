@@ -9,6 +9,7 @@ import SwiftUI
 //TODO: - User coordinator to navigate
 struct ActivitiesView: View {
     @StateObject var vm : ActivitiesViewModel
+    @EnvironmentObject private var coordinator: Coordinator
     @State var selection: String? = nil
     var body: some View {
         NavigationStack {
@@ -19,11 +20,15 @@ struct ActivitiesView: View {
                     .bold()
                     .padding(.leading,16)
                     .padding(.top,8)
-                NavigationLink(destination: CheerleadersView(vm: CheerleadersViewModel())) { Text("Profile") }
+                Text("Profile")
+                    .onTapGesture {
+                        coordinator.push(.Profile())
+                    }
+//                NavigationLink(destination: CheerleadersView(vm: CheerleadersViewModel())) { Text("Profile") }
                 List {
                     ForEach(vm.outputs.activities) { activity in
                         ZStack(alignment: .center){
-                            NavigationLink(destination: AddFeelingView(vm: AddFeelingViewModel(activityID: activity.activityID ?? "")), tag: activity.activityID ?? "", selection: $selection) { EmptyView() }
+//                            NavigationLink(destination: AddFeelingView(vm: AddFeelingViewModel(activityID: activity.activityID ?? "")), tag: activity.activityID ?? "", selection: $selection) { EmptyView() }
 
                             if let url = URL(string: activity.imageURLString ?? "") {
                                 AsyncImage(url: url){ image in

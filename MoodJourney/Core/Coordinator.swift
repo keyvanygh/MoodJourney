@@ -18,6 +18,8 @@ class Coordinator: ObservableObject {
         switch(view){
         case .Activity(let user):
             ActivitiesView(vm: ActivitiesViewModel(user: user))
+        case .Profile(let activity):
+            AddFeelingView(vm: AddFeelingViewModel(ac))
         }
     }
 }
@@ -38,5 +40,6 @@ struct CoordinatorView: View {
 enum AppView: Hashable {
     
     case Activity(user: UserEntity)
+    case Profile(activity: ActivityEntity)
     var id: UUID {UUID()}
 }
