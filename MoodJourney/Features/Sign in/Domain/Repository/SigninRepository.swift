@@ -24,7 +24,3 @@ protocol SigninRepository {
         name : String?,family : String?,
         givenName : String?,imageURL : URL?) -> Result<UserEntity,Error>
 }
-
-enum ThirdParty{
-    case Google,Apple,Meta
-}
