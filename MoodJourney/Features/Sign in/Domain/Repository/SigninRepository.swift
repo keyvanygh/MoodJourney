@@ -18,6 +18,9 @@ protocol SigninRepository {
     ///   - family: last name provided by 3'rd party
     ///   - givenName: given name provided by 3'rd party
     ///   - imageURL: user image url
+    /// - Returns:
+    ///   - success: UserEntity
+    ///   - fail: SigninError
     func signin(
         withThirdParty thirdParty: ThirdParty,
         userID : String,hasImage : Bool?,
