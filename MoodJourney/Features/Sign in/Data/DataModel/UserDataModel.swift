@@ -2,11 +2,10 @@
 //  UserDataModel.swift
 //  MoodJourney
 //
-//  Created by sh on 2/16/23.
+//  Created by Keyvan on 2/16/23.
 //
 
 import Foundation
 
-struct UserDataModel{
-    
-}
+/// will be used to decode remote datasource response
+struct UserDataModel{}

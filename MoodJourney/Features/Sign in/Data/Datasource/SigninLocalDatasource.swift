@@ -12,7 +12,7 @@ class SigninLocalDatasource {
     /// singelton database manager
     @Injected(Container.dbm) var dbm: LocalDatabaseManager
     
-    /// Signin
+    /// Local Datasource Signin:
     /// - Parameters:
     ///   - with: signinType e.g: PhoneNumber, Apple
     ///   - userID: userID provided by 3'rd party
@@ -22,7 +22,7 @@ class SigninLocalDatasource {
     ///   - imageURLString: user image url absoluteString
     /// - Returns:
     ///   - if user exsit, return existing user
-    ///   - if user dose not exist create user and return it
+    ///   - if user dose not exist, create user and return it
     /// - Throws:
     ///   - throw SigninError
     func signin(

@@ -45,6 +45,6 @@ class SigninRepositoryImp : SigninRepository {
                     family: family,
                     imageURLString: imageURL?.absoluteString ?? "")
                 return .success(user)
-            }catch{return .failure(AnyError.error)}
+            } catch {return .failure(AnyError.error)}
         }
 }

@@ -26,4 +26,6 @@ protocol SigninRepository {
         userID : String,hasImage : Bool?,
         name : String?,family : String?,
         givenName : String?,imageURL : URL?) -> Result<UserEntity,Error>
+    
+    //TODO: - signin(withPhoneNumber)
 }
