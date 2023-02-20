@@ -222,6 +222,7 @@
 		C01A3746299D3122001856BA /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				C022FE7D29A282F500F53B0B /* UserEntity+extension.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -385,7 +386,6 @@
 		C022FE7B29A280EE00F53B0B /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				C022FE7D29A282F500F53B0B /* UserEntity+extension.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";

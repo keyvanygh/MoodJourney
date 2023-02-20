@@ -8,6 +8,7 @@
 import Foundation
 
 extension UserEntity {
+    /// to make it identifiable for swiftui
     var internalID: UUID {
         UUID()
     }
