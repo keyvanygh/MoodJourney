@@ -24,7 +24,6 @@ class SigninLocalDatasource {
             user.name = name
             user.familyName = lastName
             user.imageURLString = imageURLString
-            user.internalID = UUID()
             try? dbm.save()
             return user
     }

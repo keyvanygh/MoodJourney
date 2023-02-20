@@ -26,7 +26,6 @@ class CheerleadersLocalDatasource {
     func addUser(userID: String) throws -> UserEntity {
         guard let user = dbm.add(entity: .User) as? UserEntity else {throw(AnyError.error)}
         user.name = userID
-        user.internalID = UUID()
         user.userID = userID
         user.imageURLString = "b"
         user.familyName = "a"

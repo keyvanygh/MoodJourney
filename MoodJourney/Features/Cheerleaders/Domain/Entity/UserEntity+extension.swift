@@ -8,5 +8,7 @@
 import Foundation
 
 extension UserEntity {
-    
+    var internalID: UUID {
+        UUID()
+    }
 }
