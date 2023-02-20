@@ -2,15 +2,15 @@
 //  ThirdPartySigninRemoteDataSource.swift
 //  MoodJourney
 //
-//  Created by sh on 2/16/23.
+//  Created by Keyvan on 2/16/23.
 //
 
 import Foundation
 
 class SigninRemoteDataSource {
-    let networkManager : INetworkManager
+    let nm : INetworkManager
     init(networkManager: INetworkManager) {
-        self.networkManager = networkManager
+        self.nm = networkManager
     }
     func signin(
         withThirdParty thirdParty: String,
@@ -20,10 +20,7 @@ class SigninRemoteDataSource {
         family: String?,
         givenName: String?,
         imageURL: String) throws -> UserDataModel  {
-            _ =  try networkManager.post()
+            _ =  try nm.post()
             return UserDataModel()
         }
-    
 }
-// signin -> add user
-// splash -> get user

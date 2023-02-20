@@ -39,9 +39,10 @@ class SigninRepositoryImp : SigninRepository {
         imageURL: URL?) -> Result<UserEntity, Error> {
             do{
                 let user = try lds.signin(
+                    with: thirdParty.rawValue,
                     userID: userID,
                     name: name,
-                    lastName: "",
+                    family: family,
                     imageURLString: imageURL?.absoluteString ?? "")
                 return .success(user)
             }catch{return .failure(AnyError.error)}
