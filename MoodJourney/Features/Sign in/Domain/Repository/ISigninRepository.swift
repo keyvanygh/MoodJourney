@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ISigninRepository {
+protocol SigninRepository {
     
     /// Signin using  **3'rd Party**
     /// - Parameters:
