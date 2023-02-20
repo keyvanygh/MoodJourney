@@ -10,6 +10,16 @@ import Foundation
 class FeelingLocalDatasource {
     let dbm = LocalDatabaseManager()
     
+    /// add feeling to activity with acitivtyID
+    /// - Parameters:
+    ///   - activityID: activity id
+    ///   - feeling: feeling
+    ///   - message: some explanation for the feeling
+    ///   - imageURLString: image url absoluteString
+    /// - Returns:
+    ///   - success: array of FeelingEntitys
+    /// - Throws:
+    ///   - FeelingError
     func addFeeling(
         toActicity activityID: String,
         feeling: String,message: String?,
