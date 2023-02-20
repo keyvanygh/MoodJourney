@@ -28,13 +28,13 @@ struct ThirdPartySigninUsecase {
     ///   - success: UserEntity
     ///   - fail: SigninError
     func execute(
-        thirdParty : ThirdParty,
-        userID : String,
-        hasImage : Bool?,
-        name : String?,
-        family : String?,
-        givenName : String?,
-        imageURL : URL?) -> Result<UserEntity,Error> {
-            return repository.signin(withThirdParty: .Google, userID: userID, hasImage: hasImage, name: name, family: family, givenName: givenName, imageURL: imageURL)
+        thirdParty: ThirdParty,
+        userID: String,
+        hasImage: Bool? = false,
+        name: String? = "",
+        family: String? = "",
+        givenName: String? = "",
+        imageURL: URL? = nil) -> Result<UserEntity,Error> {
+            return repository.signin(withThirdParty: thirdParty, userID: userID, hasImage: hasImage, name: name, family: family, givenName: givenName, imageURL: imageURL)
         }
 }
