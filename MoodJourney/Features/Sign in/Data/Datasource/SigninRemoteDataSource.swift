@@ -8,7 +8,7 @@
 import Foundation
 
 class SigninRemoteDataSource {
-    let nm : INetworkManager
+    private let nm : INetworkManager
     init(networkManager: INetworkManager) {
         self.nm = networkManager
     }
