@@ -14,6 +14,12 @@ class CheerleadersRepositoryImp: CheerleadersRepository {
     init(lds: CheerleadersLocalDatasource) {
         self.lds = lds
     }
+    /// fetch cheerers of user
+    /// - Parameters:
+    ///   - user: user
+    /// - Returns:
+    ///   - success: list of cheerers
+    ///   - fail: CheerersError
     func fetchCheerleaders(of user: UserEntity) -> Result<[UserEntity], Error> {
         do{
             return .success(try lds.fetchCheerleaders(of: user))
