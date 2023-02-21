@@ -5,37 +5,24 @@ struct KeychainManager {
     
     enum KeychainError: Error {
         case noUserID
-        case unexpectedPasswordData
         case unexpectedItemData
         case unhandledError
-        case serviceNotFound
-        case accountNotFound
+        case notFound
     }
     
     // MARK: Properties
     
-    let service: String? = Bundle.main.bundleIdentifier
-    private(set) var account: String?
     private(set) var accessGroup: String?
-
-    mutating func setAccount(userID: String) {
-        self.account = userID
-    }
-    mutating func accessGroup(userID: String) {
-        self.account = userID
-    }
+    private let account = "moodjourny.com"
     
     // MARK: Keychain access
     
-    func readItem() throws -> String {
+    func read(_ service: Service) throws -> String {
         /*
          Build a query to find the item that matches the service, account and
          access group.
          */
-        guard let service = service else{throw(KeychainError.serviceNotFound)}
-        guard let account = account else{throw(KeychainError.accountNotFound)}
-
-        var query = keychainQuery(withService: service, account: account, accessGroup: accessGroup)
+        var query = keychainQuery(withService: service)
         query[kSecMatchLimit as String] = kSecMatchLimitOne
         query[kSecReturnAttributes as String] = kCFBooleanTrue
         query[kSecReturnData as String] = kCFBooleanTrue
@@ -47,46 +34,45 @@ struct KeychainManager {
         }
         
         // Check the return status and throw an error if appropriate.
-        guard status != errSecItemNotFound else { throw KeychainError.noPassword }
+        guard status != errSecItemNotFound else { throw KeychainError.notFound}
         guard status == noErr else { throw KeychainError.unhandledError }
         
         // Parse the password string from the query result.
         guard let existingItem = queryResult as? [String: AnyObject],
-            let passwordData = existingItem[kSecValueData as String] as? Data,
-            let password = String(data: passwordData, encoding: String.Encoding.utf8)
-            else {
-                throw KeychainError.unexpectedPasswordData
+              let data = existingItem[kSecValueData as String] as? Data,
+              let item = String(data: data, encoding: String.Encoding.utf8)
+        else {
+            throw KeychainError.unexpectedItemData
         }
         
-        return password
+        return item
     }
     
-    func saveItem(_ password: String) throws {
-        guard let service = service else{throw(KeychainError.serviceNotFound)}
-
+    
+    func save(data: Data,to service: Service) throws {
         // Encode the password into an Data object.
-        let encodedPassword = password.data(using: String.Encoding.utf8)!
+//        let encodedPassword = password.data(using: String.Encoding.utf8)!
         
         do {
             // Check for an existing item in the keychain.
-            try _ = readItem()
+            try _ = read(service)
             
             // Update the existing item with the new password.
             var attributesToUpdate = [String: AnyObject]()
-            attributesToUpdate[kSecValueData as String] = encodedPassword as AnyObject?
+            attributesToUpdate[kSecValueData as String] = data as AnyObject?
             
-            let query = keychainQuery(withService: service, account: account, accessGroup: accessGroup)
+            let query = keychainQuery(withService: service)
             let status = SecItemUpdate(query as CFDictionary, attributesToUpdate as CFDictionary)
             
             // Throw an error if an unexpected status was returned.
             guard status == noErr else { throw KeychainError.unhandledError }
-        } catch KeychainError.noPassword {
+        } catch KeychainError.notFound {
             /*
              No password was found in the keychain. Create a dictionary to save
              as a new keychain item.
              */
-            var newItem = keychainQuery(withService: service, account: account, accessGroup: accessGroup)
-            newItem[kSecValueData as String] = encodedPassword as AnyObject?
+            var newItem = keychainQuery(withService: service)
+            newItem[kSecValueData as String] = data as AnyObject?
             
             // Add a the new item to the keychain.
             let status = SecItemAdd(newItem as CFDictionary, nil)
@@ -96,11 +82,10 @@ struct KeychainManager {
         }
     }
     
-    func deleteItem() throws {
-        guard let service = service else{throw(KeychainError.serviceNotFound)}
-
+    func delete(_ service: Service) throws {
+        
         // Delete the existing item from the keychain.
-        let query = keychainQuery(withService: service, account: account, accessGroup: accessGroup)
+        let query = keychainQuery(withService: service)
         let status = SecItemDelete(query as CFDictionary)
         
         // Throw an error if an unexpected status was returned.
@@ -109,40 +94,17 @@ struct KeychainManager {
     
     // MARK: Convenience
     
-    private func keychainQuery(withService service: String, account: String? = nil, accessGroup: String? = nil) -> [String: AnyObject] {
+    private func keychainQuery(withService service: Service) -> [String: AnyObject] {
         var query = [String: AnyObject]()
-        query[kSecClass as String] = kSecClassGenericPassword
+        query[kSecClass as String] =
+        (service == .userID) ? kSecClassIdentity : kSecAttrTokenID
         query[kSecAttrService as String] = service as AnyObject?
-        
-        if let account = account {
-            query[kSecAttrAccount as String] = account as AnyObject?
-        }
+        query[kSecAttrAccount as String] = account as AnyObject?
         
         if let accessGroup = accessGroup {
             query[kSecAttrAccessGroup as String] = accessGroup as AnyObject?
         }
         
         return query
-    }
-    
-    /*
-     For the purpose of this demo app, the user identifier will be stored in the device keychain.
-     You should store the user identifier in your account management system.
-     */
-    static var currentUserIdentifier: String {
-        do {
-            let storedIdentifier = try KeychainManager(service: "com.example.apple-samplecode.juice", account: "userIdentifier").readItem()
-            return storedIdentifier
-        } catch {
-            return ""
-        }
-    }
-    
-    static func deleteUserIdentifierFromKeychain() {
-        do {
-            try KeychainManager(service: "com.example.apple-samplecode.juice", account: "userIdentifier").deleteItem()
-        } catch {
-            print("Unable to delete userIdentifier from keychain")
-        }
     }
 }

@@ -37,6 +37,7 @@
 		C03FB33329A4230700D0E781 /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB33229A4230700D0E781 /* Feeling.swift */; };
 		C0461176299ECC5F0050ABFD /* SigninRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0461175299ECC5F0050ABFD /* SigninRepositoryImp.swift */; };
 		C0B8001629A51A5400E7D119 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001529A51A5400E7D119 /* KeychainManager.swift */; };
+		C0B8001829A533DD00E7D119 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001729A533DD00E7D119 /* Service.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* SigninView.swift */; };
 		C0B834F1299D2BF7001436E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B834F0299D2BF7001436E8 /* Assets.xcassets */; };
@@ -120,6 +121,7 @@
 		C03FB33229A4230700D0E781 /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
 		C0461175299ECC5F0050ABFD /* SigninRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepositoryImp.swift; sourceTree = "<group>"; };
 		C0B8001529A51A5400E7D119 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		C0B8001729A533DD00E7D119 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
 		C0B834EE299D2BF5001436E8 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		C0B834F0299D2BF7001436E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 			children = (
 				C03FB33029A3C7F800D0E781 /* SigninType.swift */,
 				C03FB33229A4230700D0E781 /* Feeling.swift */,
+				C0B8001729A533DD00E7D119 /* Service.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -977,6 +980,7 @@
 				C03FB32B29A3C07100D0E781 /* AppView.swift in Sources */,
 				C0F05A86299FF89800385F65 /* FeelingLocalDatasource.swift in Sources */,
 				C022FE8A29A2878F00F53B0B /* CheerleadersRepositoryImp.swift in Sources */,
+				C0B8001829A533DD00E7D119 /* Service.swift in Sources */,
 				C022FE8829A2852500F53B0B /* CheerleadersLocalDatasource.swift in Sources */,
 				C0B8001629A51A5400E7D119 /* KeychainManager.swift in Sources */,
 				C0F05ABD29A0650B00385F65 /* Container+extension.swift in Sources */,
