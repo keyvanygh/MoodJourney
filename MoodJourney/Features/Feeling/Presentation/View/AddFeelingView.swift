@@ -12,8 +12,8 @@ struct AddFeelingView: View {
     var body: some View {
         VStack{
             List(){
-                ForEach(vm.outputs.feelings){ feeling in
-                    switch(feeling.feelingTypeEnum){
+                ForEach(vm.outputs.feelings){ feelingEntity in
+                    switch(feelingEntity.feelingType){
                     case .Happy:
                         Text("😂")
                     case .Sad:
