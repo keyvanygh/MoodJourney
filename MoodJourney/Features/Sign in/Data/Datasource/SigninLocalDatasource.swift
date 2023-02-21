@@ -11,6 +11,7 @@ import Factory
 class SigninLocalDatasource {
     /// singelton database manager
     @Injected(Container.dbm) var dbm: DatabaseManager
+    let userDefualts = UserDefaults.standard
     
     /// Local Datasource Signin:
     /// - Parameters:
@@ -47,4 +48,7 @@ class SigninLocalDatasource {
             .first(where: {$0.userID == userID})
     }
     
+    func storeUserID(userID: String){
+        userDefualts.set(userID, forKey: "userID")
+    }
 }
