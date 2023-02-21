@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class LocalDatabaseManager {
+class DatabaseManager {
     let container = NSPersistentContainer(name: "LocalDatabase")
     init() {
         container.loadPersistentStores { description, error in

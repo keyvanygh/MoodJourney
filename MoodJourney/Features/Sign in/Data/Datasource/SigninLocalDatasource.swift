@@ -10,7 +10,7 @@ import Factory
 
 class SigninLocalDatasource {
     /// singelton database manager
-    @Injected(Container.dbm) var dbm: LocalDatabaseManager
+    @Injected(Container.dbm) var dbm: DatabaseManager
     
     /// Local Datasource Signin:
     /// - Parameters:

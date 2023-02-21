@@ -8,7 +8,7 @@
 import Foundation
 
 class FeelingLocalDatasource {
-    let dbm = LocalDatabaseManager()
+    let dbm = DatabaseManager()
     
     /// add feeling to activity with acitivtyID
     /// - Parameters:
