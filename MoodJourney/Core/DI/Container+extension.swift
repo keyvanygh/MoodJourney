@@ -10,7 +10,8 @@ import Factory
 
 extension Container {
     static let dbm = Factory(scope: .singleton) {DatabaseManager() }
-    
+    static let kcm = Factory(scope: .singleton) {KeychainManager() }
+
     // MARK: - Feelings :
     static let feelingLocalDatasource = Factory {FeelingLocalDatasource() }
     static let feelingRepository = Factory{ FeelingRepositoryImp(localDatasource: feelingLocalDatasource()) }
