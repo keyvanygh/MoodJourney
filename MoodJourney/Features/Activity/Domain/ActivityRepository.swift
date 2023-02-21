@@ -8,5 +8,9 @@
 import Foundation
 
 protocol ActivityRepository {
+    /// fetch all activities
+    /// - Returns:
+    ///   - success: list of activities
+    ///   - fail: ActivityError
     func fetchActivities() -> Result<[ActivityEntity],Error>
 }
