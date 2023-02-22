@@ -49,6 +49,7 @@
 		C0B8003B29A6734600E7D119 /* ReactionLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003A29A6734600E7D119 /* ReactionLocalDatasource.swift */; };
 		C0B8003E29A67B6000E7D119 /* ReactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003D29A67B6000E7D119 /* ReactionViewModel.swift */; };
 		C0B8004129A67B7800E7D119 /* ReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8004029A67B7800E7D119 /* ReactionView.swift */; };
+		C0B8004429A6953F00E7D119 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C0B8004329A6953F00E7D119 /* Kingfisher */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* SigninView.swift */; };
 		C0B834F1299D2BF7001436E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B834F0299D2BF7001436E8 /* Assets.xcassets */; };
@@ -181,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0B8004429A6953F00E7D119 /* Kingfisher in Frameworks */,
 				C0F05AA729A00FAD00385F65 /* GoogleSignInSwift in Frameworks */,
 				C0F05AB829A064D400385F65 /* Factory in Frameworks */,
 			);
@@ -960,6 +962,7 @@
 			packageProductDependencies = (
 				C0F05AA629A00FAD00385F65 /* GoogleSignInSwift */,
 				C0F05AB729A064D400385F65 /* Factory */,
+				C0B8004329A6953F00E7D119 /* Kingfisher */,
 			);
 			productName = MoodJourney;
 			productReference = C022FE3D29A1153500F53B0B /* MoodJourney.app */;
@@ -1039,6 +1042,7 @@
 			packageReferences = (
 				C0F05AA529A00FAD00385F65 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				C0F05AB629A064D400385F65 /* XCRemoteSwiftPackageReference "Factory" */,
+				C0B8004229A6953F00E7D119 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = C0B834E0299D2BF5001436E8;
 			projectDirPath = "";
@@ -1478,6 +1482,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C0B8004229A6953F00E7D119 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		C0F05AA529A00FAD00385F65 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -1497,6 +1509,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C0B8004329A6953F00E7D119 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0B8004229A6953F00E7D119 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		C0F05AA629A00FAD00385F65 /* GoogleSignInSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C0F05AA529A00FAD00385F65 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;

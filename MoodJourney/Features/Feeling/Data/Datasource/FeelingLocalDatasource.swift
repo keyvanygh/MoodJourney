@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Factory
 
 class FeelingLocalDatasource {
-    let dbm = DatabaseManager()
+    @Injected(Container.dbm) private var dbm
     
     /// add feeling to activity with acitivtyID
     /// - Parameters:

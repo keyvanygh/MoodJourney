@@ -18,7 +18,8 @@ class ReactionLocalDatasource {
             reaction.gifUrlString = gifURL?.absoluteString
             reaction.emoji = emoji
             feeling.addToReactions(reaction)
-//            feeling.addToReactions(reaction)
+            reaction.feeling = feeling
+            try dbm.save()
             return reaction
     }
 }

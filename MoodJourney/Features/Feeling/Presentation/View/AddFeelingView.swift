@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct AddFeelingView: View {
     @EnvironmentObject private var coordinator: Coordinator
@@ -22,7 +23,8 @@ struct AddFeelingView: View {
                                 if let reactions = feelingEntity.reactions?.allObjects as? [ReactionEntity]{
                                     ForEach(reactions){ reaction in
                                         if let emoji = reaction.emoji {
-                                            Text(emoji)
+                                            KFAnimatedImage(URL(string: "https://media.giphy.com/media/o75ajIFH0QnQC3nCeD/giphy.gif"))
+                                                
                                         }
                                     }
                                 }
@@ -98,3 +100,18 @@ struct AddFeelingView_Previews: PreviewProvider {
 }
 
 
+
+//@available(iOS 13.0, *)
+//struct KFAnimatedImage: UIViewRepresentable {
+//
+//    var resource: Resource?
+//
+//    func makeUIView(context: Context) -> AnimatedImageView {
+//        return AnimatedImageView()
+//    }
+//
+//    func updateUIView(_ uiView: AnimatedImageView, context: Context) {
+//        uiView.kf.setImage(with: resource)
+//    }
+//
+//}
