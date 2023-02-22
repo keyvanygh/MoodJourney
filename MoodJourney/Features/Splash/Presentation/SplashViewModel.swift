@@ -11,10 +11,22 @@ import Factory
 class SplashViewModel: ObservableObject{
     @Published var userSignedin: Bool? = nil
     @Injected(Container.kcm) private var kcm: KeychainManager
+    @Injected(Container.fetchUserByIDUsecase) private var fetchUserByIDUsecase
+    
+    var user: UserEntity? = nil
+
     func searchForExistingUser() {
         do{
-            _ = try kcm.read(.userID)
-            userSignedin = true
+            let userID = try kcm.read(.userID)
+            let result = fetchUserByIDUsecase.execute(userID: userID)
+            switch(result){
+            case.success(let user):
+                self.user = user
+                userSignedin = true
+                break
+            case .failure(_):
+                break
+            }
         }catch{}
     }
 }

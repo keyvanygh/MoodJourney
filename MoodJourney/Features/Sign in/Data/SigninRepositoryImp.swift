@@ -50,4 +50,11 @@ class SigninRepositoryImp : SigninRepository {
                 return .success(user)
             } catch {return .failure(AnyError.error)}
         }
+    
+    func fetchUser(byID id: String) -> Result<UserEntity, Error> {
+        do{
+            let user = try lds.fetchUser(byID: id)
+            return .success(user)
+        }catch{return .failure(AnyError.error)}
+    }
 }

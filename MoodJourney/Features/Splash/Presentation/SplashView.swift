@@ -18,6 +18,10 @@ struct SplashView: View {
             .onChange(of: vm.userSignedin) { userSignedin in
                 guard let userSignedin = userSignedin else{return}
                 if !userSignedin {coordinator.push(.Signin)}
+                else{
+                    guard let user = vm.user else{return}
+                    coordinator.push(.Activity(user: user))
+                }
             }
     }
     

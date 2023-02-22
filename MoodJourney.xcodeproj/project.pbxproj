@@ -40,6 +40,7 @@
 		C0B8001829A533DD00E7D119 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001729A533DD00E7D119 /* Service.swift */; };
 		C0B8001C29A58E2900E7D119 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001B29A58E2900E7D119 /* SplashViewModel.swift */; };
 		C0B8002029A58E5900E7D119 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001F29A58E5900E7D119 /* SplashView.swift */; };
+		C0B8002429A5958F00E7D119 /* UserTokenValidationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8002329A5958F00E7D119 /* UserTokenValidationUsecase.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* SigninView.swift */; };
 		C0B834F1299D2BF7001436E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B834F0299D2BF7001436E8 /* Assets.xcassets */; };
@@ -126,6 +127,7 @@
 		C0B8001729A533DD00E7D119 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		C0B8001B29A58E2900E7D119 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		C0B8001F29A58E5900E7D119 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		C0B8002329A5958F00E7D119 /* UserTokenValidationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenValidationUsecase.swift; sourceTree = "<group>"; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
 		C0B834EE299D2BF5001436E8 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		C0B834F0299D2BF7001436E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 		C0B8001929A58DEA00E7D119 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				C0B8002129A594D800E7D119 /* Domain */,
 				C0B8001A29A58E1E00E7D119 /* Presentation */,
 			);
 			path = Splash;
@@ -584,6 +587,22 @@
 				C0B8001F29A58E5900E7D119 /* SplashView.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C0B8002129A594D800E7D119 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C0B8002229A5954E00E7D119 /* Usecase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C0B8002229A5954E00E7D119 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				C0B8002329A5958F00E7D119 /* UserTokenValidationUsecase.swift */,
+			);
+			path = Usecase;
 			sourceTree = "<group>";
 		};
 		C0B834E0299D2BF5001436E8 = {
@@ -1018,6 +1037,7 @@
 				C03FB32929A3C03700D0E781 /* CoordinatorView.swift in Sources */,
 				C022FE9129A28D8900F53B0B /* CheerleadersView.swift in Sources */,
 				C022FE6F29A19FF900F53B0B /* FetchActivitiesUsecase.swift in Sources */,
+				C0B8002429A5958F00E7D119 /* UserTokenValidationUsecase.swift in Sources */,
 				C022FE6729A19EAE00F53B0B /*  ActivityRepositoryImp.swift in Sources */,
 				C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */,
 				C022FE5929A122E200F53B0B /* DatabaseManager.swift in Sources */,

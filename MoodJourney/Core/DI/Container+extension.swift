@@ -33,5 +33,5 @@ extension Container {
     static let signinRemoteDataSource = Factory {SigninRemoteDataSource(networkManager: NetworkManager(willSucceed: true)) }
     static let signinRepository = Factory{ SigninRepositoryImp(rds: signinRemoteDataSource(), lds: signinLocalDatasource()) }
     static let thirdPartySigninUsecase = Factory { ThirdPartySigninUsecase(repository: signinRepository()) }
-
+    static let fetchUserByIDUsecase = Factory { FetchUserByIDUsecase(repository: signinRepository()) }
 }
