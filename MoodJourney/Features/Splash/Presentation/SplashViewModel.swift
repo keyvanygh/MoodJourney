@@ -22,13 +22,13 @@ class SplashViewModel:
     
     //MARK: - Outputs:
     
-    @Published private(set) var userSignedin: Bool? = nil
+    @Published private(set) var isUserSignedin: Bool? = nil
     private(set) var user: UserEntity? = nil
     
     
     //MARK: - Inputs:
 
-    func startFlow() {
+    func viewDidAppear() {
         if let userID = fetchUserID() {
             searchForExistingUser(with: userID)
         }else{}
@@ -58,9 +58,9 @@ class SplashViewModel:
 }
 
 protocol SplashViewModelInputs {
-    func startFlow()
+    func viewDidAppear()
 }
 protocol SplashViewModelOutputs {
     var user: UserEntity? {get}
-    var userSignedin: Bool? {get}
+    var isUserSignedin: Bool? {get}
 }

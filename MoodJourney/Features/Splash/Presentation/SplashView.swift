@@ -13,12 +13,12 @@ struct SplashView: View {
     var body: some View {
         Text("Splash")
             .onAppear(){
-                vm.inputs.startFlow()
+                vm.inputs.viewDidAppear()
             }
-            .onChange(of: vm.outputs.userSignedin) { userSignedin in
+            .onChange(of: vm.outputs.isUserSignedin) { isUserSignedin in
                 guard let userSignedin = userSignedin else{return}
-                if !userSignedin {coordinator.push(.Signin)}
-                else{
+                if !isUserSignedin {coordinator.push(.Signin)}
+                else {
                     guard let user = vm.outputs.user else{return}
                     coordinator.push(.Activity(user: user))
                 }
