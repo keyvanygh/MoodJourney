@@ -11,7 +11,7 @@ struct CoordinatorView: View {
     @StateObject var coordinator : Coordinator = Coordinator()
     var body: some View {
         NavigationStack(path: $coordinator.path) {
-            coordinator.build(view: .Signin)
+            coordinator.build(view: .Splash)
                 .navigationDestination(for: AppView.self) { view in
                     coordinator.build(view: view)
                 }

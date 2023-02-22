@@ -44,6 +44,9 @@ class SigninRepositoryImp : SigninRepository {
                     name: name,
                     family: family,
                     imageURLString: imageURL?.absoluteString ?? "")
+                guard let userID = user.userID else{throw(AnyError.error)}
+                try lds.storeUserID(userID: userID)
+                try lds.storeAccessToken(accessToken: userID)
                 return .success(user)
             } catch {return .failure(AnyError.error)}
         }

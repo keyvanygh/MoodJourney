@@ -11,6 +11,7 @@ import Factory
 class SigninLocalDatasource {
     /// singelton database manager
     @Injected(Container.dbm) var dbm: DatabaseManager
+    @Injected(Container.kcm) var kcm: KeychainManager
     let userDefualts = UserDefaults.standard
     
     /// Local Datasource Signin:
@@ -47,8 +48,12 @@ class SigninLocalDatasource {
         return try? (dbm.fetch(entity: .User) as? [UserEntity])?
             .first(where: {$0.userID == userID})
     }
-    
-    func storeUserID(userID: String){
-        userDefualts.set(userID, forKey: "userID")
+    func storeUserID(userID: String) throws {
+        guard let data = userID.data(using: .utf8) else{return}
+        try kcm.save(data: data, to: .userID)
+    }
+    func storeAccessToken(accessToken: String) throws {
+        guard let data = accessToken.data(using: .utf8) else{return}
+        try kcm.save(data: data, to: .accessToken)
     }
 }

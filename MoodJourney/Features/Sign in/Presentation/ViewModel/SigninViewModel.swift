@@ -17,7 +17,6 @@ class SigninViewModel :
     public var outputs: SigninViewModelOutputs {return self}
     
     @Injected(Container.thirdPartySigninUsecase) var thirdPartySigninUsecase
-    @Injected(Container.kcm) var kcm: KeychainManager
     @Published private(set) var user : UserEntity? = nil
     
     public func didSucceed3rdPartySignin(thirdParty: ThirdParty, userID: String, hasImage: Bool, name: String?, family: String?, imageURL: URL?) {
@@ -39,12 +38,6 @@ class SigninViewModel :
         name: String?,
         family: String?,
         imageURL: URL?) {
-            let data = "keyvan".data(using: String.Encoding.utf8)!
-            do{
-                try kcm.save(data: data, to: .userID)
-                let readItem = try kcm.read(.userID)
-                print(readItem)
-            }catch{print(error)}
             let result =
             thirdPartySigninUsecase.execute(
                 thirdParty: thirdParty,

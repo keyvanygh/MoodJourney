@@ -38,6 +38,8 @@
 		C0461176299ECC5F0050ABFD /* SigninRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0461175299ECC5F0050ABFD /* SigninRepositoryImp.swift */; };
 		C0B8001629A51A5400E7D119 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001529A51A5400E7D119 /* KeychainManager.swift */; };
 		C0B8001829A533DD00E7D119 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001729A533DD00E7D119 /* Service.swift */; };
+		C0B8001C29A58E2900E7D119 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001B29A58E2900E7D119 /* SplashViewModel.swift */; };
+		C0B8002029A58E5900E7D119 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001F29A58E5900E7D119 /* SplashView.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* SigninView.swift */; };
 		C0B834F1299D2BF7001436E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B834F0299D2BF7001436E8 /* Assets.xcassets */; };
@@ -122,6 +124,8 @@
 		C0461175299ECC5F0050ABFD /* SigninRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepositoryImp.swift; sourceTree = "<group>"; };
 		C0B8001529A51A5400E7D119 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		C0B8001729A533DD00E7D119 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		C0B8001B29A58E2900E7D119 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		C0B8001F29A58E5900E7D119 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
 		C0B834EE299D2BF5001436E8 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		C0B834F0299D2BF7001436E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 		C01A3742299D2D1D001856BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				C0B8001929A58DEA00E7D119 /* Splash */,
 				C03FB31929A2C11D00D0E781 /* User */,
 				C022FE7929A27DE100F53B0B /* Cheerleaders */,
 				C022FE7829A27BE600F53B0B /* Profile */,
@@ -562,6 +567,23 @@
 				C0F05A54299EEF3A00385F65 /* ThirdPartySigninRemoteDataSourceTest.swift */,
 			);
 			path = Datasource;
+			sourceTree = "<group>";
+		};
+		C0B8001929A58DEA00E7D119 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				C0B8001A29A58E1E00E7D119 /* Presentation */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		C0B8001A29A58E1E00E7D119 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C0B8001B29A58E2900E7D119 /* SplashViewModel.swift */,
+				C0B8001F29A58E5900E7D119 /* SplashView.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		C0B834E0299D2BF5001436E8 = {
@@ -955,6 +977,7 @@
 			files = (
 				C022FE5329A11B0200F53B0B /* LocalDatabase.xcdatamodeld in Sources */,
 				C0F05AB529A0624B00385F65 /* AnyViewModel.swift in Sources */,
+				C0B8001C29A58E2900E7D119 /* SplashViewModel.swift in Sources */,
 				C0F05A79299F1DF200385F65 /* AddFeelingToActivityUsecase.swift in Sources */,
 				C0461176299ECC5F0050ABFD /* SigninRepositoryImp.swift in Sources */,
 				C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */,
@@ -973,6 +996,7 @@
 				C03FB32629A2EA0C00D0E781 /* Coordinator.swift in Sources */,
 				C03FB33329A4230700D0E781 /* Feeling.swift in Sources */,
 				C022FE7729A1D1E900F53B0B /* FetchFeelingsForActivityUsecase.swift in Sources */,
+				C0B8002029A58E5900E7D119 /* SplashView.swift in Sources */,
 				C03FB33129A3C7F800D0E781 /* SigninType.swift in Sources */,
 				C022FE8029A2833B00F53B0B /* FetchCheerleadersUsecase.swift in Sources */,
 				C022FE8D29A2899900F53B0B /* CheerleadersViewModel.swift in Sources */,

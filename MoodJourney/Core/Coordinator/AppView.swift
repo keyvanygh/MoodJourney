@@ -12,4 +12,5 @@ enum AppView: Hashable {
     case Feeling(activity: ActivityEntity)
     case Profile(user: UserEntity)
     case Signin
+    case Splash
 }

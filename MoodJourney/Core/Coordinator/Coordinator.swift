@@ -28,6 +28,8 @@ class Coordinator: ObservableObject {
             CheerleadersView(vm: CheerleadersViewModel(user: user))
         case .Signin:
             SigninView()
+        case .Splash:
+            SplashView()
         }
     }
 }
