@@ -48,7 +48,7 @@ class SplashViewModel:
         switch(result){
         case.success(let user):
             self.user = user
-            userSignedin = true
+            isUserSignedin = true
             break
         case .failure(_):
             break
