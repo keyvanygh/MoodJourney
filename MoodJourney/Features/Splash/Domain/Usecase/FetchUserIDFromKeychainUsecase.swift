@@ -12,7 +12,7 @@ class FetchUserIDFromKeychainUsecase{
     init(repository: SigninRepository) {
         self.repository = repository
     }
-    func execute(){
+    func execute() -> Result<String,Error> {
         repository.fetchUserID()
     }
 }

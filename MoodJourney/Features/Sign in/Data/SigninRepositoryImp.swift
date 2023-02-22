@@ -57,4 +57,9 @@ class SigninRepositoryImp : SigninRepository {
             return .success(user)
         }catch{return .failure(AnyError.error)}
     }
+    func fetchUserID() -> Result<String, Error> {
+        do{
+            return .success(try lds.fetchUserID())
+        }catch{return .failure(AnyError.error)}
+    }
 }

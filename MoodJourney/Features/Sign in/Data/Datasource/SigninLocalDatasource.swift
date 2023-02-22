@@ -57,4 +57,10 @@ class SigninLocalDatasource {
         guard let data = accessToken.data(using: .utf8) else{return}
         try kcm.save(data: data, to: .accessToken)
     }
+    func fetchUserID() throws -> String {
+        try kcm.read(.userID)
+    }
+    func fetchUserAccessToken() throws -> String {
+        try kcm.read(.accessToken)
+    }
 }

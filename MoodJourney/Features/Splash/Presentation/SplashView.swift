@@ -13,7 +13,7 @@ struct SplashView: View {
     var body: some View {
         Text("Splash")
             .onAppear(){
-                vm.searchForExistingUser()
+                vm.startFlow()
             }
             .onChange(of: vm.userSignedin) { userSignedin in
                 guard let userSignedin = userSignedin else{return}

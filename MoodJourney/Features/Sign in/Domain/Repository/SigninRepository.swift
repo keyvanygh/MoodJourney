@@ -28,5 +28,6 @@ protocol SigninRepository {
         givenName : String?,imageURL : URL?) -> Result<UserEntity,Error>
     
     func fetchUser(byID id: String) -> Result<UserEntity,Error>
+    func fetchUserID() -> Result<String,Error>
     //TODO: - signin(withPhoneNumber)
 }
