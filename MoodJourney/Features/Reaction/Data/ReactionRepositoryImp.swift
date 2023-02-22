@@ -14,7 +14,7 @@ class ReactionRepositoryImp: ReactionRepository {
     }
     func addReaction(_ reaction: ReactionEntity, to feeling: FeelingEntity) -> Result<ReactionEntity, Error> {
         do{
-            try lds.addReaction(reaction, to: feeling)
+            return .success(try lds.addReaction(reaction, to: feeling))
         }catch{return .failure(AnyError.error)}
     }
     

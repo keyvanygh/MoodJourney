@@ -11,5 +11,10 @@ import Factory
 class ReactionLocalDatasource {
     @Injected(Container.dbm) private var dbm: DatabaseManager
     
-    func addReaction(_ reaction: ReactionEntity,to feeling: FeelingEntity){}
+    func addReaction(
+        _ reaction: ReactionEntity,
+        to feeling: FeelingEntity) throws -> ReactionEntity {
+        
+            
+    }
 }
