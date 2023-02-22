@@ -16,17 +16,22 @@ class SplashViewModel:
     public var inputs: SplashViewModelInputs  {return self}
     public var outputs: SplashViewModelOutputs  {return self}
 
-    @Published var userSignedin: Bool? = nil
     @Injected(Container.fetchUserByIDUsecase) private var fetchUserByIDUsecase
     @Injected(Container.fetchUserIDFromKeychainUsecase) private var fetchUserIDFromKeychainUsecase
     
-    var user: UserEntity? = nil
+    
+    //MARK: - Outputs
+    @Published private(set) var userSignedin: Bool? = nil
+    private(set) var user: UserEntity? = nil
     
     func startFlow() {
         if let userID = fetchUserID() {
             searchForExistingUser(with: userID)
         }else{}
     }
+    
+    
+    //MARK: - Inputs
     
     func fetchUserID() -> String? {
         let result = fetchUserIDFromKeychainUsecase.execute()
@@ -56,4 +61,5 @@ protocol SplashViewModelInputs {
 }
 protocol SplashViewModelOutputs {
     var user: UserEntity? {get}
+    var userSignedin: Bool? {get}
 }
