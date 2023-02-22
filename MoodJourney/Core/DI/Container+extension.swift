@@ -35,5 +35,9 @@ extension Container {
     static let thirdPartySigninUsecase = Factory { ThirdPartySigninUsecase(repository: signinRepository()) }
     static let fetchUserByIDUsecase = Factory { FetchUserByIDUsecase(repository: signinRepository()) }
     static let fetchUserIDFromKeychainUsecase = Factory { FetchUserIDFromKeychainUsecase(repository: signinRepository()) }
-
+    
+    // MARK: - Reaction :
+    static let reactionLocalDatasource = Factory {ReactionLocalDatasource() }
+    static let reactionRepository = Factory {ReactionRepositoryImp(lds: reactionLocalDatasource()) }
+    static let ddReactionToFeeling = Factory { AddReactionToFeeling(repository: reactionRepository()) }
 }
