@@ -12,9 +12,9 @@ class ReactionRepositoryImp: ReactionRepository {
     init(lds: ReactionLocalDatasource){
         self.lds = lds
     }
-    func addReaction(_ reaction: ReactionEntity, to feeling: FeelingEntity) -> Result<ReactionEntity, Error> {
+    func addReaction(gifURL: URL?,emoji: String?,to feeling: FeelingEntity) -> Result<ReactionEntity, Error> {
         do{
-            return .success(try lds.addReaction(reaction, to: feeling))
+            return .success(try lds.addReaction(gifURL: gifURL, emoji: emoji, to: feeling))
         }catch{return .failure(AnyError.error)}
     }
     

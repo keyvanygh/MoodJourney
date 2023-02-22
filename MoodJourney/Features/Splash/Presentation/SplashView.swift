@@ -16,7 +16,7 @@ struct SplashView: View {
                 vm.inputs.viewDidAppear()
             }
             .onChange(of: vm.outputs.isUserSignedin) { isUserSignedin in
-                guard let userSignedin = userSignedin else{return}
+                guard let isUserSignedin = isUserSignedin else{return}
                 if !isUserSignedin {coordinator.push(.Signin)}
                 else {
                     guard let user = vm.outputs.user else{return}

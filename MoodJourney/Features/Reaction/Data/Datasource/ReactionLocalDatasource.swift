@@ -12,12 +12,12 @@ class ReactionLocalDatasource {
     @Injected(Container.dbm) private var dbm: DatabaseManager
     
     func addReaction(
-        _ reaction: ReactionEntity,
+        gifURL: URL?,emoji: String?,
         to feeling: FeelingEntity) throws -> ReactionEntity {
             guard let reaction = dbm.add(entity: .Reaction) as? ReactionEntity else {throw(AnyError.error)}
             reaction.feeling = feeling
-            reaction.gifUrlString = "gifURL.absoluteURL"
-            reaction.emoji = "emoji"
+            reaction.gifUrlString = gifURL?.absoluteString
+            reaction.emoji = emoji
             return reaction
 //            feeling.addToReactions(reaction)
     }
