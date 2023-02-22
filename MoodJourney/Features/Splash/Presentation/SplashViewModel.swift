@@ -8,10 +8,18 @@
 import Foundation
 import Factory
 
-class SplashViewModel: ObservableObject{
+class SplashViewModel:
+    AnyViewModel,
+    SplashViewModelInputs,
+    SplashViewModelOutputs {
+    
+    public var inputs: SplashViewModelInputs  {return self}
+    public var outputs: SplashViewModelOutputs  {return self}
+
     @Published var userSignedin: Bool? = nil
     @Injected(Container.fetchUserByIDUsecase) private var fetchUserByIDUsecase
     @Injected(Container.fetchUserIDFromKeychainUsecase) private var fetchUserIDFromKeychainUsecase
+    
     var user: UserEntity? = nil
     
     func startFlow() {
@@ -30,16 +38,22 @@ class SplashViewModel: ObservableObject{
         return nil
     }
     func searchForExistingUser(with userID: String) {
-        do{
-            let result = fetchUserByIDUsecase.execute(userID: userID)
-            switch(result){
-            case.success(let user):
-                self.user = user
-                userSignedin = true
-                break
-            case .failure(_):
-                break
-            }
-        }catch{}
+        let result = fetchUserByIDUsecase.execute(userID: userID)
+        switch(result){
+        case.success(let user):
+            self.user = user
+            userSignedin = true
+            break
+        case .failure(_):
+            break
+        }
+        
     }
+}
+
+protocol SplashViewModelInputs {
+    func startFlow()
+}
+protocol SplashViewModelOutputs {
+    var user: UserEntity? {get}
 }
