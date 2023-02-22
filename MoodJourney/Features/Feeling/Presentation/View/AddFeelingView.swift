@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddFeelingView: View {
+    @EnvironmentObject private var coordinator: Coordinator
     @StateObject var vm : AddFeelingViewModel
     var body: some View {
         VStack{
@@ -15,7 +16,21 @@ struct AddFeelingView: View {
                 ForEach(vm.outputs.feelings){ feelingEntity in
                     switch(feelingEntity.feelingType){
                     case .Happy:
-                        Text("😂")
+                        VStack{
+                            Text("😂")
+                            HStack{
+                                if let reactions = feelingEntity.reactions?.allObjects as? [ReactionEntity]{
+                                    ForEach(reactions){ reaction in
+                                        if let emoji = reaction.emoji {
+                                            Text(emoji)
+                                        }
+                                    }
+                                }
+                            }
+                        }.onTapGesture {
+                            coordinator.push(.Reaction(feeling: feelingEntity))
+                        }
+                        
                     case .Sad:
                         Text("😭")
                     case .Depressed:

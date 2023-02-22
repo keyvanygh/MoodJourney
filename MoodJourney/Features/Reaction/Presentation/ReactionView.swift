@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct ReactionView: View {
+    @StateObject var vm = ReactionViewModel()
+    var selectedFeeling: FeelingEntity?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            guard let feeling = selectedFeeling else{return}
+            print("HI IM HERE")
+            vm.addReaction(gifURL: URL(string: ""), emoji: "", to: feeling)
+        } label: {
+            Text("Submit Reaction")
+                .padding(32)
+                .background(Color.green)
+                .cornerRadius(16)
+                .foregroundColor(.white)
+        }
+
     }
 }
 

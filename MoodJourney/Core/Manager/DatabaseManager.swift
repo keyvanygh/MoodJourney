@@ -19,7 +19,6 @@ class DatabaseManager {
     }
     func fetch(entity: Entity) throws -> [NSFetchRequestResult] {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity.rawValue)
-            request.relationshipKeyPathsForPrefetching = ["cheerleaders"]
         return try container.viewContext.fetch(request)
     }
     

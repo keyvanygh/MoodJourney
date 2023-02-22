@@ -12,5 +12,7 @@ class AddReactionToFeelingUsecase {
     init(repository: ReactionRepository) {
         self.repository = repository
     }
-    func execute(gifURL: URL?,emoji: String?,to feeling: FeelingEntity){}
+    func execute(gifURL: URL?,emoji: String?,to feeling: FeelingEntity){
+        _ = repository.addReaction(gifURL: gifURL, emoji: emoji, to: feeling)
+    }
 }

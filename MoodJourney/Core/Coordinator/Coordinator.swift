@@ -30,6 +30,8 @@ class Coordinator: ObservableObject {
             SigninView()
         case .Splash:
             SplashView()
+        case .Reaction(let feeling):
+            ReactionView(selectedFeeling: feeling)
         }
     }
 }

@@ -13,13 +13,13 @@
         <attribute name="imageURLString" optional="YES" attributeType="String"/>
         <attribute name="internalID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="message" optional="YES" attributeType="String"/>
-        <relationship name="reactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ReactionEntity" inverseName="feeling" inverseEntity="ReactionEntity"/>
+        <relationship name="reactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ReactionEntity"/>
     </entity>
     <entity name="ReactionEntity" representedClassName="ReactionEntity" syncable="YES" codeGenerationType="class">
         <attribute name="emoji" optional="YES" attributeType="String"/>
         <attribute name="gifUrlString" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
-        <relationship name="feeling" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FeelingEntity" inverseName="reactions" inverseEntity="FeelingEntity"/>
+        <relationship name="feeling" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FeelingEntity"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="reactions" inverseEntity="UserEntity"/>
     </entity>
     <entity name="UserEntity" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">

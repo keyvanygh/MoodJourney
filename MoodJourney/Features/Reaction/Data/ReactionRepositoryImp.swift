@@ -14,7 +14,7 @@ class ReactionRepositoryImp: ReactionRepository {
     }
     func addReaction(gifURL: URL?,emoji: String?,to feeling: FeelingEntity) -> Result<ReactionEntity, Error> {
         do{
-            return .success(try lds.addReaction(gifURL: gifURL, emoji: emoji, to: feeling))
+            return .success(try lds.addReaction(gifURL: gifURL, emoji: "BOJO BOOJO", to: feeling))
         }catch{return .failure(AnyError.error)}
     }
     
