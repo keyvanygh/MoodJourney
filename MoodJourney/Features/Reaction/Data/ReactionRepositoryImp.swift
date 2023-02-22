@@ -12,8 +12,10 @@ class ReactionRepositoryImp: ReactionRepository {
     init(lds: ReactionLocalDatasource){
         self.lds = lds
     }
-    func addReaction(_ reaction: ReactionEntity, to feeling: Feeling) -> Result<ReactionEntity, Error> {
-        
+    func addReaction(_ reaction: ReactionEntity, to feeling: FeelingEntity) -> Result<ReactionEntity, Error> {
+        do{
+            try lds.addReaction(reaction, to: feeling)
+        }catch{return .failure(AnyError.error)}
     }
     
     

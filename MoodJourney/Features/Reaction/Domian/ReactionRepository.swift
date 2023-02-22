@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ReactionRepository {
-    func addReaction(_ reaction: ReactionEntity,to feeling: Feeling) -> Result<ReactionEntity,Error>
+    func addReaction(_ reaction: ReactionEntity,to feeling: FeelingEntity) -> Result<ReactionEntity,Error>
 }

@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import Factory
+
+class ReactionLocalDatasource {
+    @Injected(Container.dbm) private var dbm: DatabaseManager
+    
+    func addReaction(_ reaction: ReactionEntity,to feeling: FeelingEntity){}
+}
