@@ -2,7 +2,7 @@
 //  SplashView.swift
 //  MoodJourney
 //
-//  Created by sh on 2/21/23.
+//  Created by Keyvan on 2/21/23.
 //
 
 import Foundation
@@ -20,18 +20,19 @@ class SplashViewModel:
     @Injected(Container.fetchUserIDFromKeychainUsecase) private var fetchUserIDFromKeychainUsecase
     
     
-    //MARK: - Outputs
+    //MARK: - Outputs:
+    
     @Published private(set) var userSignedin: Bool? = nil
     private(set) var user: UserEntity? = nil
     
+    
+    //MARK: - Inputs:
+
     func startFlow() {
         if let userID = fetchUserID() {
             searchForExistingUser(with: userID)
         }else{}
     }
-    
-    
-    //MARK: - Inputs
     
     func fetchUserID() -> String? {
         let result = fetchUserIDFromKeychainUsecase.execute()
