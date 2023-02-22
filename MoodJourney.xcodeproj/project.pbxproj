@@ -43,6 +43,8 @@
 		C0B8002429A5958F00E7D119 /* UserTokenValidationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8002329A5958F00E7D119 /* UserTokenValidationUsecase.swift */; };
 		C0B8002829A5A63000E7D119 /* FetchUserIDFromKeychainUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8002729A5A63000E7D119 /* FetchUserIDFromKeychainUsecase.swift */; };
 		C0B8003129A670AB00E7D119 /* ReactionEntity+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003029A670AB00E7D119 /* ReactionEntity+extension.swift */; };
+		C0B8003329A670E100E7D119 /* AddReactionToFeeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003229A670E100E7D119 /* AddReactionToFeeling.swift */; };
+		C0B8003529A6712600E7D119 /* ReactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003429A6712600E7D119 /* ReactionRepository.swift */; };
 		C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */; };
 		C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834EE299D2BF5001436E8 /* SigninView.swift */; };
 		C0B834F1299D2BF7001436E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B834F0299D2BF7001436E8 /* Assets.xcassets */; };
@@ -132,6 +134,8 @@
 		C0B8002329A5958F00E7D119 /* UserTokenValidationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenValidationUsecase.swift; sourceTree = "<group>"; };
 		C0B8002729A5A63000E7D119 /* FetchUserIDFromKeychainUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserIDFromKeychainUsecase.swift; sourceTree = "<group>"; };
 		C0B8003029A670AB00E7D119 /* ReactionEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReactionEntity+extension.swift"; sourceTree = "<group>"; };
+		C0B8003229A670E100E7D119 /* AddReactionToFeeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReactionToFeeling.swift; sourceTree = "<group>"; };
+		C0B8003429A6712600E7D119 /* ReactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionRepository.swift; sourceTree = "<group>"; };
 		C0B834EC299D2BF5001436E8 /* MoodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyApp.swift; sourceTree = "<group>"; };
 		C0B834EE299D2BF5001436E8 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		C0B834F0299D2BF7001436E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -633,6 +637,7 @@
 			children = (
 				C0B8002E29A6708400E7D119 /* Usecase */,
 				C0B8002D29A6707200E7D119 /* Entity */,
+				C0B8003429A6712600E7D119 /* ReactionRepository.swift */,
 			);
 			path = Domian;
 			sourceTree = "<group>";
@@ -655,6 +660,7 @@
 		C0B8002E29A6708400E7D119 /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				C0B8003229A670E100E7D119 /* AddReactionToFeeling.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -1085,6 +1091,7 @@
 				C0F05ABD29A0650B00385F65 /* Container+extension.swift in Sources */,
 				C022FE7E29A282F500F53B0B /* UserEntity+extension.swift in Sources */,
 				C01A3757299DC9CA001856BA /* ThridPartySigninUsecase.swift in Sources */,
+				C0B8003529A6712600E7D119 /* ReactionRepository.swift in Sources */,
 				C0F05A77299F1D5A00385F65 /* IFeelingRepository.swift in Sources */,
 				C0F05A73299F1BBF00385F65 /* FeelingEntity+extension.swift in Sources */,
 				C0C31740299E8E1200B998C5 /* AnyError.swift in Sources */,
@@ -1096,6 +1103,7 @@
 				C0B8002429A5958F00E7D119 /* UserTokenValidationUsecase.swift in Sources */,
 				C022FE6729A19EAE00F53B0B /*  ActivityRepositoryImp.swift in Sources */,
 				C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */,
+				C0B8003329A670E100E7D119 /* AddReactionToFeeling.swift in Sources */,
 				C022FE5929A122E200F53B0B /* DatabaseManager.swift in Sources */,
 				C0F05A81299FF79100385F65 /* FeelingRepositoryImp.swift in Sources */,
 				C0F05A64299F073E00385F65 /* SigninViewModel.swift in Sources */,
