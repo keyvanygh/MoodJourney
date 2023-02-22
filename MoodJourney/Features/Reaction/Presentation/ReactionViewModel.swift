@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import Factory
 
 class ReactionViewModel: ObservableObject {
+    @Injected(Container.AddReactionToFeeling)
     
 }

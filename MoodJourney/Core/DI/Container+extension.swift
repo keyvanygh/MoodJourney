@@ -39,5 +39,5 @@ extension Container {
     // MARK: - Reaction :
     static let reactionLocalDatasource = Factory {ReactionLocalDatasource() }
     static let reactionRepository = Factory {ReactionRepositoryImp(lds: reactionLocalDatasource()) }
-    static let ddReactionToFeeling = Factory { AddReactionToFeeling(repository: reactionRepository()) }
+    static let addReactionToFeelingUsecase = Factory { AddReactionToFeelingUsecase(repository: reactionRepository()) }
 }

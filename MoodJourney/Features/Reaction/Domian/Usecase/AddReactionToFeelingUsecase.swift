@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AddReactionToFeeling {
+class AddReactionToFeelingUsecase {
     let repository: ReactionRepository
     init(repository: ReactionRepository) {
         self.repository = repository
