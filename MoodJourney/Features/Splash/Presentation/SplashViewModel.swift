@@ -10,9 +10,8 @@ import Factory
 
 class SplashViewModel: ObservableObject{
     @Published var userSignedin: Bool? = nil
-    @Injected(Container.kcm) private var kcm: KeychainManager
     @Injected(Container.fetchUserByIDUsecase) private var fetchUserByIDUsecase
-    
+    fetchUserIDFromKeychainUsecase()
     var user: UserEntity? = nil
 
     func searchForExistingUser() {
