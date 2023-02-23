@@ -12,7 +12,7 @@ final class ThirdPartySigninRemoteDataSourceTest: XCTestCase {
     
     func test_reciveUserDataModel_whenSinginSucceed(){
         let mockedNetworkManager = MockedNetworkManager(willSucceed: true)
-        let sut = ThirdPartySigninRemoteDataSource(networkManager: mockedNetworkManager)
+        let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
         do{
             _ = try sut.signin(
             withThirdParty : ".Google",
@@ -31,7 +31,7 @@ final class ThirdPartySigninRemoteDataSourceTest: XCTestCase {
     }
     func test_throwsError_whenSinginFailed(){
         let mockedNetworkManager = MockedNetworkManager(willSucceed: false)
-        let sut = ThirdPartySigninRemoteDataSource(networkManager: mockedNetworkManager)
+        let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
         do{
             _ = try sut.signin(
             withThirdParty : ".Google",

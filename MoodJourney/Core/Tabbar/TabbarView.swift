@@ -16,18 +16,26 @@ struct TabbarView: View {
     var body: some View {
         TabView(selection: $selection) {
             if let user = vm.user {
+                
+                HomeView(vm: HomeViewModel(user: user))
+                    .tabItem {
+                        Text("Home")
+                    }
+                    .environmentObject(coordinator)
+            }
+            if let user = vm.user {
                 ActivitiesView(vm: ActivitiesViewModel(user: user))
                     .tabItem {
-                        Text("Hi")
+                        Text("Goal")
                     }
                     .environmentObject(coordinator)
 
             }
             if let user = vm.user {
                 
-                HomeView(vm: HomeViewModel(user: user))
+                CheerleadersView(vm: CheerleadersViewModel(user: user))
                     .tabItem {
-                        Text("Hi2")
+                        Text("Profile")
                     }
                     .environmentObject(coordinator)
             }

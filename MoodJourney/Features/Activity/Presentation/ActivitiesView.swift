@@ -10,6 +10,9 @@ import SwiftUI
 struct ActivitiesView: View {
     @EnvironmentObject private var coordinator: Coordinator
     @StateObject var vm : ActivitiesViewModel
+    private let url = URL(string: "https://www.appcoda.com")!
+    private let photo = Image("tt2")
+
     var body: some View {
         
         VStack(alignment: .leading,spacing: 4){
@@ -23,6 +26,9 @@ struct ActivitiesView: View {
                     guard let user = vm.user else{return}
                     coordinator.push(.Profile(user: user))
                 }
+            ShareLink(item: url)
+            ShareLink(item: photo, preview: SharePreview("Big Ben", image: photo))
+
             List {
                 ForEach(vm.outputs.activities) { activity in
                     ZStack(alignment: .center){
