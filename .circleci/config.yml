@@ -1,13 +1,12 @@
-version: 2
+# .circleci/config.yml
+version: 2.1
 jobs:
   build-and-test:
-   macos:
+    macos:
       xcode: 12.5.1
-    working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: test
-    shell: /bin/bash --login -o pipefail
     steps:
       - checkout
       - run: bundle install
@@ -18,9 +17,8 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
-          
+
 workflows:
-  version: 2
   build-test-adhoc:
     jobs:
       - build-and-test
