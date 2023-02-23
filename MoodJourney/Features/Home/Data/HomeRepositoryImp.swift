@@ -9,12 +9,14 @@ import Foundation
 
 class HomeRepositoryImp: HomeRepository {
     let lds: HomeLocalDatasource
-    init(lds: HomeLocalDatasouce){
+    init(lds: HomeLocalDatasource){
         self.lds = lds
     }
     
-    func fetchHome() -> Result<[FeelingEntity], Error> {
-        
+    func fetchHome(for user: UserEntity) -> Result<[FeelingEntity], Error> {
+        do{
+            return .success(try lds.fetchHome(for: user))
+        }catch{return .failure(AnyError.error)}
     }
     
     

@@ -9,5 +9,5 @@ import Foundation
 
 protocol HomeRepository {
 
-    func fetchHome() -> Result<[FeelingEntity],Error>
+    func fetchHome(for user: UserEntity) -> Result<[FeelingEntity],Error>
 }
