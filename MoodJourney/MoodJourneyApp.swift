@@ -7,7 +7,6 @@
 
 import SwiftUI
 import GoogleSignIn
-
 @main
 struct MoodJourneyApp: App {
     var body: some Scene {

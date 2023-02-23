@@ -20,7 +20,7 @@ struct SplashView: View {
                 if !isUserSignedin {coordinator.push(.Signin)}
                 else {
                     guard let user = vm.outputs.user else{return}
-                    coordinator.push(.Activity(user: user))
+                    coordinator.push(.TabbarView(user: user))
                 }
             }
     }

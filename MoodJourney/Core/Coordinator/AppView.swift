@@ -14,4 +14,7 @@ enum AppView: Hashable {
     case Signin
     case Splash
     case Reaction(feeling: FeelingEntity)
+    case Home
+    case TabbarView(user: UserEntity)
+
 }
