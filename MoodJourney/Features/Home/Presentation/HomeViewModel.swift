@@ -22,6 +22,7 @@ class HomeViewModel: ObservableObject {
         switch result {
         case.success(let feelings):
             self.feelings = feelings
+            self.feelings.remove(at: 0)
             break
         case . failure(_): break
         }
