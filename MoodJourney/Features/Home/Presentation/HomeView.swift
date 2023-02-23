@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var vm: HomeViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello, World!")
+        List{
+            ForEach(vm.feelings){ feeling in
+                Text("HI")
+            }
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(vm: HomeViewModel())
     }
 }
