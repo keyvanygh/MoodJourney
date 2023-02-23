@@ -9,7 +9,8 @@ import Foundation
 import Factory
 
 class FeelingLocalDatasource {
-    @Injected(Container.dbm) private var dbm
+    @Injected(Container.dbm) private var dbm: DatabaseManager
+    @Injected(Container.acm) private var acm: AccountManager
     
     /// add feeling to activity with acitivtyID
     /// - Parameters:
@@ -41,6 +42,7 @@ class FeelingLocalDatasource {
             feelingEntitiy.feelingTypeValue = feeling
             feelingEntitiy.date = Date()
             feelingEntitiy.activityID = activity.activityID ?? ""
+            if let user = acm.user { feelingEntitiy.user = user }
             activity.addToFeelings(feelingEntitiy)
             try dbm.save()
             return feelingEntitiy
@@ -67,4 +69,21 @@ class FeelingLocalDatasource {
         return fetchResutl
         
     }
+    
+#if DEBUG
+    //MARK: - HELPER:
+    func addFeelingHelper(
+        feeling: String,message: String?,
+        imageURLString: String?,user: UserEntity,to activity: ActivityEntity) throws -> FeelingEntity {
+            guard let feelingEntitiy = dbm.add(entity: .Feeling) as? FeelingEntity else {throw(URLError(.badURL))}
+            feelingEntitiy.message = message
+            feelingEntitiy.feelingTypeValue = feeling
+            feelingEntitiy.date = Date()
+            feelingEntitiy.activityID = activity.activityID ?? ""
+            feelingEntitiy.user = user
+            activity.addToFeelings(feelingEntitiy)
+            try dbm.save()
+            return feelingEntitiy
+        }
+#endif
 }

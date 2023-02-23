@@ -12,6 +12,7 @@ class SigninLocalDatasource {
     /// singelton database manager
     @Injected(Container.dbm) var dbm: DatabaseManager
     @Injected(Container.kcm) var kcm: KeychainManager
+    @Injected(Container.acm) var acm: AccountManager
     let userDefualts = UserDefaults.standard
     
     /// Local Datasource Signin:
@@ -62,5 +63,8 @@ class SigninLocalDatasource {
     }
     func fetchUserAccessToken() throws -> String {
         try kcm.read(.accessToken)
+    }
+    func setUserToACM(user: UserEntity){
+        acm.user = user
     }
 }

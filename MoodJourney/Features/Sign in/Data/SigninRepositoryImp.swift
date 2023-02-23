@@ -47,6 +47,7 @@ class SigninRepositoryImp : SigninRepository {
                 guard let userID = user.userID else{throw(AnyError.error)}
                 try lds.storeUserID(userID: userID)
                 try lds.storeAccessToken(accessToken: userID)
+                lds.setUserToACM(user: user)
                 return .success(user)
             } catch {return .failure(AnyError.error)}
         }

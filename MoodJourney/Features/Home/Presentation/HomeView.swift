@@ -6,15 +6,27 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 struct HomeView: View {
     @StateObject var vm: HomeViewModel
     var body: some View {
-        Text("Hello, World!")
         List{
             ForEach(vm.feelings){ feeling in
-                Text("HI")
+                VStack{
+                    HStack{
+                        if let imageURL = URL(string: feeling.user?.imageURLString ?? ""){
+                            KFImage(imageURL)
+                                .onAppear(){
+                                    print( feeling.user?.imageURLString)
+                                }
+       
+                        }
+                    }
+                }
             }
+            
+        }.onAppear(){
+            vm.fetchHomePage()
         }
     }
 }

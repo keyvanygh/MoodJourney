@@ -21,6 +21,9 @@ struct TabbarView: View {
                         Text("Hi")
                     }
                     .environmentObject(coordinator)
+
+            }
+            if let user = vm.user {
                 
                 HomeView(vm: HomeViewModel(user: user))
                     .tabItem {

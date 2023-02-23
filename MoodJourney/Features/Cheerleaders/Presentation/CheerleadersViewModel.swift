@@ -48,13 +48,13 @@ class CheerleadersViewModel:
     var index = 0
     func addCheerleader(){
 
-        let names = ["Tara","Fati","Fateme","Atvando"]
-        if index < names.count{
-            guard let cheerleader = try? cheerLeadersLocalDatasource.addUser(userID: names[index]) else {return}
-            guard let user = user else {return}
-            cheerLeadersLocalDatasource.addCheerleader(cheerLeader: cheerleader, to: user)
-            index += 1
-        }
+//        let names = ["Tara","Fati","Fateme","Atvando"]
+//        if index < names.count{
+////            guard let cheerleader = try? cheerLeadersLocalDatasource.addUser(userID: names[index]) else {return}
+//            guard let user = user else {return}
+//            cheerLeadersLocalDatasource.addCheerleader(cheerLeader: cheerleader, to: user)
+//            index += 1
+//        }
         fetchCheerLeaders()
 
 

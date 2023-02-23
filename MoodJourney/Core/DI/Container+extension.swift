@@ -11,6 +11,8 @@ import Factory
 extension Container {
     static let dbm = Factory(scope: .singleton) {DatabaseManager() }
     static let kcm = Factory(scope: .singleton) {KeychainManager() }
+    static let acm = Factory(scope: .singleton) {AccountManager() }
+
 
     // MARK: - Feelings :
     static let feelingLocalDatasource = Factory {FeelingLocalDatasource() }
@@ -45,4 +47,5 @@ extension Container {
     static let homeLocalDatasource = Factory {HomeLocalDatasource() }
     static let homeRepository = Factory {HomeRepositoryImp(lds: homeLocalDatasource()) }
     static let fetchHomeUsecase = Factory { FetchHomeUsecase(repository: homeRepository()) }
+
 }

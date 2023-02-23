@@ -14,6 +14,11 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingView
     public var outputs: AddFeelingViewModelOutput { return self }
     @Injected(Container.addFeelingToActivityUsecase) private(set) var addFeelingToActivityUsecase
     @Injected(Container.fetchFeelingsForActivityUsecase) private(set) var fetchFeelingsForActivityUsecase
+    #if DEBUG
+    @Injected(Container.signinLocalDatasource) private var signinLocalDatasource
+    @Injected(Container.feelingLocalDatasource) private var  feelingLocalDatasource
+
+    #endif
     
     private var activity: ActivityEntity? = nil
     init(activity: ActivityEntity) {
@@ -39,6 +44,8 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingView
             break
         case 3:
             _ = addFeelingToActivityUsecase.execute(feeling: .Depressed,message: "",to: activity)
+//            guard let user = try? signinLocalDatasource.signin(with: .ThirdParty(.Google), userID: "TaraAsghari",name: "Tara",imageURLString: "https://i.pinimg.com/280x280_RS/89/da/dd/89dadd1c53a779cbac42be8ae9b7aca2.jpg") else {return }
+//            _ = try? feelingLocalDatasource.addFeelingHelper(feeling: Feeling.Happy.rawValue, message: "awsome", imageURLString: "", user: user, to: activity)
             break
         default :
             break
