@@ -40,4 +40,9 @@ extension Container {
     static let reactionLocalDatasource = Factory {ReactionLocalDatasource() }
     static let reactionRepository = Factory {ReactionRepositoryImp(lds: reactionLocalDatasource()) }
     static let addReactionToFeelingUsecase = Factory { AddReactionToFeelingUsecase(repository: reactionRepository()) }
+    
+    // MARK: - Home :
+    static let homeLocalDatasource = Factory {HomeLocalDatasource() }
+    static let homeRepository = Factory {HomeRepositoryImp(lds: homeLocalDatasource()) }
+    static let fetchHomeUsecase = Factory { FetchHomeUsecase(repository: homeRepository()) }
 }
