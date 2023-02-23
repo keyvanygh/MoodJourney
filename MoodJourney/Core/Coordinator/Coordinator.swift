@@ -32,8 +32,8 @@ class Coordinator: ObservableObject {
             SplashView()
         case .Reaction(let feeling):
             ReactionView(selectedFeeling: feeling)
-        case .Home:
-            HomeView()
+        case .Home(let user):
+            HomeView(vm: HomeViewModel(user: user))
         case .TabbarView(let user):
             TabbarView(vm: TabbarViewModel(user: user))
         }

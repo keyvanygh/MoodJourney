@@ -21,13 +21,13 @@ struct TabbarView: View {
                         Text("Hi")
                     }
                     .environmentObject(coordinator)
+                
+                HomeView(vm: HomeViewModel(user: user))
+                    .tabItem {
+                        Text("Hi2")
+                    }
+                    .environmentObject(coordinator)
             }
-            HomeView()
-                .tabItem {
-                    Text("Hi2")
-                }
-                .environmentObject(coordinator)
-            
         }
     }
 }
