@@ -33,8 +33,10 @@ struct TabbarView: View {
 }
 import CoreData
 struct TabbarView_Previews: PreviewProvider {
+    static let coordinator = Coordinator()
     static var previews: some View {
         TabbarView(vm: TabbarViewModel())
+            .environmentObject(coordinator)
     }
 }
 

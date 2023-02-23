@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C001183D29A70ABA00BADEE6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C001183C29A70ABA00BADEE6 /* HomeViewModel.swift */; };
+		C001184329A70B0600BADEE6 /* FetchHomeUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C001184229A70B0600BADEE6 /* FetchHomeUsecase.swift */; };
+		C001184529A70B7000BADEE6 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C001184429A70B7000BADEE6 /* HomeRepository.swift */; };
+		C001184729A70BF800BADEE6 /* HomeRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C001184629A70BF800BADEE6 /* HomeRepositoryImp.swift */; };
 		C01A3753299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3752299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift */; };
 		C01A3755299DC782001856BA /* SigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3754299DC782001856BA /* SigninRepository.swift */; };
 		C01A3757299DC9CA001856BA /* ThridPartySigninUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3756299DC9CA001856BA /* ThridPartySigninUsecase.swift */; };
@@ -103,6 +107,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C001183C29A70ABA00BADEE6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C001184229A70B0600BADEE6 /* FetchHomeUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHomeUsecase.swift; sourceTree = "<group>"; };
+		C001184429A70B7000BADEE6 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		C001184629A70BF800BADEE6 /* HomeRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryImp.swift; sourceTree = "<group>"; };
 		C01A3752299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartySigninUsecaseTest.swift; sourceTree = "<group>"; };
 		C01A3754299DC782001856BA /* SigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepository.swift; sourceTree = "<group>"; };
 		C01A3756299DC9CA001856BA /* ThridPartySigninUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThridPartySigninUsecase.swift; sourceTree = "<group>"; };
@@ -212,6 +220,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C001183E29A70AD800BADEE6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C001184129A70AEC00BADEE6 /* Usecase */,
+				C001183F29A70ADC00BADEE6 /* Entity */,
+				C001184429A70B7000BADEE6 /* HomeRepository.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C001183F29A70ADC00BADEE6 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C001184029A70AE500BADEE6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C001184629A70BF800BADEE6 /* HomeRepositoryImp.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C001184129A70AEC00BADEE6 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				C001184229A70B0600BADEE6 /* FetchHomeUsecase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
 		C01A3742299D2D1D001856BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,6 +756,8 @@
 		C0B8004929A6F0D700E7D119 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C001184029A70AE500BADEE6 /* Data */,
+				C001183E29A70AD800BADEE6 /* Domain */,
 				C0B8004A29A6F0DB00E7D119 /* Presentation */,
 			);
 			path = Home;
@@ -724,6 +767,7 @@
 			isa = PBXGroup;
 			children = (
 				C0B8004B29A6F0F100E7D119 /* HomeView.swift */,
+				C001183C29A70ABA00BADEE6 /* HomeViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -1127,6 +1171,7 @@
 				C0461176299ECC5F0050ABFD /* SigninRepositoryImp.swift in Sources */,
 				C0B8003B29A6734600E7D119 /* ReactionLocalDatasource.swift in Sources */,
 				C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */,
+				C001183D29A70ABA00BADEE6 /* HomeViewModel.swift in Sources */,
 				C0B8004E29A6F69700E7D119 /* TabbarViewModel.swift in Sources */,
 				C03FB32429A2C5A900D0E781 /* SigninLocalDatasource.swift in Sources */,
 				C0F05A5E299F032700385F65 /* NetworkManager.swift in Sources */,
@@ -1151,6 +1196,7 @@
 				C022FE8029A2833B00F53B0B /* FetchCheerleadersUsecase.swift in Sources */,
 				C022FE8D29A2899900F53B0B /* CheerleadersViewModel.swift in Sources */,
 				C0F05A5A299EFF5100385F65 /* SigninRemoteDataSource.swift in Sources */,
+				C001184529A70B7000BADEE6 /* HomeRepository.swift in Sources */,
 				C03FB32B29A3C07100D0E781 /* AppView.swift in Sources */,
 				C0F05A86299FF89800385F65 /* FeelingLocalDatasource.swift in Sources */,
 				C022FE8A29A2878F00F53B0B /* CheerleadersRepositoryImp.swift in Sources */,
@@ -1181,6 +1227,8 @@
 				C0F05A64299F073E00385F65 /* SigninViewModel.swift in Sources */,
 				C03FB31E29A2C14000D0E781 /* UserRepository.swift in Sources */,
 				C0F05A7B299FF37500385F65 /* ActivityEntity+extension.swift in Sources */,
+				C001184329A70B0600BADEE6 /* FetchHomeUsecase.swift in Sources */,
+				C001184729A70BF800BADEE6 /* HomeRepositoryImp.swift in Sources */,
 				C0F05A84299FF87600385F65 /* FeelingDataModel.swift in Sources */,
 				C0F05A6C299F110C00385F65 /* SigninWithGoogleButton.swift in Sources */,
 			);
