@@ -5,6 +5,7 @@
         <attribute name="imageURLString" optional="YES" attributeType="String"/>
         <attribute name="internalID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="feelings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FeelingEntity"/>
     </entity>
     <entity name="FeelingEntity" representedClassName="FeelingEntity" syncable="YES" codeGenerationType="class">
         <attribute name="activityID" optional="YES" attributeType="String"/>
@@ -13,6 +14,7 @@
         <attribute name="imageURLString" optional="YES" attributeType="String"/>
         <attribute name="internalID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="message" optional="YES" attributeType="String"/>
+        <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ActivityEntity"/>
         <relationship name="reactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ReactionEntity"/>
     </entity>
     <entity name="ReactionEntity" representedClassName="ReactionEntity" syncable="YES" codeGenerationType="class">

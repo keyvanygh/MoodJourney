@@ -18,7 +18,7 @@ protocol FeelingRepository {
     /// - Returns:
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
-    func addFeeling(activityID: String,feeling: Feeling,message: String?, imageURLString: String?) -> Result<Bool,Error>
+    func addFeeling(feeling: Feeling,message: String?, imageURLString: String?,to activity: ActivityEntity) -> Result<Bool,Error>
     
     /// fetch feelings from activity with activityID
     /// - Parameters:
@@ -27,4 +27,8 @@ protocol FeelingRepository {
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
     func fetchFeelings(fromActivity activityID: String) -> Result<[FeelingEntity],Error>
+    
+    
+    func fetchFeelings(of activity: ActivityEntity) -> Result<[FeelingEntity],Error>
+
 }

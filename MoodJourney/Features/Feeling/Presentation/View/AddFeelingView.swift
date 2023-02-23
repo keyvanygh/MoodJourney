@@ -24,7 +24,9 @@ struct AddFeelingView: View {
                                     ForEach(reactions){ reaction in
                                         if let emoji = reaction.emoji {
                                             KFAnimatedImage(URL(string: "https://media.giphy.com/media/o75ajIFH0QnQC3nCeD/giphy.gif"))
-                                                
+                                                .frame(maxWidth: .infinity)
+                                                .cornerRadius(16)
+                                                .aspectRatio(contentMode: .fit)
                                         }
                                     }
                                 }

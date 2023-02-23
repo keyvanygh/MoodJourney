@@ -33,6 +33,18 @@ class FeelingLocalDatasource {
             try dbm.save()
             return entitiy
         }
+    func addFeeling(
+        feeling: String,message: String?,
+        imageURLString: String?,to activity: ActivityEntity) throws -> FeelingEntity {
+            guard let feelingEntitiy = dbm.add(entity: .Feeling) as? FeelingEntity else {throw(URLError(.badURL))}
+            feelingEntitiy.message = message
+            feelingEntitiy.feelingTypeValue = feeling
+            feelingEntitiy.date = Date()
+            feelingEntitiy.activityID = activity.activityID ?? ""
+            activity.addToFeelings(feelingEntitiy)
+            try dbm.save()
+            return feelingEntitiy
+        }
     
     /// fetch feelings from activity with activityID
     /// - Parameters:
@@ -46,6 +58,13 @@ class FeelingLocalDatasource {
         fetchResutl
             .sort(by:{$0.date ?? Date() < $1.date ?? Date()})
         return fetchResutl.filter({$0.activityID == activityID})
+        
+    }
+    func fetchFeelings(of activity: ActivityEntity) throws -> [FeelingEntity] {
+        guard var fetchResutl = activity.feelings?.allObjects as? [FeelingEntity] else{return []}
+        fetchResutl
+            .sort(by:{$0.date ?? Date() < $1.date ?? Date()})
+        return fetchResutl
         
     }
 }

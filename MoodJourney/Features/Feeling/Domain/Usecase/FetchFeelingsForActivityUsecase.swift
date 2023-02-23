@@ -19,7 +19,7 @@ class FetchFeelingsForActivityUsecase {
     /// - Returns:
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
-    func execute(activityID: String) -> Result<[FeelingEntity],Error> {
-        return repository.fetchFeelings(fromActivity: activityID)
+    func execute(of activity: ActivityEntity) -> Result<[FeelingEntity],Error> {
+        return repository.fetchFeelings(of: activity)
     }
 }

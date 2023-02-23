@@ -28,15 +28,18 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingView
     
     // MARK: - Inputs
     func didTapSubmitButton() {
+        guard let activity = activity else{return}
+
         switch(selectedFeelingIndex){
         case 1:
-            _ = addFeelingToActivityUsecase.execute(activityID: activity?.activityID ?? "", feeling: .Sad,message: "")
+            _ = addFeelingToActivityUsecase.execute(feeling: .Sad,message: "",to: activity)
             break
         case 2:
-            _ = addFeelingToActivityUsecase.execute(activityID:  activity?.activityID ?? "", feeling: .Happy,message: "")
+            _ = addFeelingToActivityUsecase.execute(feeling: .Happy,message: "",to: activity)
             break
         case 3:
-            _ = addFeelingToActivityUsecase.execute(activityID:  activity?.activityID ?? "", feeling: .Depressed,message: "")
+            _ = addFeelingToActivityUsecase.execute(feeling: .Depressed,message: "",to: activity)
+            break
         default :
             break
         }
@@ -46,7 +49,8 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingView
         selectedFeelingIndex = index
     }
     func fetchFeelings() {
-        let result = fetchFeelingsForActivityUsecase.execute(activityID:  activity?.activityID ?? "")
+        guard let activity = activity else {return}
+        let result = fetchFeelingsForActivityUsecase.execute(of: activity)
         switch result {
         case .success(let result):
             feelings = result

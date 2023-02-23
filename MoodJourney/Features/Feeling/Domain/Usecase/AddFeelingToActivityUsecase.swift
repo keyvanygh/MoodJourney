@@ -22,15 +22,15 @@ class AddFeelingToActivityUsecase {
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
     func execute(
-        activityID: String,
         feeling: Feeling,
         message: String? = "",
-        imageURLString: String? = "") -> Result<Bool,Error> {
+        imageURLString: String? = "",
+        to activity: ActivityEntity) -> Result<Bool,Error> {
             
             return repository.addFeeling(
-                activityID: activityID,
                 feeling: feeling,
                 message: message,
-                imageURLString: imageURLString)
+                imageURLString: imageURLString,
+                to: activity)
         }
 }

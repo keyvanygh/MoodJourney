@@ -23,21 +23,21 @@ class FeelingRepositoryImp : FeelingRepository {
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
     func addFeeling(
-        activityID: String,
         feeling: Feeling,
         message: String?,
-        imageURLString: String?) -> Result<Bool,Error> {
-        do {
-            _ = try lds.addFeeling(
-                toActicity: activityID,
-                feeling: feeling.rawValue,
-                message: message,
-                imageURLString: imageURLString)
-            return .success(true)
-        }catch(let error) {
-            return .failure(error)
+        imageURLString: String?,
+        to activity: ActivityEntity) -> Result<Bool,Error> {
+            do {
+                _ = try lds.addFeeling(
+                    feeling: feeling.rawValue,
+                    message: message,
+                    imageURLString: imageURLString,
+                    to: activity)
+                return .success(true)
+            }catch(let error) {
+                return .failure(error)
+            }
         }
-    }
     
     /// fetch feelings from activity with activityID
     /// - Parameters:
@@ -48,6 +48,21 @@ class FeelingRepositoryImp : FeelingRepository {
     func fetchFeelings(fromActivity activityID: String) -> Result<[FeelingEntity],Error>{
         do {
             let result = try lds.fetchFeelings(fromActivity: activityID)
+            return .success(result)
+        }catch{
+            return .failure(AnyError.error)
+        }
+    }
+    
+    /// fetch feelings from activity with activityID
+    /// - Parameters:
+    ///   - activityID: activity id
+    /// - Returns:
+    ///   - success: array of FeelingEntitys
+    ///   - fail: FeelingError
+    func fetchFeelings(of activity: ActivityEntity) -> Result<[FeelingEntity],Error>{
+        do {
+            let result = try lds.fetchFeelings(of: activity)
             return .success(result)
         }catch{
             return .failure(AnyError.error)
