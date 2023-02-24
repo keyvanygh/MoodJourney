@@ -21,26 +21,29 @@ struct SigninWithGoogleButton: View {
                 Text("Sign in with Google")
                     .font(.system(size: 17, weight: .bold))
                     .foregroundColor(Color.black)
-
             }
             Spacer()
         }
         .onTapGesture {
-            guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else {return}
-            GIDSignIn.sharedInstance.signIn(withPresenting: presentingViewController) { signInResult, error in
-                if let error = error {
-                    vm.didFailed3rdPartySignin(thirdParty: .google, error: error)
-                    return
+            guard let presentingViewController =
+                    (UIApplication.shared.connectedScenes.first as? UIWindowScene)?
+                .windows.first?.rootViewController else {return}
+            GIDSignIn.sharedInstance.signIn(
+                withPresenting: presentingViewController) { signInResult, error in
+                    if let error = error {
+                        vm.didFailed3rdPartySignin(thirdParty: .google, error: error)
+                        return
+                    }
+                    guard let userID = signInResult?.user.userID else {return}
+                    vm.inputs.didSucceed3rdPartySignin(
+                        thirdParty: .google,
+                        userID: userID,
+                        hasImage: signInResult?.user.profile?.hasImage ?? false,
+                        name: signInResult?.user.profile?.name,
+                        family: signInResult?.user.profile?.familyName,
+                        imageURL: signInResult?
+                            .user.profile?.imageURL(withDimension: 256))
                 }
-                guard let userID = signInResult?.user.userID else {return}
-                vm.inputs.didSucceed3rdPartySignin(
-                    thirdParty: .google,
-                    userID: userID,
-                    hasImage: signInResult?.user.profile?.hasImage ?? false,
-                    name: signInResult?.user.profile?.name,
-                    family: signInResult?.user.profile?.familyName,
-                    imageURL: signInResult?.user.profile?.imageURL(withDimension: 256))
-            }
         }
         .frame(height: 44)
         .background(Color.white)

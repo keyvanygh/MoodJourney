@@ -12,24 +12,32 @@ class SigninViewModel:
     AnyViewModel,
     SigninViewModelInputs,
     SigninViewModelOutputs {
-
+    
     public var inputs: SigninViewModelInputs {return self}
     public var outputs: SigninViewModelOutputs {return self}
-
+    
     @Injected(Container.thirdPartySigninUsecase) var thirdPartySigninUsecase
     @Published private(set) var user: UserEntity?
-
-    public func didSucceed3rdPartySignin(thirdParty: ThirdParty, userID: String, hasImage: Bool, name: String?, family: String?, imageURL: URL?) {
-        signin(thirdParty: thirdParty,
-               userID: userID,
-               hasImage: hasImage,
-               name: name,
-               family: family, imageURL: imageURL)
-    }
-
-    public func didFailed3rdPartySignin(thirdParty: ThirdParty, error: Error) {
-    }
-
+    
+    public func didSucceed3rdPartySignin(
+        thirdParty: ThirdParty,
+        userID: String,
+        hasImage: Bool,
+        name: String?,
+        family: String?,
+        imageURL: URL?) {
+            signin(thirdParty: thirdParty,
+                   userID: userID,
+                   hasImage: hasImage,
+                   name: name,
+                   family: family, imageURL: imageURL)
+        }
+    
+    public func didFailed3rdPartySignin(
+        thirdParty: ThirdParty,
+        error: Error) {
+        }
+    
     private func signin(
         thirdParty: ThirdParty,
         userID: String,

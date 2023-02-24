@@ -21,9 +21,11 @@ class DatabaseManager {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity.rawValue)
         return try container.viewContext.fetch(request)
     }
-
+    
     func add(entity: Entity) -> NSManagedObject {
-        return NSEntityDescription.insertNewObject(forEntityName: entity.rawValue, into: container.viewContext)
+        return NSEntityDescription.insertNewObject(
+            forEntityName: entity.rawValue,
+            into: container.viewContext)
     }
     func save() throws {
         self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump

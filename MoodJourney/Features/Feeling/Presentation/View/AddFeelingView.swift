@@ -11,6 +11,8 @@ import Kingfisher
 struct AddFeelingView: View {
     @EnvironmentObject private var coordinator: Coordinator
     @StateObject var vm: AddFeelingViewModel
+    let url: URL? =
+    URL(string:"https://media.giphy.com/media/o75ajIFH0QnQC3nCeD/giphy.gif")
     var body: some View {
         VStack {
             List {
@@ -20,10 +22,14 @@ struct AddFeelingView: View {
                         VStack {
                             Text("😂")
                             HStack {
-                                if let reactions = feelingEntity.reactions?.allObjects as? [ReactionEntity] {
+                                if let reactions =
+                                    feelingEntity
+                                    .reactions?
+                                    .allObjects
+                                    as? [ReactionEntity] {
                                     ForEach(reactions) { reaction in
-                                        if let emoji = reaction.emoji {
-                                            KFAnimatedImage(URL(string: "https://media.giphy.com/media/o75ajIFH0QnQC3nCeD/giphy.gif"))
+                                        if let _ = reaction.emoji {
+                                            KFAnimatedImage(url)
                                                 .frame(maxWidth: .infinity)
                                                 .cornerRadius(16)
                                                 .aspectRatio(contentMode: .fit)
@@ -34,7 +40,7 @@ struct AddFeelingView: View {
                         }.onTapGesture {
                             coordinator.push(.reaction(feeling: feelingEntity))
                         }
-
+                        
                     case .sad:
                         Text("😭")
                     case .depressed:
@@ -63,9 +69,10 @@ struct AddFeelingView: View {
                                 .zIndex(2)
                                 .font(.system(.largeTitle))
                         }
-
+                        
                         RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor((i==vm.outputs.selectedFeelingIndex) ? Color.green : Color.gray.opacity(0.3) )
+                            .foregroundColor((i==vm.outputs.selectedFeelingIndex) ?
+                                             Color.green : Color.gray.opacity(0.3) )
                             .frame(width: 80)
                             .frame(height: 80)
                     }.onTapGesture {
@@ -76,7 +83,7 @@ struct AddFeelingView: View {
                 }
             }
             .padding(.horizontal, 16)
-
+            
             Button {
                 vm.didTapSubmitButton()
             } label: {
@@ -90,7 +97,7 @@ struct AddFeelingView: View {
             }
             .padding(.horizontal, 16)
         }
-
+        
     }
 }
 

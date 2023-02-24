@@ -23,7 +23,6 @@ class HomeViewModel: ObservableObject {
         case.success(let feelings):
             self.feelings = feelings
             self.feelings.remove(at: 0)
-            break
         case . failure: break
         }
     }

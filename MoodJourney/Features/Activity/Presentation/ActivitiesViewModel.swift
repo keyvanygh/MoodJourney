@@ -15,7 +15,8 @@ class ActivitiesViewModel:
 
     public var inputs: ActivitiesViewModelInput { return self }
     public var outputs: ActivitiesViewModelOutput { return self }
-    @Injected(Container.fetchActivitiesUsecase) private(set) var fetchActivitiesUsecase
+    @Injected(Container.fetchActivitiesUsecase)
+    private(set) var fetchActivitiesUsecase
     var user: UserEntity?
     init(user: UserEntity) {
         self.user = user
@@ -43,11 +44,11 @@ class ActivitiesViewModel:
         _ = try? lds.addActivity(
             activityID: "1",
             name: "Gain Weight",
-            imageURLString: "https://legionathletics.com/wp-content/uploads/2021/04/clean-bulking-1.jpg")
+            imageURLString: "")
         _ = try? lds.addActivity(
             activityID: "2",
             name: "Loose Weight",
-            imageURLString: "https://i.kinja-img.com/gawker-media/image/upload/c_fit,f_auto,g_center,pg_1,q_60,w_1600/uztbf1vxh2eic9z01ojn.jpg")
+            imageURLString: "")
 
     }
 }

@@ -63,7 +63,7 @@ struct ActivitiesView: View {
             .listStyle(.plain)
         }
         .onAppear {
-            if vm.outputs.activities.count == 0 {
+            if vm.outputs.activities.isEmpty {
                 vm.inputs.fetchActivies()
             }
         }

@@ -11,7 +11,7 @@ import Factory
 class FeelingLocalDatasource {
     @Injected(Container.dbm) private var dbm: DatabaseManager
     @Injected(Container.acm) private var acm: AccountManager
-
+    
     /// add feeling to activity with acitivtyID
     /// - Parameters:
     ///   - activityID: activity id
@@ -26,7 +26,8 @@ class FeelingLocalDatasource {
         toActicity activityID: String,
         feeling: String, message: String?,
         imageURLString: String?) throws -> FeelingEntity {
-            guard let entitiy = dbm.add(entity: .Feeling) as? FeelingEntity else {throw(URLError(.badURL))}
+            guard let entitiy = dbm.add(entity: .Feeling) as? FeelingEntity
+            else {throw(URLError(.badURL))}
             entitiy.message = message
             entitiy.activityID = activityID
             entitiy.feelingTypeValue = feeling
@@ -37,7 +38,8 @@ class FeelingLocalDatasource {
     func addFeeling(
         feeling: String, message: String?,
         imageURLString: String?, to activity: ActivityEntity) throws -> FeelingEntity {
-            guard let feelingEntitiy = dbm.add(entity: .Feeling) as? FeelingEntity else {throw(URLError(.badURL))}
+            guard let feelingEntitiy = dbm.add(entity: .Feeling) as? FeelingEntity
+            else {throw(URLError(.badURL))}
             feelingEntitiy.message = message
             feelingEntitiy.feelingTypeValue = feeling
             feelingEntitiy.date = Date()
@@ -47,7 +49,7 @@ class FeelingLocalDatasource {
             try dbm.save()
             return feelingEntitiy
         }
-
+    
     /// fetch feelings from activity with activityID
     /// - Parameters:
     ///   - activityID: activity id
@@ -56,26 +58,29 @@ class FeelingLocalDatasource {
     /// - Throws:
     ///   - FeelingError
     func fetchFeelings(fromActivity activityID: String) throws -> [FeelingEntity] {
-        guard var fetchResutl = try dbm.fetch(entity: .Feeling) as? [FeelingEntity] else {return []}
+        guard var fetchResutl = try dbm.fetch(entity: .Feeling) as? [FeelingEntity]
+        else {return []}
         fetchResutl
             .sort(by: {$0.date ?? Date() < $1.date ?? Date()})
         return fetchResutl.filter({$0.activityID == activityID})
-
+        
     }
     func fetchFeelings(of activity: ActivityEntity) throws -> [FeelingEntity] {
-        guard var fetchResutl = activity.feelings?.allObjects as? [FeelingEntity] else {return []}
+        guard var fetchResutl = activity.feelings?.allObjects as? [FeelingEntity]
+        else {return []}
         fetchResutl
             .sort(by: {$0.date ?? Date() < $1.date ?? Date()})
         return fetchResutl
-
+        
     }
-
+    
 #if DEBUG
     // MARK: - HELPER:
     func addFeelingHelper(
         feeling: String, message: String?,
         imageURLString: String?, user: UserEntity, to activity: ActivityEntity) throws -> FeelingEntity {
-            guard let feelingEntitiy = dbm.add(entity: .Feeling) as? FeelingEntity else {throw(URLError(.badURL))}
+            guard let feelingEntitiy = dbm.add(entity: .Feeling) as? FeelingEntity
+            else {throw(URLError(.badURL))}
             feelingEntitiy.message = message
             feelingEntitiy.feelingTypeValue = feeling
             feelingEntitiy.date = Date()

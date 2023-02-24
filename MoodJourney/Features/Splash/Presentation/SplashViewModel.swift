@@ -17,7 +17,8 @@ class SplashViewModel:
     public var outputs: SplashViewModelOutputs {return self}
 
     @Injected(Container.fetchUserByIDUsecase) private var fetchUserByIDUsecase
-    @Injected(Container.fetchUserIDFromKeychainUsecase) private var fetchUserIDFromKeychainUsecase
+    @Injected(Container.fetchUserIDFromKeychainUsecase)
+    private var fetchUserIDFromKeychainUsecase
 
     // MARK: - Outputs:
 
@@ -47,7 +48,6 @@ class SplashViewModel:
         case.success(let user):
             self.user = user
             isUserSignedin = true
-            break
         case .failure:
             break
         }
