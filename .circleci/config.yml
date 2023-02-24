@@ -8,7 +8,7 @@ orbs:
 jobs:
   swiftlint:
     docker:
-  - image: 'dantoml/swiftlint:latest'
+      - image: 'dantoml/swiftlint:latest'
   build-and-test:
     macos:
       xcode: 14.2.0
