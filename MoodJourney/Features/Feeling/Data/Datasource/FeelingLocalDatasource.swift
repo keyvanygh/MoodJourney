@@ -26,7 +26,7 @@ class FeelingLocalDatasource {
         toActicity activityID: String,
         feeling: String, message: String?,
         imageURLString: String?) throws -> FeelingEntity {
-            guard let entitiy = dbm.add(entity: .Feeling) as? FeelingEntity
+            guard let entitiy = dbm.add(entity: .feeling) as? FeelingEntity
             else {throw(URLError(.badURL))}
             entitiy.message = message
             entitiy.activityID = activityID
@@ -38,7 +38,7 @@ class FeelingLocalDatasource {
     func addFeeling(
         feeling: String, message: String?,
         imageURLString: String?, to activity: ActivityEntity) throws -> FeelingEntity {
-            guard let feelingEntitiy = dbm.add(entity: .Feeling) as? FeelingEntity
+            guard let feelingEntitiy = dbm.add(entity: .feeling) as? FeelingEntity
             else {throw(URLError(.badURL))}
             feelingEntitiy.message = message
             feelingEntitiy.feelingTypeValue = feeling
@@ -58,7 +58,7 @@ class FeelingLocalDatasource {
     /// - Throws:
     ///   - FeelingError
     func fetchFeelings(fromActivity activityID: String) throws -> [FeelingEntity] {
-        guard var fetchResutl = try dbm.fetch(entity: .Feeling) as? [FeelingEntity]
+        guard var fetchResutl = try dbm.fetch(entity: .feeling) as? [FeelingEntity]
         else {return []}
         fetchResutl
             .sort(by: {$0.date ?? Date() < $1.date ?? Date()})
@@ -79,7 +79,7 @@ class FeelingLocalDatasource {
     func addFeelingHelper(
         feeling: String, message: String?,
         imageURLString: String?, user: UserEntity, to activity: ActivityEntity) throws -> FeelingEntity {
-            guard let feelingEntitiy = dbm.add(entity: .Feeling) as? FeelingEntity
+            guard let feelingEntitiy = dbm.add(entity: .feeling) as? FeelingEntity
             else {throw(URLError(.badURL))}
             feelingEntitiy.message = message
             feelingEntitiy.feelingTypeValue = feeling

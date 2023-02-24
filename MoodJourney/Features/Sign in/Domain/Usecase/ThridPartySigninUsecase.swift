@@ -35,6 +35,13 @@ struct ThirdPartySigninUsecase {
         family: String? = "",
         givenName: String? = "",
         imageURL: URL? = nil) -> Result<UserEntity, Error> {
-            return repository.signin(withThirdParty: thirdParty, userID: userID, hasImage: hasImage, name: name, family: family, givenName: givenName, imageURL: imageURL)
+            return repository.signin(
+                withThirdParty: thirdParty,
+                userID: userID,
+                hasImage: hasImage,
+                name: name,
+                family: family,
+                givenName: givenName,
+                imageURL: imageURL)
         }
 }

@@ -25,7 +25,7 @@ final class ThirdPartySigninRemoteDataSourceTest: XCTestCase {
             XCTAssert(true)
 
         } catch {
-            XCTFail()
+            XCTFail("failed")
 
         }
     }
@@ -41,7 +41,7 @@ final class ThirdPartySigninRemoteDataSourceTest: XCTestCase {
             family: "String?",
             givenName: " String",
             imageURL: "String")
-            XCTFail()
+            XCTFail("Failed")
 
         } catch {
             XCTAssert(true)

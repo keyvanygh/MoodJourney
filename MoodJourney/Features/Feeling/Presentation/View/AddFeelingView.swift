@@ -52,32 +52,32 @@ struct AddFeelingView: View {
                 vm.inputs.fetchFeelings()
             }
             HStack(spacing: 16) {
-                ForEach((1...3), id: \.self) { i in
+                ForEach((1...3), id: \.self) { number in
                     ZStack {
-                        if i == 1 {
+                        if number == 1 {
                             Text("😭")
                                 .zIndex(2)
                                 .font(.system(.largeTitle))
                         }
-                        if i == 2 {
+                        if number == 2 {
                             Text("😂")
                                 .zIndex(2)
                                 .font(.system(.largeTitle))
                         }
-                        if i == 3 {
+                        if number == 3 {
                             Text("😞")
                                 .zIndex(2)
                                 .font(.system(.largeTitle))
                         }
                         
                         RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor((i==vm.outputs.selectedFeelingIndex) ?
+                            .foregroundColor((number==vm.outputs.selectedFeelingIndex) ?
                                              Color.green : Color.gray.opacity(0.3) )
                             .frame(width: 80)
                             .frame(height: 80)
                     }.onTapGesture {
                         withAnimation {
-                            vm.inputs.didSelectFeeling(atIndex: i)
+                            vm.inputs.didSelectFeeling(atIndex: number)
                         }
                     }
                 }

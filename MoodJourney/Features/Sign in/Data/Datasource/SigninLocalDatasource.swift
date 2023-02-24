@@ -35,7 +35,7 @@ class SigninLocalDatasource {
         family: String? = "",
         imageURLString: String? = "") throws -> UserEntity {
             if let exsitingUser = try? fetchUser(byID: userID) {return exsitingUser}
-            guard let user = dbm.add(entity: .User) as? UserEntity else {throw(AnyError.error)}
+            guard let user = dbm.add(entity: .user) as? UserEntity else {throw(AnyError.error)}
             user.userID = userID
             user.name = name
             user.familyName = family
@@ -46,7 +46,7 @@ class SigninLocalDatasource {
         }
 
     func fetchUser(byID userID: String) throws -> UserEntity {
-        guard let user =  try (dbm.fetch(entity: .User) as? [UserEntity])?
+        guard let user =  try (dbm.fetch(entity: .user) as? [UserEntity])?
             .first(where: {$0.userID == userID}) else {throw(AnyError.error)}
         return user
     }

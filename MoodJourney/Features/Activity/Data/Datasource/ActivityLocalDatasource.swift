@@ -25,7 +25,7 @@ class ActivityLocalDatasource {
         activityID: String,
         name: String,
         imageURLString: String? = nil) throws -> ActivityEntity {
-        guard let entitiy = dbm.add(entity: .Activity) as? ActivityEntity else {throw(URLError(.badURL))}
+        guard let entitiy = dbm.add(entity: .activity) as? ActivityEntity else {throw(URLError(.badURL))}
         entitiy.name = name
         entitiy.activityID = activityID
         entitiy.internalID = UUID()
@@ -40,7 +40,7 @@ class ActivityLocalDatasource {
     /// - Throws:
     ///   - ActivityError
     func fetchActivies() throws -> [ActivityEntity] {
-        guard let result = try dbm.fetch(entity: .Activity) as? [ActivityEntity] else {throw(AnyError.error)}
+        guard let result = try dbm.fetch(entity: .activity) as? [ActivityEntity] else {throw(AnyError.error)}
         return result
     }
 }

@@ -20,7 +20,7 @@ class CheerleadersLocalDatasource {
         try? dbm.save()
     }
     func getUser(userID: String) throws -> UserEntity {
-        guard let user = (try dbm.fetch(entity: .User) as? [UserEntity])?.first else {throw(AnyError.error)}
+        guard let user = (try dbm.fetch(entity: .user) as? [UserEntity])?.first else {throw(AnyError.error)}
         return user
     }
 //    func addUser(userID: String) throws -> UserEntity {

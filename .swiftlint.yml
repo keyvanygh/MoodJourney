@@ -5,13 +5,15 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
   - control_statement
   - function_parameter_count
   - identifier_name
+  - trailing_whitespace
+
 opt_in_rules: # some rules are turned off by default, so you need to opt-in
   - empty_count # Find all the available rules by running: `swiftlint rules`
 
 # Alternatively, specify all rules explicitly by uncommenting this option:
 # only_rules: # delete `disabled_rules` & `opt_in_rules` if using this
 #   - empty_parameters
-#   - vertical_whitespace
+  - vertical_whitespace
 
 analyzer_rules: # Rules run by `swiftlint analyze`
   - explicit_self

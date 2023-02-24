@@ -34,8 +34,8 @@ class DatabaseManager {
     }
 }
 public enum Entity: String {
-    case Activity = "ActivityEntity"
-    case Feeling = "FeelingEntity"
-    case User = "UserEntity"
-    case Reaction = "ReactionEntity"
+    case activity = "ActivityEntity"
+    case feeling = "FeelingEntity"
+    case user = "UserEntity"
+    case reaction = "ReactionEntity"
 }

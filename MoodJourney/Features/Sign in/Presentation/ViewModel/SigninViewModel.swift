@@ -56,7 +56,6 @@ class SigninViewModel:
             switch result {
             case .success(let result):
                 user = result
-                break
             case .failure: break
             }
         }
