@@ -10,6 +10,7 @@ jobs:
     steps:
       - checkout
       - run: bundle install
+      - run: *install-gems
       - run:
           name: Fastlane
           command: cd ios; bundle exec fastlane $FASTLANE_LANE
