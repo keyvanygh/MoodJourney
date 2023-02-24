@@ -9,10 +9,10 @@ import SwiftUI
 
 struct CoordinatorView: View {
     @StateObject var coordinator: Coordinator = Coordinator()
-    var root: AppView = .Splash
+    var root: AppView = .splash
     var body: some View {
         NavigationStack(path: $coordinator.path) {
-            coordinator.build(view: .Splash)
+            coordinator.build(view: .splash)
                 .navigationDestination(for: AppView.self) { view in
                     coordinator.build(view: view)
                 }

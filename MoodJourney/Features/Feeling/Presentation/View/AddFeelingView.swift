@@ -32,7 +32,7 @@ struct AddFeelingView: View {
                                 }
                             }
                         }.onTapGesture {
-                            coordinator.push(.Reaction(feeling: feelingEntity))
+                            coordinator.push(.reaction(feeling: feelingEntity))
                         }
 
                     case .Sad:

@@ -24,7 +24,7 @@ struct ActivitiesView: View {
             Text("Profile")
                 .onTapGesture {
                     guard let user = vm.user else {return}
-                    coordinator.push(.Profile(user: user))
+                    coordinator.push(.profile(user: user))
                 }
             ShareLink(item: url)
             ShareLink(item: photo, preview: SharePreview("Big Ben", image: photo))
@@ -54,7 +54,7 @@ struct ActivitiesView: View {
                             .bold()
                     }
                     .onTapGesture {
-                        coordinator.push(.Feeling(activity: activity))
+                        coordinator.push(.feeling(activity: activity))
                     }
                 }
                 .listRowSeparator(.hidden)

@@ -20,21 +20,21 @@ class Coordinator: ObservableObject {
     @ViewBuilder
     func build(view: AppView) -> some View {
         switch view {
-        case .Activity(let user):
+        case .activity(let user):
             ActivitiesView(vm: ActivitiesViewModel(user: user))
-        case .Feeling(let activity):
+        case .feeling(let activity):
             AddFeelingView(vm: AddFeelingViewModel(activity: activity))
-        case .Profile(let user):
+        case .profile(let user):
             CheerleadersView(vm: CheerleadersViewModel(user: user))
-        case .Signin:
+        case .signin:
             SigninView()
-        case .Splash:
+        case .splash:
             SplashView()
-        case .Reaction(let feeling):
+        case .reaction(let feeling):
             ReactionView(selectedFeeling: feeling)
-        case .Home(let user):
+        case .home(let user):
             HomeView(vm: HomeViewModel(user: user))
-        case .TabbarView(let user):
+        case .tabbarView(let user):
             TabbarView(vm: TabbarViewModel(user: user))
         }
     }
