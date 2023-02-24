@@ -25,21 +25,21 @@ final class AddFeelingToActivityUsecaseTest: XCTestCase {
 //    }
     
     // MARK: Helpers:
-    final private func sut(repository : FeelingRepository) -> AddFeelingToActivityUsecase {
-        return AddFeelingToActivityUsecase(repository : repository)
-    }
-    
-    class MockedRepository : FeelingRepository {
-        let isSuccess : Bool
-        let successResponse = UserEntity(hasImage: true, userID: "ID")
-        
-        init(isSuccess: Bool) {
-            self.isSuccess = isSuccess
-        }
-        func addFeeling(activityID activity: String, feeling: MoodJourney.FeelingEntity) -> Result<Bool,Error> {
-            if isSuccess {return .success(true)}else{return.failure(AnyError.error)}
-        }
-    }
+//    final private func sut(repository : FeelingRepository) -> AddFeelingToActivityUsecase {
+//        return AddFeelingToActivityUsecase(repository : repository)
+//    }
+//    
+//    class MockedRepository : FeelingRepository {
+//        let isSuccess : Bool
+//        let successResponse = UserEntity(hasImage: true, userID: "ID")
+//        
+//        init(isSuccess: Bool) {
+//            self.isSuccess = isSuccess
+//        }
+//        func addFeeling(activityID activity: String, feeling: MoodJourney.FeelingEntity) -> Result<Bool,Error> {
+//            if isSuccess {return .success(true)}else{return.failure(AnyError.error)}
+//        }
+//    }
 }
 extension Result{
     var isSuccess: Bool {
