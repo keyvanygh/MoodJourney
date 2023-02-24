@@ -25,4 +25,5 @@ jobs:
 workflows:
   build-test-adhoc:
     jobs:
+      - swiftlint
       - build-and-test
