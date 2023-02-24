@@ -6,9 +6,6 @@ orbs:
   swiftlint: ngs/swiftlint@0.0.1
 
 jobs:
-  swiftlint:
-    docker:
-      - image: 'dantoml/swiftlint:latest'
   build-and-test:
     macos:
       xcode: 14.2.0
@@ -29,5 +26,4 @@ jobs:
 workflows:
   build-test-adhoc:
     jobs:
-      - swiftlint
       - build-and-test
