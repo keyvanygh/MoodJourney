@@ -1,10 +1,12 @@
 # .circleci/config.yml
 
 version: 2.1
+
 orbs:
   swiftlint: ngs/swiftlint@0.0.1
   
 jobs:
+
   build-and-test:
     macos:
       xcode: 14.2.0
