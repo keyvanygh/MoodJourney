@@ -1,9 +1,5 @@
 # .circleci/config.yml
-
 version: 2.1
-
-orbs:
-  swiftlint: ngs/swiftlint@0.0.1
 
 jobs:
 
@@ -24,15 +20,7 @@ jobs:
       - store_test_results:
           path: output/scan
           
-
-
-executors:
-  swiftlint:
-    docker:
-      - image: dantoml/swiftlint:latest
-
 workflows:
   build-test-adhoc:
     jobs:
-      - swiftlint
       - build-and-test
