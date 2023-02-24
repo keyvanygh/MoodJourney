@@ -16,7 +16,7 @@ struct AddFeelingView: View {
             List {
                 ForEach(vm.outputs.feelings) { feelingEntity in
                     switch feelingEntity.feelingType {
-                    case .Happy:
+                    case .happy:
                         VStack {
                             Text("😂")
                             HStack {
@@ -35,9 +35,9 @@ struct AddFeelingView: View {
                             coordinator.push(.reaction(feeling: feelingEntity))
                         }
 
-                    case .Sad:
+                    case .sad:
                         Text("😭")
-                    case .Depressed:
+                    case .depressed:
                         Text("😞")
                     }
                 }

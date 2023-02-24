@@ -18,7 +18,7 @@ struct SigninWithAppleButton: View {
             case .success(let authorization):
                 if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
                     vm.inputs.didSucceed3rdPartySignin(
-                        thirdParty: .Apple,
+                        thirdParty: .apple,
                         userID: credential.user,
                         hasImage: false,
                         name: credential.fullName?.givenName,
@@ -28,7 +28,7 @@ struct SigninWithAppleButton: View {
                 break
             case .failure(let error):
                 vm.inputs.didFailed3rdPartySignin(
-                    thirdParty: .Apple, error: error)
+                    thirdParty: .apple, error: error)
                 break
             }
         }

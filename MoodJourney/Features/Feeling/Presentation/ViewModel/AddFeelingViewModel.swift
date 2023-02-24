@@ -36,16 +36,13 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput, AddFeelingVie
 
         switch selectedFeelingIndex {
         case 1:
-            _ = addFeelingToActivityUsecase.execute(feeling: .Sad, message: "", to: activity)
-            break
+            _ = addFeelingToActivityUsecase.execute(feeling: .sad, message: "", to: activity)
         case 2:
-            _ = addFeelingToActivityUsecase.execute(feeling: .Happy, message: "", to: activity)
-            break
+            _ = addFeelingToActivityUsecase.execute(feeling: .happy, message: "", to: activity)
         case 3:
-            _ = addFeelingToActivityUsecase.execute(feeling: .Depressed, message: "", to: activity)
+            _ = addFeelingToActivityUsecase.execute(feeling: .depressed, message: "", to: activity)
 //            guard let user = try? signinLocalDatasource.signin(with: .ThirdParty(.Google), userID: "TaraAsghari",name: "Tara",imageURLString: "https://i.pinimg.com/280x280_RS/89/da/dd/89dadd1c53a779cbac42be8ae9b7aca2.jpg") else {return }
 //            _ = try? feelingLocalDatasource.addFeelingHelper(feeling: Feeling.Happy.rawValue, message: "awsome", imageURLString: "", user: user, to: activity)
-            break
         default:
             break
         }

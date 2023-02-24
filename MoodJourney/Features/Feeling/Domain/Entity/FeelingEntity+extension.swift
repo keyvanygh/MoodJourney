@@ -11,6 +11,6 @@ extension FeelingEntity {
     /// feelingTypeValue is a String stored in database representing the feeling rawValue
     /// feelingType is the enum from feelingTypeValue
     var feelingType: Feeling {
-        return Feeling(rawValue: self.feelingTypeValue ?? "") ?? .Happy
+        return Feeling(rawValue: self.feelingTypeValue ?? "") ?? .happy
     }
 }

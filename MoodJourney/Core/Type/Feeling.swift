@@ -8,5 +8,5 @@
 import Foundation
 
 enum Feeling: String {
-    case Happy, Sad, Depressed
+    case happy, sad, depressed
 }

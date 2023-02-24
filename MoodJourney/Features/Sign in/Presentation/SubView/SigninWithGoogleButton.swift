@@ -29,12 +29,12 @@ struct SigninWithGoogleButton: View {
             guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else {return}
             GIDSignIn.sharedInstance.signIn(withPresenting: presentingViewController) { signInResult, error in
                 if let error = error {
-                    vm.didFailed3rdPartySignin(thirdParty: .Google, error: error)
+                    vm.didFailed3rdPartySignin(thirdParty: .google, error: error)
                     return
                 }
                 guard let userID = signInResult?.user.userID else {return}
                 vm.inputs.didSucceed3rdPartySignin(
-                    thirdParty: .Google,
+                    thirdParty: .google,
                     userID: userID,
                     hasImage: signInResult?.user.profile?.hasImage ?? false,
                     name: signInResult?.user.profile?.name,
