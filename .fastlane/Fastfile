@@ -9,6 +9,10 @@ platform :ios do
   desc "Runs all the tests"
   lane :test do
     scan(include_simulator_logs: false)
+    swiftlint(
+       mode: :lint,
+       quiet: true,
+       strict: true)
   end
 
 end
