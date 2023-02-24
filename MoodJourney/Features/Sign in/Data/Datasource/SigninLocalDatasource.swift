@@ -14,7 +14,7 @@ class SigninLocalDatasource {
     @Injected(Container.kcm) var kcm: KeychainManager
     @Injected(Container.acm) var acm: AccountManager
     let userDefualts = UserDefaults.standard
-    
+
     /// Local Datasource Signin:
     /// - Parameters:
     ///   - with: signinType e.g: PhoneNumber, Apple
@@ -35,7 +35,7 @@ class SigninLocalDatasource {
         family: String? = "",
         imageURLString: String? = "") throws -> UserEntity {
             if let exsitingUser = try? fetchUser(byID: userID) {return exsitingUser}
-            guard let user = dbm.add(entity: .User) as? UserEntity else{throw(AnyError.error)}
+            guard let user = dbm.add(entity: .User) as? UserEntity else {throw(AnyError.error)}
             user.userID = userID
             user.name = name
             user.familyName = family
@@ -44,18 +44,18 @@ class SigninLocalDatasource {
             try? dbm.save()
             return user
         }
-    
+
     func fetchUser(byID userID: String) throws -> UserEntity {
         guard let user =  try (dbm.fetch(entity: .User) as? [UserEntity])?
-            .first(where: {$0.userID == userID}) else{throw(AnyError.error)}
+            .first(where: {$0.userID == userID}) else {throw(AnyError.error)}
         return user
     }
     func storeUserID(userID: String) throws {
-        guard let data = userID.data(using: .utf8) else{return}
+        guard let data = userID.data(using: .utf8) else {return}
         try kcm.save(data: data, to: .userID)
     }
     func storeAccessToken(accessToken: String) throws {
-        guard let data = accessToken.data(using: .utf8) else{return}
+        guard let data = accessToken.data(using: .utf8) else {return}
         try kcm.save(data: data, to: .accessToken)
     }
     func fetchUserID() throws -> String {
@@ -64,7 +64,7 @@ class SigninLocalDatasource {
     func fetchUserAccessToken() throws -> String {
         try kcm.read(.accessToken)
     }
-    func setUserToACM(user: UserEntity){
+    func setUserToACM(user: UserEntity) {
         acm.user = user
     }
 }

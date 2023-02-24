@@ -8,7 +8,7 @@
 import Foundation
 
 class FeelingLocalDatasource {
-    func addFeeling(_ feeling: FeelingDataModel){
-        //add
+    func addFeeling(_ feeling: FeelingDataModel) {
+        // add
     }
 }

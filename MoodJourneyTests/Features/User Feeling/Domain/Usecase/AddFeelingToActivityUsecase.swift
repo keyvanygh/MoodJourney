@@ -9,7 +9,7 @@ import XCTest
 @testable import MoodJourney
 
 final class AddFeelingToActivityUsecaseTest: XCTestCase {
-    
+
 //    func test_reciveSuccessResponse_whenAddingFeelingToActivitySucceed() {
 //        let mockedRepostiry = MockedRepository(isSuccess: true)
 //        let sut : AddFeelingToActivityUsecase = sut(repository: mockedRepostiry)
@@ -23,7 +23,7 @@ final class AddFeelingToActivityUsecaseTest: XCTestCase {
 //        print(result.isSuccess)
 //        XCTAssert(!result.isSuccess)
 //    }
-    
+
     // MARK: Helpers:
 //    final private func sut(repository : FeelingRepository) -> AddFeelingToActivityUsecase {
 //        return AddFeelingToActivityUsecase(repository : repository)
@@ -41,12 +41,12 @@ final class AddFeelingToActivityUsecaseTest: XCTestCase {
 //        }
 //    }
 }
-extension Result{
+extension Result {
     var isSuccess: Bool {
-        switch(self){
-        case .success(_):
+        switch self {
+        case .success:
             return true
-        case .failure(_):
+        case .failure:
             return false
         }
     }

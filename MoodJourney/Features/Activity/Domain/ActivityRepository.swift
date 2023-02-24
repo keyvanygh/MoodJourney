@@ -12,5 +12,5 @@ protocol ActivityRepository {
     /// - Returns:
     ///   - success: list of activities
     ///   - fail: ActivityError
-    func fetchActivities() -> Result<[ActivityEntity],Error>
+    func fetchActivities() -> Result<[ActivityEntity], Error>
 }

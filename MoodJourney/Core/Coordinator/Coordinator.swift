@@ -9,17 +9,17 @@ import SwiftUI
 
 class Coordinator: ObservableObject {
     @Published var path = NavigationPath()
-    
-    func push(_ view: AppView){
+
+    func push(_ view: AppView) {
         path.append(view)
     }
-    func pop(){
+    func pop() {
         path.removeLast()
     }
-    
+
     @ViewBuilder
-    func build(view: AppView) -> some View{
-        switch(view){
+    func build(view: AppView) -> some View {
+        switch view {
         case .Activity(let user):
             ActivitiesView(vm: ActivitiesViewModel(user: user))
         case .Feeling(let activity):

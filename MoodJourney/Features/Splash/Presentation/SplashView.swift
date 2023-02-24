@@ -12,19 +12,18 @@ struct SplashView: View {
     @StateObject var vm: SplashViewModel = SplashViewModel()
     var body: some View {
         Text("Splash")
-            .onAppear(){
+            .onAppear {
                 vm.inputs.viewDidAppear()
             }
             .onChange(of: vm.outputs.isUserSignedin) { isUserSignedin in
-                guard let isUserSignedin = isUserSignedin else{return}
-                if !isUserSignedin {coordinator.push(.Signin)}
-                else {
-                    guard let user = vm.outputs.user else{return}
+                guard let isUserSignedin = isUserSignedin else {return}
+                if !isUserSignedin {coordinator.push(.Signin)} else {
+                    guard let user = vm.outputs.user else {return}
                     coordinator.push(.TabbarView(user: user))
                 }
             }
     }
-    
+
 }
 
 struct SplashView_Previews: PreviewProvider {

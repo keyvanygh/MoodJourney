@@ -8,8 +8,8 @@
 import Foundation
 import Factory
 
-class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingViewModelOutput {
-    
+class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput, AddFeelingViewModelOutput {
+
     public var inputs: AddFeelingViewModelInput { return self }
     public var outputs: AddFeelingViewModelOutput { return self }
     @Injected(Container.addFeelingToActivityUsecase) private(set) var addFeelingToActivityUsecase
@@ -19,35 +19,34 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingView
     @Injected(Container.feelingLocalDatasource) private var  feelingLocalDatasource
 
     #endif
-    
-    private var activity: ActivityEntity? = nil
+
+    private var activity: ActivityEntity?
     init(activity: ActivityEntity) {
         self.activity = activity
     }
-    init(){}
-    
+    init() {}
+
     // MARK: - Outputs
     @Published private(set) var selectedFeelingIndex: Int = 0
     @Published private(set) var feelings: [FeelingEntity] = []
-    
-    
+
     // MARK: - Inputs
     func didTapSubmitButton() {
-        guard let activity = activity else{return}
+        guard let activity = activity else {return}
 
-        switch(selectedFeelingIndex){
+        switch selectedFeelingIndex {
         case 1:
-            _ = addFeelingToActivityUsecase.execute(feeling: .Sad,message: "",to: activity)
+            _ = addFeelingToActivityUsecase.execute(feeling: .Sad, message: "", to: activity)
             break
         case 2:
-            _ = addFeelingToActivityUsecase.execute(feeling: .Happy,message: "",to: activity)
+            _ = addFeelingToActivityUsecase.execute(feeling: .Happy, message: "", to: activity)
             break
         case 3:
-            _ = addFeelingToActivityUsecase.execute(feeling: .Depressed,message: "",to: activity)
+            _ = addFeelingToActivityUsecase.execute(feeling: .Depressed, message: "", to: activity)
 //            guard let user = try? signinLocalDatasource.signin(with: .ThirdParty(.Google), userID: "TaraAsghari",name: "Tara",imageURLString: "https://i.pinimg.com/280x280_RS/89/da/dd/89dadd1c53a779cbac42be8ae9b7aca2.jpg") else {return }
 //            _ = try? feelingLocalDatasource.addFeelingHelper(feeling: Feeling.Happy.rawValue, message: "awsome", imageURLString: "", user: user, to: activity)
             break
-        default :
+        default:
             break
         }
         fetchFeelings()
@@ -62,17 +61,17 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput,AddFeelingView
         case .success(let result):
             feelings = result
             break
-        case .failure(_): break
+        case .failure: break
         }
     }
 }
 protocol AddFeelingViewModelInput {
-    var addFeelingToActivityUsecase : AddFeelingToActivityUsecase { get }
+    var addFeelingToActivityUsecase: AddFeelingToActivityUsecase { get }
     func didSelectFeeling(atIndex index: Int)
     func didTapSubmitButton()
     func fetchFeelings()
 }
 protocol AddFeelingViewModelOutput {
-    var selectedFeelingIndex : Int { get }
+    var selectedFeelingIndex: Int { get }
     var feelings: [FeelingEntity] { get }
 }

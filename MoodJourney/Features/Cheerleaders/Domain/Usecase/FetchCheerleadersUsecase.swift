@@ -18,7 +18,7 @@ class FetchCheerleadersUsecase {
     /// - Returns:
     ///   - success: list of cheerers
     ///   - fail: CheerersError
-    func execute(of user: UserEntity) -> Result<[UserEntity],Error> {
+    func execute(of user: UserEntity) -> Result<[UserEntity], Error> {
         return repository.fetchCheerleaders(of: user)
     }
 }

@@ -7,12 +7,12 @@
 
 import Foundation
 
-class FetchUserIDFromKeychainUsecase{
+class FetchUserIDFromKeychainUsecase {
     let repository: SigninRepository
     init(repository: SigninRepository) {
         self.repository = repository
     }
-    func execute() -> Result<String,Error> {
+    func execute() -> Result<String, Error> {
         repository.fetchUserID()
     }
 }

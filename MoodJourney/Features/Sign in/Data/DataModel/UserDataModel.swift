@@ -8,4 +8,4 @@
 import Foundation
 
 /// will be used to decode remote datasource response
-struct UserDataModel{}
+struct UserDataModel {}

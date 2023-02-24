@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ReactionRepository {
-    func addReaction(gifURL: URL?,emoji: String?,to feeling: FeelingEntity) -> Result<ReactionEntity,Error>
+    func addReaction(gifURL: URL?, emoji: String?, to feeling: FeelingEntity) -> Result<ReactionEntity, Error>
 }

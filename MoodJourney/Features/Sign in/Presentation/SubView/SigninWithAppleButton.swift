@@ -9,13 +9,13 @@ import SwiftUI
 import AuthenticationServices
 
 struct SigninWithAppleButton: View {
-    @ObservedObject var vm : SigninViewModel
+    @ObservedObject var vm: SigninViewModel
     var body: some View {
         SignInWithAppleButton(.signIn) { request in
-            request.requestedScopes = [.fullName,.email]
+            request.requestedScopes = [.fullName, .email]
         } onCompletion: { result in
-            switch(result){
-            case .success(let authorization) :
+            switch result {
+            case .success(let authorization):
                 if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
                     vm.inputs.didSucceed3rdPartySignin(
                         thirdParty: .Apple,

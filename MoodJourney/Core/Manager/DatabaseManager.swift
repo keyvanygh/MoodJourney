@@ -11,7 +11,7 @@ import CoreData
 class DatabaseManager {
     let container = NSPersistentContainer(name: "LocalDatabase")
     init() {
-        container.loadPersistentStores { description, error in
+        container.loadPersistentStores { _, error in
             if let error = error {
                 print("Core Data failed to load: \(error.localizedDescription)")
             }
@@ -21,7 +21,7 @@ class DatabaseManager {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity.rawValue)
         return try container.viewContext.fetch(request)
     }
-    
+
     func add(entity: Entity) -> NSManagedObject {
         return NSEntityDescription.insertNewObject(forEntityName: entity.rawValue, into: container.viewContext)
     }
@@ -31,10 +31,9 @@ class DatabaseManager {
         try container.viewContext.save()
     }
 }
-public enum Entity: String{
+public enum Entity: String {
     case Activity = "ActivityEntity"
     case Feeling = "FeelingEntity"
     case User = "UserEntity"
     case Reaction = "ReactionEntity"
 }
-

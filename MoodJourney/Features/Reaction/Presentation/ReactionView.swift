@@ -12,7 +12,7 @@ struct ReactionView: View {
     var selectedFeeling: FeelingEntity?
     var body: some View {
         Button {
-            guard let feeling = selectedFeeling else{return}
+            guard let feeling = selectedFeeling else {return}
             print("HI IM HERE")
             vm.addReaction(gifURL: URL(string: ""), emoji: "", to: feeling)
         } label: {

@@ -12,7 +12,7 @@ class FetchHomeUsecase {
     init(repository: HomeRepository) {
         self.repository = repository
     }
-    func execute(for user: UserEntity) -> Result<[FeelingEntity],Error> {
+    func execute(for user: UserEntity) -> Result<[FeelingEntity], Error> {
         return repository.fetchHome(for: user)
     }
 }

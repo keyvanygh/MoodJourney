@@ -9,19 +9,19 @@ import SwiftUI
 import GoogleSignIn
 
 struct SigninWithGoogleButton: View {
-    @ObservedObject var vm : SigninViewModel
+    @ObservedObject var vm: SigninViewModel
     var body: some View {
-        HStack(spacing: 0 ){
+        HStack(spacing: 0 ) {
             Spacer()
-            HStack(spacing: 4){
+            HStack(spacing: 4) {
                 Image("google")
                     .resizable()
                     .frame(width: 15)
                     .frame(height: 15)
                 Text("Sign in with Google")
-                    .font(.system(size: 17,weight: .bold))
+                    .font(.system(size: 17, weight: .bold))
                     .foregroundColor(Color.black)
-                
+
             }
             Spacer()
         }
@@ -32,7 +32,7 @@ struct SigninWithGoogleButton: View {
                     vm.didFailed3rdPartySignin(thirdParty: .Google, error: error)
                     return
                 }
-                guard let userID = signInResult?.user.userID else{return}
+                guard let userID = signInResult?.user.userID else {return}
                 vm.inputs.didSucceed3rdPartySignin(
                     thirdParty: .Google,
                     userID: userID,
@@ -42,10 +42,10 @@ struct SigninWithGoogleButton: View {
                     imageURL: signInResult?.user.profile?.imageURL(withDimension: 256))
             }
         }
-        .frame(height : 44)
+        .frame(height: 44)
         .background(Color.white)
         .cornerRadius(6)
-        .padding(.horizontal,32)
+        .padding(.horizontal, 32)
     }
 }
 

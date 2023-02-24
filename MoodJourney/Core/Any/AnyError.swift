@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum AnyError : Error {
+enum AnyError: Error {
     case error
 }

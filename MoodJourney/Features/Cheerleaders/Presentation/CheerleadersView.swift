@@ -10,9 +10,9 @@ import SwiftUI
 struct CheerleadersView: View {
     @StateObject var vm: CheerleadersViewModel
     var body: some View {
-        VStack{
-            List{
-                ForEach(vm.outputs.cheerLeaders){ cheerleader in
+        VStack {
+            List {
+                ForEach(vm.outputs.cheerLeaders) { cheerleader in
                     Text(cheerleader.userID ?? "")
                 }
             }
@@ -26,13 +26,11 @@ struct CheerleadersView: View {
                     .padding(16)
                     .foregroundColor(.white)
 
-
-                
             }
 
             Text("\(vm.outputs.cheerLeaders.count) people are cheering you on")
         }
-        .onAppear(){
+        .onAppear {
 //            vm.addUser()
             vm.fetchCheerLeaders()
         }

@@ -12,48 +12,46 @@ class SplashViewModel:
     AnyViewModel,
     SplashViewModelInputs,
     SplashViewModelOutputs {
-    
-    public var inputs: SplashViewModelInputs  {return self}
-    public var outputs: SplashViewModelOutputs  {return self}
+
+    public var inputs: SplashViewModelInputs {return self}
+    public var outputs: SplashViewModelOutputs {return self}
 
     @Injected(Container.fetchUserByIDUsecase) private var fetchUserByIDUsecase
     @Injected(Container.fetchUserIDFromKeychainUsecase) private var fetchUserIDFromKeychainUsecase
-    
-    
-    //MARK: - Outputs:
-    
-    @Published private(set) var isUserSignedin: Bool? = nil
-    private(set) var user: UserEntity? = nil
-    
-    
-    //MARK: - Inputs:
+
+    // MARK: - Outputs:
+
+    @Published private(set) var isUserSignedin: Bool?
+    private(set) var user: UserEntity?
+
+    // MARK: - Inputs:
 
     func viewDidAppear() {
         if let userID = fetchUserID() {
             searchForExistingUser(with: userID)
-        }else{}
+        } else {}
     }
-    
+
     func fetchUserID() -> String? {
         let result = fetchUserIDFromKeychainUsecase.execute()
-        switch(result){
+        switch result {
         case.success(let userID):
             return userID
-        case .failure(_):break
+        case .failure: break
         }
         return nil
     }
     func searchForExistingUser(with userID: String) {
         let result = fetchUserByIDUsecase.execute(userID: userID)
-        switch(result){
+        switch result {
         case.success(let user):
             self.user = user
             isUserSignedin = true
             break
-        case .failure(_):
+        case .failure:
             break
         }
-        
+
     }
 }
 

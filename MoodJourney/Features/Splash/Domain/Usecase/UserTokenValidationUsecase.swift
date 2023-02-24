@@ -12,8 +12,8 @@ class FetchUserByIDUsecase {
     init(repository: SigninRepository) {
         self.repository = repository
     }
-    
-    func execute(userID: String) -> Result<UserEntity,Error>{
+
+    func execute(userID: String) -> Result<UserEntity, Error> {
         repository.fetchUser(byID: userID)
     }
 }

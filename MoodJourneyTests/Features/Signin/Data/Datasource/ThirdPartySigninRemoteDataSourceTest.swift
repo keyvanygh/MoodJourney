@@ -9,41 +9,41 @@ import XCTest
 @testable import MoodJourney
 
 final class ThirdPartySigninRemoteDataSourceTest: XCTestCase {
-    
-    func test_reciveUserDataModel_whenSinginSucceed(){
+
+    func test_reciveUserDataModel_whenSinginSucceed() {
         let mockedNetworkManager = MockedNetworkManager(willSucceed: true)
         let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
-        do{
+        do {
             _ = try sut.signin(
-            withThirdParty : ".Google",
+            withThirdParty: ".Google",
             userID: "String",
             hasImage: false,
             name: "String",
             family: "String?",
-            givenName:" String",
+            givenName: " String",
             imageURL: "String")
             XCTAssert(true)
 
-        }catch{
+        } catch {
             XCTFail()
 
         }
     }
-    func test_throwsError_whenSinginFailed(){
+    func test_throwsError_whenSinginFailed() {
         let mockedNetworkManager = MockedNetworkManager(willSucceed: false)
         let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
-        do{
+        do {
             _ = try sut.signin(
-            withThirdParty : ".Google",
+            withThirdParty: ".Google",
             userID: "String",
             hasImage: false,
             name: "String",
             family: "String?",
-            givenName:" String",
+            givenName: " String",
             imageURL: "String")
             XCTFail()
 
-        }catch{
+        } catch {
             XCTAssert(true)
 
         }
@@ -51,24 +51,23 @@ final class ThirdPartySigninRemoteDataSourceTest: XCTestCase {
 
 }
 
-class MockedNetworkManager : INetworkManager {
-    let willSucceed : Bool
+class MockedNetworkManager: INetworkManager {
+    let willSucceed: Bool
     init(willSucceed: Bool) {
         self.willSucceed = willSucceed
     }
-    
+
     func get() throws -> Data {
-        if willSucceed {return Data()}else{throw(AnyError.error)}
+        if willSucceed {return Data()} else {throw(AnyError.error)}
     }
     func post() throws -> Data {
-        if willSucceed {return Data()}else{throw(AnyError.error)}
+        if willSucceed {return Data()} else {throw(AnyError.error)}
     }
     func path() throws -> Data {
-        if willSucceed {return Data()}else{throw(AnyError.error)}
+        if willSucceed {return Data()} else {throw(AnyError.error)}
     }
     func delete() throws -> Data {
-        if willSucceed {return Data()}else{throw(AnyError.error)}
+        if willSucceed {return Data()} else {throw(AnyError.error)}
     }
-    
-    
+
 }

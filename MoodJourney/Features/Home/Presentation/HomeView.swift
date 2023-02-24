@@ -10,19 +10,19 @@ import Kingfisher
 struct HomeView: View {
     @StateObject var vm: HomeViewModel
     var body: some View {
-        List{
-            ForEach(vm.feelings){ feeling in
-                VStack(alignment: . leading){
-                    HStack(spacing: 8){
-                        if let imageURL = URL(string: feeling.user?.imageURLString ?? ""){
+        List {
+            ForEach(vm.feelings) { feeling in
+                VStack(alignment: . leading) {
+                    HStack(spacing: 8) {
+                        if let imageURL = URL(string: feeling.user?.imageURLString ?? "") {
                             KFImage(imageURL)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width:50,height: 50)
+                                .frame(width: 50, height: 50)
                                 .cornerRadius(25)
                         }
                         if let name = feeling.user?.name {
-                            VStack(alignment: .leading, spacing: 4){
+                            VStack(alignment: .leading, spacing: 4) {
                                 Text(name)
                                     .foregroundColor(.white)
                                     .font(.headline)
@@ -39,12 +39,12 @@ struct HomeView: View {
                         .frame(maxWidth: .infinity)
                         .frame(height: 400)
                         .cornerRadius(16)
-                    
+
                 }
-                
+
             }
-            
-        }.onAppear(){
+
+        }.onAppear {
             vm.fetchHomePage()
         }
     }

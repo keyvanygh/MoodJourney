@@ -10,7 +10,7 @@ import Foundation
 class CheerleadersRepositoryImp: CheerleadersRepository {
     /// local data source
     let lds: CheerleadersLocalDatasource
-    
+
     init(lds: CheerleadersLocalDatasource) {
         self.lds = lds
     }
@@ -21,10 +21,9 @@ class CheerleadersRepositoryImp: CheerleadersRepository {
     ///   - success: list of cheerers
     ///   - fail: CheerersError
     func fetchCheerleaders(of user: UserEntity) -> Result<[UserEntity], Error> {
-        do{
+        do {
             return .success(try lds.fetchCheerleaders(of: user))
-        }catch{return .failure(AnyError.error)}
+        } catch {return .failure(AnyError.error)}
     }
-    
-    
+
 }

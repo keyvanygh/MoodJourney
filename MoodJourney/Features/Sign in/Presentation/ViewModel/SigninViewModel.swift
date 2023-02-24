@@ -8,17 +8,17 @@
 import Foundation
 import Factory
 
-class SigninViewModel :
+class SigninViewModel:
     AnyViewModel,
     SigninViewModelInputs,
     SigninViewModelOutputs {
-    
+
     public var inputs: SigninViewModelInputs {return self}
     public var outputs: SigninViewModelOutputs {return self}
-    
+
     @Injected(Container.thirdPartySigninUsecase) var thirdPartySigninUsecase
-    @Published private(set) var user : UserEntity? = nil
-    
+    @Published private(set) var user: UserEntity?
+
     public func didSucceed3rdPartySignin(thirdParty: ThirdParty, userID: String, hasImage: Bool, name: String?, family: String?, imageURL: URL?) {
         signin(thirdParty: thirdParty,
                userID: userID,
@@ -26,11 +26,11 @@ class SigninViewModel :
                name: name,
                family: family, imageURL: imageURL)
     }
-    
+
     public func didFailed3rdPartySignin(thirdParty: ThirdParty, error: Error) {
-        //TODO: - implemnt fail
+        // TODO: - implemnt fail
     }
-    
+
     private func signin(
         thirdParty: ThirdParty,
         userID: String,
@@ -46,11 +46,11 @@ class SigninViewModel :
                 name: name,
                 family: family,
                 imageURL: imageURL)
-            switch(result){
+            switch result {
             case .success(let result):
                 user = result
                 break
-            case .failure(_): break
+            case .failure: break
             }
         }
 }
@@ -62,9 +62,8 @@ protocol SigninViewModelInputs {
         name: String?,
         family: String?,
         imageURL: URL?)
-    func didFailed3rdPartySignin(thirdParty: ThirdParty,error: Error)
+    func didFailed3rdPartySignin(thirdParty: ThirdParty, error: Error)
 }
 protocol SigninViewModelOutputs {
-    var user : UserEntity? {get}
+    var user: UserEntity? {get}
 }
-

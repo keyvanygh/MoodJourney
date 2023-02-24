@@ -12,34 +12,33 @@ class ActivitiesViewModel:
     AnyViewModel,
     ActivitiesViewModelInput,
     ActivitiesViewModelOutput {
-    
+
     public var inputs: ActivitiesViewModelInput { return self }
     public var outputs: ActivitiesViewModelOutput { return self }
     @Injected(Container.fetchActivitiesUsecase) private(set) var fetchActivitiesUsecase
-    var user: UserEntity? = nil
+    var user: UserEntity?
     init(user: UserEntity) {
         self.user = user
     }
-    //for preview
+    // for preview
     init() {}
-    
-    
+
     // MARK: - Outputs
     @Published var activities: [ActivityEntity] = []
-    
+
     // MARK: - Inputs
     func fetchActivies() {
         activities = []
         let result = fetchActivitiesUsecase.execute()
-        switch result{
+        switch result {
         case .success(let result):
             activities = result
-        case .failure(_):
+        case .failure:
             break
         }
     }
-    // MARK: -  HELPER
-    func addActivity(){
+    // MARK: - HELPER
+    func addActivity() {
         let lds = ActivityLocalDatasource()
         _ = try? lds.addActivity(
             activityID: "1",
@@ -49,15 +48,13 @@ class ActivitiesViewModel:
             activityID: "2",
             name: "Loose Weight",
             imageURLString: "https://i.kinja-img.com/gawker-media/image/upload/c_fit,f_auto,g_center,pg_1,q_60,w_1600/uztbf1vxh2eic9z01ojn.jpg")
-        
+
     }
 }
-protocol ActivitiesViewModelInput{
+protocol ActivitiesViewModelInput {
     func fetchActivies()
 }
 
-protocol ActivitiesViewModelOutput{
+protocol ActivitiesViewModelOutput {
     var activities: [ActivityEntity] { get }
 }
-
-

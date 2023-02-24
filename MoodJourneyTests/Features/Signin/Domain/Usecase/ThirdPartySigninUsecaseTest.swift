@@ -9,7 +9,7 @@ import XCTest
 @testable import MoodJourney
 
 final class ThirdPartySigninUsecaseTest: XCTestCase {
-    
+
 //    func test_reciveUserEntity_whenAuthIsSuccess() {
 //        let mockedRepostiry = MockedRepository(isSuccess: true)
 //        let sut = sut(repository: mockedRepostiry)
@@ -53,7 +53,7 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
 //    final private func sut(repository : ISigninRepository) -> ThirdPartySigninUsecase {
 //        return ThirdPartySigninUsecase(repository : repository)
 //    }
-    
+
 //    class MockedRepository : ISigninRepository{
 //        let isSuccess : Bool
 ////        let successResponse = UserEntity.self

@@ -8,7 +8,7 @@
 import Foundation
 
 class SigninRemoteDataSource {
-    private let nm : INetworkManager
+    private let nm: INetworkManager
     init(networkManager: INetworkManager) {
         self.nm = networkManager
     }
@@ -19,7 +19,7 @@ class SigninRemoteDataSource {
         name: String?,
         family: String?,
         givenName: String?,
-        imageURL: String) throws -> UserDataModel  {
+        imageURL: String) throws -> UserDataModel {
             _ =  try nm.post()
             return UserDataModel()
         }

@@ -14,5 +14,5 @@ protocol CheerleadersRepository {
     /// - Returns:
     ///   - success: list of cheerers
     ///   - fail: CheerersError
-    func fetchCheerleaders(of user: UserEntity) -> Result<[UserEntity],Error>
+    func fetchCheerleaders(of user: UserEntity) -> Result<[UserEntity], Error>
 }

@@ -10,18 +10,18 @@ import Kingfisher
 
 struct AddFeelingView: View {
     @EnvironmentObject private var coordinator: Coordinator
-    @StateObject var vm : AddFeelingViewModel
+    @StateObject var vm: AddFeelingViewModel
     var body: some View {
-        VStack{
-            List(){
-                ForEach(vm.outputs.feelings){ feelingEntity in
-                    switch(feelingEntity.feelingType){
+        VStack {
+            List {
+                ForEach(vm.outputs.feelings) { feelingEntity in
+                    switch feelingEntity.feelingType {
                     case .Happy:
-                        VStack{
+                        VStack {
                             Text("😂")
-                            HStack{
-                                if let reactions = feelingEntity.reactions?.allObjects as? [ReactionEntity]{
-                                    ForEach(reactions){ reaction in
+                            HStack {
+                                if let reactions = feelingEntity.reactions?.allObjects as? [ReactionEntity] {
+                                    ForEach(reactions) { reaction in
                                         if let emoji = reaction.emoji {
                                             KFAnimatedImage(URL(string: "https://media.giphy.com/media/o75ajIFH0QnQC3nCeD/giphy.gif"))
                                                 .frame(maxWidth: .infinity)
@@ -34,7 +34,7 @@ struct AddFeelingView: View {
                         }.onTapGesture {
                             coordinator.push(.Reaction(feeling: feelingEntity))
                         }
-                        
+
                     case .Sad:
                         Text("😭")
                     case .Depressed:
@@ -42,28 +42,28 @@ struct AddFeelingView: View {
                     }
                 }
             }
-            .onAppear(){
+            .onAppear {
                 vm.inputs.fetchFeelings()
             }
-            HStack(spacing: 16){
+            HStack(spacing: 16) {
                 ForEach((1...3), id: \.self) { i in
-                    ZStack{
-                        if i == 1{
+                    ZStack {
+                        if i == 1 {
                             Text("😭")
                                 .zIndex(2)
                                 .font(.system(.largeTitle))
                         }
-                        if i == 2{
+                        if i == 2 {
                             Text("😂")
                                 .zIndex(2)
                                 .font(.system(.largeTitle))
                         }
-                        if i == 3{
+                        if i == 3 {
                             Text("😞")
                                 .zIndex(2)
                                 .font(.system(.largeTitle))
                         }
-                        
+
                         RoundedRectangle(cornerRadius: 8)
                             .foregroundColor((i==vm.outputs.selectedFeelingIndex) ? Color.green : Color.gray.opacity(0.3) )
                             .frame(width: 80)
@@ -75,9 +75,8 @@ struct AddFeelingView: View {
                     }
                 }
             }
-            .padding(.horizontal,16)
-            
-            
+            .padding(.horizontal, 16)
+
             Button {
                 vm.didTapSubmitButton()
             } label: {
@@ -89,9 +88,9 @@ struct AddFeelingView: View {
                     .background(Color.green)
                     .cornerRadius(8)
             }
-            .padding(.horizontal,16)
+            .padding(.horizontal, 16)
         }
-        
+
     }
 }
 
@@ -101,10 +100,8 @@ struct AddFeelingView_Previews: PreviewProvider {
     }
 }
 
-
-
-//@available(iOS 13.0, *)
-//struct KFAnimatedImage: UIViewRepresentable {
+// @available(iOS 13.0, *)
+// struct KFAnimatedImage: UIViewRepresentable {
 //
 //    var resource: Resource?
 //
@@ -116,4 +113,4 @@ struct AddFeelingView_Previews: PreviewProvider {
 //        uiView.kf.setImage(with: resource)
 //    }
 //
-//}
+// }

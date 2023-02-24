@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AccountManager{
-    var user: UserEntity? = nil
+struct AccountManager {
+    var user: UserEntity?
     let currentUserFeeling = true
 }

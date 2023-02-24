@@ -8,7 +8,7 @@
 import Foundation
 
 class AddFeelingToActivityUsecase {
-    let repository : FeelingRepository
+    let repository: FeelingRepository
     init(repository: FeelingRepository) {
         self.repository = repository
     }
@@ -25,8 +25,8 @@ class AddFeelingToActivityUsecase {
         feeling: Feeling,
         message: String? = "",
         imageURLString: String? = "",
-        to activity: ActivityEntity) -> Result<Bool,Error> {
-            
+        to activity: ActivityEntity) -> Result<Bool, Error> {
+
             return repository.addFeeling(
                 feeling: feeling,
                 message: message,

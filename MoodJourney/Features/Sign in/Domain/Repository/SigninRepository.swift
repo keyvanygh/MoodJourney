@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SigninRepository {
-    
+
     /// Signin using  **3'rd Party**
     /// - Parameters:
     ///   - thirdParty: 3'rd party type e.g: .Google
@@ -23,11 +23,11 @@ protocol SigninRepository {
     ///   - fail: SigninError
     func signin(
         withThirdParty thirdParty: ThirdParty,
-        userID : String,hasImage : Bool?,
-        name : String?,family : String?,
-        givenName : String?,imageURL : URL?) -> Result<UserEntity,Error>
-    
-    func fetchUser(byID id: String) -> Result<UserEntity,Error>
-    func fetchUserID() -> Result<String,Error>
-    //TODO: - signin(withPhoneNumber)
+        userID: String, hasImage: Bool?,
+        name: String?, family: String?,
+        givenName: String?, imageURL: URL?) -> Result<UserEntity, Error>
+
+    func fetchUser(byID id: String) -> Result<UserEntity, Error>
+    func fetchUserID() -> Result<String, Error>
+    // TODO: - signin(withPhoneNumber)
 }

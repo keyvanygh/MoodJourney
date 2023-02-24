@@ -9,9 +9,9 @@ import Foundation
 import Factory
 
 class ActivityLocalDatasource {
-    
+
     @Injected(Container.dbm) private var dbm
-    
+
     /// add activity to db
     /// - Parameters:
     ///   - activityID: activity id
@@ -33,13 +33,13 @@ class ActivityLocalDatasource {
         try dbm.save()
         return entitiy
     }
-    
+
     /// fetch all activities
     /// - Returns:
     ///   - success: list of activities
     /// - Throws:
     ///   - ActivityError
-    func fetchActivies() throws -> [ActivityEntity]{
+    func fetchActivies() throws -> [ActivityEntity] {
         guard let result = try dbm.fetch(entity: .Activity) as? [ActivityEntity] else {throw(AnyError.error)}
         return result
     }

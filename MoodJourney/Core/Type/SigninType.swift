@@ -7,10 +7,9 @@
 
 import Foundation
 
-
 enum SigninType {
-    var rawValue:String {
-        switch(self){
+    var rawValue: String {
+        switch self {
         case .PhoneNumber: return "PhoneNumber"
         case .ThirdParty(let thirdParty):
             return thirdParty.rawValue
@@ -20,5 +19,5 @@ enum SigninType {
     case ThirdParty(ThirdParty)
 }
 enum ThirdParty: String {
-    case Google,Apple,Meta
+    case Google, Apple, Meta
 }

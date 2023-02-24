@@ -12,41 +12,40 @@ class CheerleadersViewModel:
     AnyViewModel,
     CheerleadersViewModelInputs,
     CheerleadersViewModelOutputs {
-    
+
     public var inputs: CheerleadersViewModelInputs {return self}
     public var outputs: CheerleadersViewModelOutputs {return self}
-    
+
     @LazyInjected(Container.fetchCheerleadersUsecase) private var fetchCheerleadersUsecase
     @LazyInjected(Container.cheerLeadersLocalDatasource) private var cheerLeadersLocalDatasource
-    
-    private var user: UserEntity? = nil
-    
+
+    private var user: UserEntity?
+
     init(user: UserEntity) {
         self.user = user
     }
-    init(){}
+    init() {}
     //
-    //MARK: - Outputs
+    // MARK: - Outputs
     @Published private(set) var cheerLeaders: [UserEntity] = []
-    
-    
-    //MARK: - Inputs
+
+    // MARK: - Inputs
     func fetchCheerLeaders() {
         guard let user = user else {return}
         let result = fetchCheerleadersUsecase.execute(of: user)
-        switch result{
+        switch result {
         case .success(let result):
             cheerLeaders = result
             break
-        case .failure(_):
+        case .failure:
             break
         }
-        
+
     }
-    
-    //    //MARK: - Helper
+
+    // MARK: - Helper
     var index = 0
-    func addCheerleader(){
+    func addCheerleader() {
 
 //        let names = ["Tara","Fati","Fateme","Atvando"]
 //        if index < names.count{
@@ -57,14 +56,12 @@ class CheerleadersViewModel:
 //        }
         fetchCheerLeaders()
 
-
     }
-    
-    
+
 }
 protocol CheerleadersViewModelInputs {
     func fetchCheerLeaders()
-    
+
 }
 protocol CheerleadersViewModelOutputs {
     var cheerLeaders: [UserEntity] {get}

@@ -8,11 +8,10 @@
 import Foundation
 
 class TabbarViewModel: ObservableObject {
-    
-    var user: UserEntity? = nil
-    init(user: UserEntity){
+
+    var user: UserEntity?
+    init(user: UserEntity) {
         self.user = user
     }
-    init(){}
+    init() {}
 }
-

@@ -18,17 +18,16 @@ protocol FeelingRepository {
     /// - Returns:
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
-    func addFeeling(feeling: Feeling,message: String?, imageURLString: String?,to activity: ActivityEntity) -> Result<Bool,Error>
-    
+    func addFeeling(feeling: Feeling, message: String?, imageURLString: String?, to activity: ActivityEntity) -> Result<Bool, Error>
+
     /// fetch feelings from activity with activityID
     /// - Parameters:
     ///   - activityID: activity id
     /// - Returns:
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
-    func fetchFeelings(fromActivity activityID: String) -> Result<[FeelingEntity],Error>
-    
-    
-    func fetchFeelings(of activity: ActivityEntity) -> Result<[FeelingEntity],Error>
+    func fetchFeelings(fromActivity activityID: String) -> Result<[FeelingEntity], Error>
+
+    func fetchFeelings(of activity: ActivityEntity) -> Result<[FeelingEntity], Error>
 
 }

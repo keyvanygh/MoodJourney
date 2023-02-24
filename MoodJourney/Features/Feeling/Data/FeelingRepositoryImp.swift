@@ -7,12 +7,12 @@
 
 import Foundation
 
-class FeelingRepositoryImp : FeelingRepository {
-    let lds : FeelingLocalDatasource
+class FeelingRepositoryImp: FeelingRepository {
+    let lds: FeelingLocalDatasource
     init(localDatasource: FeelingLocalDatasource) {
         self.lds = localDatasource
     }
-    
+
     /// add feeling to activity with acitivtyID
     /// - Parameters:
     ///   - activityID: activity id
@@ -26,7 +26,7 @@ class FeelingRepositoryImp : FeelingRepository {
         feeling: Feeling,
         message: String?,
         imageURLString: String?,
-        to activity: ActivityEntity) -> Result<Bool,Error> {
+        to activity: ActivityEntity) -> Result<Bool, Error> {
             do {
                 _ = try lds.addFeeling(
                     feeling: feeling.rawValue,
@@ -34,37 +34,37 @@ class FeelingRepositoryImp : FeelingRepository {
                     imageURLString: imageURLString,
                     to: activity)
                 return .success(true)
-            }catch(let error) {
+            } catch let error {
                 return .failure(error)
             }
         }
-    
+
     /// fetch feelings from activity with activityID
     /// - Parameters:
     ///   - activityID: activity id
     /// - Returns:
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
-    func fetchFeelings(fromActivity activityID: String) -> Result<[FeelingEntity],Error>{
+    func fetchFeelings(fromActivity activityID: String) -> Result<[FeelingEntity], Error> {
         do {
             let result = try lds.fetchFeelings(fromActivity: activityID)
             return .success(result)
-        }catch{
+        } catch {
             return .failure(AnyError.error)
         }
     }
-    
+
     /// fetch feelings from activity with activityID
     /// - Parameters:
     ///   - activityID: activity id
     /// - Returns:
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
-    func fetchFeelings(of activity: ActivityEntity) -> Result<[FeelingEntity],Error>{
+    func fetchFeelings(of activity: ActivityEntity) -> Result<[FeelingEntity], Error> {
         do {
             let result = try lds.fetchFeelings(of: activity)
             return .success(result)
-        }catch{
+        } catch {
             return .failure(AnyError.error)
         }
     }

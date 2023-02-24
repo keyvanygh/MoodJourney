@@ -7,16 +7,15 @@
 
 import SwiftUI
 
-
 struct TabbarView: View {
     @State private var selection = 0
     @StateObject var vm: TabbarViewModel
     @EnvironmentObject private var coordinator: Coordinator
-    
+
     var body: some View {
         TabView(selection: $selection) {
             if let user = vm.user {
-                
+
                 HomeView(vm: HomeViewModel(user: user))
                     .tabItem {
                         Text("Home")
@@ -32,7 +31,7 @@ struct TabbarView: View {
 
             }
             if let user = vm.user {
-                
+
                 CheerleadersView(vm: CheerleadersViewModel(user: user))
                     .tabItem {
                         Text("Profile")
@@ -50,4 +49,3 @@ struct TabbarView_Previews: PreviewProvider {
             .environmentObject(coordinator)
     }
 }
-

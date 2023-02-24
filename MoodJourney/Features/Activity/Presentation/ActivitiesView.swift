@@ -6,24 +6,24 @@
 //
 
 import SwiftUI
-//TODO: - User coordinator to navigate
+// TODO: - User coordinator to navigate
 struct ActivitiesView: View {
     @EnvironmentObject private var coordinator: Coordinator
-    @StateObject var vm : ActivitiesViewModel
+    @StateObject var vm: ActivitiesViewModel
     private let url = URL(string: "https://www.appcoda.com")!
     private let photo = Image("tt2")
 
     var body: some View {
-        
-        VStack(alignment: .leading,spacing: 4){
+
+        VStack(alignment: .leading, spacing: 4) {
             Text("Goals")
                 .font(.largeTitle)
                 .bold()
-                .padding(.leading,16)
-                .padding(.top,8)
+                .padding(.leading, 16)
+                .padding(.top, 8)
             Text("Profile")
                 .onTapGesture {
-                    guard let user = vm.user else{return}
+                    guard let user = vm.user else {return}
                     coordinator.push(.Profile(user: user))
                 }
             ShareLink(item: url)
@@ -31,9 +31,9 @@ struct ActivitiesView: View {
 
             List {
                 ForEach(vm.outputs.activities) { activity in
-                    ZStack(alignment: .center){
+                    ZStack(alignment: .center) {
                         if let url = URL(string: activity.imageURLString ?? "") {
-                            AsyncImage(url: url){ image in
+                            AsyncImage(url: url) { image in
                                 image
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
@@ -62,16 +62,14 @@ struct ActivitiesView: View {
             .listRowBackground(Color.clear)
             .listStyle(.plain)
         }
-        .onAppear(){
-            if vm.outputs.activities.count == 0{
+        .onAppear {
+            if vm.outputs.activities.count == 0 {
                 vm.inputs.fetchActivies()
             }
         }
-        
+
     }
 }
-
-
 
 struct ActivitiesView_Previews: PreviewProvider {
     static var previews: some View {

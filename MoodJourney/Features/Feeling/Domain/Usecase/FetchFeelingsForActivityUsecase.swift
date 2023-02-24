@@ -9,7 +9,7 @@ import Foundation
 
 /// fetch feelings submited in an activity
 class FetchFeelingsForActivityUsecase {
-    let repository : FeelingRepository
+    let repository: FeelingRepository
     init(repository: FeelingRepository) {
         self.repository = repository
     }
@@ -19,7 +19,7 @@ class FetchFeelingsForActivityUsecase {
     /// - Returns:
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
-    func execute(of activity: ActivityEntity) -> Result<[FeelingEntity],Error> {
+    func execute(of activity: ActivityEntity) -> Result<[FeelingEntity], Error> {
         return repository.fetchFeelings(of: activity)
     }
 }

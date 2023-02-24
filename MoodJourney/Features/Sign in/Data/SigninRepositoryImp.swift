@@ -7,18 +7,18 @@
 
 import Foundation
 
-class SigninRepositoryImp : SigninRepository {
-    
+class SigninRepositoryImp: SigninRepository {
+
     /// remote data source
-    fileprivate let rds : SigninRemoteDataSource
+    fileprivate let rds: SigninRemoteDataSource
     /// local data source
-    fileprivate let lds : SigninLocalDatasource
-    
+    fileprivate let lds: SigninLocalDatasource
+
     init(rds: SigninRemoteDataSource, lds: SigninLocalDatasource) {
         self.rds = rds
         self.lds = lds
     }
-    
+
     /// Signin using  **3'rd Party**
     /// - Parameters:
     ///   - thirdParty: 3'rd party type e.g: .Google
@@ -37,30 +37,30 @@ class SigninRepositoryImp : SigninRepository {
         name: String?, family: String?,
         givenName: String?,
         imageURL: URL?) -> Result<UserEntity, Error> {
-            do{
+            do {
                 let user = try lds.signin(
                     with: SigninType.ThirdParty(thirdParty),
                     userID: userID,
                     name: name,
                     family: family,
                     imageURLString: imageURL?.absoluteString ?? "")
-                guard let userID = user.userID else{throw(AnyError.error)}
+                guard let userID = user.userID else {throw(AnyError.error)}
                 try lds.storeUserID(userID: userID)
                 try lds.storeAccessToken(accessToken: userID)
                 lds.setUserToACM(user: user)
                 return .success(user)
             } catch {return .failure(AnyError.error)}
         }
-    
+
     func fetchUser(byID id: String) -> Result<UserEntity, Error> {
-        do{
+        do {
             let user = try lds.fetchUser(byID: id)
             return .success(user)
-        }catch{return .failure(AnyError.error)}
+        } catch {return .failure(AnyError.error)}
     }
     func fetchUserID() -> Result<String, Error> {
-        do{
+        do {
             return .success(try lds.fetchUserID())
-        }catch{return .failure(AnyError.error)}
+        } catch {return .failure(AnyError.error)}
     }
 }

@@ -11,11 +11,11 @@ import Factory
 class HomeViewModel: ObservableObject {
     @Injected(Container.fetchHomeUsecase) private var fetchHomeUsecase
     @Published var feelings: [FeelingEntity] = []
-    var user: UserEntity? = nil
+    var user: UserEntity?
     init(user: UserEntity? = nil) {
         self.user = user
     }
-    init(){}
+    init() {}
     func fetchHomePage() {
         guard let user = user else {return}
         let result = fetchHomeUsecase.execute(for: user)
@@ -24,7 +24,7 @@ class HomeViewModel: ObservableObject {
             self.feelings = feelings
             self.feelings.remove(at: 0)
             break
-        case . failure(_): break
+        case . failure: break
         }
     }
 }

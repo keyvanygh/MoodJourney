@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CoordinatorView: View {
-    @StateObject var coordinator : Coordinator = Coordinator()
+    @StateObject var coordinator: Coordinator = Coordinator()
     var root: AppView = .Splash
     var body: some View {
         NavigationStack(path: $coordinator.path) {
@@ -19,7 +19,7 @@ struct CoordinatorView: View {
         }
         .environmentObject(coordinator)
     }
-    
+
 }
 
 struct CoordinatorView_Previews: PreviewProvider {

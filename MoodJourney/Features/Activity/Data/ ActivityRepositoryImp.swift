@@ -8,7 +8,7 @@
 import Foundation
 
 class ActivityRepositoryImp: ActivityRepository {
-    let lds : ActivityLocalDatasource
+    let lds: ActivityLocalDatasource
     init(localDs: ActivityLocalDatasource) {
         self.lds = localDs
     }
@@ -16,8 +16,7 @@ class ActivityRepositoryImp: ActivityRepository {
     /// - Returns:
     ///   - success: list of activities
     ///   - fail: ActivityError
-    func fetchActivities() -> Result<[ActivityEntity],Error> {
-        do{return .success(try lds.fetchActivies())}
-        catch {return .failure(AnyError.error)}
+    func fetchActivities() -> Result<[ActivityEntity], Error> {
+        do {return .success(try lds.fetchActivies())} catch {return .failure(AnyError.error)}
     }
 }
