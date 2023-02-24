@@ -10,15 +10,6 @@ jobs:
   switlint:
   docker:
   - image: 'dantoml/swiftlint:latest'
-  description: Runs swiftlint
-  executor: swiftlint
-  steps:
-    - checkout
-    - run: swiftlint lint --reporter junit | tee result.xml
-    - store_artifacts:
-        path: result.xml
-    - store_test_results:
-        path: result.xml
   
   build-and-test:
     macos:
