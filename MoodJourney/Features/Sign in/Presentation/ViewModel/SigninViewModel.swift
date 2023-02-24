@@ -28,7 +28,6 @@ class SigninViewModel:
     }
 
     public func didFailed3rdPartySignin(thirdParty: ThirdParty, error: Error) {
-        // TODO: - implemnt fail
     }
 
     private func signin(

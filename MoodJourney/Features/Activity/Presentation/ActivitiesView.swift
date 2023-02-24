@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-// TODO: - User coordinator to navigate
+
 struct ActivitiesView: View {
     @EnvironmentObject private var coordinator: Coordinator
     @StateObject var vm: ActivitiesViewModel

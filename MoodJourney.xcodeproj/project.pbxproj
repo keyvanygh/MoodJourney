@@ -83,8 +83,6 @@
 		C0F05A96299FFCE400385F65 /* AddFeelingToActivityUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A8A299FF96E00385F65 /* AddFeelingToActivityUsecase.swift */; };
 		C0F05AA729A00FAD00385F65 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C0F05AA629A00FAD00385F65 /* GoogleSignInSwift */; };
 		C0F05AA929A0101100385F65 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C0F05AA829A0101100385F65 /* GoogleSignInSwift */; };
-		C0F05AAB29A013ED00385F65 /* MoodJourneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B83507299D2BF7001436E8 /* MoodJourneyUITests.swift */; };
-		C0F05AAC29A013ED00385F65 /* MoodJourneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B83509299D2BF7001436E8 /* MoodJourneyUITestsLaunchTests.swift */; };
 		C0F05AB129A0330A00385F65 /* AddFeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05AB029A0330A00385F65 /* AddFeelingView.swift */; };
 		C0F05AB329A0332400385F65 /* AddFeelingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05AB229A0332400385F65 /* AddFeelingViewModel.swift */; };
 		C0F05AB529A0624B00385F65 /* AnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05AB429A0624B00385F65 /* AnyViewModel.swift */; };
@@ -93,13 +91,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		C0B834FA299D2BF7001436E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C0B834E1299D2BF5001436E8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C0B834E8299D2BF5001436E8;
-			remoteInfo = MoodJourney;
-		};
-		C0B83504299D2BF7001436E8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C0B834E1299D2BF5001436E8 /* Project object */;
 			proxyType = 1;
@@ -118,7 +109,6 @@
 		C01A3756299DC9CA001856BA /* ThridPartySigninUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThridPartySigninUsecase.swift; sourceTree = "<group>"; };
 		C022FE3D29A1153500F53B0B /* MoodJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C022FE3E29A1153500F53B0B /* MoodJourneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodJourneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C022FE3F29A1153500F53B0B /* MoodJourneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodJourneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C022FE5229A11B0200F53B0B /* LocalDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalDatabase.xcdatamodel; sourceTree = "<group>"; };
 		C022FE5829A122E200F53B0B /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C022FE6229A19D8C00F53B0B /* ActivityLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalDatasource.swift; sourceTree = "<group>"; };
@@ -166,8 +156,6 @@
 		C0B834F0299D2BF7001436E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0B834F3299D2BF7001436E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C0B834FD299D2BF7001436E8 /* MoodJourneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyTests.swift; sourceTree = "<group>"; };
-		C0B83507299D2BF7001436E8 /* MoodJourneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyUITests.swift; sourceTree = "<group>"; };
-		C0B83509299D2BF7001436E8 /* MoodJourneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C0BF6BF329A70C8A0035111D /* HomeLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDatasource.swift; sourceTree = "<group>"; };
 		C0BF6BF529A716060035111D /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		C0C3173F299E8E1200B998C5 /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
@@ -211,13 +199,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0F05AA929A0101100385F65 /* GoogleSignInSwift in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C0B83500299D2BF7001436E8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,11 +764,9 @@
 			children = (
 				C0B834EB299D2BF5001436E8 /* MoodJourney */,
 				C0B834FC299D2BF7001436E8 /* MoodJourneyTests */,
-				C0B83506299D2BF7001436E8 /* MoodJourneyUITests */,
 				C0F05A9729A0001F00385F65 /* Frameworks */,
 				C022FE3D29A1153500F53B0B /* MoodJourney.app */,
 				C022FE3E29A1153500F53B0B /* MoodJourneyTests.xctest */,
-				C022FE3F29A1153500F53B0B /* MoodJourneyUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -821,15 +800,6 @@
 				C0B834FD299D2BF7001436E8 /* MoodJourneyTests.swift */,
 			);
 			path = MoodJourneyTests;
-			sourceTree = "<group>";
-		};
-		C0B83506299D2BF7001436E8 /* MoodJourneyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C0B83507299D2BF7001436E8 /* MoodJourneyUITests.swift */,
-				C0B83509299D2BF7001436E8 /* MoodJourneyUITestsLaunchTests.swift */,
-			);
-			path = MoodJourneyUITests;
 			sourceTree = "<group>";
 		};
 		C0BF6BF229A70C7E0035111D /* Datasource */ = {
@@ -1080,24 +1050,6 @@
 			productReference = C022FE3E29A1153500F53B0B /* MoodJourneyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C0B83502299D2BF7001436E8 /* MoodJourneyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C0B83513299D2BF7001436E8 /* Build configuration list for PBXNativeTarget "MoodJourneyUITests" */;
-			buildPhases = (
-				C0B834FF299D2BF7001436E8 /* Sources */,
-				C0B83500299D2BF7001436E8 /* Frameworks */,
-				C0B83501299D2BF7001436E8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C0B83505299D2BF7001436E8 /* PBXTargetDependency */,
-			);
-			name = MoodJourneyUITests;
-			productName = MoodJourneyUITests;
-			productReference = C022FE3F29A1153500F53B0B /* MoodJourneyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1112,10 +1064,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					C0B834F8299D2BF7001436E8 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = C0B834E8299D2BF5001436E8;
-					};
-					C0B83502299D2BF7001436E8 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = C0B834E8299D2BF5001436E8;
 					};
@@ -1141,7 +1089,6 @@
 			targets = (
 				C0B834E8299D2BF5001436E8 /* MoodJourney */,
 				C0B834F8299D2BF7001436E8 /* MoodJourneyTests */,
-				C0B83502299D2BF7001436E8 /* MoodJourneyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1157,13 +1104,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C0B834F7299D2BF7001436E8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C0B83501299D2BF7001436E8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1261,15 +1201,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C0B834FF299D2BF7001436E8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C0F05AAC29A013ED00385F65 /* MoodJourneyUITestsLaunchTests.swift in Sources */,
-				C0F05AAB29A013ED00385F65 /* MoodJourneyUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1277,11 +1208,6 @@
 			isa = PBXTargetDependency;
 			target = C0B834E8299D2BF5001436E8 /* MoodJourney */;
 			targetProxy = C0B834FA299D2BF7001436E8 /* PBXContainerItemProxy */;
-		};
-		C0B83505299D2BF7001436E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C0B834E8299D2BF5001436E8 /* MoodJourney */;
-			targetProxy = C0B83504299D2BF7001436E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1510,42 +1436,6 @@
 			};
 			name = Release;
 		};
-		C0B83514299D2BF7001436E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 597HX97FLJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MoodJourneyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MoodJourney;
-			};
-			name = Debug;
-		};
-		C0B83515299D2BF7001436E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 597HX97FLJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MoodJourneyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MoodJourney;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1572,15 +1462,6 @@
 			buildConfigurations = (
 				C0B83511299D2BF7001436E8 /* Debug */,
 				C0B83512299D2BF7001436E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C0B83513299D2BF7001436E8 /* Build configuration list for PBXNativeTarget "MoodJourneyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C0B83514299D2BF7001436E8 /* Debug */,
-				C0B83515299D2BF7001436E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
