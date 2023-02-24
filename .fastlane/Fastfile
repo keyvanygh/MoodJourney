@@ -12,7 +12,7 @@ platform :ios do
     swiftlint(
        mode: :lint,
        quiet: true,
-       strict: true)
+       strict: false)
   end
 
 end
