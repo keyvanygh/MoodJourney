@@ -6,6 +6,17 @@ orbs:
   swiftlint: ngs/swiftlint@0.0.1
 
 jobs:
+    swiftlint:
+    run:
+    description: Runs swiftlint
+    executor: swiftlint
+    steps:
+      - checkout
+      - run: swiftlint lint --reporter junit | tee result.xml
+      - store_artifacts:
+          path: result.xml
+      - store_test_results:
+          path: result.xml
   build-and-test:
     macos:
       xcode: 14.2.0
@@ -23,17 +34,7 @@ jobs:
       - store_test_results:
           path: output/scan
           
-    swiftlint:
-    run:
-    description: Runs swiftlint
-    executor: swiftlint
-    steps:
-      - checkout
-      - run: swiftlint lint --reporter junit | tee result.xml
-      - store_artifacts:
-          path: result.xml
-      - store_test_results:
-          path: result.xml
+
 
 executors:
   swiftlint:
