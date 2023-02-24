@@ -12,6 +12,7 @@ platform :ios do
     swiftlint(
        mode: :lint,
        quiet: true,
+       config_file: ".swiftlint-ci.yml",
        strict: false)
   end
 
