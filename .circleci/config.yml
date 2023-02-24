@@ -4,7 +4,8 @@ version: 2.1
 
 orbs:
   swiftlint: ngs/swiftlint@0.0.1
-  
+  docker:
+  - image: 'dantoml/swiftlint:latest'
 jobs:
   swiftlint:
   build-and-test:
