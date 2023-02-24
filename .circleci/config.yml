@@ -1,10 +1,5 @@
 # .circleci/config.yml
-  - &restore-gemfile-cache
-    key: v1-bundle-{{ checksum "ios/Gemfile.lock" }}--{{ arch }}
-  - &save-gemfile-cache
-    key: v1-bundle-{{ checksum "ios/Gemfile.lock" }}--{{ arch }}
-    paths:
-      - vendor/bundle
+
 version: 2.1
 jobs:
   build-and-test:
@@ -16,7 +11,7 @@ jobs:
     steps:
       - checkout
       - run: bundle install
-      - run: *install-gems
+      - run: install-gems
       - run:
           name: Fastlane
           command: cd ios; bundle exec fastlane $FASTLANE_LANE
