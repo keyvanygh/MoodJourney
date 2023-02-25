@@ -28,12 +28,7 @@ struct ActivitiesView: View {
                 }
             ShareLink(item: url)
             ShareLink(item: photo, preview: SharePreview("Big Ben", image: photo))
-            Button {
-//                vm.outputs.activities = []
-            } label: {
-                Text("\(vm.outputs.activities.count)")
-            }
-
+            
             List {
                 ForEach(vm.outputs.activities) { activity in
                     ZStack(alignment: .center) {
@@ -74,7 +69,6 @@ struct ActivitiesView: View {
         }
     }
 }
-import Factory
 
 struct ActivitiesView_Previews: PreviewProvider {
     static var testdbm = TestCoreData()
@@ -83,7 +77,7 @@ struct ActivitiesView_Previews: PreviewProvider {
     static var previews: some View {
         CoordinatorView(root: .activity(
             user: testdbm.previewUser!,
-            activities: [testdbm.previewActivity!]))
+            activities: testdbm.previewActivities))
             .environmentObject(coordinator)
     }
 }

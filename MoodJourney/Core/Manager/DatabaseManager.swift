@@ -54,12 +54,20 @@ class TestCoreData: CoreDataManager {
         activity.imageURLString = "https://www.healthkart.com/connect/wp-content/uploads/2021/03/banner.jpg"
         return user
     }()
-    lazy var previewActivity: ActivityEntity? = {
-        guard let activity = add(entity: .activity) as? ActivityEntity else {return nil}
+    lazy var previewActivities: [ActivityEntity] = {
+        var activities: [ActivityEntity] = []
+        guard let activity = add(entity: .activity) as? ActivityEntity else {return []}
         activity.name = "TestActivityName"
         activity.activityID = "TestActivityID"
         activity.imageURLString = "https://www.healthkart.com/connect/wp-content/uploads/2021/03/banner.jpg"
-        return activity
+        activities.append(activity)
+        guard let activity2 = add(entity: .activity) as? ActivityEntity else {return []}
+        activity2.name = "TestActivityName2"
+        activity2.activityID = "TestActivityID2"
+        activity2.imageURLString =
+        "https://www.healthcanal.com/wp-content/uploads/how-to-lose-weight-without-losing-boobs.jpg"
+        activities.append(activity2)
+        return activities
     }()
     lazy var container: NSPersistentContainer = {
         let description = NSPersistentStoreDescription()
