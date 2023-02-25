@@ -8,7 +8,8 @@
 import Foundation
 
 enum AppView: Hashable {
-    case activity(user: UserEntity)
+    case activity(user: UserEntity,
+                  activities: [ActivityEntity] = [])
     case feeling(activity: ActivityEntity)
     case profile(user: UserEntity)
     case signin
@@ -16,5 +17,5 @@ enum AppView: Hashable {
     case reaction(feeling: FeelingEntity)
     case home(user: UserEntity)
     case tabbarView(user: UserEntity)
-
+    
 }

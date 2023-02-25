@@ -18,8 +18,9 @@ class ActivitiesViewModel:
     @Injected(Container.fetchActivitiesUsecase)
     private(set) var fetchActivitiesUsecase
     var user: UserEntity?
-    init(user: UserEntity) {
+    init(user: UserEntity, activities: [ActivityEntity] = []) {
         self.user = user
+        self.activities = activities
     }
     // for preview
     init() {}

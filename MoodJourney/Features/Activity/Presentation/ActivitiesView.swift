@@ -28,6 +28,11 @@ struct ActivitiesView: View {
                 }
             ShareLink(item: url)
             ShareLink(item: photo, preview: SharePreview("Big Ben", image: photo))
+            Button {
+//                vm.outputs.activities = []
+            } label: {
+                Text("\(vm.outputs.activities.count)")
+            }
 
             List {
                 ForEach(vm.outputs.activities) { activity in
@@ -67,7 +72,6 @@ struct ActivitiesView: View {
                 vm.inputs.fetchActivies()
             }
         }
-
     }
 }
 import Factory
@@ -77,7 +81,9 @@ struct ActivitiesView_Previews: PreviewProvider {
     @StateObject static var coordinator = Coordinator()
     
     static var previews: some View {
-        CoordinatorView(root: .activity(user: testdbm.previewUser!))
+        CoordinatorView(root: .activity(
+            user: testdbm.previewUser!,
+            activities: [testdbm.previewActivity!]))
             .environmentObject(coordinator)
     }
 }

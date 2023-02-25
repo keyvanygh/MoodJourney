@@ -54,6 +54,13 @@ class TestCoreData: CoreDataManager {
         activity.imageURLString = "https://www.healthkart.com/connect/wp-content/uploads/2021/03/banner.jpg"
         return user
     }()
+    lazy var previewActivity: ActivityEntity? = {
+        guard let activity = add(entity: .activity) as? ActivityEntity else {return nil}
+        activity.name = "TestActivityName"
+        activity.activityID = "TestActivityID"
+        activity.imageURLString = "https://www.healthkart.com/connect/wp-content/uploads/2021/03/banner.jpg"
+        return activity
+    }()
     lazy var container: NSPersistentContainer = {
         let description = NSPersistentStoreDescription()
         description.url = URL(fileURLWithPath: "/dev/null")
