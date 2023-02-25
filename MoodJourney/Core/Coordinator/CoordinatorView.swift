@@ -12,7 +12,7 @@ struct CoordinatorView: View {
     var root: AppView = .splash
     var body: some View {
         NavigationStack(path: $coordinator.path) {
-            coordinator.build(view: .splash)
+            coordinator.build(view: root)
                 .navigationDestination(for: AppView.self) { view in
                     coordinator.build(view: view)
                 }

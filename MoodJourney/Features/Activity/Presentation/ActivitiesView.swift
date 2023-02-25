@@ -70,9 +70,14 @@ struct ActivitiesView: View {
 
     }
 }
+import Factory
 
 struct ActivitiesView_Previews: PreviewProvider {
+    static var testdbm = TestCoreData()
+    @StateObject static var coordinator = Coordinator()
+    
     static var previews: some View {
-        ActivitiesView(vm: ActivitiesViewModel())
+        CoordinatorView(root: .activity(user: testdbm.previewUser!))
+            .environmentObject(coordinator)
     }
 }

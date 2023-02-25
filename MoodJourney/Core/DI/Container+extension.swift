@@ -12,6 +12,7 @@ extension Container {
     static let dbm = Factory(scope: .singleton) {DatabaseManager() }
     static let kcm = Factory(scope: .singleton) {KeychainManager() }
     static let acm = Factory(scope: .singleton) {AccountManager() }
+    static let testdbm = Factory(scope: .singleton) {TestCoreData() }
     
     // MARK: - Feelings :
     static let feelingLocalDatasource = Factory {FeelingLocalDatasource() }
