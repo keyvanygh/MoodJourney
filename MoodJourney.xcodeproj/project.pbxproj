@@ -70,6 +70,7 @@
 		C0BF79B129AC613100A0A0A0 /* signin-fail.json in Resources */ = {isa = PBXBuildFile; fileRef = C0BF79B029AC613100A0A0A0 /* signin-fail.json */; };
 		C0BF79B329AC64E400A0A0A0 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF79B229AC64E400A0A0A0 /* String+extension.swift */; };
 		C0BF79B529AC65D500A0A0A0 /* Bool+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF79B429AC65D500A0A0A0 /* Bool+extension.swift */; };
+		C0BF79B829AC6D4700A0A0A0 /* UserDataModel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF79B729AC6D4700A0A0A0 /* UserDataModel+extension.swift */; };
 		C0C31740299E8E1200B998C5 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C3173F299E8E1200B998C5 /* AnyError.swift */; };
 		C0F05A55299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A54299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift */; };
 		C0F05A5A299EFF5100385F65 /* SigninRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A59299EFF5100385F65 /* SigninRemoteDataSource.swift */; };
@@ -168,6 +169,7 @@
 		C0BF79B029AC613100A0A0A0 /* signin-fail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "signin-fail.json"; sourceTree = "<group>"; };
 		C0BF79B229AC64E400A0A0A0 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		C0BF79B429AC65D500A0A0A0 /* Bool+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+extension.swift"; sourceTree = "<group>"; };
+		C0BF79B729AC6D4700A0A0A0 /* UserDataModel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDataModel+extension.swift"; sourceTree = "<group>"; };
 		C0C3173F299E8E1200B998C5 /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
 		C0F05A54299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRemoteDataSourceTest.swift; sourceTree = "<group>"; };
 		C0F05A59299EFF5100385F65 /* SigninRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRemoteDataSource.swift; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 		C0461178299ECD0D0050ABFD /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C0BF79B629AC6CEC00A0A0A0 /* DataModel */,
 				C0461179299ECD1D0050ABFD /* Datasource */,
 			);
 			path = Data;
@@ -839,6 +842,14 @@
 				C0BF79A929AC581600A0A0A0 /* MockNetworkManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		C0BF79B629AC6CEC00A0A0A0 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				C0BF79B729AC6D4700A0A0A0 /* UserDataModel+extension.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		C0F05A5F299F055D00385F65 /* Presentation */ = {
@@ -1250,6 +1261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0BF79B829AC6D4700A0A0A0 /* UserDataModel+extension.swift in Sources */,
 				C0F05A96299FFCE400385F65 /* AddFeelingToActivityUsecase.swift in Sources */,
 				C0F05A55299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift in Sources */,
 				C01A3753299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift in Sources */,

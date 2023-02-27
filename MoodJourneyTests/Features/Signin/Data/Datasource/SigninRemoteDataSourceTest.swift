@@ -28,7 +28,6 @@ final class SigninRemoteDataSourceTest: XCTestCase {
             
         } catch {
             XCTFail("failed")
-            
         }
     }
     func test_throwsError_whenSinginFailed() {
@@ -50,6 +49,25 @@ final class SigninRemoteDataSourceTest: XCTestCase {
         } catch {
             XCTAssert(true)
             
+        }
+    }
+    func test_reciveCurrectUserDataModel_whenSigninSucceed() {
+        let mockedNetworkManager = MockNetworkManager(
+            response:.signinSuccess,
+            willSucceed: true)
+        let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
+        do {
+            let response = try sut.signin(
+                withThirdParty: UserDataModel.template.signedWith,
+                userID: UserDataModel.template.userID,
+                hasImage:  Bool.dontcare,
+                name:  UserDataModel.template.name,
+                family:  UserDataModel.template.family,
+                givenName:  UserDataModel.template.family,
+                imageURL:  UserDataModel.template.imageURLString)
+            XCTAssertEqual(response.userID, UserDataModel.template.userID)
+        } catch {
+            XCTFail("failed")
         }
     }
 }

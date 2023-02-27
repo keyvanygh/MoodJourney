@@ -1,6 +1,6 @@
 {
-    status : "success",
-    data : {
+    "status" : "success",
+    "data" : {
         "userID" : "mockUserID",
         "name" : "mockUserName",
         "family" : "mockUserfamily",

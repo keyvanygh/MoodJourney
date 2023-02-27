@@ -19,8 +19,17 @@ class SigninRemoteDataSource {
         name: String?,
         family: String?,
         givenName: String?,
-        imageURL: String) throws -> UserDataModel {
-            _ =  try nm.post()
-            return UserDataModel()
+        imageURL: String?) throws -> UserDataModel {
+            let responseData =  try nm.post()
+            let responseModel =
+            try JSONDecoder().decode(
+                ServerResponse<UserDataModel>.self,
+                from: responseData)
+            return responseModel.data
         }
+}
+
+struct ServerResponse<T: Codable>: Codable {
+    let data: T
+    let status: String
 }

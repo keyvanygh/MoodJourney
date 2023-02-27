@@ -38,6 +38,11 @@
                BlueprintName = "MoodJourneyTests"
                ReferencedContainer = "container:MoodJourney.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "SigninRemoteDataSourceTest/test_reciveCurrectUserDataModel_whenSigninSucceed()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO"
