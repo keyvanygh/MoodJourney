@@ -1,2 +1,11 @@
-
-
+{
+    status : "success",
+    data : {
+        "userID" : "mockUserID",
+        "name" : "mockUserName",
+        "family" : "mockUserfamily",
+        "userID" : "mockUserID",
+        "imageURLString" : "mockUserImageUrl",
+        "signedWith" : "Google"
+     }
+}
