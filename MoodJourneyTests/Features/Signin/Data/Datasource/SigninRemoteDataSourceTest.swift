@@ -11,7 +11,7 @@ import XCTest
 final class SigninRemoteDataSourceTest: XCTestCase {
 
     func test_reciveUserDataModel_whenSinginSucceed() {
-        let mockedNetworkManager = MockedNetworkManager(willSucceed: true)
+        let mockedNetworkManager = MockNetworkManager(,willSucceed: true)
         let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
         do {
             _ = try sut.signin(
@@ -30,7 +30,7 @@ final class SigninRemoteDataSourceTest: XCTestCase {
         }
     }
     func test_throwsError_whenSinginFailed() {
-        let mockedNetworkManager = MockedNetworkManager(willSucceed: false)
+        let mockedNetworkManager = MockNetworkManager(willSucceed: false)
         let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
         do {
             _ = try sut.signin(
@@ -48,28 +48,4 @@ final class SigninRemoteDataSourceTest: XCTestCase {
 
         }
     }
-}
-
-class MockedNetworkManager: NetworkManager {
-    let willSucceed: Bool
-    let successResponseJson: String = ""
-    let errorResponseJson: String = ""
-    
-    init(willSucceed: Bool) {
-        self.willSucceed = willSucceed
-    }
-
-    func get() throws -> Data {
-        if willSucceed {return Data()} else {throw(AnyError.error)}
-    }
-    func post() throws -> Data {
-        if willSucceed {return Data()} else {throw(AnyError.error)}
-    }
-    func path() throws -> Data {
-        if willSucceed {return Data()} else {throw(AnyError.error)}
-    }
-    func delete() throws -> Data {
-        if willSucceed {return Data()} else {throw(AnyError.error)}
-    }
-
 }

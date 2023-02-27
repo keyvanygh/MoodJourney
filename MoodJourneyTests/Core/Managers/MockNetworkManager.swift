@@ -10,11 +10,11 @@ import Foundation
 
 class MockNetworkManager: NetworkManager {
     
-    let response: Data?
+    let response: Response?
     let willSucceed: Bool
     
     init(
-        response: Data? = nil,
+        response: Response? = nil,
         willSucceed: Bool) {
             self.response = response
             self.willSucceed = willSucceed
@@ -31,7 +31,6 @@ class MockNetworkManager: NetworkManager {
     
     func path() throws -> Data {
         return try handleRequest()
-
     }
     
     func delete() throws -> Data {
@@ -41,7 +40,13 @@ class MockNetworkManager: NetworkManager {
     
     private func handleRequest() throws -> Data {
         guard willSucceed else {throw(AnyError.error)}
-        guard let response = response else {throw(AnyError.error)}
+        guard let url = Bundle(for: MockNetworkManager.self).url(forResource: response?.rawValue, withExtension: "json") else {throw(AnyError.error)}
+        guard let response = try? Data(contentsOf: url) else {throw(AnyError.error)}
+        
         return response
     }
+}
+enum Response: String{
+    case signinSuccess
+    case signinFailed
 }
