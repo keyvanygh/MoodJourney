@@ -10,7 +10,7 @@ import XCTest
 
 final class SigninRemoteDataSourceTest: XCTestCase {
     
-    func test_reciveUserDataModel_whenSinginSucceed() {
+    func test_doNotThrow_whenSinginSucceed() {
         let mockedNetworkManager = MockNetworkManager(
             response:.signinSuccess,
             willSucceed: true)

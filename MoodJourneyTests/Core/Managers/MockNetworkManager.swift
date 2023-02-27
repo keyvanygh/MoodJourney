@@ -52,5 +52,5 @@ class MockNetworkManager: NetworkManager {
 }
 enum Response: String {
     case signinSuccess = "signin-success"
-    case signinFailed
+    case signinFailed = "signin-fail"
 }
