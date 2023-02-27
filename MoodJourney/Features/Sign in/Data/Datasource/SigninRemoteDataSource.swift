@@ -15,12 +15,20 @@ class SigninRemoteDataSource {
     func signin(
         withThirdParty thirdParty: String,
         userID: String,
-        hasImage: Bool? = false,
+        hasImage: Bool = false,
         name: String? = "",
         family: String? = "",
         givenName: String? = "",
         imageURL: String? = "") throws -> UserDataModel {
-            let responseData =  try nm.post()
+            let params:[String:Any] = [
+                "userID":userID,
+                "signedWith":thirdParty,
+                "name":name,
+                "family":family,
+                "givenName":givenName,
+                "imageURLString":imageURL
+            ]
+            let responseData =  try nm.post(path: "signin", body: params)
             let responseModel =
             try JSONDecoder().decode(
                 ServerResponse<UserDataModel>.self,

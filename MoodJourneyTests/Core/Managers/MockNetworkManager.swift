@@ -12,6 +12,7 @@ class MockNetworkManager: NetworkManager {
     
     let response: Response?
     let willSucceed: Bool
+    var calledFucntion: Function = .none
     
     init(
         response: Response? = nil,
@@ -24,12 +25,17 @@ class MockNetworkManager: NetworkManager {
         return try handleRequest()
     }
     
-    func post() throws -> Data {
-        return try handleRequest()
-        
-    }
+    func post(
+        path: String,
+        body: [String:Any]? = nil) throws -> Data {
+            calledFucntion = .post(path: path, body: body)
+            return try handleRequest()
+            
+        }
     
-    func path() throws -> Data {
+    func patch(
+        path: String,
+        body: NSDictionary? = nil) throws -> Data {
         return try handleRequest()
     }
     
@@ -53,4 +59,9 @@ class MockNetworkManager: NetworkManager {
 enum Response: String {
     case signinSuccess = "signin-success"
     case signinFailed = "signin-fail"
+}
+enum Function {
+    case none
+    case get
+    case post(path: String,body: [String:Any]?)
 }

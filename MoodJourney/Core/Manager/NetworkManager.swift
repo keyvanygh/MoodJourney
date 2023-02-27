@@ -10,8 +10,8 @@ import Foundation
 protocol NetworkManager {
 
     func get() throws -> Data
-    func post() throws -> Data
-    func path() throws -> Data
+    func post(path: String,body: [String:Any]?) throws -> Data
+    func patch(path: String,body: NSDictionary?) throws -> Data
     func delete() throws -> Data
 }
 
@@ -24,10 +24,10 @@ class NetworkManagerImp: NetworkManager {
     func get() throws -> Data {
         if willSucceed {return Data()} else {throw(AnyError.error)}
     }
-    func post() throws -> Data {
+    func post(path: String, body: [String:Any]? = nil) throws -> Data {
         if willSucceed {return Data()} else {throw(AnyError.error)}
     }
-    func path() throws -> Data {
+    func patch(path: String, body: NSDictionary?) throws -> Data {
         if willSucceed {return Data()} else {throw(AnyError.error)}
     }
     func delete() throws -> Data {

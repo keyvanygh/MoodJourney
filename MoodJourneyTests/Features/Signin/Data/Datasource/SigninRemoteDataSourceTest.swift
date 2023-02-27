@@ -41,6 +41,32 @@ final class SigninRemoteDataSourceTest: XCTestCase {
             
         }
     }
+    func test_doseSendCurrectParamsToNetworkManager() {
+        let mockedNetworkManager = MockNetworkManager(
+            response:.signinSuccess,
+            willSucceed: true)
+        let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
+        do {
+            let response = try sut.signin(
+                withThirdParty: UserDataModel.template.signedWith,
+                userID: UserDataModel.template.userID,
+                hasImage:  Bool.dontcare,
+                name:  UserDataModel.template.name,
+                family:  UserDataModel.template.family,
+                givenName:  UserDataModel.template.family,
+                imageURL:  UserDataModel.template.imageURLString)
+            switch (mockedNetworkManager.calledFucntion) {
+            case .post(let path, let body):
+
+                XCTAssertEqual(path, "signin")
+                XCTAssertEqual(body?["userID"] as? String ,UserDataModel.template.userID)
+            default:
+                XCTFail("failed")
+            }
+        } catch {
+            XCTFail("failed")
+        }
+    }
     func test_reciveCurrectUserDataModel_whenSigninSucceed() {
         let mockedNetworkManager = MockNetworkManager(
             response:.signinSuccess,
