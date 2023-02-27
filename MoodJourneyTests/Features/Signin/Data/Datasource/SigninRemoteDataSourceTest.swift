@@ -18,12 +18,7 @@ final class SigninRemoteDataSourceTest: XCTestCase {
         do {
             _ = try sut.signin(
                 withThirdParty: String.dontcare,
-                userID: String.dontcare,
-                hasImage: Bool.dontcare,
-                name: String.dontcare,
-                family: String.dontcare,
-                givenName: String.dontcare,
-                imageURL: String.dontcare)
+                userID: String.dontcare)
             XCTAssert(true)
             
         } catch {
@@ -38,12 +33,7 @@ final class SigninRemoteDataSourceTest: XCTestCase {
         do {
             _ = try sut.signin(
                 withThirdParty: String.dontcare,
-                userID: String.dontcare,
-                hasImage: Bool.dontcare,
-                name: String.dontcare,
-                family: String.dontcare,
-                givenName: String.dontcare,
-                imageURL: String.dontcare)
+                userID: String.dontcare)
             XCTFail("Failed")
             
         } catch {
