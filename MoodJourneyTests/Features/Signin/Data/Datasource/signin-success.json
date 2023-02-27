@@ -3,9 +3,9 @@
     "data" : {
         "userID" : "mockUserID",
         "name" : "mockUserName",
-        "family" : "mockUserfamily",
+        "family" : "mockUserFamily",
         "userID" : "mockUserID",
-        "imageURLString" : "mockUserImageUrl",
-        "signedWith" : "Google"
+        "imageURLString" : "mockUserImageURLString",
+        "signedWith" : "Apple"
      }
 }
