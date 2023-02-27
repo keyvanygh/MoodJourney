@@ -52,6 +52,9 @@ final class SigninRemoteDataSourceTest: XCTestCase {
 
 class MockedNetworkManager: NetworkManager {
     let willSucceed: Bool
+    let successResponseJson: String = ""
+    let errorResponseJson: String = ""
+    
     init(willSucceed: Bool) {
         self.willSucceed = willSucceed
     }

@@ -65,8 +65,11 @@
 		C0BF6BF429A70C8A0035111D /* HomeLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF6BF329A70C8A0035111D /* HomeLocalDatasource.swift */; };
 		C0BF6BF629A716060035111D /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF6BF529A716060035111D /* AccountManager.swift */; };
 		C0BF6BFB29A86B560035111D /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = C0BF6BFA29A86B560035111D /* Factory */; };
+		C0BF79AA29AC581600A0A0A0 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF79A929AC581600A0A0A0 /* MockNetworkManager.swift */; };
+		C0BF79AC29AC5C8E00A0A0A0 /* signin-success.json in Resources */ = {isa = PBXBuildFile; fileRef = C0BF79AB29AC5C8E00A0A0A0 /* signin-success.json */; };
+		C0BF79B129AC613100A0A0A0 /* signin-fail.json in Resources */ = {isa = PBXBuildFile; fileRef = C0BF79B029AC613100A0A0A0 /* signin-fail.json */; };
 		C0C31740299E8E1200B998C5 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C3173F299E8E1200B998C5 /* AnyError.swift */; };
-		C0F05A55299EEF3A00385F65 /* ThirdPartySigninRemoteDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A54299EEF3A00385F65 /* ThirdPartySigninRemoteDataSourceTest.swift */; };
+		C0F05A55299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A54299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift */; };
 		C0F05A5A299EFF5100385F65 /* SigninRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A59299EFF5100385F65 /* SigninRemoteDataSource.swift */; };
 		C0F05A5C299F00B700385F65 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A5B299F00B700385F65 /* UserDataModel.swift */; };
 		C0F05A5E299F032700385F65 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A5D299F032700385F65 /* NetworkManager.swift */; };
@@ -158,8 +161,11 @@
 		C0B834FD299D2BF7001436E8 /* MoodJourneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyTests.swift; sourceTree = "<group>"; };
 		C0BF6BF329A70C8A0035111D /* HomeLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDatasource.swift; sourceTree = "<group>"; };
 		C0BF6BF529A716060035111D /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		C0BF79A929AC581600A0A0A0 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		C0BF79AB29AC5C8E00A0A0A0 /* signin-success.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "signin-success.json"; sourceTree = "<group>"; };
+		C0BF79B029AC613100A0A0A0 /* signin-fail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "signin-fail.json"; sourceTree = "<group>"; };
 		C0C3173F299E8E1200B998C5 /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
-		C0F05A54299EEF3A00385F65 /* ThirdPartySigninRemoteDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartySigninRemoteDataSourceTest.swift; sourceTree = "<group>"; };
+		C0F05A54299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRemoteDataSourceTest.swift; sourceTree = "<group>"; };
 		C0F05A59299EFF5100385F65 /* SigninRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRemoteDataSource.swift; sourceTree = "<group>"; };
 		C0F05A5B299F00B700385F65 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		C0F05A5D299F032700385F65 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -621,7 +627,9 @@
 		C0461179299ECD1D0050ABFD /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
-				C0F05A54299EEF3A00385F65 /* ThirdPartySigninRemoteDataSourceTest.swift */,
+				C0BF79AB29AC5C8E00A0A0A0 /* signin-success.json */,
+				C0BF79B029AC613100A0A0A0 /* signin-fail.json */,
+				C0F05A54299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -796,6 +804,7 @@
 		C0B834FC299D2BF7001436E8 /* MoodJourneyTests */ = {
 			isa = PBXGroup;
 			children = (
+				C0BF79A729AC57DD00A0A0A0 /* Core */,
 				C01A374E299DB8C8001856BA /* Features */,
 				C0B834FD299D2BF7001436E8 /* MoodJourneyTests.swift */,
 			);
@@ -808,6 +817,22 @@
 				C0BF6BF329A70C8A0035111D /* HomeLocalDatasource.swift */,
 			);
 			path = Datasource;
+			sourceTree = "<group>";
+		};
+		C0BF79A729AC57DD00A0A0A0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C0BF79A829AC57E200A0A0A0 /* Managers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C0BF79A829AC57E200A0A0A0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C0BF79A929AC581600A0A0A0 /* MockNetworkManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		C0F05A5F299F055D00385F65 /* Presentation */ = {
@@ -1108,6 +1133,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0BF79AC29AC5C8E00A0A0A0 /* signin-success.json in Resources */,
+				C0BF79B129AC613100A0A0A0 /* signin-fail.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1216,9 +1243,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0F05A96299FFCE400385F65 /* AddFeelingToActivityUsecase.swift in Sources */,
-				C0F05A55299EEF3A00385F65 /* ThirdPartySigninRemoteDataSourceTest.swift in Sources */,
+				C0F05A55299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift in Sources */,
 				C01A3753299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift in Sources */,
 				C0B834FE299D2BF7001436E8 /* MoodJourneyTests.swift in Sources */,
+				C0BF79AA29AC581600A0A0A0 /* MockNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
