@@ -26,7 +26,7 @@ class MockNetworkManager: NetworkManager {
     
     func post() throws -> Data {
         return try handleRequest()
-
+        
     }
     
     func path() throws -> Data {
@@ -35,13 +35,17 @@ class MockNetworkManager: NetworkManager {
     
     func delete() throws -> Data {
         return try handleRequest()
-
+        
     }
     
     private func handleRequest() throws -> Data {
         guard willSucceed else {throw(AnyError.error)}
-        guard let url = Bundle(for: MockNetworkManager.self).url(forResource: response?.rawValue, withExtension: "json") else {throw(AnyError.error)}
-        guard let response = try? Data(contentsOf: url) else {throw(AnyError.error)}
+        guard let url = Bundle(for: MockNetworkManager.self)
+            .url(forResource: response?.rawValue,
+                 withExtension: "json")
+        else {throw(AnyError.error)}
+        guard let response = try? Data(contentsOf: url)
+        else {throw(AnyError.error)}
         
         return response
     }
