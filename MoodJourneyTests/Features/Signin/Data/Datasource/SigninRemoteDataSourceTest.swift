@@ -9,43 +9,47 @@ import XCTest
 @testable import MoodJourney
 
 final class SigninRemoteDataSourceTest: XCTestCase {
-
+    
     func test_reciveUserDataModel_whenSinginSucceed() {
-        let mockedNetworkManager = MockNetworkManager(,willSucceed: true)
+        let mockedNetworkManager = MockNetworkManager(
+            response:.signinSuccess,
+            willSucceed: true)
         let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
         do {
             _ = try sut.signin(
-            withThirdParty: ".Google",
-            userID: "String",
-            hasImage: false,
-            name: "String",
-            family: "String?",
-            givenName: " String",
-            imageURL: "String")
+                withThirdParty: ".Google",
+                userID: "String",
+                hasImage: false,
+                name: "String",
+                family: "String?",
+                givenName: " String",
+                imageURL: "String")
             XCTAssert(true)
-
+            
         } catch {
             XCTFail("failed")
-
+            
         }
     }
     func test_throwsError_whenSinginFailed() {
-        let mockedNetworkManager = MockNetworkManager(willSucceed: false)
+        let mockedNetworkManager = MockNetworkManager(
+            response:.signinFailed,
+            willSucceed: false)
         let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
         do {
             _ = try sut.signin(
-            withThirdParty: ".Google",
-            userID: "String",
-            hasImage: false,
-            name: "String",
-            family: "String?",
-            givenName: " String",
-            imageURL: "String")
+                withThirdParty: ".Google",
+                userID: "String",
+                hasImage: false,
+                name: "String",
+                family: "String?",
+                givenName: " String",
+                imageURL: "String")
             XCTFail("Failed")
-
+            
         } catch {
             XCTAssert(true)
-
+            
         }
     }
 }
