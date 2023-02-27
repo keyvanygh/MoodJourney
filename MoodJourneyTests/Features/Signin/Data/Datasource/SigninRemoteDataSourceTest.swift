@@ -17,13 +17,13 @@ final class SigninRemoteDataSourceTest: XCTestCase {
         let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
         do {
             _ = try sut.signin(
-                withThirdParty: ".Google",
-                userID: "String",
-                hasImage: false,
-                name: "String",
-                family: "String?",
-                givenName: " String",
-                imageURL: "String")
+                withThirdParty: String.dontcare,
+                userID: String.dontcare,
+                hasImage: Bool.dontcare,
+                name: String.dontcare,
+                family: String.dontcare,
+                givenName: String.dontcare,
+                imageURL: String.dontcare)
             XCTAssert(true)
             
         } catch {
@@ -38,13 +38,13 @@ final class SigninRemoteDataSourceTest: XCTestCase {
         let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
         do {
             _ = try sut.signin(
-                withThirdParty: ".Google",
-                userID: "String",
-                hasImage: false,
-                name: "String",
-                family: "String?",
-                givenName: " String",
-                imageURL: "String")
+                withThirdParty: String.dontcare,
+                userID: String.dontcare,
+                hasImage: Bool.dontcare,
+                name: String.dontcare,
+                family: String.dontcare,
+                givenName: String.dontcare,
+                imageURL: String.dontcare)
             XCTFail("Failed")
             
         } catch {

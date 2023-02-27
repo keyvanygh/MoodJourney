@@ -68,6 +68,8 @@
 		C0BF79AA29AC581600A0A0A0 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF79A929AC581600A0A0A0 /* MockNetworkManager.swift */; };
 		C0BF79AC29AC5C8E00A0A0A0 /* signin-success.json in Resources */ = {isa = PBXBuildFile; fileRef = C0BF79AB29AC5C8E00A0A0A0 /* signin-success.json */; };
 		C0BF79B129AC613100A0A0A0 /* signin-fail.json in Resources */ = {isa = PBXBuildFile; fileRef = C0BF79B029AC613100A0A0A0 /* signin-fail.json */; };
+		C0BF79B329AC64E400A0A0A0 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF79B229AC64E400A0A0A0 /* String+extension.swift */; };
+		C0BF79B529AC65D500A0A0A0 /* Bool+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF79B429AC65D500A0A0A0 /* Bool+extension.swift */; };
 		C0C31740299E8E1200B998C5 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C3173F299E8E1200B998C5 /* AnyError.swift */; };
 		C0F05A55299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A54299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift */; };
 		C0F05A5A299EFF5100385F65 /* SigninRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A59299EFF5100385F65 /* SigninRemoteDataSource.swift */; };
@@ -164,6 +166,8 @@
 		C0BF79A929AC581600A0A0A0 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		C0BF79AB29AC5C8E00A0A0A0 /* signin-success.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "signin-success.json"; sourceTree = "<group>"; };
 		C0BF79B029AC613100A0A0A0 /* signin-fail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "signin-fail.json"; sourceTree = "<group>"; };
+		C0BF79B229AC64E400A0A0A0 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		C0BF79B429AC65D500A0A0A0 /* Bool+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+extension.swift"; sourceTree = "<group>"; };
 		C0C3173F299E8E1200B998C5 /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
 		C0F05A54299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRemoteDataSourceTest.swift; sourceTree = "<group>"; };
 		C0F05A59299EFF5100385F65 /* SigninRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRemoteDataSource.swift; sourceTree = "<group>"; };
@@ -291,6 +295,8 @@
 				C03FB32C29A3C0B900D0E781 /* Manager */,
 				C03FB32729A3C01300D0E781 /* Coordinator */,
 				C0F05ABA29A0650B00385F65 /* DI */,
+				C0BF79B229AC64E400A0A0A0 /* String+extension.swift */,
+				C0BF79B429AC65D500A0A0A0 /* Bool+extension.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1172,6 +1178,7 @@
 				C0F05A79299F1DF200385F65 /* AddFeelingToActivityUsecase.swift in Sources */,
 				C0461176299ECC5F0050ABFD /* SigninRepositoryImp.swift in Sources */,
 				C0B8003B29A6734600E7D119 /* ReactionLocalDatasource.swift in Sources */,
+				C0BF79B329AC64E400A0A0A0 /* String+extension.swift in Sources */,
 				C0B834EF299D2BF5001436E8 /* SigninView.swift in Sources */,
 				C001183D29A70ABA00BADEE6 /* HomeViewModel.swift in Sources */,
 				C0B8004E29A6F69700E7D119 /* TabbarViewModel.swift in Sources */,
@@ -1191,6 +1198,7 @@
 				C0B8002829A5A63000E7D119 /* FetchUserIDFromKeychainUsecase.swift in Sources */,
 				C0F05A66299F07C100385F65 /* SigninWithAppleButton.swift in Sources */,
 				C022FE8229A283D800F53B0B /* CheerleadersRepository.swift in Sources */,
+				C0BF79B529AC65D500A0A0A0 /* Bool+extension.swift in Sources */,
 				C03FB32629A2EA0C00D0E781 /* Coordinator.swift in Sources */,
 				C03FB33329A4230700D0E781 /* Feeling.swift in Sources */,
 				C022FE7729A1D1E900F53B0B /* FetchFeelingsForActivityUsecase.swift in Sources */,
