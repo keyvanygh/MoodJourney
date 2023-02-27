@@ -14,4 +14,11 @@ struct UserDataModel: Codable {
     let name: String?
     let family: String?
     let imageURLString: String?
+    enum CodingKeys: CodingKey {
+        case userID
+        case signedWith
+        case name
+        case family
+        case imageURLString
+    }
 }

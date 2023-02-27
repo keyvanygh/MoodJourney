@@ -56,10 +56,10 @@ final class SigninRemoteDataSourceTest: XCTestCase {
                 givenName:  UserDataModel.template.family,
                 imageURL:  UserDataModel.template.imageURLString)
             switch (mockedNetworkManager.calledFucntion) {
-            case .post(let path, let body):
-
-                XCTAssertEqual(path, "signin")
-                XCTAssertEqual(body?["userID"] as? String ,UserDataModel.template.userID)
+            case .post(let path, let params):
+                XCTAssertEqual(path, SigninRemoteDataSource.Paths.signin.rawValue)
+                XCTAssertEqual(params?[UserDataModel.CodingKeys.userID.stringValue] as? String,
+                               UserDataModel.template.userID)
             default:
                 XCTFail("failed")
             }

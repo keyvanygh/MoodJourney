@@ -8,6 +8,11 @@
 import Foundation
 
 class SigninRemoteDataSource {
+    
+    enum Paths: String {
+        case signin
+    }
+    
     private let nm: NetworkManager
     init(networkManager: NetworkManager) {
         self.nm = networkManager
@@ -20,6 +25,7 @@ class SigninRemoteDataSource {
         family: String? = "",
         givenName: String? = "",
         imageURL: String? = "") throws -> UserDataModel {
+            
             let params:[String:Any] = [
                 "userID":userID,
                 "signedWith":thirdParty,
@@ -28,11 +34,13 @@ class SigninRemoteDataSource {
                 "givenName":givenName,
                 "imageURLString":imageURL
             ]
-            let responseData =  try nm.post(path: "signin", body: params)
+            
+            let responseData =  try nm.post(path: Paths.signin.rawValue, body: params)
             let responseModel =
             try JSONDecoder().decode(
                 ServerResponse<UserDataModel>.self,
                 from: responseData)
+            
             return responseModel.data
         }
 }
