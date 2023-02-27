@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol INetworkManager {
+protocol NetworkManager {
 
     func get() throws -> Data
     func post() throws -> Data
@@ -15,7 +15,7 @@ protocol INetworkManager {
     func delete() throws -> Data
 }
 
-class NetworkManager: INetworkManager {
+class NetworkManagerImp: NetworkManager {
     let willSucceed: Bool
     init(willSucceed: Bool) {
         self.willSucceed = willSucceed

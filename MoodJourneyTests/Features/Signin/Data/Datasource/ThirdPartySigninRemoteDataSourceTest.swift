@@ -8,7 +8,7 @@
 import XCTest
 @testable import MoodJourney
 
-final class ThirdPartySigninRemoteDataSourceTest: XCTestCase {
+final class SigninRemoteDataSourceTest: XCTestCase {
 
     func test_reciveUserDataModel_whenSinginSucceed() {
         let mockedNetworkManager = MockedNetworkManager(willSucceed: true)
@@ -48,10 +48,9 @@ final class ThirdPartySigninRemoteDataSourceTest: XCTestCase {
 
         }
     }
-
 }
 
-class MockedNetworkManager: INetworkManager {
+class MockedNetworkManager: NetworkManager {
     let willSucceed: Bool
     init(willSucceed: Bool) {
         self.willSucceed = willSucceed

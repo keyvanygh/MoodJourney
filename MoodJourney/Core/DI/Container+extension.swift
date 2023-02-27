@@ -41,7 +41,7 @@ extension Container {
     // MARK: - Signin :
     static let signinLocalDatasource = Factory {SigninLocalDatasource() }
     static let signinRemoteDataSource = Factory {
-        SigninRemoteDataSource(networkManager: NetworkManager(willSucceed: true)) }
+        SigninRemoteDataSource(networkManager: NetworkManagerImp(willSucceed: true)) }
     static let signinRepository = Factory {
         SigninRepositoryImp(rds: signinRemoteDataSource(), lds: signinLocalDatasource()) }
     static let thirdPartySigninUsecase = Factory {

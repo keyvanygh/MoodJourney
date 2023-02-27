@@ -8,8 +8,8 @@
 import Foundation
 
 class SigninRemoteDataSource {
-    private let nm: INetworkManager
-    init(networkManager: INetworkManager) {
+    private let nm: NetworkManager
+    init(networkManager: NetworkManager) {
         self.nm = networkManager
     }
     func signin(
