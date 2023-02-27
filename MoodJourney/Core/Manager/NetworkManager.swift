@@ -11,7 +11,7 @@ protocol NetworkManager {
 
     func get() throws -> Data
     func post(path: String,body: [String:Any]?) throws -> Data
-    func patch(path: String,body: NSDictionary?) throws -> Data
+    func patch(path: String,body: [String:Any]?) throws -> Data
     func delete() throws -> Data
 }
 
@@ -27,7 +27,7 @@ class NetworkManagerImp: NetworkManager {
     func post(path: String, body: [String:Any]? = nil) throws -> Data {
         if willSucceed {return Data()} else {throw(AnyError.error)}
     }
-    func patch(path: String, body: NSDictionary?) throws -> Data {
+    func patch(path: String, body: [String:Any]? = nil) throws -> Data {
         if willSucceed {return Data()} else {throw(AnyError.error)}
     }
     func delete() throws -> Data {

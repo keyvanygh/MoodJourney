@@ -55,6 +55,7 @@ final class SigninRemoteDataSourceTest: XCTestCase {
                 family:  UserDataModel.template.family,
                 givenName:  UserDataModel.template.family,
                 imageURL:  UserDataModel.template.imageURLString)
+            
             switch (mockedNetworkManager.calledFucntion) {
             case .post(let path, let params):
                 XCTAssertEqual(
@@ -97,10 +98,18 @@ final class SigninRemoteDataSourceTest: XCTestCase {
                 givenName:  UserDataModel.template.family,
                 imageURL:  UserDataModel.template.imageURLString)
             
-            XCTAssertEqual(response.userID, UserDataModel.template.userID)
-            XCTAssertEqual(response.signedWith, UserDataModel.template.signedWith)
-            XCTAssertEqual(response.name, UserDataModel.template.name)
-            XCTAssertEqual(response.family, UserDataModel.template.family)
+            XCTAssertEqual(
+                response.userID,
+                UserDataModel.template.userID)
+            XCTAssertEqual(
+                response.signedWith,
+                UserDataModel.template.signedWith)
+            XCTAssertEqual(
+                response.name,
+                UserDataModel.template.name)
+            XCTAssertEqual(
+                response.family,
+                UserDataModel.template.family)
             XCTAssertEqual(
                 response.imageURLString,
                 UserDataModel.template.imageURLString)

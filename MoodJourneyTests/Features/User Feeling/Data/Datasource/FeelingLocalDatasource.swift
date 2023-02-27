@@ -8,6 +8,9 @@
 import Foundation
 
 class FeelingLocalDatasource {
+    enum Function {
+        case test
+    }
     func addFeeling(_ feeling: FeelingDataModel) {
         // add
     }
