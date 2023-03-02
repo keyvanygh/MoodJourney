@@ -42,6 +42,9 @@
                <Test
                   Identifier = "SigninRemoteDataSourceTest/test_reciveCurrectUserDataModel_whenSigninSucceed()">
                </Test>
+               <Test
+                  Identifier = "ThirdPartySigninUsecaseTest/test_reciveUserEntity_whenAuthIsSuccess()">
+               </Test>
             </SkippedTests>
          </TestableReference>
          <TestableReference

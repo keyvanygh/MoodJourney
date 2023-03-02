@@ -9,70 +9,57 @@ import XCTest
 @testable import MoodJourney
 
 final class ThirdPartySigninUsecaseTest: XCTestCase {
-
-//    func test_reciveUserEntity_whenAuthIsSuccess() {
-//        let mockedRepostiry = MockedRepository(isSuccess: true)
-//        let sut = sut(repository: mockedRepostiry)
-//        let result = sut.execute(
-//            thirdParty : .Google,
-//            userID : "String",
-//            hasImage : false,
-//            name : "name",
-//            family : "fname",
-//            givenName : "gname",
-//            imageURL : URL(string: "string"))
-//        switch(result){
-//        case .success(let userEntity):
-//            XCTAssertNotNil(userEntity)
-//        default:
-//            XCTFail()
-//        }
-//    }
-//    func test_reciveError_whenAuthIsFailed() {
-//        let mockedRepostiry = MockedRepository(isSuccess: false)
-//        let sut = sut(repository: mockedRepostiry)
-//        let result = sut.execute(
-//            thirdParty : .Google,
-//            userID : "String",
-//            hasImage : false,
-//            name : "name",
-//            family : "fname",
-//            givenName : "gname",
-//            imageURL : URL(string: "string"))
-//        switch(result){
-//        case .failure(let error):
-//            XCTAssert((error is AnyError))
-//            break
-//        case .success(_):
-//            XCTFail()
-//            break
-//        }
-//    }
-//    
-//    // MARK: Helpers:
-//    final private func sut(repository : ISigninRepository) -> ThirdPartySigninUsecase {
-//        return ThirdPartySigninUsecase(repository : repository)
-//    }
-
-//    class MockedRepository : ISigninRepository{
-//        let isSuccess : Bool
-////        let successResponse = UserEntity.self
-//        
-//        init(isSuccess: Bool) {
-//            self.isSuccess = isSuccess
-//            print("HI IS SUCSess \(isSuccess)")
-//        }
-//        
-//        func signin(
-//            withThirdParty thirdParty: MoodJourney.ThirdParty,
-//            userID: String,
-//            hasImage: Bool?,
-//            name: String?,
-//            family: String?,
-//            givenName: String?,
-//            imageURL mageURL: URL?) -> Result<UserEntity,Error> {
-////                if isSuccess {return .success()}
-//               return .failure(AnyError.error) 
-//            }
-//    }
+    
+    func test_reciveUserEntity_whenAuthIsSuccess() throws {
+        let mockedRepostiry =  MockSigninRepository()
+        let sut:ThirdPartySigninUsecase = sut(repository: mockedRepostiry)
+        
+        let testUser = try XCTUnwrap(UserEntity.testUser)
+        let userID = try XCTUnwrap(testUser.userID)
+        let answer: Result<UserEntity,Error> = .success(testUser)
+        
+        mockedRepostiry
+            .answerWith(answer)
+        
+        let result = sut.execute(
+            thirdParty : .google,
+            userID : userID)
+        
+        switch(result) {
+        case .success(let userEntity):
+            XCTAssertEqual(userEntity, UserEntity.testUser)
+        default:
+            XCTFail("failed")
+        }
+    }
+    
+    func test_reciveError_whenAuthIsFailed() throws {
+        let mockedSigninRepository =  MockSigninRepository()
+        let sut = sut(repository: mockedSigninRepository)
+        
+        let testUser = try XCTUnwrap(UserEntity.testUser)
+        let userID = try XCTUnwrap(testUser.userID)
+        let answer: Result<UserEntity,Error> = .failure(AnyError.error)
+        
+        mockedSigninRepository
+            .answerWith(answer)
+        
+        let result = sut.execute(
+            thirdParty: .google,
+            userID: userID)
+        
+        switch(result) {
+        case .success:
+            XCTFail("failed")
+            
+        default:
+            XCTAssert(true)
+            
+        }
+    }
+    
+    //    // MARK: Helpers:
+    final private func sut(repository : SigninRepository) -> ThirdPartySigninUsecase {
+        return ThirdPartySigninUsecase(repository : repository)
+    }
 }

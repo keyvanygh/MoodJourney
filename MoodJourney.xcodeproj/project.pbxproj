@@ -40,6 +40,9 @@
 		C03FB33129A3C7F800D0E781 /* SigninType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB33029A3C7F800D0E781 /* SigninType.swift */; };
 		C03FB33329A4230700D0E781 /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB33229A4230700D0E781 /* Feeling.swift */; };
 		C0461176299ECC5F0050ABFD /* SigninRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0461175299ECC5F0050ABFD /* SigninRepositoryImp.swift */; };
+		C0AEE83929B0589800F8E879 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AEE83829B0589800F8E879 /* Mock.swift */; };
+		C0B1063329AD6F060034302A /* MockSigninRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1063229AD6F060034302A /* MockSigninRepository.swift */; };
+		C0B1063529AD72B40034302A /* UserEntity+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1063429AD72B40034302A /* UserEntity+extension.swift */; };
 		C0B8001629A51A5400E7D119 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001529A51A5400E7D119 /* KeychainManager.swift */; };
 		C0B8001829A533DD00E7D119 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001729A533DD00E7D119 /* Service.swift */; };
 		C0B8001C29A58E2900E7D119 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001B29A58E2900E7D119 /* SplashViewModel.swift */; };
@@ -141,6 +144,9 @@
 		C03FB33029A3C7F800D0E781 /* SigninType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninType.swift; sourceTree = "<group>"; };
 		C03FB33229A4230700D0E781 /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
 		C0461175299ECC5F0050ABFD /* SigninRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepositoryImp.swift; sourceTree = "<group>"; };
+		C0AEE83829B0589800F8E879 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		C0B1063229AD6F060034302A /* MockSigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSigninRepository.swift; sourceTree = "<group>"; };
+		C0B1063429AD72B40034302A /* UserEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+extension.swift"; sourceTree = "<group>"; };
 		C0B8001529A51A5400E7D119 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		C0B8001729A533DD00E7D119 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		C0B8001B29A58E2900E7D119 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -349,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				C01A3751299DB8F5001856BA /* Usecase */,
+				C0B1063429AD72B40034302A /* UserEntity+extension.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -629,6 +636,7 @@
 			children = (
 				C0BF79B629AC6CEC00A0A0A0 /* DataModel */,
 				C0461179299ECD1D0050ABFD /* Datasource */,
+				C0B1063229AD6F060034302A /* MockSigninRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -831,6 +839,7 @@
 		C0BF79A729AC57DD00A0A0A0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C0AEE83829B0589800F8E879 /* Mock.swift */,
 				C0BF79A829AC57E200A0A0A0 /* Managers */,
 			);
 			path = Core;
@@ -1262,11 +1271,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0BF79B829AC6D4700A0A0A0 /* UserDataModel+extension.swift in Sources */,
+				C0B1063529AD72B40034302A /* UserEntity+extension.swift in Sources */,
 				C0F05A96299FFCE400385F65 /* AddFeelingToActivityUsecase.swift in Sources */,
 				C0F05A55299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift in Sources */,
+				C0B1063329AD6F060034302A /* MockSigninRepository.swift in Sources */,
 				C01A3753299DB9FB001856BA /* ThirdPartySigninUsecaseTest.swift in Sources */,
 				C0B834FE299D2BF7001436E8 /* MoodJourneyTests.swift in Sources */,
 				C0BF79AA29AC581600A0A0A0 /* MockNetworkManager.swift in Sources */,
+				C0AEE83929B0589800F8E879 /* Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

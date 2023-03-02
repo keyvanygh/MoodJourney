@@ -41,6 +41,7 @@ public enum Entity: String {
 }
 
 class TestCoreData: CoreDataManager {
+    static let shared = TestCoreData()
     lazy var previewUser: UserEntity? = {
         guard let user = add(entity: .user) as? UserEntity else {return nil}
         user.userID = "TestUser"
