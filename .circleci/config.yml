@@ -13,7 +13,8 @@ jobs:
       FASTLANE_LANE: test
     steps:
       - checkout
-      - codecov/upload
+      - codecov/upload:
+          file: coverage/*.xml
       - run: bundle install
       - run: brew install swiftlint
       - run:
