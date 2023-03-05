@@ -14,7 +14,7 @@ jobs:
     steps:
       - checkout
       - codecov/upload:
-          file: coverage/*.xml
+          file: coverage.xml
       - run: bundle install
       - run: brew install swiftlint
       - run:
