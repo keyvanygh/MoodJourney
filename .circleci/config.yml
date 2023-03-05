@@ -13,8 +13,6 @@ jobs:
       FASTLANE_LANE: test
     steps:
       - checkout
-      - codecov/upload:
-          file: coverage.xml
       - run: bundle install
       - run: brew install swiftlint
       - run:
@@ -24,6 +22,8 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
+      - codecov/upload:
+          file: coverage.xml
 
 workflows:
   build-test-adhoc:
