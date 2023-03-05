@@ -1,5 +1,7 @@
 # .circleci/config.yml
 version: 2.1
+orbs:
+  codecov: codecov/codecov@3.2.4
 
 jobs:
 
@@ -25,3 +27,7 @@ workflows:
   build-test-adhoc:
     jobs:
       - build-and-test
+  upload-to-codecov:
+    jobs:
+      - checkout
+      - codecov/upload
