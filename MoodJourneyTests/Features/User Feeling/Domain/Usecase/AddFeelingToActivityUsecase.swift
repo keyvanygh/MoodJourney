@@ -13,7 +13,8 @@ final class AddFeelingToActivityUsecaseTest: XCTestCase {
 //    func test_reciveSuccessResponse_whenAddingFeelingToActivitySucceed() {
 //        let mockedRepostiry = MockedRepository(isSuccess: true)
 //        let sut : AddFeelingToActivityUsecase = sut(repository: mockedRepostiry)
-//        let result = sut.execute(activityID: "activityID", feeling: .Happy, message: "", to: <#ActivityEntity#>)
+//        let result = sut.execute(activityID: "activityID",
+//  feeling: .Happy, message: "", to: )
 //        XCTAssert(result.isSuccess)
 //    }
 //    func test_reciveError_whenAuthIsFailed() {
@@ -36,7 +37,8 @@ final class AddFeelingToActivityUsecaseTest: XCTestCase {
 //        init(isSuccess: Bool) {
 //            self.isSuccess = isSuccess
 //        }
-//        func addFeeling(activityID activity: String, feeling: MoodJourney.FeelingEntity) -> Result<Bool,Error> {
+//        func addFeeling(activityID activity: String, feeling:
+//    MoodJourney.FeelingEntity) -> Result<Bool,Error> {
 //            if isSuccess {return .success(true)}else{return.failure(AnyError.error)}
 //        }
 //    }

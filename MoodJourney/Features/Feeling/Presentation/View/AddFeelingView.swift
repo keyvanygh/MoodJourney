@@ -28,7 +28,7 @@ struct AddFeelingView: View {
                                     .allObjects
                                     as? [ReactionEntity] {
                                     ForEach(reactions) { reaction in
-                                        if let _ = reaction.emoji {
+                                        if reaction.emoji != nil {
                                             KFAnimatedImage(url)
                                                 .frame(maxWidth: .infinity)
                                                 .cornerRadius(16)
