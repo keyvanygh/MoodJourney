@@ -1,9 +1,6 @@
-coverage_service: cobertura_xml
-xcodeproj: MoodJourney/MoodJourney.xcodeproj
+coverage_service: coveralls
+xcodeproj: MoodJourney.xcodeproj
 scheme: MoodJourney
-configuration: TestedConfiguration
-source_directory: MoodJourney
-output_directory: MoodJourney/reports
 ignore:
   - ExamplePodCode/*
   - ProjectTestsGroup/*
