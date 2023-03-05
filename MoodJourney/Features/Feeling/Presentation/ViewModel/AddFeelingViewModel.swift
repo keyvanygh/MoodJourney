@@ -12,11 +12,11 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput, AddFeelingVie
     
     public var inputs: AddFeelingViewModelInput { return self }
     public var outputs: AddFeelingViewModelOutput { return self }
-    @Injected(Container.addFeelingToActivityUsecase) private(set) var addFeelingToActivityUsecase
-    @Injected(Container.fetchFeelingsForActivityUsecase) private(set) var fetchFeelingsForActivityUsecase
+    @Injected(\.addFeelingToActivityUsecase) private(set) var addFeelingToActivityUsecase
+    @Injected(\.fetchFeelingsForActivityUsecase) private(set) var fetchFeelingsForActivityUsecase
 #if DEBUG
-    @Injected(Container.signinLocalDatasource) private var signinLocalDatasource
-    @Injected(Container.feelingLocalDatasource) private var  feelingLocalDatasource
+    @Injected(\.signinLocalDatasource) private var signinLocalDatasource
+    @Injected(\.feelingLocalDatasource) private var  feelingLocalDatasource
     
 #endif
     

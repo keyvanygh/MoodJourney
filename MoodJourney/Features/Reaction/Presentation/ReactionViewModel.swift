@@ -9,7 +9,7 @@ import Foundation
 import Factory
 
 class ReactionViewModel: ObservableObject {
-    @Injected(Container.addReactionToFeelingUsecase)
+    @Injected(\.addReactionToFeelingUsecase)
     private var addReactionToFeelingUsecase: AddReactionToFeelingUsecase
     
     func addReaction(gifURL: URL?, emoji: String?, to feeling: FeelingEntity) {

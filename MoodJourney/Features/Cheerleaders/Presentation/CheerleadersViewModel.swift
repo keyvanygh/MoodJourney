@@ -16,9 +16,9 @@ class CheerleadersViewModel:
     public var inputs: CheerleadersViewModelInputs {return self}
     public var outputs: CheerleadersViewModelOutputs {return self}
     
-    @LazyInjected(Container.fetchCheerleadersUsecase)
+    @LazyInjected(\.fetchCheerleadersUsecase)
     private var fetchCheerleadersUsecase
-    @LazyInjected(Container.cheerLeadersLocalDatasource)
+    @LazyInjected(\.cheerLeadersLocalDatasource)
     private var cheerLeadersLocalDatasource
     
     private var user: UserEntity?

@@ -16,8 +16,8 @@ class SplashViewModel:
     public var inputs: SplashViewModelInputs {return self}
     public var outputs: SplashViewModelOutputs {return self}
 
-    @Injected(Container.fetchUserByIDUsecase) private var fetchUserByIDUsecase
-    @Injected(Container.fetchUserIDFromKeychainUsecase)
+    @Injected(\.fetchUserByIDUsecase) private var fetchUserByIDUsecase
+    @Injected(\.fetchUserIDFromKeychainUsecase)
     private var fetchUserIDFromKeychainUsecase
 
     // MARK: - Outputs:

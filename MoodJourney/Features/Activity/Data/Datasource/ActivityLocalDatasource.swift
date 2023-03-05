@@ -10,7 +10,7 @@ import Factory
 
 class ActivityLocalDatasource {
 
-    @Injected(Container.dbm) private var dbm
+    @Injected(\.dbm) private var dbm
 
     /// add activity to db
     /// - Parameters:

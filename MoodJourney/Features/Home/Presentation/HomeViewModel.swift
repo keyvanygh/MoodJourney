@@ -9,7 +9,7 @@ import Foundation
 import Factory
 
 class HomeViewModel: ObservableObject {
-    @Injected(Container.fetchHomeUsecase) private var fetchHomeUsecase
+    @Injected(\.fetchHomeUsecase) private var fetchHomeUsecase
     @Published var feelings: [FeelingEntity] = []
     var user: UserEntity?
     init(user: UserEntity? = nil) {

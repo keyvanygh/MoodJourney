@@ -9,7 +9,7 @@ import Foundation
 import Factory
 
 class CheerleadersLocalDatasource {
-    @Injected(Container.dbm) private var dbm
+    @Injected(\.dbm) private var dbm
 
     func fetchCheerleaders(of user: UserEntity) throws -> [UserEntity] {
         guard let cheerLeaders = user.cheerleaders?.allObjects as? [UserEntity] else {throw(AnyError.error)}

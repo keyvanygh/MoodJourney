@@ -9,60 +9,98 @@ import Foundation
 import Factory
 
 extension Container {
-    static let dbm = Factory(scope: .singleton) {DatabaseManager() }
-    static let kcm = Factory(scope: .singleton) {KeychainManager() }
-    static let acm = Factory(scope: .singleton) {AccountManager() }
-    static let testdbm = Factory(scope: .singleton) {TestCoreData() }
+    
+    var dbm: Factory<DatabaseManager> {
+        self { DatabaseManager()  }
+            .singleton
+    }
+    var kcm: Factory<KeychainManager> {
+        self { KeychainManager()  }
+            .singleton
+    }
+    var acm: Factory<AccountManager> {
+        self { AccountManager()  }
+            .singleton
+    }
     
     // MARK: - Feelings :
-    static let feelingLocalDatasource = Factory {FeelingLocalDatasource() }
-    static let feelingRepository = Factory {
-        FeelingRepositoryImp(localDatasource: feelingLocalDatasource()) }
-    static let addFeelingToActivityUsecase = Factory {
-        AddFeelingToActivityUsecase(repository: feelingRepository()) }
-    static let fetchFeelingsForActivityUsecase = Factory {
-        FetchFeelingsForActivityUsecase(repository: feelingRepository()) }
+    var feelingLocalDatasource: Factory<FeelingLocalDatasource> {
+        self { FeelingLocalDatasource()  }
+    }
+    var feelingRepository: Factory<FeelingRepository> {
+        self { [self] in FeelingRepositoryImp(localDatasource: feelingLocalDatasource())  }
+    }
+    var addFeelingToActivityUsecase: Factory<AddFeelingToActivityUsecase> {
+        self { [self] in AddFeelingToActivityUsecase(repository: feelingRepository())  }
+    }
+    var fetchFeelingsForActivityUsecase: Factory<FetchFeelingsForActivityUsecase> {
+        self { [self] in FetchFeelingsForActivityUsecase(repository: feelingRepository())  }
+    }
     
     // MARK: - Activity :
-    static let activityLocalDatasource = Factory {ActivityLocalDatasource() }
-    static let activityRepository = Factory {
-        ActivityRepositoryImp(localDs: activityLocalDatasource()) }
-    static let fetchActivitiesUsecase = Factory {
-        FetchActivitiesUsecase(repository: activityRepository()) }
+    var activityLocalDatasource: Factory<ActivityLocalDatasource> {
+        self { ActivityLocalDatasource()  }
+    }
+    var activityRepository: Factory<ActivityRepository> {
+        self { [self] in ActivityRepositoryImp(localDs: activityLocalDatasource())  }
+    }
+    var fetchActivitiesUsecase: Factory<FetchActivitiesUsecase> {
+        self { [self] in FetchActivitiesUsecase(repository: activityRepository())  }
+    }
     
     // MARK: - Cheerleaders :
-    static let cheerLeadersLocalDatasource = Factory {
-        CheerleadersLocalDatasource() }
-    static let cheerLeadersRepository = Factory {
-        CheerleadersRepositoryImp(lds: cheerLeadersLocalDatasource()) }
-    static let fetchCheerleadersUsecase = Factory {
-        FetchCheerleadersUsecase(repository: cheerLeadersRepository()) }
+    var cheerLeadersLocalDatasource: Factory<CheerleadersLocalDatasource> {
+        self { CheerleadersLocalDatasource()  }
+    }
+    var cheerLeadersRepository: Factory<CheerleadersRepository> {
+        self { [self] in CheerleadersRepositoryImp(lds: cheerLeadersLocalDatasource())  }
+    }
+    var fetchCheerleadersUsecase: Factory<FetchCheerleadersUsecase> {
+        self { [self] in FetchCheerleadersUsecase(repository: cheerLeadersRepository())  }
+    }
     
     // MARK: - Signin :
-    static let signinLocalDatasource = Factory {SigninLocalDatasource() }
-    static let signinRemoteDataSource = Factory {
-        SigninRemoteDataSource(networkManager: NetworkManagerImp(willSucceed: true)) }
-    static let signinRepository = Factory {
-        SigninRepositoryImp(rds: signinRemoteDataSource(), lds: signinLocalDatasource()) }
-    static let thirdPartySigninUsecase = Factory {
-        ThirdPartySigninUsecase(repository: signinRepository()) }
-    static let fetchUserByIDUsecase = Factory {
-        FetchUserByIDUsecase(repository: signinRepository()) }
-    static let fetchUserIDFromKeychainUsecase = Factory {
-        FetchUserIDFromKeychainUsecase(repository: signinRepository()) }
+    var signinLocalDatasource: Factory<SigninLocalDatasource> {
+        self { SigninLocalDatasource()  }
+    }
+    var signinRemoteDataSource: Factory<SigninRemoteDataSource> {
+        self { SigninRemoteDataSource(networkManager: NetworkManagerImp(willSucceed: true))  }
+    }
+    var signinRepository: Factory<SigninRepository> {
+        self { [self] in SigninRepositoryImp(
+            rds: signinRemoteDataSource(),
+            lds: signinLocalDatasource()) }
+    }
+    var thirdPartySigninUsecase: Factory<ThirdPartySigninUsecase> {
+        self { [self] in ThirdPartySigninUsecase(repository: signinRepository())  }
+    }
+    var fetchUserByIDUsecase: Factory<FetchUserByIDUsecase> {
+        self { [self] in FetchUserByIDUsecase(repository: signinRepository())  }
+    }
+    var fetchUserIDFromKeychainUsecase: Factory<FetchUserIDFromKeychainUsecase> {
+        self { [self] in FetchUserIDFromKeychainUsecase(repository: signinRepository())  }
+    }
     
     // MARK: - Reaction :
-    static let reactionLocalDatasource = Factory {ReactionLocalDatasource() }
-    static let reactionRepository = Factory {
-        ReactionRepositoryImp(lds: reactionLocalDatasource()) }
-    static let addReactionToFeelingUsecase = Factory {
-        AddReactionToFeelingUsecase(repository: reactionRepository()) }
+    var reactionLocalDatasource: Factory<ReactionLocalDatasource> {
+        self { ReactionLocalDatasource()  }
+    }
+    var reactionRepository: Factory<ReactionRepository> {
+        self { [self] in ReactionRepositoryImp(lds: reactionLocalDatasource())  }
+    }
+    var addReactionToFeelingUsecase: Factory<AddReactionToFeelingUsecase> {
+        self { [self] in AddReactionToFeelingUsecase(repository: reactionRepository())  }
+    }
     
     // MARK: - Home :
-    static let homeLocalDatasource = Factory {HomeLocalDatasource() }
-    static let homeRepository = Factory {
-        HomeRepositoryImp(lds: homeLocalDatasource()) }
-    static let fetchHomeUsecase = Factory {
-        FetchHomeUsecase(repository: homeRepository()) }
     
+    var homeLocalDatasource: Factory<HomeLocalDatasource> {
+        self { HomeLocalDatasource()  }
+    }
+    var homeRepository: Factory<HomeRepository> {
+        self { [self] in HomeRepositoryImp(lds: homeLocalDatasource())  }
+    }
+    var fetchHomeUsecase: Factory<FetchHomeUsecase> {
+        self { [self] in FetchHomeUsecase(repository: homeRepository())  }
+    }
 }

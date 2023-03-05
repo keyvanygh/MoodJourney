@@ -10,9 +10,9 @@ import Factory
 
 class SigninLocalDatasource {
     /// singelton database manager
-    @Injected(Container.dbm) var dbm: DatabaseManager
-    @Injected(Container.kcm) var kcm: KeychainManager
-    @Injected(Container.acm) var acm: AccountManager
+    @Injected(\.dbm) var dbm: DatabaseManager
+    @Injected(\.kcm) var kcm: KeychainManager
+    @Injected(\.acm) var acm: AccountManager
     let userDefualts = UserDefaults.standard
 
     /// Local Datasource Signin:
