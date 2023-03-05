@@ -26,7 +26,6 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
-      - run: bundle exec slather
       - codecov/upload
 
 
