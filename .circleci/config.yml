@@ -9,6 +9,7 @@ test:
     - bundle exec slather
     - bash <(curl -s https://codecov.io/bash) -f path/to/xml_report/cobertura.xml -X coveragepy -X gcov -X xcode
 
+
 jobs:
   build-and-test:
     macos:
@@ -16,13 +17,14 @@ jobs:
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: test
+      SCHEME: MoodJourney
     steps:
       - checkout
       - run: bundle install
       - run: brew install swiftlint
       - run:
            name: Generate Slather coverage report
-           command: bundle exec slather coverage
+           command: bundle exec slather coverage -x --scheme $SCHEME ./MoodJourney.xcodeproj
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
