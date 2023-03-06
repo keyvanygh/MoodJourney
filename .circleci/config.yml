@@ -26,8 +26,8 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
-      - codecov/upload
-
+    - codecov/upload:
+        file: cobertura.xml
 
 workflows:
   build-test-adhoc:
