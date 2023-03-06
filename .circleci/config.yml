@@ -22,7 +22,6 @@ jobs:
       - checkout
       - run: bundle install
       - run: brew install swiftlint
-      - run: bundle exec slather
       - run: bash <(curl -s https://codecov.io/bash) -f path/to/xml_report/cobertura.xml -X coveragepy -X gcov -X xcode
       - run:
           name: Fastlane
@@ -31,7 +30,6 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
-          
       - codecov/upload:
            file: cobertura.xml
 
