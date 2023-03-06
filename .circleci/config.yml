@@ -21,12 +21,16 @@ jobs:
       - run: bundle install
       - run: brew install swiftlint
       - run:
+           name: Generate Slather coverage report
+           command: bundle exec slather coverage -x --scheme $SCHEME ./MoodJourney.xcodeproj
+      - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
       - store_artifacts:
           path: output
       - store_test_results:
           path: output/scan
+          
       - codecov/upload:
            file: cobertura.xml
 
