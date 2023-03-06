@@ -21,6 +21,7 @@ jobs:
       - checkout
       - run: bundle install
       - codecov/upload
+      - run: bundle exec slather coverage
       - run: brew install swiftlint
       - run:
           name: Fastlane
