@@ -20,9 +20,6 @@ jobs:
     steps:
       - checkout
       - run: bundle install
-      - run:
-          name: Generate Slather coverage report
-          command: bundle exec slather coverage -x
       - run: brew install swiftlint
       - run:
           name: Fastlane
