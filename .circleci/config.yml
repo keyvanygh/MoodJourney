@@ -20,8 +20,6 @@ jobs:
     steps:
       - checkout
       - run: bundle install
-      - run: bundle exec slather coverage
-      - codecov/upload
       - run: brew install swiftlint
       - run:
           name: Fastlane
@@ -30,6 +28,8 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
+      - run: bundle exec slather coverage
+      - codecov/upload
 
 
 workflows:
