@@ -1,5 +1,1 @@
-coverage_service: cobertura_xml
-xcodeproj: ./MoodJourney.xcodeproj
-scheme: MoodJourney
-source_directory: ./MoodJourney
-xcodeproj: ./MoodJourney.xcodeproj
+
