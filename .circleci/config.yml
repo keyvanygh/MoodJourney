@@ -20,6 +20,7 @@ jobs:
     steps:
       - checkout
       - run: bundle install
+      - codecov/upload
       - run: brew install swiftlint
       - run:
           name: Fastlane
@@ -28,7 +29,6 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
-      - codecov/upload
 
 
 workflows:
