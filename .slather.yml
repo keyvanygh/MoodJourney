@@ -1,4 +1,5 @@
 coverage_service: cobertura_xml
 xcodeproj: ./MoodJourney.xcodeproj
 scheme: MoodJourney
-output_directory: ./
+source_directory: ./MoodJourney
+xcodeproj: ./MoodJourney.xcodeproj
