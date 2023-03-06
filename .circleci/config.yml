@@ -20,8 +20,10 @@ jobs:
     steps:
       - checkout
       - run: bundle install
+      - run:
+          name: Generate Slather coverage report
+          command: bundle exec slather coverage -x
       - run: brew install swiftlint
-      - run: bash <(curl -s https://codecov.io/bash) -f path/to/xml_report/cobertura.xml -X coveragepy -X gcov -X xcode
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
@@ -29,8 +31,7 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
-      - codecov/upload:
-           file: cobertura.xml
+      - codecov/upload
 
 
 workflows:
