@@ -36,6 +36,9 @@ extension Container {
     var fetchFeelingsForActivityUsecase: Factory<FetchFeelingsForActivityUsecase> {
         self { [self] in FetchFeelingsForActivityUsecase(repository: feelingRepository())  }
     }
+    var addFeelingViewModel: Factory<AddFeelingViewModel> {
+        self {AddFeelingViewModel()}
+    }
     
     // MARK: - Activity :
     var activityLocalDatasource: Factory<ActivityLocalDatasource> {

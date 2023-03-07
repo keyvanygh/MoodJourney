@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+import Factory
 
 struct AddFeelingView: View {
     @EnvironmentObject private var coordinator: Coordinator
@@ -103,7 +104,7 @@ struct AddFeelingView: View {
 
 struct AddFeelingView_Previews: PreviewProvider {
     static var previews: some View {
-        AddFeelingView(vm: AddFeelingViewModel())
+        AddFeelingView(vm:  Container.shared.addFeelingViewModel())
     }
 }
 
