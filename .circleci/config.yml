@@ -2,9 +2,15 @@
 version: 2.1
 orbs:
   codecov: codecov/codecov@3.2.4
+# circle.yml
+
+test:
+  post:
+    - bundle exec slather
+    - bash <(curl -s https://codecov.io/bash) -f path/to/xml_report/cobertura.xml -X coveragepy -X gcov -X xcode
+
 
 jobs:
-
   build-and-test:
     macos:
       xcode: 14.2.0
@@ -13,7 +19,6 @@ jobs:
       FASTLANE_LANE: test
     steps:
       - checkout
-      - codecov/upload
       - run: bundle install
       - run: brew install swiftlint
       - run:
@@ -23,6 +28,9 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
+      - run: bundle exec slather coverage
+      - codecov/upload
+
 
 workflows:
   build-test-adhoc:
