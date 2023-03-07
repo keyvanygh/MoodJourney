@@ -7,6 +7,7 @@
 
 import SwiftUI
 import GoogleSignIn
+import Factory
 
 struct SigninWithGoogleButton: View {
     @ObservedObject var vm: SigninViewModel
@@ -54,6 +55,6 @@ struct SigninWithGoogleButton: View {
 
 struct SigninWithGoogleButton_Previews: PreviewProvider {
     static var previews: some View {
-        SigninWithGoogleButton(vm: SigninViewModel())
+        SigninWithGoogleButton(vm: Container.shared.signinViewModel())
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Factory
 import AuthenticationServices
 
 struct SigninWithAppleButton: View {
@@ -37,6 +38,6 @@ struct SigninWithAppleButton: View {
 struct SigninWithAppleButton_Previews: PreviewProvider {
     static var previews: some View {
         SigninWithAppleButton(
-            vm: SigninViewModel())
+            vm: Container.shared.signinViewModel())
     }
 }

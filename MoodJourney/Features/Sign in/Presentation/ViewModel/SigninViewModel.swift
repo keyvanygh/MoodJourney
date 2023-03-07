@@ -15,9 +15,13 @@ class SigninViewModel:
     
     public var inputs: SigninViewModelInputs {return self}
     public var outputs: SigninViewModelOutputs {return self}
-    
-    @Injected(\.thirdPartySigninUsecase) var thirdPartySigninUsecase
     @Published private(set) var user: UserEntity?
+
+    private let thirdPartySigninUsecase: ThirdPartySigninUsecase
+
+    init(thirdPartySigninUsecase: ThirdPartySigninUsecase) {
+        self.thirdPartySigninUsecase = thirdPartySigninUsecase
+    }
     
     public func didSucceed3rdPartySignin(
         thirdParty: ThirdParty,
