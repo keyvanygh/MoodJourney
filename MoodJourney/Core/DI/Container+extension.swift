@@ -77,6 +77,9 @@ extension Container {
     var signinWithGoogle: Factory<SigninWithGoogle> {
         self { [self] in SigninWithGoogle(repository: signinRepository())  }
     }
+    var signinWithApple: Factory<SigninWithApple> {
+        self { [self] in SigninWithApple(repository: signinRepository())  }
+    }
     var fetchUserByIDUsecase: Factory<FetchUserByIDUsecase> {
         self { [self] in FetchUserByIDUsecase(repository: signinRepository())  }
     }
