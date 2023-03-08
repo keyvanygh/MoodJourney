@@ -7,9 +7,9 @@
 
 import Foundation
 
-class AddFeelingToActivityUsecase {
-    let repository: FeelingRepository
-    init(repository: FeelingRepository) {
+class AddFeelingToActivity: AnyUsecase {
+    let repository: any FeelingRepository
+    init(repository: any FeelingRepository) {
         self.repository = repository
     }
     /// execute the usecae
@@ -21,7 +21,7 @@ class AddFeelingToActivityUsecase {
     /// - Returns:
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
-    func execute(
+    func callAsFunction(
         feeling: Feeling,
         message: String? = "",
         imageURLString: String? = "",

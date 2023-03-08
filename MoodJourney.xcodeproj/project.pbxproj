@@ -72,6 +72,7 @@
 		C0BCF8A529B93BF800A680D2 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCF8A429B93BF800A680D2 /* MockCoreDataManager.swift */; };
 		C0BCF8A729B93C5A00A680D2 /* Entitiy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCF8A629B93C5A00A680D2 /* Entitiy.swift */; };
 		C0BCF8A929B93C7F00A680D2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCF8A829B93C7F00A680D2 /* CoreDataManager.swift */; };
+		C0BCF8AB29B944DA00A680D2 /* MockFeelingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCF8AA29B944DA00A680D2 /* MockFeelingRepository.swift */; };
 		C0BF6BF429A70C8A0035111D /* HomeLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF6BF329A70C8A0035111D /* HomeLocalDatasource.swift */; };
 		C0BF6BF629A716060035111D /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF6BF529A716060035111D /* AccountManager.swift */; };
 		C0BF6BFB29A86B560035111D /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = C0BF6BFA29A86B560035111D /* Factory */; };
@@ -182,6 +183,7 @@
 		C0BCF8A429B93BF800A680D2 /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
 		C0BCF8A629B93C5A00A680D2 /* Entitiy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entitiy.swift; sourceTree = "<group>"; };
 		C0BCF8A829B93C7F00A680D2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C0BCF8AA29B944DA00A680D2 /* MockFeelingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFeelingRepository.swift; sourceTree = "<group>"; };
 		C0BF6BF329A70C8A0035111D /* HomeLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDatasource.swift; sourceTree = "<group>"; };
 		C0BF6BF529A716060035111D /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		C0BF79A929AC581600A0A0A0 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
@@ -1032,6 +1034,7 @@
 			isa = PBXGroup;
 			children = (
 				C0F05A92299FF96E00385F65 /* Datasource */,
+				C0BCF8AA29B944DA00A680D2 /* MockFeelingRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1311,6 +1314,7 @@
 				C0F05A55299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift in Sources */,
 				C0B1063329AD6F060034302A /* MockSigninRepository.swift in Sources */,
 				C01A3753299DB9FB001856BA /* SigninWithGoogleTest.swift in Sources */,
+				C0BCF8AB29B944DA00A680D2 /* MockFeelingRepository.swift in Sources */,
 				C0BCF8A229B93AD300A680D2 /* SigninWithAppleTest.swift in Sources */,
 				C0B834FE299D2BF7001436E8 /* MoodJourneyTests.swift in Sources */,
 				C0BF79AA29AC581600A0A0A0 /* MockNetworkManager.swift in Sources */,

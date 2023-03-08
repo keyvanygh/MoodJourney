@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FeelingRepository {
+protocol FeelingRepository: AnyRepository {
     
     /// add feeling to activity with acitivtyID
     /// - Parameters:
