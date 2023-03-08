@@ -47,7 +47,7 @@ final class SigninRemoteDataSourceTest: XCTestCase {
             willSucceed: true)
         let sut = SigninRemoteDataSource(networkManager: mockedNetworkManager)
         do {
-            let response = try sut.signin(
+            _ = try sut.signin(
                 withThirdParty: UserDataModel.template.signedWith,
                 userID: UserDataModel.template.userID,
                 hasImage:  Bool.dontcare,

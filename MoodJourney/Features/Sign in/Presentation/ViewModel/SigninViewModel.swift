@@ -29,7 +29,6 @@ class SigninViewModelImp:
     private let signinWithGoogle: SigninWithGoogle
     private let signinWithApple: SigninWithApple
 
-    
     init(
         signinWithGoogle: SigninWithGoogle,
         signinWithApple: SigninWithApple
