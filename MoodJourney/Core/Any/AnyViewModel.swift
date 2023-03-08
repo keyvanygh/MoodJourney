@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AnyViewModel: ObservableObject {
+public protocol AnyViewModel: ObservableObject {
     associatedtype Inputs
     associatedtype Outputs
     var inputs: Inputs { get }

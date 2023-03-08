@@ -9,8 +9,13 @@ import Foundation
 import GoogleSignIn
 import Factory
 
-class SigninViewModel:
-    AnyViewModel,
+public protocol SigninViewModel: AnyViewModel {
+    var inputs: SigninViewModelInputs { get }
+    var outputs: SigninViewModelOutputs { get }
+}
+
+class SigninViewModelImp:
+    SigninViewModel,
     SigninViewModelInputs,
     SigninViewModelOutputs {
     
@@ -24,20 +29,18 @@ class SigninViewModel:
         self.signinWithGoogle = signinWithGoogle
     }
     
-    public final func googleSigninCallback(result: GIDSignInResult?,error: Error?){
+    internal final func googleSigninCallback(result: GIDSignInResult?,error: Error?) {
         if let error = error { print(error) /* show error */ }
         guard let userID = result?.user.userID else { return /* show error */}
         let result = signinWithGoogle(userID: userID)
         switch result {
         case .success(let user):
             print(user)
-            break
         case .failure(let error):
             print(error)
-            break
         }
     }
-    public final func appleSinginCallback() {}
+    internal final func appleSinginCallback() {}
     
     private func signin(
         userID: String,
@@ -59,10 +62,12 @@ class SigninViewModel:
             }
         }
 }
-protocol SigninViewModelInputs {
+
+public protocol SigninViewModelInputs {
     func googleSigninCallback(result: GIDSignInResult?,error: Error?)
     func appleSinginCallback()
 }
-protocol SigninViewModelOutputs {
+
+public protocol SigninViewModelOutputs {
     var user: UserEntity? {get}
 }

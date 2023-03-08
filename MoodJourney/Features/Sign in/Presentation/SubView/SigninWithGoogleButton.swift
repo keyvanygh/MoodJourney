@@ -9,8 +9,8 @@ import SwiftUI
 import GoogleSignIn
 import Factory
 
-struct SigninWithGoogleButton: View {
-    @ObservedObject var vm: SigninViewModel
+struct SigninWithGoogleButton<ViewModel>: View where ViewModel: SigninViewModel {
+    @ObservedObject var vm: ViewModel
     var body: some View {
         HStack(spacing: 0 ) {
             Spacer()
@@ -31,7 +31,7 @@ struct SigninWithGoogleButton: View {
                 .windows.first?.rootViewController else {return}
             GIDSignIn.sharedInstance.signIn(
                 withPresenting: presentingViewController) { (signInResult,error) in
-                    vm.googleSigninCallback(result: signInResult, error: error)
+                    vm.inputs.googleSigninCallback(result: signInResult, error: error)
                     
 //                    if let error = error {
 //                        vm.didFailed3rdPartySignin(thirdParty: .google, error: error)
