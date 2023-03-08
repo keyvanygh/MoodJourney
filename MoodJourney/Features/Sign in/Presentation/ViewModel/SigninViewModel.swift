@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import GoogleSignIn
 import Factory
 
 class SigninViewModel:
@@ -17,20 +18,23 @@ class SigninViewModel:
     public var outputs: SigninViewModelOutputs {return self}
     @Published private(set) var user: UserEntity?
 
-    private let thirdPartySigninUsecase: ThirdPartySigninUsecase
+    private let signinWithGoogle: SigninWithGoogle
 
-    init(thirdPartySigninUsecase: ThirdPartySigninUsecase) {
-        self.thirdPartySigninUsecase = thirdPartySigninUsecase
+    init(signinWithGoogle: SigninWithGoogle) {
+        self.signinWithGoogle = signinWithGoogle
     }
     
+    public func googleSigninCallback(result: GIDSignInResult?,error: Error?){
+        
+    }
     public func didSucceed3rdPartySignin(
         thirdParty: ThirdParty,
         userID: String,
-        hasImage: Bool,
+        hasImage: Bool?,
         name: String?,
         family: String?,
         imageURL: URL?) {
-            signin(thirdParty: thirdParty,
+            signin(
                    userID: userID,
                    hasImage: hasImage,
                    name: name,
@@ -43,15 +47,13 @@ class SigninViewModel:
         }
     
     private func signin(
-        thirdParty: ThirdParty,
         userID: String,
-        hasImage: Bool,
+        hasImage: Bool?,
         name: String?,
         family: String?,
         imageURL: URL?) {
             let result =
-            thirdPartySigninUsecase.execute(
-                thirdParty: thirdParty,
+            signinWithGoogle.execute(
                 userID: userID,
                 hasImage: hasImage,
                 name: name,
