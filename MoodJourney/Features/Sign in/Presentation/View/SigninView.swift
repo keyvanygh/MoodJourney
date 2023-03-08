@@ -7,9 +7,12 @@
 import SwiftUI
 import Factory
 
-struct SigninView: View {
-    @StateObject var vm: SigninViewModel = Container.shared.signinViewModel()
+struct SigninView<ViewModel>: View where ViewModel: SigninViewModel {
+    @StateObject var vm: ViewModel
     @EnvironmentObject private var coordinator: Coordinator
+    init(vm: ViewModel = Container.shared.signinViewModel()) {
+        _vm = StateObject(wrappedValue: vm)
+    }
     var body: some View {
         VStack {
             SigninWithAppleButton(vm: vm)

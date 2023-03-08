@@ -83,7 +83,7 @@ extension Container {
     var fetchUserIDFromKeychainUsecase: Factory<FetchUserIDFromKeychainUsecase> {
         self { [self] in FetchUserIDFromKeychainUsecase(repository: signinRepository())  }
     }
-    var signinViewModel: Factory<any SigninViewModel> {
+    var signinViewModel: Factory<SigninViewModelImp> {
         self { [self] in SigninViewModelImp(signinWithGoogle: signinWithGoogle())}
     }
     
