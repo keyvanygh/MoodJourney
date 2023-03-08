@@ -27,11 +27,11 @@ extension Container {
     var feelingLocalDatasource: Factory<FeelingLocalDatasource> {
         self { FeelingLocalDatasource()  }
     }
-    var feelingRepository: Factory<FeelingRepository> {
+    var feelingRepository: Factory<any FeelingRepository> {
         self { [self] in FeelingRepositoryImp(localDatasource: feelingLocalDatasource())  }
     }
-    var addFeelingToActivityUsecase: Factory<AddFeelingToActivityUsecase> {
-        self { [self] in AddFeelingToActivityUsecase(repository: feelingRepository())  }
+    var addFeelingToActivityUsecase: Factory<AddFeelingToActivity> {
+        self { [self] in AddFeelingToActivity(repository: feelingRepository())  }
     }
     var fetchFeelingsForActivityUsecase: Factory<FetchFeelingsForActivityUsecase> {
         self { [self] in FetchFeelingsForActivityUsecase(repository: feelingRepository())  }
