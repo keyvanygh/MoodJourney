@@ -9,7 +9,7 @@ import Foundation
 import Factory
 
 class ReactionLocalDatasource {
-    @Injected(\.dbm) private var dbm: DatabaseManager
+    @Injected(\.dbm) private var dbm: CoreDataManager
 
     func addReaction(
         gifURL: URL?, emoji: String?,

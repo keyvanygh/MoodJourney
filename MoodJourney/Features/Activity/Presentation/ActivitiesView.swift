@@ -71,7 +71,7 @@ struct ActivitiesView: View {
 }
 
 struct ActivitiesView_Previews: PreviewProvider {
-    static var testdbm = TestCoreData()
+    static var testdbm = MockCoreDataManager()
     @StateObject static var coordinator = Coordinator()
     
     static var previews: some View {

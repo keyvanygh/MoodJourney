@@ -9,7 +9,7 @@ import Foundation
 import Factory
 
 class FeelingLocalDatasource {
-    @Injected(\.dbm) private var dbm: DatabaseManager
+    @Injected(\.dbm) private var dbm: CoreDataManager
     @Injected(\.acm) private var acm: AccountManager
     
     /// add feeling to activity with acitivtyID

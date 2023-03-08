@@ -8,7 +8,7 @@
 import Foundation
 import Factory
 class HomeLocalDatasource {
-    @Injected(\.dbm) private var dbm: DatabaseManager
+    @Injected(\.dbm) private var dbm: CoreDataManager
 
     func fetchHome(for user: UserEntity) throws -> [FeelingEntity] {
         guard let feelings = try dbm.fetch(entity: .feeling) as? [FeelingEntity] else {return []}

@@ -10,8 +10,8 @@ import Factory
 
 extension Container {
     
-    var dbm: Factory<DatabaseManager> {
-        self { DatabaseManager()  }
+    var dbm: Factory<CoreDataManager> {
+        self { CoreDataManagerImp()  }
             .singleton
     }
     var kcm: Factory<KeychainManager> {
