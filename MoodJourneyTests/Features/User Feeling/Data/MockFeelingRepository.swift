@@ -9,6 +9,9 @@ import Foundation
 @testable import MoodJourney
 
 class MockFeelingRepository: FeelingRepository, Mock {
+    let lds: Int = 0
+    let rds: Int = 0
+
     func setAnswer(_ answer: Any?) {
         self.answer = answer
     }

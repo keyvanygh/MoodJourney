@@ -10,25 +10,26 @@ import XCTest
 
 final class AddFeelingToActivityUsecaseTest: XCTestCase {
 
-    func test_reciveSuccessResponse_whenAddingFeelingToActivitySucceed() {
+    func test_reciveSuccessResponse_whenAddingFeelingToActivitySucceed() throws {
         let mockedRepostiry = MockFeelingRepository()
         mockedRepostiry.answerWith(Result<Bool, Error>.success(true))
         let sut : AddFeelingToActivity = sut(repository: mockedRepostiry)
-        let result = sut.execute(activityID: "activityID",
-  feeling: .Happy, message: "", to: )
+        let testActivty = try XCTUnwrap(ActivityEntity.testActivity)
+        let result = sut(feeling: .happy, to: testActivty)
         XCTAssert(result.isSuccess)
     }
-    func test_reciveError_whenAuthIsFailed() {
-        let mockedRepostiry = MockedRepository(isSuccess: false)
-        let sut : AddFeelingToActivityUsecase = sut(repository: mockedRepostiry)
-        let result = sut.execute(activityID: "activityID", feeling: .Happy, message: "")
-        print(result.isSuccess)
+    func test_reciveError_whenAuthIsFailed() throws {
+        let mockedRepostiry = MockFeelingRepository()
+        mockedRepostiry.answerWith(Result<Bool, Error>.failure(AnyError.error))
+        let sut : AddFeelingToActivity = sut(repository: mockedRepostiry)
+        let testActivty = try XCTUnwrap(ActivityEntity.testActivity)
+        let result = sut(feeling: .happy, to: testActivty)
         XCTAssert(!result.isSuccess)
     }
     
     // MARK: Helpers:
-    final private func sut(repository : any SigninRepository) -> AddFeelingToActivityUsecase {
-        return SigninWithGoogle(repository : repository)
+    final private func sut(repository : any FeelingRepository) -> AddFeelingToActivity {
+        return AddFeelingToActivity(repository : repository)
     }
 
     // MARK: Helpers:

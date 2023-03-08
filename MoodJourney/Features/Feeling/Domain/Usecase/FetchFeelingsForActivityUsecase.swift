@@ -9,8 +9,8 @@ import Foundation
 
 /// fetch feelings submited in an activity
 class FetchFeelingsForActivityUsecase {
-    let repository: FeelingRepository
-    init(repository: FeelingRepository) {
+    let repository: any FeelingRepository
+    init(repository: any FeelingRepository) {
         self.repository = repository
     }
     /// execute the usecae

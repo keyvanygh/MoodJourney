@@ -73,6 +73,7 @@
 		C0BCF8A729B93C5A00A680D2 /* Entitiy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCF8A629B93C5A00A680D2 /* Entitiy.swift */; };
 		C0BCF8A929B93C7F00A680D2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCF8A829B93C7F00A680D2 /* CoreDataManager.swift */; };
 		C0BCF8AB29B944DA00A680D2 /* MockFeelingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCF8AA29B944DA00A680D2 /* MockFeelingRepository.swift */; };
+		C0BCF8AD29B9484400A680D2 /* ActicityEntity+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCF8AC29B9484400A680D2 /* ActicityEntity+extension.swift */; };
 		C0BF6BF429A70C8A0035111D /* HomeLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF6BF329A70C8A0035111D /* HomeLocalDatasource.swift */; };
 		C0BF6BF629A716060035111D /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF6BF529A716060035111D /* AccountManager.swift */; };
 		C0BF6BFB29A86B560035111D /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = C0BF6BFA29A86B560035111D /* Factory */; };
@@ -92,7 +93,7 @@
 		C0F05A6C299F110C00385F65 /* SigninWithGoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A6B299F110C00385F65 /* SigninWithGoogleButton.swift */; };
 		C0F05A73299F1BBF00385F65 /* FeelingEntity+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A72299F1BBF00385F65 /* FeelingEntity+extension.swift */; };
 		C0F05A77299F1D5A00385F65 /* IFeelingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A76299F1D5A00385F65 /* IFeelingRepository.swift */; };
-		C0F05A79299F1DF200385F65 /* AddFeelingToActivityUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A78299F1DF200385F65 /* AddFeelingToActivityUsecase.swift */; };
+		C0F05A79299F1DF200385F65 /* AddFeelingToActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A78299F1DF200385F65 /* AddFeelingToActivity.swift */; };
 		C0F05A7B299FF37500385F65 /* ActivityEntity+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A7A299FF37500385F65 /* ActivityEntity+extension.swift */; };
 		C0F05A81299FF79100385F65 /* FeelingRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A80299FF79100385F65 /* FeelingRepositoryImp.swift */; };
 		C0F05A84299FF87600385F65 /* FeelingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A83299FF87600385F65 /* FeelingDataModel.swift */; };
@@ -184,6 +185,7 @@
 		C0BCF8A629B93C5A00A680D2 /* Entitiy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entitiy.swift; sourceTree = "<group>"; };
 		C0BCF8A829B93C7F00A680D2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C0BCF8AA29B944DA00A680D2 /* MockFeelingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFeelingRepository.swift; sourceTree = "<group>"; };
+		C0BCF8AC29B9484400A680D2 /* ActicityEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActicityEntity+extension.swift"; sourceTree = "<group>"; };
 		C0BF6BF329A70C8A0035111D /* HomeLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDatasource.swift; sourceTree = "<group>"; };
 		C0BF6BF529A716060035111D /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		C0BF79A929AC581600A0A0A0 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
@@ -204,7 +206,7 @@
 		C0F05A6D299F154A00385F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C0F05A72299F1BBF00385F65 /* FeelingEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeelingEntity+extension.swift"; sourceTree = "<group>"; };
 		C0F05A76299F1D5A00385F65 /* IFeelingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFeelingRepository.swift; sourceTree = "<group>"; };
-		C0F05A78299F1DF200385F65 /* AddFeelingToActivityUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeelingToActivityUsecase.swift; sourceTree = "<group>"; };
+		C0F05A78299F1DF200385F65 /* AddFeelingToActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeelingToActivity.swift; sourceTree = "<group>"; };
 		C0F05A7A299FF37500385F65 /* ActivityEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityEntity+extension.swift"; sourceTree = "<group>"; };
 		C0F05A80299FF79100385F65 /* FeelingRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingRepositoryImp.swift; sourceTree = "<group>"; };
 		C0F05A83299FF87600385F65 /* FeelingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingDataModel.swift; sourceTree = "<group>"; };
@@ -965,7 +967,7 @@
 		C0F05A74299F1D3900385F65 /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
-				C0F05A78299F1DF200385F65 /* AddFeelingToActivityUsecase.swift */,
+				C0F05A78299F1DF200385F65 /* AddFeelingToActivity.swift */,
 				C022FE7629A1D1E900F53B0B /* FetchFeelingsForActivityUsecase.swift */,
 			);
 			path = Usecase;
@@ -1026,6 +1028,7 @@
 			isa = PBXGroup;
 			children = (
 				C0F05A8A299FF96E00385F65 /* AddFeelingToActivityUsecase.swift */,
+				C0BCF8AC29B9484400A680D2 /* ActicityEntity+extension.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -1227,7 +1230,7 @@
 				C0F05AB529A0624B00385F65 /* AnyViewModel.swift in Sources */,
 				C0B8001C29A58E2900E7D119 /* SplashViewModel.swift in Sources */,
 				C0B8003929A672CE00E7D119 /* ReactionRepositoryImp.swift in Sources */,
-				C0F05A79299F1DF200385F65 /* AddFeelingToActivityUsecase.swift in Sources */,
+				C0F05A79299F1DF200385F65 /* AddFeelingToActivity.swift in Sources */,
 				C0461176299ECC5F0050ABFD /* SigninRepositoryImp.swift in Sources */,
 				C0B8003B29A6734600E7D119 /* ReactionLocalDatasource.swift in Sources */,
 				C0BF79B329AC64E400A0A0A0 /* String+extension.swift in Sources */,
@@ -1316,6 +1319,7 @@
 				C01A3753299DB9FB001856BA /* SigninWithGoogleTest.swift in Sources */,
 				C0BCF8AB29B944DA00A680D2 /* MockFeelingRepository.swift in Sources */,
 				C0BCF8A229B93AD300A680D2 /* SigninWithAppleTest.swift in Sources */,
+				C0BCF8AD29B9484400A680D2 /* ActicityEntity+extension.swift in Sources */,
 				C0B834FE299D2BF7001436E8 /* MoodJourneyTests.swift in Sources */,
 				C0BF79AA29AC581600A0A0A0 /* MockNetworkManager.swift in Sources */,
 				C0AEE83929B0589800F8E879 /* Mock.swift in Sources */,

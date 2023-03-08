@@ -36,17 +36,17 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput, AddFeelingVie
         
         switch selectedFeelingIndex {
         case 1:
-            _ = addFeelingToActivityUsecase.execute(
+            _ = addFeelingToActivityUsecase(
                 feeling: .sad,
                 message: "",
                 to: activity)
         case 2:
-            _ = addFeelingToActivityUsecase.execute(
+            _ = addFeelingToActivityUsecase(
                 feeling: .happy,
                 message: "",
                 to: activity)
         case 3:
-            _ = addFeelingToActivityUsecase.execute(
+            _ = addFeelingToActivityUsecase(
                 feeling: .depressed,
                 message: "",
                 to: activity)
@@ -71,7 +71,7 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput, AddFeelingVie
     }
 }
 protocol AddFeelingViewModelInput {
-    var addFeelingToActivityUsecase: AddFeelingToActivityUsecase { get }
+    var addFeelingToActivityUsecase: AddFeelingToActivity { get }
     func didSelectFeeling(atIndex index: Int)
     func didTapSubmitButton()
     func fetchFeelings()
