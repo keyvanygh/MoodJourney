@@ -35,8 +35,11 @@ class SigninWithGoogle: AnyUsecase {
         givenName: String? = "",
         imageURL: URL? = nil) -> Result<UserEntity, Error> {
             
-            do {try validate(userID: userID)}
-            catch{return .failure(error)}
+            do {
+                try validate(userID: userID)
+            } catch {
+                return .failure(error)
+            }
             
             return repository.signin(
                 withThirdParty: .google,

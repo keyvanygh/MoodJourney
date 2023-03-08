@@ -14,7 +14,7 @@ struct SigninWithAppleButton<ViewModel>: View where ViewModel: SigninViewModel {
     var body: some View {
         SignInWithAppleButton(.signIn) { request in
             request.requestedScopes = [.fullName, .email]
-        } onCompletion: { result in
+        } onCompletion: { _ in
             vm.inputs.appleSinginCallback()
 //            switch result {
 //            case .success(let authorization):
