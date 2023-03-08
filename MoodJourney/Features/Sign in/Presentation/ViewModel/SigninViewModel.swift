@@ -17,14 +17,25 @@ class SigninViewModel:
     public var inputs: SigninViewModelInputs {return self}
     public var outputs: SigninViewModelOutputs {return self}
     @Published private(set) var user: UserEntity?
-
+    
     private let signinWithGoogle: SigninWithGoogle
-
+    
     init(signinWithGoogle: SigninWithGoogle) {
         self.signinWithGoogle = signinWithGoogle
     }
     
     public func googleSigninCallback(result: GIDSignInResult?,error: Error?){
+        if let error = error { /* show error */ }
+        guard let userID = result?.user.userID else {/* show error */ }
+        let result = signinWithGoogle(userID: userID)
+        switch result {
+        case .success(let user):
+            break
+        case .failure(let error):
+            break
+        }
+    }
+    public func appleSinginCallback(result: GIDSignInResult?,error: Error?){
         
     }
     public func didSucceed3rdPartySignin(
@@ -35,10 +46,10 @@ class SigninViewModel:
         family: String?,
         imageURL: URL?) {
             signin(
-                   userID: userID,
-                   hasImage: hasImage,
-                   name: name,
-                   family: family, imageURL: imageURL)
+                userID: userID,
+                hasImage: hasImage,
+                name: name,
+                family: family, imageURL: imageURL)
         }
     
     public func didFailed3rdPartySignin(

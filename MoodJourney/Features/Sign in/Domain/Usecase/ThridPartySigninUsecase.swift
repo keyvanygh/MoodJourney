@@ -12,9 +12,9 @@ class SigninWithGoogle: AnyUsecase {
     var repository: any SigninRepository
     
     init(repository: any SigninRepository) {
-        self.repository = repository 
+        self.repository = repository
     }
-
+    
     /// execute the usecae
     /// - Parameters:
     ///   - thirdParty: 3'rd party type e.g: .Google
@@ -27,13 +27,17 @@ class SigninWithGoogle: AnyUsecase {
     /// - Returns:
     ///   - success: UserEntity
     ///   - fail: SigninError
-    func execute(
+    func callAsFunction(
         userID: String,
         hasImage: Bool? = false,
         name: String? = "",
         family: String? = "",
         givenName: String? = "",
         imageURL: URL? = nil) -> Result<UserEntity, Error> {
+            
+            do {try validate(userID: userID)}
+            catch{return .failure(error)}
+            
             return repository.signin(
                 withThirdParty: .google,
                 userID: userID,
@@ -43,4 +47,7 @@ class SigninWithGoogle: AnyUsecase {
                 givenName: givenName,
                 imageURL: imageURL)
         }
+    func validate(userID: String) throws {
+        if userID.isEmpty {throw(AnyError.error)}
+    }
 }
