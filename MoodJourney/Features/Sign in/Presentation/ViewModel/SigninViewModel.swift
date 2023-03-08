@@ -54,14 +54,12 @@ class SigninViewModelImp:
         case .success(let authorization):
             guard let credential =
                     authorization.credential as? ASAuthorizationAppleIDCredential else {return}
-            print(credential)
-//                vm.inputs.didSucceed3rdPartySignin(
-//                    thirdParty: .apple,
-//                    userID: credential.user,
-//                    hasImage: false,
-//                    name: credential.fullName?.givenName,
-//                    family: credential.fullName?.familyName,
-//                    imageURL: nil)
+              let result = signinWithApple(
+                    userID: credential.user,
+                    hasImage: false,
+                    name: credential.fullName?.givenName,
+                    family: credential.fullName?.familyName,
+                    imageURL: nil)
         case .failure(let error):
             print(error)
 //            vm.inputs.didFailed3rdPartySignin(
