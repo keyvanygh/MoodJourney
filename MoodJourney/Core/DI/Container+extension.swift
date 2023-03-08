@@ -69,13 +69,13 @@ extension Container {
     var signinRemoteDataSource: Factory<SigninRemoteDataSource> {
         self { SigninRemoteDataSource(networkManager: NetworkManagerImp(willSucceed: true))  }
     }
-    var signinRepository: Factory<SigninRepository> {
+    var signinRepository: Factory<any SigninRepository> {
         self { [self] in SigninRepositoryImp(
             rds: signinRemoteDataSource(),
             lds: signinLocalDatasource()) }
     }
-    var thirdPartySigninUsecase: Factory<ThirdPartySigninUsecase> {
-        self { [self] in ThirdPartySigninUsecase(repository: signinRepository())  }
+    var signinWithGoogle: Factory<SigninWithGoogle> {
+        self { [self] in SigninWithGoogle(repository: signinRepository())  }
     }
     var fetchUserByIDUsecase: Factory<FetchUserByIDUsecase> {
         self { [self] in FetchUserByIDUsecase(repository: signinRepository())  }
@@ -84,7 +84,7 @@ extension Container {
         self { [self] in FetchUserIDFromKeychainUsecase(repository: signinRepository())  }
     }
     var signinViewModel: Factory<SigninViewModel> {
-        self { [self] in SigninViewModel(thirdPartySigninUsecase: thirdPartySigninUsecase())}
+        self { [self] in SigninViewModel(signinWithGoogle: signinWithGoogle())}
     }
     
     // MARK: - Reaction :
