@@ -14,24 +14,8 @@ struct SigninWithAppleButton<ViewModel>: View where ViewModel: SigninViewModel {
     var body: some View {
         SignInWithAppleButton(.signIn) { request in
             request.requestedScopes = [.fullName, .email]
-        } onCompletion: { _ in
-            vm.inputs.appleSinginCallback()
-//            switch result {
-//            case .success(let authorization):
-//                if let credential =
-//                    authorization.credential as? ASAuthorizationAppleIDCredential {
-//                    vm.inputs.didSucceed3rdPartySignin(
-//                        thirdParty: .apple,
-//                        userID: credential.user,
-//                        hasImage: false,
-//                        name: credential.fullName?.givenName,
-//                        family: credential.fullName?.familyName,
-//                        imageURL: nil)
-//                }
-//            case .failure(let error):
-//                vm.inputs.didFailed3rdPartySignin(
-//                    thirdParty: .apple, error: error)
-//            }
+        } onCompletion: { result in
+            vm.inputs.appleSinginCallback(result)
         }
     }
 }

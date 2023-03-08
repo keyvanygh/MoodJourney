@@ -7,6 +7,7 @@
 
 import Foundation
 import GoogleSignIn
+import AuthenticationServices
 import Factory
 
 public protocol SigninViewModel: AnyViewModel {
@@ -24,7 +25,7 @@ class SigninViewModelImp:
     
     @Published private(set) var user: UserEntity?
     @Published private(set) var navigateToActivitiesPage: Bool = false
-
+    
     private let signinWithGoogle: SigninWithGoogle
     
     init(signinWithGoogle: SigninWithGoogle) {
@@ -42,7 +43,25 @@ class SigninViewModelImp:
             print(error)
         }
     }
-    internal final func appleSinginCallback() {}
+    internal final func appleSinginCallback(_ result: Result<ASAuthorization,Error>) {
+        switch result {
+        case .success(let authorization):
+            guard let credential =
+                    authorization.credential as? ASAuthorizationAppleIDCredential else {return}
+            print(credential)
+//                vm.inputs.didSucceed3rdPartySignin(
+//                    thirdParty: .apple,
+//                    userID: credential.user,
+//                    hasImage: false,
+//                    name: credential.fullName?.givenName,
+//                    family: credential.fullName?.familyName,
+//                    imageURL: nil)
+        case .failure(let error):
+            print(error)
+//            vm.inputs.didFailed3rdPartySignin(
+//                thirdParty: .apple, error: error)
+        }
+    }
     
     private func signin(
         userID: String,
@@ -67,7 +86,7 @@ class SigninViewModelImp:
 
 public protocol SigninViewModelInputs {
     func googleSigninCallback(result: GIDSignInResult?,error: Error?)
-    func appleSinginCallback()
+    func appleSinginCallback(_ result: Result<ASAuthorization,Error>)
 }
 
 public protocol SigninViewModelOutputs {
