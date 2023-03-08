@@ -15,22 +15,7 @@ struct SigninWithAppleButton: View {
         SignInWithAppleButton(.signIn) { request in
             request.requestedScopes = [.fullName, .email]
         } onCompletion: { result in
-            switch result {
-            case .success(let authorization):
-                if let credential =
-                    authorization.credential as? ASAuthorizationAppleIDCredential {
-                    vm.inputs.didSucceed3rdPartySignin(
-                        thirdParty: .apple,
-                        userID: credential.user,
-                        hasImage: false,
-                        name: credential.fullName?.givenName,
-                        family: credential.fullName?.familyName,
-                        imageURL: nil)
-                }
-            case .failure(let error):
-                vm.inputs.didFailed3rdPartySignin(
-                    thirdParty: .apple, error: error)
-            }
+            vm.inputs.appleSinginCallback()
         }
     }
 }
