@@ -27,7 +27,7 @@ class SigninWithGoogle: AnyUsecase {
     /// - Returns:
     ///   - success: UserEntity
     ///   - fail: SigninError
-    func callAsFunction(
+    public final func callAsFunction(
         userID: String,
         hasImage: Bool? = false,
         name: String? = "",
@@ -47,7 +47,7 @@ class SigninWithGoogle: AnyUsecase {
                 givenName: givenName,
                 imageURL: imageURL)
         }
-    func validate(userID: String) throws {
+    private final func validate(userID: String) throws {
         if userID.isEmpty {throw(AnyError.error)}
     }
 }
