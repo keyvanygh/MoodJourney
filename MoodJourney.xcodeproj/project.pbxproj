@@ -45,6 +45,7 @@
 		C0B1063529AD72B40034302A /* UserEntity+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1063429AD72B40034302A /* UserEntity+extension.swift */; };
 		C0B6AD0529B82FD2008036B9 /* AnyUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6AD0429B82FD2008036B9 /* AnyUsecase.swift */; };
 		C0B6AD0729B8302E008036B9 /* AnyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6AD0629B8302E008036B9 /* AnyRepository.swift */; };
+		C0B6AD0929B90C20008036B9 /* SigninWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6AD0829B90C20008036B9 /* SigninWithApple.swift */; };
 		C0B8001629A51A5400E7D119 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001529A51A5400E7D119 /* KeychainManager.swift */; };
 		C0B8001829A533DD00E7D119 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001729A533DD00E7D119 /* Service.swift */; };
 		C0B8001C29A58E2900E7D119 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001B29A58E2900E7D119 /* SplashViewModel.swift */; };
@@ -151,6 +152,7 @@
 		C0B1063429AD72B40034302A /* UserEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+extension.swift"; sourceTree = "<group>"; };
 		C0B6AD0429B82FD2008036B9 /* AnyUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyUsecase.swift; sourceTree = "<group>"; };
 		C0B6AD0629B8302E008036B9 /* AnyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRepository.swift; sourceTree = "<group>"; };
+		C0B6AD0829B90C20008036B9 /* SigninWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithApple.swift; sourceTree = "<group>"; };
 		C0B8001529A51A5400E7D119 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		C0B8001729A533DD00E7D119 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		C0B8001B29A58E2900E7D119 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 		C01A3748299D3133001856BA /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				C0B6AD0829B90C20008036B9 /* SigninWithApple.swift */,
 				C01A3756299DC9CA001856BA /* SigninWithGoogle.swift */,
 			);
 			path = Usecase;
@@ -1257,6 +1260,7 @@
 				C03FB32929A3C03700D0E781 /* CoordinatorView.swift in Sources */,
 				C022FE9129A28D8900F53B0B /* CheerleadersView.swift in Sources */,
 				C022FE6F29A19FF900F53B0B /* FetchActivitiesUsecase.swift in Sources */,
+				C0B6AD0929B90C20008036B9 /* SigninWithApple.swift in Sources */,
 				C0B8002429A5958F00E7D119 /* UserTokenValidationUsecase.swift in Sources */,
 				C0B8003E29A67B6000E7D119 /* ReactionViewModel.swift in Sources */,
 				C022FE6729A19EAE00F53B0B /*  ActivityRepositoryImp.swift in Sources */,
