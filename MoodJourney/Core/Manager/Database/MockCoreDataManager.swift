@@ -1,47 +1,15 @@
 //
-//  LocalDatabaseManager.swift
+//  MockDatabaseManager.swift
 //  MoodJourney
 //
-//  Created by Keyvan on 2/18/23.
+//  Created by Keyvan on 3/8/23.
 //
 
 import Foundation
 import CoreData
 
-class DatabaseManager: CoreDataManager {
-    let container = NSPersistentContainer(name: "LocalDatabase")
-    init() {
-        container.loadPersistentStores { _, error in
-            if let error = error {
-                print("Core Data failed to load: \(error.localizedDescription)")
-            }
-        }
-    }
-    func fetch(entity: Entity) throws -> [NSFetchRequestResult] {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity.rawValue)
-        return try container.viewContext.fetch(request)
-    }
-    
-    func add(entity: Entity) -> NSManagedObject {
-        return NSEntityDescription.insertNewObject(
-            forEntityName: entity.rawValue,
-            into: container.viewContext)
-    }
-    func save() throws {
-        self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
-        container.viewContext.automaticallyMergesChangesFromParent = true
-        try container.viewContext.save()
-    }
-}
-public enum Entity: String {
-    case activity = "ActivityEntity"
-    case feeling = "FeelingEntity"
-    case user = "UserEntity"
-    case reaction = "ReactionEntity"
-}
-
-class TestCoreData: CoreDataManager {
-    static let shared = TestCoreData()
+class MockCoreDataManager: CoreDataManager {
+    static let shared = MockCoreDataManager()
     lazy var previewUser: UserEntity? = {
         guard let user = add(entity: .user) as? UserEntity else {return nil}
         user.userID = "TestUser"
@@ -97,10 +65,4 @@ class TestCoreData: CoreDataManager {
         container.viewContext.automaticallyMergesChangesFromParent = true
         try container.viewContext.save()
     }
-}
-
-protocol CoreDataManager {
-    func fetch(entity: Entity) throws -> [NSFetchRequestResult]
-    func add(entity: Entity) -> NSManagedObject
-    func save() throws
 }

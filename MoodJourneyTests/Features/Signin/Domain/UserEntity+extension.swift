@@ -9,6 +9,6 @@ import Foundation
 @testable import MoodJourney
 extension UserEntity {
     static var testUser: UserEntity? {
-        return TestCoreData.shared.previewUser
+        return MockCoreDataManager.shared.previewUser
     }
 }
