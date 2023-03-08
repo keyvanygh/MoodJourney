@@ -27,9 +27,15 @@ class SigninViewModelImp:
     @Published private(set) var navigateToActivitiesPage: Bool = false
     
     private let signinWithGoogle: SigninWithGoogle
+    private let signinWithApple: SigninWithApple
+
     
-    init(signinWithGoogle: SigninWithGoogle) {
+    init(
+        signinWithGoogle: SigninWithGoogle,
+        signinWithApple: SigninWithApple
+    ) {
         self.signinWithGoogle = signinWithGoogle
+        self.signinWithApple = signinWithApple
     }
     
     internal final func googleSigninCallback(result: GIDSignInResult?,error: Error?) {
