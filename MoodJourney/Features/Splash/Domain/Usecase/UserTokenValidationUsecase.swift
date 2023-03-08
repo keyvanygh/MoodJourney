@@ -8,8 +8,8 @@
 import Foundation
 
 class FetchUserByIDUsecase {
-    let repository: SigninRepository
-    init(repository: SigninRepository) {
+    let repository: any SigninRepository
+    init(repository: any SigninRepository) {
         self.repository = repository
     }
 
