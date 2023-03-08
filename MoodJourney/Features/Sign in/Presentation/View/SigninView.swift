@@ -8,11 +8,14 @@ import SwiftUI
 import Factory
 
 struct SigninView<ViewModel>: View where ViewModel: SigninViewModel {
+    
     @StateObject var vm: ViewModel
     @EnvironmentObject private var coordinator: Coordinator
+    
     init(vm: ViewModel = Container.shared.signinViewModel()) {
         _vm = StateObject(wrappedValue: vm)
     }
+    
     var body: some View {
         VStack {
             SigninWithAppleButton(vm: vm)
@@ -26,7 +29,8 @@ struct SigninView<ViewModel>: View where ViewModel: SigninViewModel {
 
         }
         .background(Color.green.ignoresSafeArea())
-        .onChange(of: vm.outputs.user) { _ in
+        .onChange(of: vm.outputs.navigateToActivitiesPage) { shouldNavigate in
+            guard shouldNavigate else {return}
             guard let user = vm.outputs.user else {return}
             coordinator.push(.activity(user: user))
         }

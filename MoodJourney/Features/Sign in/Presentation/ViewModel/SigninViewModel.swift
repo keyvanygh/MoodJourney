@@ -21,8 +21,10 @@ class SigninViewModelImp:
     
     public var inputs: SigninViewModelInputs {return self}
     public var outputs: SigninViewModelOutputs {return self}
-    @Published private(set) var user: UserEntity?
     
+    @Published private(set) var user: UserEntity?
+    @Published private(set) var navigateToActivitiesPage: Bool = false
+
     private let signinWithGoogle: SigninWithGoogle
     
     init(signinWithGoogle: SigninWithGoogle) {
@@ -70,4 +72,5 @@ public protocol SigninViewModelInputs {
 
 public protocol SigninViewModelOutputs {
     var user: UserEntity? {get}
+    var navigateToActivitiesPage:Bool {get}
 }
