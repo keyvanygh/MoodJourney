@@ -31,7 +31,7 @@ struct SigninWithGoogleButton: View {
                 .windows.first?.rootViewController else {return}
             GIDSignIn.sharedInstance.signIn(
                 withPresenting: presentingViewController) { (signInResult,error) in
-                    vm.googleSigninCallback(result: signin, error: error)
+                    vm.googleSigninCallback(result: signInResult, error: error)
                     
 //                    if let error = error {
 //                        vm.didFailed3rdPartySignin(thirdParty: .google, error: error)
