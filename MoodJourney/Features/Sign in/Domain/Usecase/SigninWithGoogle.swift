@@ -1,5 +1,5 @@
 //
-//  ThridPartySigninUsecase.swift
+//  SigninWithGoogle.swift
 //  MoodJourney
 //
 //  Created by Keyvan on 2/15/23.
