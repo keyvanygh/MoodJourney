@@ -29,26 +29,21 @@ class SigninWithApple: AnyUsecase {
     ///   - fail: SigninError
     public final func callAsFunction(
         userID: String,
-        hasImage: Bool? = false,
         name: String? = "",
-        family: String? = "",
-        givenName: String? = "",
-        imageURL: URL? = nil) -> Result<UserEntity, Error> {
+        family: String? = "") -> Result<UserEntity, Error> {
             
             do {
                 try validate(userID: userID)
-            } catch {
-                return .failure(error)
-            }
+            } catch {return .failure(error)}
             
             return repository.signin(
                 withThirdParty: .apple,
                 userID: userID,
-                hasImage: hasImage,
+                hasImage: false,
                 name: name,
                 family: family,
-                givenName: givenName,
-                imageURL: imageURL)
+                givenName: "",
+                imageURL: nil)
         }
     private final func validate(userID: String) throws {
         if userID.isEmpty {throw(AnyError.error)}
