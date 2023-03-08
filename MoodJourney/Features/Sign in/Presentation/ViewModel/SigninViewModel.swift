@@ -44,7 +44,8 @@ class SigninViewModelImp:
         let result = signinWithGoogle(userID: userID)
         switch result {
         case .success(let user):
-            print(user)
+            self.user = user
+            navigateToActivitiesPage = true
         case .failure(let error):
             print(error)
         }
@@ -56,14 +57,21 @@ class SigninViewModelImp:
                     authorization.credential as? ASAuthorizationAppleIDCredential else {return}
               let result = signinWithApple(
                     userID: credential.user,
-                    hasImage: false,
                     name: credential.fullName?.givenName,
-                    family: credential.fullName?.familyName,
-                    imageURL: nil)
+                    family: credential.fullName?.familyName
+              )
+            switch result {
+            case .success(let user):
+                self.user = user
+                navigateToActivitiesPage = true
+            case .failure(let error):
+                print(error)
+                /*show error*/
+            }
+            
         case .failure(let error):
             print(error)
-//            vm.inputs.didFailed3rdPartySignin(
-//                thirdParty: .apple, error: error)
+            /* show error */
         }
     }
     
