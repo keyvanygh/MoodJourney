@@ -9,6 +9,9 @@ import Foundation
 @testable import MoodJourney
 
 class MockSigninRepository: SigninRepository,Mock {
+    var lds: Any = 0
+    var rds: Any = 0
+    
     var answer: Any?
         
     @discardableResult

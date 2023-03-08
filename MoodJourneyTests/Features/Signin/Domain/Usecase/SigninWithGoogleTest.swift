@@ -8,11 +8,11 @@
 import XCTest
 @testable import MoodJourney
 
-final class ThirdPartySigninUsecaseTest: XCTestCase {
+final class SigninWithGoogleTest: XCTestCase {
     
     func test_reciveUserEntity_whenAuthIsSuccess() throws {
         let mockedRepostiry =  MockSigninRepository()
-        let sut:ThirdPartySigninUsecase = sut(repository: mockedRepostiry)
+        let sut:SigninWithGoogle = sut(repository: mockedRepostiry)
         
         let testUser = try XCTUnwrap(UserEntity.testUser)
         let userID = try XCTUnwrap(testUser.userID)
@@ -21,9 +21,7 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
         mockedRepostiry
             .answerWith(answer)
         
-        let result = sut.execute(
-            thirdParty : .google,
-            userID : userID)
+        let result = sut(userID : userID)
         
         switch(result) {
         case .success(let userEntity):
@@ -35,7 +33,7 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
     
     func test_reciveError_whenAuthIsFailed() throws {
         let mockedSigninRepository =  MockSigninRepository()
-        let sut = sut(repository: mockedSigninRepository)
+        let sut:SigninWithGoogle = sut(repository: mockedSigninRepository)
         
         let testUser = try XCTUnwrap(UserEntity.testUser)
         let userID = try XCTUnwrap(testUser.userID)
@@ -44,9 +42,7 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
         mockedSigninRepository
             .answerWith(answer)
         
-        let result = sut.execute(
-            thirdParty: .google,
-            userID: userID)
+        let result = sut(userID: userID)
         
         switch(result) {
         case .success:
@@ -59,7 +55,7 @@ final class ThirdPartySigninUsecaseTest: XCTestCase {
     }
     
     //    // MARK: Helpers:
-    final private func sut(repository : SigninRepository) -> ThirdPartySigninUsecase {
-        return ThirdPartySigninUsecase(repository : repository)
+    final private func sut(repository : any SigninRepository) -> SigninWithGoogle {
+        return SigninWithGoogle(repository : repository)
     }
 }
