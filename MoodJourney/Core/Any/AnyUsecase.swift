@@ -8,6 +8,6 @@
 import Foundation
 
 protocol AnyUsecase {
-    associatedtype Repository: AnyRepository
+    associatedtype Repository = AnyRepository
     var repository:Repository {get}
 }

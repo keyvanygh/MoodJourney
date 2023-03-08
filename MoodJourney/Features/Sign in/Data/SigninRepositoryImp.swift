@@ -10,9 +10,9 @@ import Foundation
 class SigninRepositoryImp: SigninRepository {
 
     /// remote data source
-    fileprivate let rds: SigninRemoteDataSource
+    internal let rds: SigninRemoteDataSource
     /// local data source
-    fileprivate let lds: SigninLocalDatasource
+    internal let lds: SigninLocalDatasource
 
     init(rds: SigninRemoteDataSource, lds: SigninLocalDatasource) {
         self.rds = rds

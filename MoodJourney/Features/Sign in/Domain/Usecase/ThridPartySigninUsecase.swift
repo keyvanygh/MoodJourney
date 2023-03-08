@@ -8,11 +8,11 @@
 import Foundation
 
 /// will execute this usecase when user sign in with 3'rd party providers e.g: Apple,Google
-struct SigninWithGoogle: AnyUsecase {
-    fileprivate let repository: SigninRepository
-
-    init(repository: SigninRepository) {
-        self.repository = repository
+class SigninWithGoogle: AnyUsecase {
+    var repository: any SigninRepository
+    
+    init(repository: any SigninRepository) {
+        self.repository = repository 
     }
 
     /// execute the usecae
@@ -35,6 +35,7 @@ struct SigninWithGoogle: AnyUsecase {
         givenName: String? = "",
         imageURL: URL? = nil) -> Result<UserEntity, Error> {
             return repository.signin(
+                withThirdParty: .google,
                 userID: userID,
                 hasImage: hasImage,
                 name: name,
