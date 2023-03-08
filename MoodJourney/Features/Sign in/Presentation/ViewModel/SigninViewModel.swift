@@ -24,38 +24,20 @@ class SigninViewModel:
         self.signinWithGoogle = signinWithGoogle
     }
     
-    public func googleSigninCallback(result: GIDSignInResult?,error: Error?){
-        if let error = error { /* show error */ }
-        guard let userID = result?.user.userID else {/* show error */ }
+    public final func googleSigninCallback(result: GIDSignInResult?,error: Error?){
+        if let error = error { print(error) /* show error */ }
+        guard let userID = result?.user.userID else { return /* show error */}
         let result = signinWithGoogle(userID: userID)
         switch result {
         case .success(let user):
+            print(user)
             break
         case .failure(let error):
+            print(error)
             break
         }
     }
-    public func appleSinginCallback(result: GIDSignInResult?,error: Error?){
-        
-    }
-    public func didSucceed3rdPartySignin(
-        thirdParty: ThirdParty,
-        userID: String,
-        hasImage: Bool?,
-        name: String?,
-        family: String?,
-        imageURL: URL?) {
-            signin(
-                userID: userID,
-                hasImage: hasImage,
-                name: name,
-                family: family, imageURL: imageURL)
-        }
-    
-    public func didFailed3rdPartySignin(
-        thirdParty: ThirdParty,
-        error: Error) {
-        }
+    public final func appleSinginCallback() {}
     
     private func signin(
         userID: String,
@@ -64,7 +46,7 @@ class SigninViewModel:
         family: String?,
         imageURL: URL?) {
             let result =
-            signinWithGoogle.execute(
+            signinWithGoogle(
                 userID: userID,
                 hasImage: hasImage,
                 name: name,
@@ -78,14 +60,8 @@ class SigninViewModel:
         }
 }
 protocol SigninViewModelInputs {
-    func didSucceed3rdPartySignin(
-        thirdParty: ThirdParty,
-        userID: String,
-        hasImage: Bool,
-        name: String?,
-        family: String?,
-        imageURL: URL?)
-    func didFailed3rdPartySignin(thirdParty: ThirdParty, error: Error)
+    func googleSigninCallback(result: GIDSignInResult?,error: Error?)
+    func appleSinginCallback()
 }
 protocol SigninViewModelOutputs {
     var user: UserEntity? {get}
