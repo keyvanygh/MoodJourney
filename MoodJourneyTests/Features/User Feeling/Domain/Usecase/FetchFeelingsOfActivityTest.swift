@@ -1,45 +1,35 @@
 //
-//  AddMoodUsecase.swift
-//  MoodJourney
+//  FetchFeelingsOfActivityTest.swift
+//  MoodJourneyTests
 //
-//  Created Keyvan sh on 2/16/23.
+//  Created by sh on 3/8/23.
 //
 
 import XCTest
 @testable import MoodJourney
 
-final class AddFeelingToActivityTest: XCTestCase {
+final class FetchFeelingsOfActivityTest: XCTestCase {
 
     func test_reciveSuccessResponse_whenAddingFeelingToActivitySucceed() throws {
         let mockedRepostiry = MockFeelingRepository()
         mockedRepostiry.answerWith(Result<Bool, Error>.success(true))
-        let sut : AddFeelingToActivity = sut(repository: mockedRepostiry)
+        let sut : FetchFeelingsOfActivity = sut(repository: mockedRepostiry)
         let testActivty = try XCTUnwrap(ActivityEntity.testActivity)
         let result = sut(feeling: .happy, to: testActivty)
         XCTAssert(result.isSuccess)
     }
-    func test_reciveError_whenAddingFeelingToActivityFailed() throws {
+    func test_reciveError_whenAuthIsFailed() throws {
         let mockedRepostiry = MockFeelingRepository()
         mockedRepostiry.answerWith(Result<Bool, Error>.failure(AnyError.error))
-        let sut : AddFeelingToActivity = sut(repository: mockedRepostiry)
+        let sut : FetchFeelingsOfActivity = sut(repository: mockedRepostiry)
         let testActivty = try XCTUnwrap(ActivityEntity.testActivity)
         let result = sut(feeling: .happy, to: testActivty)
         XCTAssert(!result.isSuccess)
     }
     
     // MARK: Helpers:
-    final private func sut(repository : any FeelingRepository) -> AddFeelingToActivity {
-        return AddFeelingToActivity(repository : repository)
+    final private func sut(repository : any FeelingRepository) -> FetchFeelingsOfActivity {
+        return FetchFeelingsOfActivity(repository : repository)
     }
-    
-}
-extension Result {
-    var isSuccess: Bool {
-        switch self {
-        case .success:
-            return true
-        case .failure:
-            return false
-        }
-    }
+
 }

@@ -155,6 +155,7 @@
 		C03FB33229A4230700D0E781 /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
 		C0461175299ECC5F0050ABFD /* SigninRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepositoryImp.swift; sourceTree = "<group>"; };
 		C0AEE83829B0589800F8E879 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		C0B0DAE629B981970013A4F7 /* FetchFeelingsOfActivityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFeelingsOfActivityTest.swift; sourceTree = "<group>"; };
 		C0B1063229AD6F060034302A /* MockSigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSigninRepository.swift; sourceTree = "<group>"; };
 		C0B1063429AD72B40034302A /* UserEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+extension.swift"; sourceTree = "<group>"; };
 		C0B6AD0429B82FD2008036B9 /* AnyUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyUsecase.swift; sourceTree = "<group>"; };
@@ -1030,6 +1031,7 @@
 			isa = PBXGroup;
 			children = (
 				C0F05A8A299FF96E00385F65 /* AddFeelingToActivityUsecase.swift */,
+				C0B0DAE629B981970013A4F7 /* FetchFeelingsOfActivityTest.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
