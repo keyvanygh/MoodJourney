@@ -8,14 +8,14 @@
 import Foundation
 
 /// fetch feelings submited in an activity
-class FetchFeelingsForActivityUsecase {
+class FetchFeelingsOfActivity {
     let repository: any FeelingRepository
     init(repository: any FeelingRepository) {
         self.repository = repository
     }
     /// execute the usecae
     /// - Parameters:
-    ///   - activityID: activity id
+    ///   - of: activity 
     /// - Returns:
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError

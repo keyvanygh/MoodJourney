@@ -8,7 +8,7 @@
 import XCTest
 @testable import MoodJourney
 
-final class AddFeelingToActivityUsecaseTest: XCTestCase {
+final class AddFeelingToActivityTest: XCTestCase {
 
     func test_reciveSuccessResponse_whenAddingFeelingToActivitySucceed() throws {
         let mockedRepostiry = MockFeelingRepository()
