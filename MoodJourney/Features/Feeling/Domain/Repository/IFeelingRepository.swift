@@ -26,12 +26,10 @@ protocol FeelingRepository: AnyRepository {
     
     /// fetch feelings from activity with activityID
     /// - Parameters:
-    ///   - activityID: activity id
+    ///   - of: activity 
     /// - Returns:
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
-    func fetchFeelings(fromActivity activityID: String) -> Result<[FeelingEntity], Error>
-    
     func fetchFeelings(of activity: ActivityEntity) -> Result<[FeelingEntity], Error>
     
 }

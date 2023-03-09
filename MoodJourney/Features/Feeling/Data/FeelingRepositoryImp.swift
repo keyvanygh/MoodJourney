@@ -48,21 +48,6 @@ class FeelingRepositoryImp: FeelingRepository {
     /// - Returns:
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
-    func fetchFeelings(fromActivity activityID: String) -> Result<[FeelingEntity], Error> {
-        do {
-            let result = try lds.fetchFeelings(fromActivity: activityID)
-            return .success(result)
-        } catch {
-            return .failure(AnyError.error)
-        }
-    }
-
-    /// fetch feelings from activity with activityID
-    /// - Parameters:
-    ///   - activityID: activity id
-    /// - Returns:
-    ///   - success: array of FeelingEntitys
-    ///   - fail: FeelingError
     func fetchFeelings(of activity: ActivityEntity) -> Result<[FeelingEntity], Error> {
         do {
             let result = try lds.fetchFeelings(of: activity)
