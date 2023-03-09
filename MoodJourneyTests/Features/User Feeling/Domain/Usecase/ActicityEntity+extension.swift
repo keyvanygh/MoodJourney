@@ -12,4 +12,10 @@ extension ActivityEntity {
     static var testActivity: ActivityEntity? {
         return MockCoreDataManager.shared.previewActivities.first
     }
+    static var activityWithNoFeeling: ActivityEntity? {
+        return MockCoreDataManager.shared.activityWithNoFeeling
+    }
+    static var activityWithFeeling: ActivityEntity? {
+        return MockCoreDataManager.shared.activityWithFeeling
+    }
 }

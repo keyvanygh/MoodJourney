@@ -38,6 +38,25 @@ class MockCoreDataManager: CoreDataManager {
         activities.append(activity2)
         return activities
     }()
+    lazy var activityWithFeeling: ActivityEntity? = {
+        guard let activity = add(entity: .activity) as? ActivityEntity else {return nil}
+        activity.name = "TestActivityName"
+        activity.activityID = "TestActivityID"
+        activity.imageURLString = "https://www.healthkart.com/connect/wp-content/uploads/2021/03/banner.jpg"
+        guard let feeling = add(entity: .feeling) as? FeelingEntity else {return nil}
+        feeling.message = "testFeeling"
+        feeling.feelingTypeValue = Feeling.happy.rawValue
+        activity.addToFeelings(feeling)
+        return activity
+    }()
+    lazy var activityWithNoFeeling: ActivityEntity? = {
+        guard let activity = add(entity: .activity) as? ActivityEntity else {return nil}
+        activity.name = "TestActivityName"
+        activity.activityID = "TestActivityID"
+        activity.imageURLString = "https://www.healthkart.com/connect/wp-content/uploads/2021/03/banner.jpg"
+        return activity
+    }()
+
     lazy var container: NSPersistentContainer = {
         let description = NSPersistentStoreDescription()
         description.url = URL(fileURLWithPath: "/dev/null")

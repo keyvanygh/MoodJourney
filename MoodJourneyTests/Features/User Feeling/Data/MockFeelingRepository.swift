@@ -37,5 +37,4 @@ class MockFeelingRepository: FeelingRepository, Mock {
         return answer
     }
     
-    
 }

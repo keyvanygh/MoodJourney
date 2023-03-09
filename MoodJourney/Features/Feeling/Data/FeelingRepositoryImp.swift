@@ -9,9 +9,9 @@ import Foundation
 
 class FeelingRepositoryImp: FeelingRepository {
     
-    
     let lds: FeelingLocalDatasource
     let rds: Int = 0
+    
     init(localDatasource: FeelingLocalDatasource) {
         self.lds = localDatasource
     }

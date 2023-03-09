@@ -25,7 +25,7 @@ extension Container {
     
     // MARK: - Feelings :
     var feelingLocalDatasource: Factory<FeelingLocalDatasource> {
-        self { FeelingLocalDatasource()  }
+        self { [self] in FeelingLocalDatasource(dbm: dbm(), acm: acm())  }
     }
     var feelingRepository: Factory<any FeelingRepository> {
         self { [self] in FeelingRepositoryImp(localDatasource: feelingLocalDatasource())  }

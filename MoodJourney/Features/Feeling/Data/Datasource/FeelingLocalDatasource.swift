@@ -11,6 +11,10 @@ import Factory
 class FeelingLocalDatasource {
     @Injected(\.dbm) private var dbm: CoreDataManager
     @Injected(\.acm) private var acm: AccountManager
+    init(dbm: CoreDataManager, acm: AccountManager) {
+        self.dbm = dbm
+        self.acm = acm
+    }
     
     /// add feeling to activity with acitivtyID
     /// - Parameters:
