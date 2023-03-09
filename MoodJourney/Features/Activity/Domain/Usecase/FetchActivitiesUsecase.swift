@@ -8,9 +8,9 @@
 import Foundation
 
 /// fetch all activities
-class FetchActivitiesUsecase {
-    let repository: ActivityRepository
-    init(repository: ActivityRepository) {
+class FetchActivities: AnyUsecase {
+    let repository: any ActivityRepository
+    init(repository: any ActivityRepository) {
         self.repository = repository
     }
     /// execute usecase
