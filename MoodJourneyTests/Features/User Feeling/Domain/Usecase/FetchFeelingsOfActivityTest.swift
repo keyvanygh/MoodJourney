@@ -10,20 +10,28 @@ import XCTest
 
 final class FetchFeelingsOfActivityTest: XCTestCase {
 
-    func test_reciveSuccessResponse_whenAddingFeelingToActivitySucceed() throws {
+    func test_reciveFeelings_whenFetchFeelingOfActivitySucceed() throws {
         let mockedRepostiry = MockFeelingRepository()
-        mockedRepostiry.answerWith(Result<Bool, Error>.success(true))
+        let answer:Result<[FeelingEntity], Error> = .success(FeelingEntity.someFeelings)
+        mockedRepostiry.answerWith(answer)
         let sut : FetchFeelingsOfActivity = sut(repository: mockedRepostiry)
         let testActivty = try XCTUnwrap(ActivityEntity.testActivity)
-        let result = sut(feeling: .happy, to: testActivty)
+        let result = sut(of: testActivty)
         XCTAssert(result.isSuccess)
+        switch result {
+        case .success(let feelings):
+            XCTAssert(!feelings.isEmpty)
+        case .failure:
+            XCTFail("failed")
+        }
     }
     func test_reciveError_whenAuthIsFailed() throws {
         let mockedRepostiry = MockFeelingRepository()
-        mockedRepostiry.answerWith(Result<Bool, Error>.failure(AnyError.error))
+        let answer:Result<[FeelingEntity], Error> = .failure(AnyError.error)
+        mockedRepostiry.answerWith(answer)
         let sut : FetchFeelingsOfActivity = sut(repository: mockedRepostiry)
         let testActivty = try XCTUnwrap(ActivityEntity.testActivity)
-        let result = sut(feeling: .happy, to: testActivty)
+        let result = sut(of: testActivty)
         XCTAssert(!result.isSuccess)
     }
     

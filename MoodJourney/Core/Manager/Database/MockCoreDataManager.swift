@@ -56,6 +56,19 @@ class MockCoreDataManager: CoreDataManager {
         activity.imageURLString = "https://www.healthkart.com/connect/wp-content/uploads/2021/03/banner.jpg"
         return activity
     }()
+    
+    lazy var someFeelings: [FeelingEntity] = {
+        var feelings: [FeelingEntity] = []
+        guard let feeling = add(entity: .feeling) as? FeelingEntity else {return []}
+        feeling.message = "Message1"
+        feeling.feelingTypeValue = Feeling.happy.rawValue
+        feelings.append(feeling)
+        guard let feeling2 = add(entity: .feeling) as? FeelingEntity else {return []}
+        feeling.message = "Message2"
+        feeling.feelingTypeValue = Feeling.sad.rawValue
+        feelings.append(feeling2)
+        return feelings
+    }()
 
     lazy var container: NSPersistentContainer = {
         let description = NSPersistentStoreDescription()
