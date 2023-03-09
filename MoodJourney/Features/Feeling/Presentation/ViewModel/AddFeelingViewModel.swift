@@ -13,7 +13,7 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput, AddFeelingVie
     public var inputs: AddFeelingViewModelInput { return self }
     public var outputs: AddFeelingViewModelOutput { return self }
     @Injected(\.addFeelingToActivityUsecase) private(set) var addFeelingToActivityUsecase
-    @Injected(\.fetchFeelingsForActivityUsecase) private(set) var fetchFeelingsForActivityUsecase
+    @Injected(\.fetchFeelingsOfActivity) private(set) var fetchFeelingsOfActivity
 #if DEBUG
     @Injected(\.signinLocalDatasource) private var signinLocalDatasource
     @Injected(\.feelingLocalDatasource) private var  feelingLocalDatasource
@@ -61,7 +61,7 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput, AddFeelingVie
     }
     func fetchFeelings() {
         guard let activity = activity else {return}
-        let result = fetchFeelingsForActivityUsecase(of: activity)
+        let result = fetchFeelingsOfActivity(of: activity)
         switch result {
         case .success(let result):
             feelings = result
