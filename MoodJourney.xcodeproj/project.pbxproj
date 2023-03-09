@@ -46,6 +46,9 @@
 		C0B1063529AD72B40034302A /* UserEntity+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1063429AD72B40034302A /* UserEntity+extension.swift */; };
 		C0B62D4B29B991EA00A088EE /* FetchFeelingsOfActivityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B0DAE629B981970013A4F7 /* FetchFeelingsOfActivityTest.swift */; };
 		C0B62D4D29B9929800A088EE /* FeelingEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B62D4C29B9929800A088EE /* FeelingEntity+Extension.swift */; };
+		C0B62D5129B99A8E00A088EE /* FetchActivitiesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B62D5029B99A8E00A088EE /* FetchActivitiesTest.swift */; };
+		C0B62D5429B99BE500A088EE /* MockActivityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B62D5329B99BE500A088EE /* MockActivityRepository.swift */; };
+		C0B62D5629B99D9500A088EE /* ActivityEntity+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B62D5529B99D9500A088EE /* ActivityEntity+extension.swift */; };
 		C0B6AD0529B82FD2008036B9 /* AnyUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6AD0429B82FD2008036B9 /* AnyUsecase.swift */; };
 		C0B6AD0729B8302E008036B9 /* AnyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6AD0629B8302E008036B9 /* AnyRepository.swift */; };
 		C0B6AD0929B90C20008036B9 /* SigninWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6AD0829B90C20008036B9 /* SigninWithApple.swift */; };
@@ -161,6 +164,9 @@
 		C0B1063229AD6F060034302A /* MockSigninRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSigninRepository.swift; sourceTree = "<group>"; };
 		C0B1063429AD72B40034302A /* UserEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+extension.swift"; sourceTree = "<group>"; };
 		C0B62D4C29B9929800A088EE /* FeelingEntity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeelingEntity+Extension.swift"; sourceTree = "<group>"; };
+		C0B62D5029B99A8E00A088EE /* FetchActivitiesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchActivitiesTest.swift; sourceTree = "<group>"; };
+		C0B62D5329B99BE500A088EE /* MockActivityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockActivityRepository.swift; sourceTree = "<group>"; };
+		C0B62D5529B99D9500A088EE /* ActivityEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityEntity+extension.swift"; sourceTree = "<group>"; };
 		C0B6AD0429B82FD2008036B9 /* AnyUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyUsecase.swift; sourceTree = "<group>"; };
 		C0B6AD0629B8302E008036B9 /* AnyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRepository.swift; sourceTree = "<group>"; };
 		C0B6AD0829B90C20008036B9 /* SigninWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithApple.swift; sourceTree = "<group>"; };
@@ -360,6 +366,7 @@
 		C01A374E299DB8C8001856BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				C0B62D4E29B99A5A00A088EE /* Activity */,
 				C0F05A87299FF96D00385F65 /* User Feeling */,
 				C01A374F299DB8DA001856BA /* Signin */,
 			);
@@ -676,6 +683,32 @@
 				C0F05A54299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift */,
 			);
 			path = Datasource;
+			sourceTree = "<group>";
+		};
+		C0B62D4E29B99A5A00A088EE /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				C0B62D5229B99BD900A088EE /* Data */,
+				C0B62D4F29B99A6500A088EE /* Domain */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		C0B62D4F29B99A6500A088EE /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C0B62D5029B99A8E00A088EE /* FetchActivitiesTest.swift */,
+				C0B62D5529B99D9500A088EE /* ActivityEntity+extension.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C0B62D5229B99BD900A088EE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C0B62D5329B99BE500A088EE /* MockActivityRepository.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		C0B8001929A58DEA00E7D119 /* Splash */ = {
@@ -1321,16 +1354,19 @@
 				C0B62D4D29B9929800A088EE /* FeelingEntity+Extension.swift in Sources */,
 				C0BF79B829AC6D4700A0A0A0 /* UserDataModel+extension.swift in Sources */,
 				C0B1063529AD72B40034302A /* UserEntity+extension.swift in Sources */,
+				C0B62D5129B99A8E00A088EE /* FetchActivitiesTest.swift in Sources */,
 				C0B0DAE329B96E800013A4F7 /* FeelingLocalDatasourceTest.swift in Sources */,
 				C0F05A96299FFCE400385F65 /* AddFeelingToActivityTest.swift in Sources */,
 				C0F05A55299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift in Sources */,
 				C0B1063329AD6F060034302A /* MockSigninRepository.swift in Sources */,
 				C01A3753299DB9FB001856BA /* SigninWithGoogleTest.swift in Sources */,
+				C0B62D5429B99BE500A088EE /* MockActivityRepository.swift in Sources */,
 				C0BCF8AB29B944DA00A680D2 /* MockFeelingRepository.swift in Sources */,
 				C0BCF8A229B93AD300A680D2 /* SigninWithAppleTest.swift in Sources */,
 				C0B62D4B29B991EA00A088EE /* FetchFeelingsOfActivityTest.swift in Sources */,
 				C0BCF8AD29B9484400A680D2 /* ActicityEntity+extension.swift in Sources */,
 				C0B834FE299D2BF7001436E8 /* MoodJourneyTests.swift in Sources */,
+				C0B62D5629B99D9500A088EE /* ActivityEntity+extension.swift in Sources */,
 				C0BF79AA29AC581600A0A0A0 /* MockNetworkManager.swift in Sources */,
 				C0AEE83929B0589800F8E879 /* Mock.swift in Sources */,
 			);

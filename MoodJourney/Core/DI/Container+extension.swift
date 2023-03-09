@@ -45,7 +45,7 @@ extension Container {
         self { ActivityLocalDatasource()  }
     }
     var activityRepository: Factory<any ActivityRepository> {
-        self { [self] in ActivityRepositoryImp(localDs: activityLocalDatasource())  }
+        self { [self] in ActivityRepositoryImp(lds: activityLocalDatasource())  }
     }
     var fetchActivitiesUsecase: Factory<FetchActivities> {
         self { [self] in FetchActivities(repository: activityRepository())  }

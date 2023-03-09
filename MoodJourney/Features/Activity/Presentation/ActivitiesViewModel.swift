@@ -31,7 +31,7 @@ class ActivitiesViewModel:
     // MARK: - Inputs
     func fetchActivies() {
         activities = []
-        let result = fetchActivitiesUsecase.execute()
+        let result = fetchActivitiesUsecase()
         switch result {
         case .success(let result):
             activities = result
