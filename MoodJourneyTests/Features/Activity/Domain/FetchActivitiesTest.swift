@@ -22,4 +22,16 @@ final class FetchActivitiesTest: XCTestCase {
             XCTFail("Failed")
         }
     }
+    func test_reciveEmpty_WhenThereIsNoActivityToFetch() {
+        let mockRepository = MockActivityRepository()
+        mockRepository.answerWith([])
+        let sut: FetchActivities = FetchActivities(repository: mockRepository)
+        let result = sut()
+        switch result {
+        case .success(let activities):
+            XCTAssert(activities.isEmpty)
+        case .failure:
+            XCTFail("Failed")
+        }
+    }
 }

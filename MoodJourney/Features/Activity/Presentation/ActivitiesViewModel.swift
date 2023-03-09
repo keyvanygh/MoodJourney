@@ -40,18 +40,18 @@ class ActivitiesViewModel:
         }
     }
     // MARK: - HELPER
-    func addActivity() {
-        let lds = ActivityLocalDatasource()
-        _ = try? lds.addActivity(
-            activityID: "1",
-            name: "Gain Weight",
-            imageURLString: "")
-        _ = try? lds.addActivity(
-            activityID: "2",
-            name: "Loose Weight",
-            imageURLString: "")
-
-    }
+//    func addActivity() {
+//        let lds = ActivityLocalDatasource()
+//        _ = try? lds.addActivity(
+//            activityID: "1",
+//            name: "Gain Weight",
+//            imageURLString: "")
+//        _ = try? lds.addActivity(
+//            activityID: "2",
+//            name: "Loose Weight",
+//            imageURLString: "")
+//
+//    }
 }
 protocol ActivitiesViewModelInput {
     func fetchActivies()

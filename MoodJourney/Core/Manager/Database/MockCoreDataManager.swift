@@ -97,4 +97,12 @@ class MockCoreDataManager: CoreDataManager {
         container.viewContext.automaticallyMergesChangesFromParent = true
         try container.viewContext.save()
     }
+    
+    func addSomeActivities() {
+        var newActivity = add(entity: .activity) as? ActivityEntity
+        newActivity?.name = "activity"
+        var newActivity2 = add(entity: .activity) as? ActivityEntity
+        newActivity2?.name = "activity2"
+    }
+    
 }

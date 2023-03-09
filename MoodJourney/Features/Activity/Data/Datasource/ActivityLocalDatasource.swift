@@ -11,7 +11,9 @@ import Factory
 class ActivityLocalDatasource {
 
     @Injected(\.dbm) private var dbm
-
+    init(dbm: CoreDataManager) {
+        self.dbm = dbm
+    }
     /// add activity to db
     /// - Parameters:
     ///   - activityID: activity id

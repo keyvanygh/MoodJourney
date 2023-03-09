@@ -90,6 +90,7 @@
 		C0BF79B529AC65D500A0A0A0 /* Bool+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF79B429AC65D500A0A0A0 /* Bool+extension.swift */; };
 		C0BF79B829AC6D4700A0A0A0 /* UserDataModel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF79B729AC6D4700A0A0A0 /* UserDataModel+extension.swift */; };
 		C0C31740299E8E1200B998C5 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C3173F299E8E1200B998C5 /* AnyError.swift */; };
+		C0C9BE7C29BA2CF400D4D266 /* ActivityLocalDatasourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C9BE7B29BA2CF400D4D266 /* ActivityLocalDatasourceTest.swift */; };
 		C0F05A55299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A54299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift */; };
 		C0F05A5A299EFF5100385F65 /* SigninRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A59299EFF5100385F65 /* SigninRemoteDataSource.swift */; };
 		C0F05A5C299F00B700385F65 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05A5B299F00B700385F65 /* UserDataModel.swift */; };
@@ -206,6 +207,7 @@
 		C0BF79B429AC65D500A0A0A0 /* Bool+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+extension.swift"; sourceTree = "<group>"; };
 		C0BF79B729AC6D4700A0A0A0 /* UserDataModel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDataModel+extension.swift"; sourceTree = "<group>"; };
 		C0C3173F299E8E1200B998C5 /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
+		C0C9BE7B29BA2CF400D4D266 /* ActivityLocalDatasourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalDatasourceTest.swift; sourceTree = "<group>"; };
 		C0F05A54299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRemoteDataSourceTest.swift; sourceTree = "<group>"; };
 		C0F05A59299EFF5100385F65 /* SigninRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRemoteDataSource.swift; sourceTree = "<group>"; };
 		C0F05A5B299F00B700385F65 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
@@ -706,6 +708,7 @@
 		C0B62D5229B99BD900A088EE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C0C9BE7A29BA2C9E00D4D266 /* Datasource */,
 				C0B62D5329B99BE500A088EE /* MockActivityRepository.swift */,
 			);
 			path = Data;
@@ -930,6 +933,14 @@
 				C0BF79B729AC6D4700A0A0A0 /* UserDataModel+extension.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		C0C9BE7A29BA2C9E00D4D266 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				C0C9BE7B29BA2CF400D4D266 /* ActivityLocalDatasourceTest.swift */,
+			);
+			path = Datasource;
 			sourceTree = "<group>";
 		};
 		C0F05A5F299F055D00385F65 /* Presentation */ = {
@@ -1361,6 +1372,7 @@
 				C0B1063329AD6F060034302A /* MockSigninRepository.swift in Sources */,
 				C01A3753299DB9FB001856BA /* SigninWithGoogleTest.swift in Sources */,
 				C0B62D5429B99BE500A088EE /* MockActivityRepository.swift in Sources */,
+				C0C9BE7C29BA2CF400D4D266 /* ActivityLocalDatasourceTest.swift in Sources */,
 				C0BCF8AB29B944DA00A680D2 /* MockFeelingRepository.swift in Sources */,
 				C0BCF8A229B93AD300A680D2 /* SigninWithAppleTest.swift in Sources */,
 				C0B62D4B29B991EA00A088EE /* FetchFeelingsOfActivityTest.swift in Sources */,

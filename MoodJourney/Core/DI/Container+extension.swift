@@ -42,7 +42,7 @@ extension Container {
     
     // MARK: - Activity :
     var activityLocalDatasource: Factory<ActivityLocalDatasource> {
-        self { ActivityLocalDatasource()  }
+        self { [self] in ActivityLocalDatasource(dbm: dbm())  }
     }
     var activityRepository: Factory<any ActivityRepository> {
         self { [self] in ActivityRepositoryImp(lds: activityLocalDatasource())  }
