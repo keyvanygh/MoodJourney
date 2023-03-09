@@ -61,7 +61,7 @@ class AddFeelingViewModel: AnyViewModel, AddFeelingViewModelInput, AddFeelingVie
     }
     func fetchFeelings() {
         guard let activity = activity else {return}
-        let result = fetchFeelingsForActivityUsecase.execute(of: activity)
+        let result = fetchFeelingsForActivityUsecase(of: activity)
         switch result {
         case .success(let result):
             feelings = result

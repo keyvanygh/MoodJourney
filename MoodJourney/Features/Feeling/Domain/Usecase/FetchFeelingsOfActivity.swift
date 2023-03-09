@@ -15,11 +15,11 @@ class FetchFeelingsOfActivity {
     }
     /// execute the usecae
     /// - Parameters:
-    ///   - of: activity 
+    ///   - of: activity
     /// - Returns:
     ///   - success: array of FeelingEntitys
     ///   - fail: FeelingError
-    func execute(of activity: ActivityEntity) -> Result<[FeelingEntity], Error> {
+    func callAsFunction(of activity: ActivityEntity) -> Result<[FeelingEntity], Error> {
         return repository.fetchFeelings(of: activity)
     }
 }
