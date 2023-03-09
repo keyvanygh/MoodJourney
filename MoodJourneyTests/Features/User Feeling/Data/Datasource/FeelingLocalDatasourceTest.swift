@@ -24,6 +24,16 @@ final class FeelingLocalDatasourceTest: XCTestCase {
         XCTAssert(feelings.isEmpty)
     }
     
+    func test_reciveOneFeeling_whenAddedFeelingToAnActivityWithNoFeeling() throws {
+        let sut : FeelingLocalDatasource = sut()
+        let activityWithNoFeeling = try XCTUnwrap(ActivityEntity.activityWithNoFeeling)
+        _ = try XCTUnwrap(sut.addFeeling(
+            feeling: Feeling.happy.rawValue,
+            message: String.dontcare,
+            imageURLString: String.dontcare,
+            to: activityWithNoFeeling))
+        XCTAssert(activityWithNoFeeling.feelings?.count == 1)
+    }
     // MARK: Helpers:
     final private func sut() -> FeelingLocalDatasource {
         return FeelingLocalDatasource(dbm: MockCoreDataManager.shared, acm: AccountManager())
