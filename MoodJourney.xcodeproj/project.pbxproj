@@ -20,7 +20,7 @@
 		C022FE6529A19DE900F53B0B /* ActivityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6429A19DE900F53B0B /* ActivityDataModel.swift */; };
 		C022FE6729A19EAE00F53B0B /*  ActivityRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6629A19EAE00F53B0B /*  ActivityRepositoryImp.swift */; };
 		C022FE6D29A19F5000F53B0B /* ActivityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6C29A19F5000F53B0B /* ActivityRepository.swift */; };
-		C022FE6F29A19FF900F53B0B /* FetchActivitiesUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6E29A19FF900F53B0B /* FetchActivitiesUsecase.swift */; };
+		C022FE6F29A19FF900F53B0B /* FetchActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE6E29A19FF900F53B0B /* FetchActivities.swift */; };
 		C022FE7229A1A34900F53B0B /* ActivitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE7129A1A34900F53B0B /* ActivitiesViewModel.swift */; };
 		C022FE7429A1A35500F53B0B /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE7329A1A35500F53B0B /* ActivitiesView.swift */; };
 		C022FE7729A1D1E900F53B0B /* FetchFeelingsOfActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE7629A1D1E900F53B0B /* FetchFeelingsOfActivity.swift */; };
@@ -136,7 +136,7 @@
 		C022FE6429A19DE900F53B0B /* ActivityDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDataModel.swift; sourceTree = "<group>"; };
 		C022FE6629A19EAE00F53B0B /*  ActivityRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ActivityRepositoryImp.swift"; sourceTree = "<group>"; };
 		C022FE6C29A19F5000F53B0B /* ActivityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRepository.swift; sourceTree = "<group>"; };
-		C022FE6E29A19FF900F53B0B /* FetchActivitiesUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchActivitiesUsecase.swift; sourceTree = "<group>"; };
+		C022FE6E29A19FF900F53B0B /* FetchActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchActivities.swift; sourceTree = "<group>"; };
 		C022FE7129A1A34900F53B0B /* ActivitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModel.swift; sourceTree = "<group>"; };
 		C022FE7329A1A35500F53B0B /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
 		C022FE7629A1D1E900F53B0B /* FetchFeelingsOfActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFeelingsOfActivity.swift; sourceTree = "<group>"; };
@@ -442,7 +442,7 @@
 		C022FE6929A19F2A00F53B0B /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
-				C022FE6E29A19FF900F53B0B /* FetchActivitiesUsecase.swift */,
+				C022FE6E29A19FF900F53B0B /* FetchActivities.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -1293,7 +1293,7 @@
 				C022FE7229A1A34900F53B0B /* ActivitiesViewModel.swift in Sources */,
 				C03FB32929A3C03700D0E781 /* CoordinatorView.swift in Sources */,
 				C022FE9129A28D8900F53B0B /* CheerleadersView.swift in Sources */,
-				C022FE6F29A19FF900F53B0B /* FetchActivitiesUsecase.swift in Sources */,
+				C022FE6F29A19FF900F53B0B /* FetchActivities.swift in Sources */,
 				C0B6AD0929B90C20008036B9 /* SigninWithApple.swift in Sources */,
 				C0B8002429A5958F00E7D119 /* UserTokenValidationUsecase.swift in Sources */,
 				C0B8003E29A67B6000E7D119 /* ReactionViewModel.swift in Sources */,
