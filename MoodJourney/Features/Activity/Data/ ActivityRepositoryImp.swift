@@ -8,9 +8,12 @@
 import Foundation
 
 class ActivityRepositoryImp: ActivityRepository {
+    
+    var rds = 0
     let lds: ActivityLocalDatasource
-    init(localDs: ActivityLocalDatasource) {
-        self.lds = localDs
+    
+    init(lds: ActivityLocalDatasource) {
+        self.lds = lds
     }
     /// fetch all activities
     /// - Returns:

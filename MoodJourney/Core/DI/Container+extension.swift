@@ -44,11 +44,11 @@ extension Container {
     var activityLocalDatasource: Factory<ActivityLocalDatasource> {
         self { ActivityLocalDatasource()  }
     }
-    var activityRepository: Factory<ActivityRepository> {
+    var activityRepository: Factory<any ActivityRepository> {
         self { [self] in ActivityRepositoryImp(localDs: activityLocalDatasource())  }
     }
-    var fetchActivitiesUsecase: Factory<FetchActivitiesUsecase> {
-        self { [self] in FetchActivitiesUsecase(repository: activityRepository())  }
+    var fetchActivitiesUsecase: Factory<FetchActivities> {
+        self { [self] in FetchActivities(repository: activityRepository())  }
     }
     
     // MARK: - Cheerleaders :

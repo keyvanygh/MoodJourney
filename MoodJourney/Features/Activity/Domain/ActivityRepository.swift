@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ActivityRepository {
+protocol ActivityRepository: AnyRepository {
     /// fetch all activities
     /// - Returns:
     ///   - success: list of activities
