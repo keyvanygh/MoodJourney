@@ -8,8 +8,8 @@
 import Foundation
 
 protocol AnyRepository {
-    associatedtype LocalDatasource
-    associatedtype RemoteDatasource
-    var lds: LocalDatasource {get}
-    var rds: RemoteDatasource {get}
+//    associatedtype LocalDatasource
+//    associatedtype RemoteDatasource
+//    var lds: LocalDatasource {get}
+//    var rds: RemoteDatasource {get}
 }

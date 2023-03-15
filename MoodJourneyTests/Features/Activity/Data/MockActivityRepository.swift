@@ -12,13 +12,8 @@ class MockActivityRepository: ActivityRepository, Mock {
    
     var answer: Any?
     
-    var lds = 0
-    
-    var rds = 0
-    
-    func fetchActivities() -> Result<[ActivityEntity], Error> {
-        guard let answer = answer as? [ActivityEntity] else {return .failure(AnyError.error)}
-        return .success(answer)
+    func fetchActivities() -> FetchActivitiesResult {
+        return answer(FetchActivitiesResult.self)
     }
     
     func setAnswer(_ answer: Any?) {

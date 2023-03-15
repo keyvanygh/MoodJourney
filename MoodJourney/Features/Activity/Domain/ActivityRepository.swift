@@ -7,10 +7,12 @@
 
 import Foundation
 
+typealias FetchActivitiesResult = Result<[ActivityEntity], Error>
+
 protocol ActivityRepository: AnyRepository {
     /// fetch all activities
     /// - Returns:
     ///   - success: list of activities
     ///   - fail: ActivityError
-    func fetchActivities() -> Result<[ActivityEntity], Error>
+    func fetchActivities() -> FetchActivitiesResult
 }
