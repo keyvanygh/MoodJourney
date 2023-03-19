@@ -9,7 +9,10 @@ import Foundation
 import Factory
 
 class CheerleadersLocalDatasource {
-    @Injected(\.dbm) private var dbm
+    private var dbm: CoreDataManager
+    init(dbm: CoreDataManager) {
+        self.dbm = dbm
+    }
 
     func fetchCheerleaders(of user: UserEntity) throws -> [UserEntity] {
         guard let cheerLeaders = user.cheerleaders?.allObjects as? [UserEntity] else {throw(AnyError.error)}

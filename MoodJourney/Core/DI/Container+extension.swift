@@ -53,7 +53,7 @@ extension Container {
     
     // MARK: - Cheerleaders :
     var cheerLeadersLocalDatasource: Factory<CheerleadersLocalDatasource> {
-        self { CheerleadersLocalDatasource()  }
+        self { [self] in CheerleadersLocalDatasource(dbm: dbm())  }
     }
     var cheerLeadersRepository: Factory<CheerleadersRepository> {
         self { [self] in CheerleadersRepositoryImp(lds: cheerLeadersLocalDatasource())  }
