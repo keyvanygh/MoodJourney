@@ -7,13 +7,13 @@
 
 import Foundation
 
-class FetchUserByIDUsecase {
+class FetchUserByID {
     let repository: any SigninRepository
     init(repository: any SigninRepository) {
         self.repository = repository
     }
 
-    func execute(userID: String) -> Result<UserEntity, Error> {
+    func callAsFunction(userID: String) -> Result<UserEntity, Error> {
         repository.fetchUser(byID: userID)
     }
 }

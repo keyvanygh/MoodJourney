@@ -80,8 +80,8 @@ extension Container {
     var signinWithApple: Factory<SigninWithApple> {
         self { [self] in SigninWithApple(repository: signinRepository())  }
     }
-    var fetchUserByIDUsecase: Factory<FetchUserByIDUsecase> {
-        self { [self] in FetchUserByIDUsecase(repository: signinRepository())  }
+    var fetchUserByID: Factory<FetchUserByID> {
+        self { [self] in FetchUserByID(repository: signinRepository())  }
     }
     var fetchUserIDFromKeychainUsecase: Factory<FetchUserIDFromKeychainUsecase> {
         self { [self] in FetchUserIDFromKeychainUsecase(repository: signinRepository())  }

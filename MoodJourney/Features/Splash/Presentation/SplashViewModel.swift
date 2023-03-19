@@ -16,7 +16,7 @@ class SplashViewModel:
     public var inputs: SplashViewModelInputs {return self}
     public var outputs: SplashViewModelOutputs {return self}
 
-    @Injected(\.fetchUserByIDUsecase) private var fetchUserByIDUsecase
+    @Injected(\.fetchUserByID) private var fetchUserByID
     @Injected(\.fetchUserIDFromKeychainUsecase)
     private var fetchUserIDFromKeychainUsecase
 
@@ -43,7 +43,7 @@ class SplashViewModel:
         return nil
     }
     func searchForExistingUser(with userID: String) {
-        let result = fetchUserByIDUsecase.execute(userID: userID)
+        let result = fetchUserByID(userID: userID)
         switch result {
         case.success(let user):
             self.user = user
