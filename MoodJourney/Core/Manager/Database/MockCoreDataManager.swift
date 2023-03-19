@@ -23,6 +23,19 @@ class MockCoreDataManager: CoreDataManager {
         activity.imageURLString = "https://www.healthkart.com/connect/wp-content/uploads/2021/03/banner.jpg"
         return user
     }()
+    lazy var previewUser2: UserEntity? = {
+        guard let user = add(entity: .user) as? UserEntity else {return nil}
+        user.userID = "TestUser"
+        user.imageURLString = "TestUser"
+        user.name = "TestUserName"
+        user.familyName = "TestUserFamilyName"
+        user.signedWith = "google"
+        guard let activity = add(entity: .activity) as? ActivityEntity else {return nil}
+        activity.name = "TestActivityName"
+        activity.activityID = "TestActivityID"
+        activity.imageURLString = "https://www.healthkart.com/connect/wp-content/uploads/2021/03/banner.jpg"
+        return user
+    }()
     lazy var previewActivities: [ActivityEntity] = {
         var activities: [ActivityEntity] = []
         guard let activity = add(entity: .activity) as? ActivityEntity else {return []}

@@ -11,4 +11,7 @@ extension UserEntity {
     static var testUser: UserEntity? {
         return MockCoreDataManager.shared.previewUser
     }
+    static var testUser2: UserEntity? {
+        return MockCoreDataManager.shared.previewUser2
+    }
 }
