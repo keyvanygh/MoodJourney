@@ -8,7 +8,7 @@
 import Foundation
 @testable import MoodJourney
 
-class MockSigninRepository: SigninRepository,Mock {
+class MockSigninRepository: SigninRepository,AnyMock {
     var lds: Any = 0
     var rds: Any = 0
     

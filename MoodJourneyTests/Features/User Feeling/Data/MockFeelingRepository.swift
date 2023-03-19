@@ -8,7 +8,7 @@
 import Foundation
 @testable import MoodJourney
 
-class MockFeelingRepository: FeelingRepository, Mock {
+class MockFeelingRepository: FeelingRepository, AnyMock {
     let lds: Int = 0
     let rds: Int = 0
 

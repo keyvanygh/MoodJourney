@@ -17,7 +17,7 @@ class FetchActivities: AnyUsecase {
     /// - Returns:
     ///   - success: list of activities
     ///   - fail: ActivityError
-    func callAsFunction() -> Result<[ActivityEntity], Error> {
+    func callAsFunction() -> FetchActivitiesResult {
         return repository.fetchActivities()
     }
 }

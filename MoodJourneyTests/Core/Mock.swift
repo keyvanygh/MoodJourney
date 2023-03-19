@@ -8,11 +8,11 @@
 import Foundation
 @testable import MoodJourney
 
-protocol Mock {
+protocol AnyMock {
     func setAnswer(_ answer: Any?)
     var answer: Any? {get set}
 }
-extension Mock {
+extension AnyMock {
     func answerWith(_ answer: Any) {
         setAnswer(answer)
     }

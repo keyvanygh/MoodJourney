@@ -8,7 +8,7 @@
 import Foundation
 @testable import MoodJourney
 
-class MockActivityRepository: ActivityRepository, Mock {
+class MockActivityRepository: ActivityRepository, AnyMock {
    
     var answer: Any?
     
