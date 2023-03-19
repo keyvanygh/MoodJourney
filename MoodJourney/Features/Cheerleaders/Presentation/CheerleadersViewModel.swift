@@ -16,8 +16,8 @@ class CheerleadersViewModel:
     public var inputs: CheerleadersViewModelInputs {return self}
     public var outputs: CheerleadersViewModelOutputs {return self}
     
-    @LazyInjected(\.fetchCheerleadersUsecase)
-    private var fetchCheerleadersUsecase
+    @LazyInjected(\.fetchCheerleaders)
+    private var fetchCheerleaders
     @LazyInjected(\.cheerLeadersLocalDatasource)
     private var cheerLeadersLocalDatasource
     
@@ -34,7 +34,7 @@ class CheerleadersViewModel:
     // MARK: - Inputs
     func fetchCheerLeaders() {
         guard let user = user else {return}
-        let result = fetchCheerleadersUsecase(of: user)
+        let result = fetchCheerleaders(of: user)
         switch result {
         case .success(let result):
             cheerLeaders = result

@@ -14,7 +14,7 @@ final class FetchCheerleadersTest: XCTestCase {
     func test_reciveCheerleaders_whenFetchCheerleadersSucceed() throws {
         var mockedRepository = MockCheerleadersRepository()
         mockedRepository.answerWith([UserEntity.testUser])
-        let sut: FetchCheerleadersUsecase = sut(repository: mockedRepository)
+        let sut: FetchCheerleaders = sut(repository: mockedRepository)
         let user = try XCTUnwrap(UserEntity.testUser)
         let result = sut(of: user)
         switch(result) {
@@ -26,7 +26,7 @@ final class FetchCheerleadersTest: XCTestCase {
     }
     
     // MARK: - Helpers
-    func sut(repository: CheerleadersRepository) -> FetchCheerleadersUsecase {
-        return FetchCheerleadersUsecase(repository: repository)
+    func sut(repository: CheerleadersRepository) -> FetchCheerleaders {
+        return FetchCheerleaders(repository: repository)
     }
 }

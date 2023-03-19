@@ -58,8 +58,8 @@ extension Container {
     var cheerLeadersRepository: Factory<CheerleadersRepository> {
         self { [self] in CheerleadersRepositoryImp(lds: cheerLeadersLocalDatasource())  }
     }
-    var fetchCheerleadersUsecase: Factory<FetchCheerleadersUsecase> {
-        self { [self] in FetchCheerleadersUsecase(repository: cheerLeadersRepository())  }
+    var fetchCheerleaders: Factory<FetchCheerleaders> {
+        self { [self] in FetchCheerleaders(repository: cheerLeadersRepository())  }
     }
     
     // MARK: - Signin :
