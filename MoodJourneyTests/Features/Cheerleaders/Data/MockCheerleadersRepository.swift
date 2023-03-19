@@ -15,6 +15,4 @@ class MockCheerleadersRepository: CheerleadersRepository, AnyMock {
     }
     
     var answer: Any?
-    
-    
 }
