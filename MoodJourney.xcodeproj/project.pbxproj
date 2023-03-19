@@ -113,6 +113,7 @@
 		C0F05AB329A0332400385F65 /* AddFeelingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05AB229A0332400385F65 /* AddFeelingViewModel.swift */; };
 		C0F05AB529A0624B00385F65 /* AnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05AB429A0624B00385F65 /* AnyViewModel.swift */; };
 		C0F05ABD29A0650B00385F65 /* Container+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05ABB29A0650B00385F65 /* Container+extension.swift */; };
+		C0F5AF6229C7D14C00B0EEE4 /* FetchUserByIDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5AF6129C7D14C00B0EEE4 /* FetchUserByIDTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,6 +233,7 @@
 		C0F05AB229A0332400385F65 /* AddFeelingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeelingViewModel.swift; sourceTree = "<group>"; };
 		C0F05AB429A0624B00385F65 /* AnyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyViewModel.swift; sourceTree = "<group>"; };
 		C0F05ABB29A0650B00385F65 /* Container+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+extension.swift"; sourceTree = "<group>"; };
+		C0F5AF6129C7D14C00B0EEE4 /* FetchUserByIDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserByIDTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +371,7 @@
 		C01A374E299DB8C8001856BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				C0F5AF5D29C7D08E00B0EEE4 /* Splash */,
 				C09EFAE029C69816008FAFB7 /* Cheerleaders */,
 				C0B62D4E29B99A5A00A088EE /* Activity */,
 				C0F05A87299FF96D00385F65 /* User Feeling */,
@@ -1152,6 +1155,30 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		C0F5AF5D29C7D08E00B0EEE4 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				C0F5AF5E29C7D0B100B0EEE4 /* Domain */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		C0F5AF5E29C7D0B100B0EEE4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C0F5AF5F29C7D0B600B0EEE4 /* Usecase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C0F5AF5F29C7D0B600B0EEE4 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				C0F5AF6129C7D14C00B0EEE4 /* FetchUserByIDTest.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1376,6 +1403,7 @@
 				C0B1063529AD72B40034302A /* UserEntity+extension.swift in Sources */,
 				C0B62D5129B99A8E00A088EE /* FetchActivitiesTest.swift in Sources */,
 				C0B0DAE329B96E800013A4F7 /* FeelingLocalDatasourceTest.swift in Sources */,
+				C0F5AF6229C7D14C00B0EEE4 /* FetchUserByIDTest.swift in Sources */,
 				C031FED029C6B58E00E8D166 /* CheerleadersLocalDatasourceTest.swift in Sources */,
 				C0F05A96299FFCE400385F65 /* AddFeelingToActivityTest.swift in Sources */,
 				C0F05A55299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift in Sources */,

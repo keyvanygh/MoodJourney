@@ -16,10 +16,9 @@ final class SigninWithAppleTest: XCTestCase {
         
         let testUser = try XCTUnwrap(UserEntity.testUser)
         let userID = try XCTUnwrap(testUser.userID)
-        let answer: Result<UserEntity,Error> = .success(testUser)
-        
+
         mockedRepostiry
-            .answerWith(answer)
+            .answerWith(testUser)
         
         let result = sut(userID : userID)
         
@@ -37,10 +36,9 @@ final class SigninWithAppleTest: XCTestCase {
         
         let testUser = try XCTUnwrap(UserEntity.testUser)
         let userID = try XCTUnwrap(testUser.userID)
-        let answer: Result<UserEntity,Error> = .failure(AnyError.error)
         
         mockedSigninRepository
-            .answerWith(answer)
+            .answerWith(AnyError.error)
         
         let result = sut(userID: userID)
         

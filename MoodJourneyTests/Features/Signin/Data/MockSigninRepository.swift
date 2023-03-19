@@ -20,18 +20,16 @@ class MockSigninRepository: SigninRepository,AnyMock {
         family: String? = "",
         givenName: String? = "",
         imageURL: URL? = nil) -> Result<UserEntity, Error> {
-            guard let result = answer as? Result<UserEntity, any Error>
-            else {return(.failure(AnyError.error))}
-            return result
+            return answer(Result<UserEntity, Error>.self)
         }
     
     @discardableResult
     func fetchUser(byID id: String) -> Result<UserEntity, Error> {
-        return(.failure(AnyError.error))
+        return answer(Result<UserEntity, Error>.self)
     }
     
     @discardableResult
     func fetchUserID() -> Result<String, Error> {
-        return(.failure(AnyError.error))
+        return answer(Result<String, Error>.self)
     }
 }
