@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FetchCheerleadersUsecase {
+class FetchCheerleaders {
     let repository: CheerleadersRepository
     init(repository: CheerleadersRepository) {
         self.repository = repository
