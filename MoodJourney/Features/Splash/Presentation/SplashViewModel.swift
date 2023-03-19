@@ -17,8 +17,8 @@ class SplashViewModel:
     public var outputs: SplashViewModelOutputs {return self}
 
     @Injected(\.fetchUserByID) private var fetchUserByID
-    @Injected(\.fetchUserIDFromKeychainUsecase)
-    private var fetchUserIDFromKeychainUsecase
+    @Injected(\.fetchUserIDFromKeychain)
+    private var fetchUserIDFromKeychain
 
     // MARK: - Outputs:
 
@@ -34,7 +34,7 @@ class SplashViewModel:
     }
 
     func fetchUserID() -> String? {
-        let result = fetchUserIDFromKeychainUsecase.execute()
+        let result = fetchUserIDFromKeychain()
         switch result {
         case.success(let userID):
             return userID

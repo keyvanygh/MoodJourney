@@ -58,7 +58,7 @@
 		C0B8001C29A58E2900E7D119 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001B29A58E2900E7D119 /* SplashViewModel.swift */; };
 		C0B8002029A58E5900E7D119 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8001F29A58E5900E7D119 /* SplashView.swift */; };
 		C0B8002429A5958F00E7D119 /* UserTokenValidationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8002329A5958F00E7D119 /* UserTokenValidationUsecase.swift */; };
-		C0B8002829A5A63000E7D119 /* FetchUserIDFromKeychainUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8002729A5A63000E7D119 /* FetchUserIDFromKeychainUsecase.swift */; };
+		C0B8002829A5A63000E7D119 /* FetchUserIDFromKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8002729A5A63000E7D119 /* FetchUserIDFromKeychain.swift */; };
 		C0B8003129A670AB00E7D119 /* ReactionEntity+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003029A670AB00E7D119 /* ReactionEntity+extension.swift */; };
 		C0B8003329A670E100E7D119 /* AddReactionToFeelingUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003229A670E100E7D119 /* AddReactionToFeelingUsecase.swift */; };
 		C0B8003529A6712600E7D119 /* ReactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003429A6712600E7D119 /* ReactionRepository.swift */; };
@@ -179,7 +179,7 @@
 		C0B8001B29A58E2900E7D119 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		C0B8001F29A58E5900E7D119 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C0B8002329A5958F00E7D119 /* UserTokenValidationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenValidationUsecase.swift; sourceTree = "<group>"; };
-		C0B8002729A5A63000E7D119 /* FetchUserIDFromKeychainUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserIDFromKeychainUsecase.swift; sourceTree = "<group>"; };
+		C0B8002729A5A63000E7D119 /* FetchUserIDFromKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserIDFromKeychain.swift; sourceTree = "<group>"; };
 		C0B8003029A670AB00E7D119 /* ReactionEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReactionEntity+extension.swift"; sourceTree = "<group>"; };
 		C0B8003229A670E100E7D119 /* AddReactionToFeelingUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReactionToFeelingUsecase.swift; sourceTree = "<group>"; };
 		C0B8003429A6712600E7D119 /* ReactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionRepository.swift; sourceTree = "<group>"; };
@@ -758,7 +758,7 @@
 			isa = PBXGroup;
 			children = (
 				C0B8002329A5958F00E7D119 /* UserTokenValidationUsecase.swift */,
-				C0B8002729A5A63000E7D119 /* FetchUserIDFromKeychainUsecase.swift */,
+				C0B8002729A5A63000E7D119 /* FetchUserIDFromKeychain.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -1339,7 +1339,7 @@
 				C022FE6329A19D8C00F53B0B /* ActivityLocalDatasource.swift in Sources */,
 				C022FE6529A19DE900F53B0B /* ActivityDataModel.swift in Sources */,
 				C022FE7429A1A35500F53B0B /* ActivitiesView.swift in Sources */,
-				C0B8002829A5A63000E7D119 /* FetchUserIDFromKeychainUsecase.swift in Sources */,
+				C0B8002829A5A63000E7D119 /* FetchUserIDFromKeychain.swift in Sources */,
 				C0F05A66299F07C100385F65 /* SigninWithAppleButton.swift in Sources */,
 				C022FE8229A283D800F53B0B /* CheerleadersRepository.swift in Sources */,
 				C0BF79B529AC65D500A0A0A0 /* Bool+extension.swift in Sources */,
