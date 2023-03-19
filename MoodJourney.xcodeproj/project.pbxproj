@@ -31,6 +31,7 @@
 		C022FE8A29A2878F00F53B0B /* CheerleadersRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE8929A2878F00F53B0B /* CheerleadersRepositoryImp.swift */; };
 		C022FE8D29A2899900F53B0B /* CheerleadersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE8C29A2899900F53B0B /* CheerleadersViewModel.swift */; };
 		C022FE9129A28D8900F53B0B /* CheerleadersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022FE9029A28D8900F53B0B /* CheerleadersView.swift */; };
+		C031FED029C6B58E00E8D166 /* CheerleadersLocalDatasourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C031FECF29C6B58E00E8D166 /* CheerleadersLocalDatasourceTest.swift */; };
 		C03FB32429A2C5A900D0E781 /* SigninLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB32329A2C5A900D0E781 /* SigninLocalDatasource.swift */; };
 		C03FB32629A2EA0C00D0E781 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB32529A2EA0C00D0E781 /* Coordinator.swift */; };
 		C03FB32929A3C03700D0E781 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB32829A3C03700D0E781 /* CoordinatorView.swift */; };
@@ -151,6 +152,7 @@
 		C022FE8929A2878F00F53B0B /* CheerleadersRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerleadersRepositoryImp.swift; sourceTree = "<group>"; };
 		C022FE8C29A2899900F53B0B /* CheerleadersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerleadersViewModel.swift; sourceTree = "<group>"; };
 		C022FE9029A28D8900F53B0B /* CheerleadersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerleadersView.swift; sourceTree = "<group>"; };
+		C031FECF29C6B58E00E8D166 /* CheerleadersLocalDatasourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerleadersLocalDatasourceTest.swift; sourceTree = "<group>"; };
 		C03FB32329A2C5A900D0E781 /* SigninLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninLocalDatasource.swift; sourceTree = "<group>"; };
 		C03FB32529A2EA0C00D0E781 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C03FB32829A3C03700D0E781 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 		C031FECE29C6B4ED00E8D166 /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
+				C031FECF29C6B58E00E8D166 /* CheerleadersLocalDatasourceTest.swift */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -1373,6 +1376,7 @@
 				C0B1063529AD72B40034302A /* UserEntity+extension.swift in Sources */,
 				C0B62D5129B99A8E00A088EE /* FetchActivitiesTest.swift in Sources */,
 				C0B0DAE329B96E800013A4F7 /* FeelingLocalDatasourceTest.swift in Sources */,
+				C031FED029C6B58E00E8D166 /* CheerleadersLocalDatasourceTest.swift in Sources */,
 				C0F05A96299FFCE400385F65 /* AddFeelingToActivityTest.swift in Sources */,
 				C0F05A55299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift in Sources */,
 				C0B1063329AD6F060034302A /* MockSigninRepository.swift in Sources */,
