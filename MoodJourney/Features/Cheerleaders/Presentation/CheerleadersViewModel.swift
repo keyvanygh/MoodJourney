@@ -34,7 +34,7 @@ class CheerleadersViewModel:
     // MARK: - Inputs
     func fetchCheerLeaders() {
         guard let user = user else {return}
-        let result = fetchCheerleadersUsecase.execute(of: user)
+        let result = fetchCheerleadersUsecase(of: user)
         switch result {
         case .success(let result):
             cheerLeaders = result
