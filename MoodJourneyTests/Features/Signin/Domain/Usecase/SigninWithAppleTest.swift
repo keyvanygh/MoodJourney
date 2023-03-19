@@ -11,7 +11,7 @@ import XCTest
 final class SigninWithAppleTest: XCTestCase {
     
     func test_reciveUserEntity_whenAuthIsSuccess() throws {
-        let mockedRepostiry =  MockSigninRepository()
+        var mockedRepostiry =  MockSigninRepository()
         let sut:SigninWithApple = sut(repository: mockedRepostiry)
         
         let testUser = try XCTUnwrap(UserEntity.testUser)
@@ -32,7 +32,7 @@ final class SigninWithAppleTest: XCTestCase {
     }
     
     func test_reciveError_whenAuthIsFailed() throws {
-        let mockedSigninRepository =  MockSigninRepository()
+        var mockedSigninRepository =  MockSigninRepository()
         let sut:SigninWithApple = sut(repository: mockedSigninRepository)
         
         let testUser = try XCTUnwrap(UserEntity.testUser)

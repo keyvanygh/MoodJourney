@@ -11,7 +11,7 @@ import XCTest
 final class FetchActivitiesTest: XCTestCase {
     
     func test_reciveActivities_WhenFetchActivitiesSucceed() {
-        let mockRepository = MockActivityRepository()
+        var mockRepository = MockActivityRepository()
         mockRepository.answerWith(ActivityEntity.someActivities)
         let sut: FetchActivities = FetchActivities(repository: mockRepository)
         let result = sut()
@@ -23,7 +23,7 @@ final class FetchActivitiesTest: XCTestCase {
         }
     }
     func test_reciveEmpty_WhenThereIsNoActivityToFetch() {
-        let mockRepository = MockActivityRepository()
+        var mockRepository = MockActivityRepository()
         mockRepository.answerWith([])
         let sut: FetchActivities = FetchActivities(repository: mockRepository)
         let result = sut()

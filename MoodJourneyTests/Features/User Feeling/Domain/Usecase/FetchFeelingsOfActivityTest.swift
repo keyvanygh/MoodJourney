@@ -11,7 +11,7 @@ import XCTest
 final class FetchFeelingsOfActivityTest: XCTestCase {
 
     func test_reciveFeelings_whenFetchFeelingOfActivitySucceed() throws {
-        let mockedRepostiry = MockFeelingRepository()
+        var mockedRepostiry = MockFeelingRepository()
         let answer:Result<[FeelingEntity], Error> = .success(FeelingEntity.someFeelings)
         mockedRepostiry.answerWith(answer)
         let sut : FetchFeelingsOfActivity = sut(repository: mockedRepostiry)
@@ -26,7 +26,7 @@ final class FetchFeelingsOfActivityTest: XCTestCase {
         }
     }
     func test_reciveError_whenAuthIsFailed() throws {
-        let mockedRepostiry = MockFeelingRepository()
+        var mockedRepostiry = MockFeelingRepository()
         let answer:Result<[FeelingEntity], Error> = .failure(AnyError.error)
         mockedRepostiry.answerWith(answer)
         let sut : FetchFeelingsOfActivity = sut(repository: mockedRepostiry)

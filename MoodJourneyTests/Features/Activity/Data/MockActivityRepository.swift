@@ -15,8 +15,4 @@ class MockActivityRepository: ActivityRepository, AnyMock {
     func fetchActivities() -> FetchActivitiesResult {
         return answer(FetchActivitiesResult.self)
     }
-    
-    func setAnswer(_ answer: Any?) {
-        self.answer = answer
-    }
 }

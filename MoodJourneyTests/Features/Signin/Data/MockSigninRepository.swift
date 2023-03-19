@@ -9,9 +9,6 @@ import Foundation
 @testable import MoodJourney
 
 class MockSigninRepository: SigninRepository,AnyMock {
-    var lds: Any = 0
-    var rds: Any = 0
-    
     var answer: Any?
         
     @discardableResult
@@ -37,10 +34,4 @@ class MockSigninRepository: SigninRepository,AnyMock {
     func fetchUserID() -> Result<String, Error> {
         return(.failure(AnyError.error))
     }
-    
-    // MARK: - Helper:
-    func setAnswer(_ answer: Any?) {
-        self.answer = answer
-    }
-    
 }

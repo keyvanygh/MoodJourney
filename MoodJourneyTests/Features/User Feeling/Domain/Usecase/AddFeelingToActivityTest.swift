@@ -11,7 +11,7 @@ import XCTest
 final class AddFeelingToActivityTest: XCTestCase {
 
     func test_reciveSuccessResponse_whenAddingFeelingToActivitySucceed() throws {
-        let mockedRepostiry = MockFeelingRepository()
+        var mockedRepostiry = MockFeelingRepository()
         mockedRepostiry.answerWith(Result<Bool, Error>.success(true))
         let sut : AddFeelingToActivity = sut(repository: mockedRepostiry)
         let testActivty = try XCTUnwrap(ActivityEntity.testActivity)
@@ -19,7 +19,7 @@ final class AddFeelingToActivityTest: XCTestCase {
         XCTAssert(result.isSuccess)
     }
     func test_reciveError_whenAddingFeelingToActivityFailed() throws {
-        let mockedRepostiry = MockFeelingRepository()
+        var mockedRepostiry = MockFeelingRepository()
         mockedRepostiry.answerWith(Result<Bool, Error>.failure(AnyError.error))
         let sut : AddFeelingToActivity = sut(repository: mockedRepostiry)
         let testActivty = try XCTUnwrap(ActivityEntity.testActivity)
