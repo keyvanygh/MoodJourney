@@ -114,6 +114,7 @@
 		C0F05AB529A0624B00385F65 /* AnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05AB429A0624B00385F65 /* AnyViewModel.swift */; };
 		C0F05ABD29A0650B00385F65 /* Container+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05ABB29A0650B00385F65 /* Container+extension.swift */; };
 		C0F5AF6229C7D14C00B0EEE4 /* FetchUserByIDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5AF6129C7D14C00B0EEE4 /* FetchUserByIDTest.swift */; };
+		C0F5AF6429C7D84B00B0EEE4 /* FetchUserIDFromKeychainTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5AF6329C7D84B00B0EEE4 /* FetchUserIDFromKeychainTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +235,7 @@
 		C0F05AB429A0624B00385F65 /* AnyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyViewModel.swift; sourceTree = "<group>"; };
 		C0F05ABB29A0650B00385F65 /* Container+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+extension.swift"; sourceTree = "<group>"; };
 		C0F5AF6129C7D14C00B0EEE4 /* FetchUserByIDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserByIDTest.swift; sourceTree = "<group>"; };
+		C0F5AF6329C7D84B00B0EEE4 /* FetchUserIDFromKeychainTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserIDFromKeychainTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1175,6 +1177,7 @@
 			isa = PBXGroup;
 			children = (
 				C0F5AF6129C7D14C00B0EEE4 /* FetchUserByIDTest.swift */,
+				C0F5AF6329C7D84B00B0EEE4 /* FetchUserIDFromKeychainTest.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -1412,6 +1415,7 @@
 				C0B62D5429B99BE500A088EE /* MockActivityRepository.swift in Sources */,
 				C0C9BE7C29BA2CF400D4D266 /* ActivityLocalDatasourceTest.swift in Sources */,
 				C09EFAE329C69843008FAFB7 /* FetchCheerleadersTest.swift in Sources */,
+				C0F5AF6429C7D84B00B0EEE4 /* FetchUserIDFromKeychainTest.swift in Sources */,
 				C09EFAE729C6998C008FAFB7 /* MockCheerleadersRepository.swift in Sources */,
 				C0BCF8AB29B944DA00A680D2 /* MockFeelingRepository.swift in Sources */,
 				C0BCF8A229B93AD300A680D2 /* SigninWithAppleTest.swift in Sources */,
