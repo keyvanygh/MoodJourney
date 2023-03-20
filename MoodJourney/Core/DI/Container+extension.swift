@@ -95,7 +95,7 @@ extension Container {
     
     // MARK: - Reaction :
     var reactionLocalDatasource: Factory<ReactionLocalDatasource> {
-        self { ReactionLocalDatasource()  }
+        self { [self] in ReactionLocalDatasource(dbm: dbm())  }
     }
     var reactionRepository: Factory<ReactionRepository> {
         self { [self] in ReactionRepositoryImp(lds: reactionLocalDatasource())  }
