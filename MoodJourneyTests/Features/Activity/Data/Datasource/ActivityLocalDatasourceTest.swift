@@ -24,4 +24,11 @@ final class ActivityLocalDatasourceTest: XCTestCase {
         let result = try XCTUnwrap(sut.fetchActivies())
         XCTAssert(result.isEmpty)
     }
+    func test_notEmptyActvityList_WhenAddActivitySucces() throws {
+        let mockCoreDataManager = MockCoreDataManager()
+        let sut: ActivityLocalDatasource = ActivityLocalDatasource(dbm: mockCoreDataManager)
+        _ = try sut.addActivity(activityID: "id", name: "tset")
+        let result = try XCTUnwrap(sut.fetchActivies())
+        XCTAssert(!result.isEmpty)
+    }
 }
