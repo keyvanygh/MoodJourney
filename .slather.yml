@@ -3,8 +3,9 @@ coverage_service: cobertura_xml
 xcodeproj: ./MoodJourney.xcodeproj
 scheme: MoodJourney
 ignore:
-- Features/Home/Presentation/*
-- Features/Splash/Presentation/*
-- Features/Feeling/Presentation/*
-- Features/Activity/Presentation/*
-- Features/Cheerleaders/Presentation/*
+ - Features/Home/Presentation/*
+ - Features/Splash/Presentation/*
+ - Features/Feeling/Presentation/*
+ - Features/Activity/Presentation/*
+ - Features/Cheerleaders/Presentation/*
+ 
