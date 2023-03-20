@@ -60,7 +60,7 @@
 		C0B8002429A5958F00E7D119 /* UserTokenValidationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8002329A5958F00E7D119 /* UserTokenValidationUsecase.swift */; };
 		C0B8002829A5A63000E7D119 /* FetchUserIDFromKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8002729A5A63000E7D119 /* FetchUserIDFromKeychain.swift */; };
 		C0B8003129A670AB00E7D119 /* ReactionEntity+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003029A670AB00E7D119 /* ReactionEntity+extension.swift */; };
-		C0B8003329A670E100E7D119 /* AddReactionToFeelingUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003229A670E100E7D119 /* AddReactionToFeelingUsecase.swift */; };
+		C0B8003329A670E100E7D119 /* AddReactionToFeeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003229A670E100E7D119 /* AddReactionToFeeling.swift */; };
 		C0B8003529A6712600E7D119 /* ReactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003429A6712600E7D119 /* ReactionRepository.swift */; };
 		C0B8003929A672CE00E7D119 /* ReactionRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003829A672CE00E7D119 /* ReactionRepositoryImp.swift */; };
 		C0B8003B29A6734600E7D119 /* ReactionLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8003A29A6734600E7D119 /* ReactionLocalDatasource.swift */; };
@@ -115,6 +115,9 @@
 		C0F05ABD29A0650B00385F65 /* Container+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F05ABB29A0650B00385F65 /* Container+extension.swift */; };
 		C0F5AF6229C7D14C00B0EEE4 /* FetchUserByIDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5AF6129C7D14C00B0EEE4 /* FetchUserByIDTest.swift */; };
 		C0F5AF6429C7D84B00B0EEE4 /* FetchUserIDFromKeychainTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5AF6329C7D84B00B0EEE4 /* FetchUserIDFromKeychainTest.swift */; };
+		C0F5AF6929C7DEE600B0EEE4 /* AddReactionToFeelingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5AF6829C7DEE600B0EEE4 /* AddReactionToFeelingTest.swift */; };
+		C0F5AF6B29C7E24600B0EEE4 /* ReactionEntity+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5AF6A29C7E24600B0EEE4 /* ReactionEntity+extension.swift */; };
+		C0F5AF6E29C7E5F200B0EEE4 /* MockReactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5AF6D29C7E5F200B0EEE4 /* MockReactionRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,7 +185,7 @@
 		C0B8002329A5958F00E7D119 /* UserTokenValidationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenValidationUsecase.swift; sourceTree = "<group>"; };
 		C0B8002729A5A63000E7D119 /* FetchUserIDFromKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserIDFromKeychain.swift; sourceTree = "<group>"; };
 		C0B8003029A670AB00E7D119 /* ReactionEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReactionEntity+extension.swift"; sourceTree = "<group>"; };
-		C0B8003229A670E100E7D119 /* AddReactionToFeelingUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReactionToFeelingUsecase.swift; sourceTree = "<group>"; };
+		C0B8003229A670E100E7D119 /* AddReactionToFeeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReactionToFeeling.swift; sourceTree = "<group>"; };
 		C0B8003429A6712600E7D119 /* ReactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionRepository.swift; sourceTree = "<group>"; };
 		C0B8003829A672CE00E7D119 /* ReactionRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionRepositoryImp.swift; sourceTree = "<group>"; };
 		C0B8003A29A6734600E7D119 /* ReactionLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionLocalDatasource.swift; sourceTree = "<group>"; };
@@ -236,6 +239,9 @@
 		C0F05ABB29A0650B00385F65 /* Container+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+extension.swift"; sourceTree = "<group>"; };
 		C0F5AF6129C7D14C00B0EEE4 /* FetchUserByIDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserByIDTest.swift; sourceTree = "<group>"; };
 		C0F5AF6329C7D84B00B0EEE4 /* FetchUserIDFromKeychainTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserIDFromKeychainTest.swift; sourceTree = "<group>"; };
+		C0F5AF6829C7DEE600B0EEE4 /* AddReactionToFeelingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReactionToFeelingTest.swift; sourceTree = "<group>"; };
+		C0F5AF6A29C7E24600B0EEE4 /* ReactionEntity+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReactionEntity+extension.swift"; sourceTree = "<group>"; };
+		C0F5AF6D29C7E5F200B0EEE4 /* MockReactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReactionRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +379,7 @@
 		C01A374E299DB8C8001856BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				C0F5AF6529C7DE9C00B0EEE4 /* Reaction */,
 				C0F5AF5D29C7D08E00B0EEE4 /* Splash */,
 				C09EFAE029C69816008FAFB7 /* Cheerleaders */,
 				C0B62D4E29B99A5A00A088EE /* Activity */,
@@ -815,7 +822,7 @@
 		C0B8002E29A6708400E7D119 /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
-				C0B8003229A670E100E7D119 /* AddReactionToFeelingUsecase.swift */,
+				C0B8003229A670E100E7D119 /* AddReactionToFeeling.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -1182,6 +1189,40 @@
 			path = Usecase;
 			sourceTree = "<group>";
 		};
+		C0F5AF6529C7DE9C00B0EEE4 /* Reaction */ = {
+			isa = PBXGroup;
+			children = (
+				C0F5AF6C29C7E5E100B0EEE4 /* Data */,
+				C0F5AF6629C7DECB00B0EEE4 /* Domain */,
+			);
+			path = Reaction;
+			sourceTree = "<group>";
+		};
+		C0F5AF6629C7DECB00B0EEE4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C0F5AF6A29C7E24600B0EEE4 /* ReactionEntity+extension.swift */,
+				C0F5AF6729C7DED200B0EEE4 /* Usecase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C0F5AF6729C7DED200B0EEE4 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				C0F5AF6829C7DEE600B0EEE4 /* AddReactionToFeelingTest.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		C0F5AF6C29C7E5E100B0EEE4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C0F5AF6D29C7E5F200B0EEE4 /* MockReactionRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1383,7 +1424,7 @@
 				C0B8003E29A67B6000E7D119 /* ReactionViewModel.swift in Sources */,
 				C022FE6729A19EAE00F53B0B /*  ActivityRepositoryImp.swift in Sources */,
 				C0B834ED299D2BF5001436E8 /* MoodJourneyApp.swift in Sources */,
-				C0B8003329A670E100E7D119 /* AddReactionToFeelingUsecase.swift in Sources */,
+				C0B8003329A670E100E7D119 /* AddReactionToFeeling.swift in Sources */,
 				C0BCF8A529B93BF800A680D2 /* MockCoreDataManager.swift in Sources */,
 				C022FE5929A122E200F53B0B /* CoreDataManagerImp.swift in Sources */,
 				C0F05A81299FF79100385F65 /* FeelingRepositoryImp.swift in Sources */,
@@ -1402,6 +1443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0B62D4D29B9929800A088EE /* FeelingEntity+Extension.swift in Sources */,
+				C0F5AF6929C7DEE600B0EEE4 /* AddReactionToFeelingTest.swift in Sources */,
 				C0BF79B829AC6D4700A0A0A0 /* UserDataModel+extension.swift in Sources */,
 				C0B1063529AD72B40034302A /* UserEntity+extension.swift in Sources */,
 				C0B62D5129B99A8E00A088EE /* FetchActivitiesTest.swift in Sources */,
@@ -1409,6 +1451,8 @@
 				C0F5AF6229C7D14C00B0EEE4 /* FetchUserByIDTest.swift in Sources */,
 				C031FED029C6B58E00E8D166 /* CheerleadersLocalDatasourceTest.swift in Sources */,
 				C0F05A96299FFCE400385F65 /* AddFeelingToActivityTest.swift in Sources */,
+				C0F5AF6B29C7E24600B0EEE4 /* ReactionEntity+extension.swift in Sources */,
+				C0F5AF6E29C7E5F200B0EEE4 /* MockReactionRepository.swift in Sources */,
 				C0F05A55299EEF3A00385F65 /* SigninRemoteDataSourceTest.swift in Sources */,
 				C0B1063329AD6F060034302A /* MockSigninRepository.swift in Sources */,
 				C01A3753299DB9FB001856BA /* SigninWithGoogleTest.swift in Sources */,

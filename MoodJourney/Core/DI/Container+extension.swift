@@ -100,8 +100,8 @@ extension Container {
     var reactionRepository: Factory<ReactionRepository> {
         self { [self] in ReactionRepositoryImp(lds: reactionLocalDatasource())  }
     }
-    var addReactionToFeelingUsecase: Factory<AddReactionToFeelingUsecase> {
-        self { [self] in AddReactionToFeelingUsecase(repository: reactionRepository())  }
+    var addReactionToFeeling: Factory<AddReactionToFeeling> {
+        self { [self] in AddReactionToFeeling(repository: reactionRepository())  }
     }
     
     // MARK: - Home :

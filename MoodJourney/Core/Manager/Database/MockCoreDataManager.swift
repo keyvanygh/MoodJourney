@@ -82,7 +82,10 @@ class MockCoreDataManager: CoreDataManager {
         feelings.append(feeling2)
         return feelings
     }()
-
+    lazy var reaction: ReactionEntity? = {
+        guard let reaction = add(entity: .reaction) as? ReactionEntity else {return nil}
+        return reaction
+    }()
     lazy var container: NSPersistentContainer = {
         let description = NSPersistentStoreDescription()
         description.url = URL(fileURLWithPath: "/dev/null")
