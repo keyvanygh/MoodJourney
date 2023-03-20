@@ -5,7 +5,7 @@ scheme: MoodJourney
 ignore:
  - MoodJourney/Features/Home/Presentation/*
  - MoodJourney/Features/Splash/Presentation/*
- - MoodJourney/Features/Sign in/Presentation
+ - MoodJourney/Features/Sign in/Presentation/*
  - MoodJourney/Features/Feeling/Presentation/*
  - MoodJourney/Features/Activity/Presentation/*
  - MoodJourney/Features/Cheerleaders/Presentation/*
