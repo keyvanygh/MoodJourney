@@ -8,8 +8,12 @@
 import Foundation
 import Factory
 class HomeLocalDatasource {
-    @Injected(\.dbm) private var dbm: CoreDataManager
-
+    
+    private var dbm: CoreDataManager
+    init(dbm: CoreDataManager) {
+        self.dbm = dbm
+    }
+    
     func fetchHome(for user: UserEntity) throws -> [FeelingEntity] {
         guard let feelings = try dbm.fetch(entity: .feeling) as? [FeelingEntity] else {return []}
         return feelings.filter({$0.user?.userID != user.userID && $0.user != nil})
