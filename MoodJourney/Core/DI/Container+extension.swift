@@ -112,7 +112,7 @@ extension Container {
     var homeRepository: Factory<HomeRepository> {
         self { [self] in HomeRepositoryImp(lds: homeLocalDatasource())  }
     }
-    var fetchHomeUsecase: Factory<FetchHomeUsecase> {
-        self { [self] in FetchHomeUsecase(repository: homeRepository())  }
+    var fetchHome: Factory<FetchHome> {
+        self { [self] in FetchHome(repository: homeRepository())  }
     }
 }

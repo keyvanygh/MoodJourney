@@ -7,12 +7,12 @@
 
 import Foundation
 
-class FetchHomeUsecase {
+class FetchHome {
     let repository: HomeRepository
     init(repository: HomeRepository) {
         self.repository = repository
     }
-    func execute(for user: UserEntity) -> Result<[FeelingEntity], Error> {
-        return repository.fetchHome(for: user)
+    func callAsFunction(of user: UserEntity) -> Result<[FeelingEntity], Error> {
+        return repository.fetchHome(of: user)
     }
 }

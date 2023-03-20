@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C001183D29A70ABA00BADEE6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C001183C29A70ABA00BADEE6 /* HomeViewModel.swift */; };
-		C001184329A70B0600BADEE6 /* FetchHomeUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C001184229A70B0600BADEE6 /* FetchHomeUsecase.swift */; };
+		C001184329A70B0600BADEE6 /* FetchHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = C001184229A70B0600BADEE6 /* FetchHome.swift */; };
 		C001184529A70B7000BADEE6 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C001184429A70B7000BADEE6 /* HomeRepository.swift */; };
 		C001184729A70BF800BADEE6 /* HomeRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C001184629A70BF800BADEE6 /* HomeRepositoryImp.swift */; };
 		C01A3753299DB9FB001856BA /* SigninWithGoogleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A3752299DB9FB001856BA /* SigninWithGoogleTest.swift */; };
@@ -133,7 +133,7 @@
 
 /* Begin PBXFileReference section */
 		C001183C29A70ABA00BADEE6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		C001184229A70B0600BADEE6 /* FetchHomeUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHomeUsecase.swift; sourceTree = "<group>"; };
+		C001184229A70B0600BADEE6 /* FetchHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHome.swift; sourceTree = "<group>"; };
 		C001184429A70B7000BADEE6 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
 		C001184629A70BF800BADEE6 /* HomeRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryImp.swift; sourceTree = "<group>"; };
 		C01A3752299DB9FB001856BA /* SigninWithGoogleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithGoogleTest.swift; sourceTree = "<group>"; };
@@ -297,7 +297,7 @@
 		C001184129A70AEC00BADEE6 /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
-				C001184229A70B0600BADEE6 /* FetchHomeUsecase.swift */,
+				C001184229A70B0600BADEE6 /* FetchHome.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -1442,7 +1442,7 @@
 				C0F05A64299F073E00385F65 /* SigninViewModel.swift in Sources */,
 				C0BCF8A929B93C7F00A680D2 /* CoreDataManager.swift in Sources */,
 				C0F05A7B299FF37500385F65 /* ActivityEntity+extension.swift in Sources */,
-				C001184329A70B0600BADEE6 /* FetchHomeUsecase.swift in Sources */,
+				C001184329A70B0600BADEE6 /* FetchHome.swift in Sources */,
 				C001184729A70BF800BADEE6 /* HomeRepositoryImp.swift in Sources */,
 				C0F05A84299FF87600385F65 /* FeelingDataModel.swift in Sources */,
 				C0F05A6C299F110C00385F65 /* SigninWithGoogleButton.swift in Sources */,

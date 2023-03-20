@@ -13,7 +13,7 @@ class HomeRepositoryImp: HomeRepository {
         self.lds = lds
     }
 
-    func fetchHome(for user: UserEntity) -> Result<[FeelingEntity], Error> {
+    func fetchHome(of user: UserEntity) -> Result<[FeelingEntity], Error> {
         do {
             return .success(try lds.fetchHome(for: user))
         } catch {return .failure(AnyError.error)}
