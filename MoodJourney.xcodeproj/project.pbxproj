@@ -76,6 +76,7 @@
 		C0B834F4299D2BF7001436E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B834F3299D2BF7001436E8 /* Preview Assets.xcassets */; };
 		C0B834FE299D2BF7001436E8 /* MoodJourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834FD299D2BF7001436E8 /* MoodJourneyTests.swift */; };
 		C0BA66EE29C80BBC0020565C /* ReactionLocalDatasourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66ED29C80BBC0020565C /* ReactionLocalDatasourceTest.swift */; };
+		C0BA66F429C80EFF0020565C /* FetchHomeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66F329C80EFF0020565C /* FetchHomeTest.swift */; };
 		C0BCF8A229B93AD300A680D2 /* SigninWithAppleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCF8A129B93AD300A680D2 /* SigninWithAppleTest.swift */; };
 		C0BCF8A529B93BF800A680D2 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCF8A429B93BF800A680D2 /* MockCoreDataManager.swift */; };
 		C0BCF8A729B93C5A00A680D2 /* Entitiy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCF8A629B93C5A00A680D2 /* Entitiy.swift */; };
@@ -201,6 +202,7 @@
 		C0B834F3299D2BF7001436E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C0B834FD299D2BF7001436E8 /* MoodJourneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyTests.swift; sourceTree = "<group>"; };
 		C0BA66ED29C80BBC0020565C /* ReactionLocalDatasourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionLocalDatasourceTest.swift; sourceTree = "<group>"; };
+		C0BA66F329C80EFF0020565C /* FetchHomeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHomeTest.swift; sourceTree = "<group>"; };
 		C0BCF8A129B93AD300A680D2 /* SigninWithAppleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithAppleTest.swift; sourceTree = "<group>"; };
 		C0BCF8A429B93BF800A680D2 /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
 		C0BCF8A629B93C5A00A680D2 /* Entitiy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entitiy.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 		C01A374E299DB8C8001856BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				C0BA66F029C80EEA0020565C /* Home */,
 				C0F5AF6529C7DE9C00B0EEE4 /* Reaction */,
 				C0F5AF5D29C7D08E00B0EEE4 /* Splash */,
 				C09EFAE029C69816008FAFB7 /* Cheerleaders */,
@@ -924,6 +927,30 @@
 			path = Datasource;
 			sourceTree = "<group>";
 		};
+		C0BA66F029C80EEA0020565C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C0BA66F129C80EEE0020565C /* Domain */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C0BA66F129C80EEE0020565C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C0BA66F229C80EF20020565C /* Usecase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C0BA66F229C80EF20020565C /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				C0BA66F329C80EFF0020565C /* FetchHomeTest.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
 		C0BCF8A329B93BD900A680D2 /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -1462,6 +1489,7 @@
 				C0B0DAE329B96E800013A4F7 /* FeelingLocalDatasourceTest.swift in Sources */,
 				C0F5AF6229C7D14C00B0EEE4 /* FetchUserByIDTest.swift in Sources */,
 				C031FED029C6B58E00E8D166 /* CheerleadersLocalDatasourceTest.swift in Sources */,
+				C0BA66F429C80EFF0020565C /* FetchHomeTest.swift in Sources */,
 				C0F05A96299FFCE400385F65 /* AddFeelingToActivityTest.swift in Sources */,
 				C0F5AF6B29C7E24600B0EEE4 /* ReactionEntity+extension.swift in Sources */,
 				C0F5AF6E29C7E5F200B0EEE4 /* MockReactionRepository.swift in Sources */,
