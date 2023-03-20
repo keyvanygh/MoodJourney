@@ -8,4 +8,5 @@ ignore:
  - MoodJourney/Features/Feeling/Presentation/*
  - MoodJourney/Features/Activity/Presentation/*
  - MoodJourney/Features/Cheerleaders/Presentation/*
- 
+ - MoodJourney/Features/Sign in/Presentation/*
+
