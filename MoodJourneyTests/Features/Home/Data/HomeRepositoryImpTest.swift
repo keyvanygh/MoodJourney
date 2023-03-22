@@ -28,9 +28,3 @@ final class HomeRepositoryImpTest: XCTestCase {
         XCTAssert(!result.isSuccess)
     }
 }
-class MockHomeLocalDatasource: HomeLocalDatasource, AnyMock {
-    func fetchHome(for user: UserEntity) throws -> [FeelingEntity] {
-        return try answer([FeelingEntity].self)
-    }
-    var answer: Any?
-}
