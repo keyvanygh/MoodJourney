@@ -1,7 +1,7 @@
 import Foundation
 import AuthenticationServices
 
-struct KeychainManager {
+struct KeychainManagerImp: KeychainManager {
     // MARK: Types
 
     enum KeychainError: Error {
@@ -99,4 +99,9 @@ struct KeychainManager {
 
         return query
     }
+}
+protocol KeychainManager {
+    func read(_ service: Service) throws -> String
+    func save(data: Data, to service: Service) throws
+    func delete(_ service: Service) throws 
 }

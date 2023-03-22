@@ -14,8 +14,8 @@ extension Container {
         self { CoreDataManagerImp()  }
             .singleton
     }
-    var kcm: Factory<KeychainManager> {
-        self { KeychainManager()  }
+    var kcm: Factory<KeychainManagerImp> {
+        self { KeychainManagerImp()  }
             .singleton
     }
     var acm: Factory<AccountManager> {
