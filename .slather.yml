@@ -14,4 +14,4 @@ ignore:
  - MoodJourney/Core/Coordinator/*
  - MoodJourney/Core/Tabbar/*
  - MoodJourney/Core/Type/*
-
+ - MoodJourney/Core/Manager/*
