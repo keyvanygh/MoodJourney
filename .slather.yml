@@ -10,4 +10,8 @@ ignore:
  - MoodJourney/Features/Activity/Presentation/*
  - MoodJourney/Features/Cheerleaders/Presentation/*
  - MoodJourney/Features/Reaction/Presentation/*
+ - MoodJourney/Core/DI/*
+ - MoodJourney/Core/Coordinator/*
+ - MoodJourney/Core/Tabbar/*
+ - MoodJourney/Core/Type/*
 
