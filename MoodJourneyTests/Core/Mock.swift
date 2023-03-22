@@ -21,6 +21,11 @@ extension AnyMock {
         guard let answer = answer as? T else {return .failure(AnyError.error)}
         return .success(answer)
     }
+    func answer<T>(_ type: T.Type) throws -> T {
+        if let error = answer as? Error {throw error}
+        guard let answer = answer as? T else {throw AnyError.error}
+        return answer
+    }
     mutating func setAnswer(_ answer: Any?) {
         self.answer = answer
     }

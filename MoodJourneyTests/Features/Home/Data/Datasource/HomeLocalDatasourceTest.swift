@@ -11,7 +11,7 @@ final class HomeLocalDatasourceTest: XCTestCase {
 
     func test_getHome_whenFetchHomeSuccess() throws {
         let dbm = MockCoreDataManager()
-        let sut = HomeLocalDatasource(dbm: dbm)
+        let sut = HomeLocalDatasourceImp(dbm: dbm)
         let user = try XCTUnwrap(dbm.previewUser)
         _ = try sut.fetchHome(for: user)
 

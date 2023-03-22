@@ -106,8 +106,8 @@ extension Container {
     
     // MARK: - Home :
     
-    var homeLocalDatasource: Factory<HomeLocalDatasource> {
-        self { [self] in HomeLocalDatasource(dbm: dbm())  }
+    var homeLocalDatasource: Factory<HomeLocalDatasourceImp> {
+        self { [self] in HomeLocalDatasourceImp(dbm: dbm())  }
     }
     var homeRepository: Factory<HomeRepository> {
         self { [self] in HomeRepositoryImp(lds: homeLocalDatasource())  }
