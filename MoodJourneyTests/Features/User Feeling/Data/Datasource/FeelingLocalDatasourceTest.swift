@@ -36,6 +36,6 @@ final class FeelingLocalDatasourceTest: XCTestCase {
     }
     // MARK: Helpers:
     final private func sut() -> FeelingLocalDatasource {
-        return FeelingLocalDatasource(dbm: MockCoreDataManager.shared, acm: AccountManager())
+        return FeelingLocalDatasourceImp(dbm: MockCoreDataManager.shared, acm: AccountManager())
     }
 }

@@ -82,6 +82,8 @@
 		C0B8925629CB501A006778EB /* MockCheerleadersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925529CB501A006778EB /* MockCheerleadersLocalDatasource.swift */; };
 		C0B8925829CB57B1006778EB /* ReactionRepositoryImpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925729CB57B1006778EB /* ReactionRepositoryImpTest.swift */; };
 		C0B8925A29CB59A9006778EB /* MockReactionLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925929CB59A9006778EB /* MockReactionLocalDatasource.swift */; };
+		C0B8925C29CB5B98006778EB /* FeelingRepositoryImpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925B29CB5B98006778EB /* FeelingRepositoryImpTest.swift */; };
+		C0B8925E29CB5D2F006778EB /* MockFeelingLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925D29CB5D2F006778EB /* MockFeelingLocalDatasource.swift */; };
 		C0BA66EE29C80BBC0020565C /* ReactionLocalDatasourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66ED29C80BBC0020565C /* ReactionLocalDatasourceTest.swift */; };
 		C0BA66F429C80EFF0020565C /* FetchHomeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66F329C80EFF0020565C /* FetchHomeTest.swift */; };
 		C0BA66F829C810D20020565C /* HomeLocalDatasourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66F729C810D20020565C /* HomeLocalDatasourceTest.swift */; };
@@ -216,6 +218,8 @@
 		C0B8925529CB501A006778EB /* MockCheerleadersLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCheerleadersLocalDatasource.swift; sourceTree = "<group>"; };
 		C0B8925729CB57B1006778EB /* ReactionRepositoryImpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionRepositoryImpTest.swift; sourceTree = "<group>"; };
 		C0B8925929CB59A9006778EB /* MockReactionLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReactionLocalDatasource.swift; sourceTree = "<group>"; };
+		C0B8925B29CB5B98006778EB /* FeelingRepositoryImpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingRepositoryImpTest.swift; sourceTree = "<group>"; };
+		C0B8925D29CB5D2F006778EB /* MockFeelingLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFeelingLocalDatasource.swift; sourceTree = "<group>"; };
 		C0BA66ED29C80BBC0020565C /* ReactionLocalDatasourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionLocalDatasourceTest.swift; sourceTree = "<group>"; };
 		C0BA66F329C80EFF0020565C /* FetchHomeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHomeTest.swift; sourceTree = "<group>"; };
 		C0BA66F729C810D20020565C /* HomeLocalDatasourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDatasourceTest.swift; sourceTree = "<group>"; };
@@ -1187,6 +1191,7 @@
 			children = (
 				C0F05A92299FF96E00385F65 /* Datasource */,
 				C0BCF8AA29B944DA00A680D2 /* MockFeelingRepository.swift */,
+				C0B8925B29CB5B98006778EB /* FeelingRepositoryImpTest.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1195,6 +1200,7 @@
 			isa = PBXGroup;
 			children = (
 				C0F05A93299FF96E00385F65 /* FeelingLocalDatasourceTest.swift */,
+				C0B8925D29CB5D2F006778EB /* MockFeelingLocalDatasource.swift */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -1546,9 +1552,11 @@
 				C0B8925429CB4DEE006778EB /* CheerleadersRepositoryImpTest.swift in Sources */,
 				C09EFAE329C69843008FAFB7 /* FetchCheerleadersTest.swift in Sources */,
 				C0F5AF6429C7D84B00B0EEE4 /* FetchUserIDFromKeychainTest.swift in Sources */,
+				C0B8925C29CB5B98006778EB /* FeelingRepositoryImpTest.swift in Sources */,
 				C09EFAE729C6998C008FAFB7 /* MockCheerleadersRepository.swift in Sources */,
 				C0BCF8AB29B944DA00A680D2 /* MockFeelingRepository.swift in Sources */,
 				C0BCF8A229B93AD300A680D2 /* SigninWithAppleTest.swift in Sources */,
+				C0B8925E29CB5D2F006778EB /* MockFeelingLocalDatasource.swift in Sources */,
 				C0B62D4B29B991EA00A088EE /* FetchFeelingsOfActivityTest.swift in Sources */,
 				C0BCF8AD29B9484400A680D2 /* ActicityEntity+extension.swift in Sources */,
 				C0B834FE299D2BF7001436E8 /* MoodJourneyTests.swift in Sources */,

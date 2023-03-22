@@ -8,7 +8,7 @@
 import Foundation
 import Factory
 
-class FeelingLocalDatasource {
+class FeelingLocalDatasourceImp: FeelingLocalDatasource {
     private var dbm: CoreDataManager
     private var acm: AccountManager
     
@@ -56,4 +56,12 @@ class FeelingLocalDatasource {
             .sort(by: {$0.date ?? Date() < $1.date ?? Date()})
         return fetchResutl
     }
+}
+protocol FeelingLocalDatasource {
+    func fetchFeelings(of activity: ActivityEntity) throws -> [FeelingEntity]
+    func addFeeling(
+        feeling: String,
+        message: String?,
+        imageURLString: String?,
+        to activity: ActivityEntity) throws -> FeelingEntity
 }
