@@ -84,6 +84,7 @@
 		C0B8925A29CB59A9006778EB /* MockReactionLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925929CB59A9006778EB /* MockReactionLocalDatasource.swift */; };
 		C0B8925C29CB5B98006778EB /* FeelingRepositoryImpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925B29CB5B98006778EB /* FeelingRepositoryImpTest.swift */; };
 		C0B8925E29CB5D2F006778EB /* MockFeelingLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925D29CB5D2F006778EB /* MockFeelingLocalDatasource.swift */; };
+		C0B8926029CB6745006778EB /* SigninRepositoryImpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925F29CB6745006778EB /* SigninRepositoryImpTest.swift */; };
 		C0BA66EE29C80BBC0020565C /* ReactionLocalDatasourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66ED29C80BBC0020565C /* ReactionLocalDatasourceTest.swift */; };
 		C0BA66F429C80EFF0020565C /* FetchHomeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66F329C80EFF0020565C /* FetchHomeTest.swift */; };
 		C0BA66F829C810D20020565C /* HomeLocalDatasourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66F729C810D20020565C /* HomeLocalDatasourceTest.swift */; };
@@ -220,6 +221,7 @@
 		C0B8925929CB59A9006778EB /* MockReactionLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReactionLocalDatasource.swift; sourceTree = "<group>"; };
 		C0B8925B29CB5B98006778EB /* FeelingRepositoryImpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingRepositoryImpTest.swift; sourceTree = "<group>"; };
 		C0B8925D29CB5D2F006778EB /* MockFeelingLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFeelingLocalDatasource.swift; sourceTree = "<group>"; };
+		C0B8925F29CB6745006778EB /* SigninRepositoryImpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRepositoryImpTest.swift; sourceTree = "<group>"; };
 		C0BA66ED29C80BBC0020565C /* ReactionLocalDatasourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionLocalDatasourceTest.swift; sourceTree = "<group>"; };
 		C0BA66F329C80EFF0020565C /* FetchHomeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHomeTest.swift; sourceTree = "<group>"; };
 		C0BA66F729C810D20020565C /* HomeLocalDatasourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDatasourceTest.swift; sourceTree = "<group>"; };
@@ -688,6 +690,7 @@
 				C0BF79B629AC6CEC00A0A0A0 /* DataModel */,
 				C0461179299ECD1D0050ABFD /* Datasource */,
 				C0B1063229AD6F060034302A /* MockSigninRepository.swift */,
+				C0B8925F29CB6745006778EB /* SigninRepositoryImpTest.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1547,6 +1550,7 @@
 				C0B1063329AD6F060034302A /* MockSigninRepository.swift in Sources */,
 				C01A3753299DB9FB001856BA /* SigninWithGoogleTest.swift in Sources */,
 				C0B8925A29CB59A9006778EB /* MockReactionLocalDatasource.swift in Sources */,
+				C0B8926029CB6745006778EB /* SigninRepositoryImpTest.swift in Sources */,
 				C0B62D5429B99BE500A088EE /* MockActivityRepository.swift in Sources */,
 				C0C9BE7C29BA2CF400D4D266 /* ActivityLocalDatasourceTest.swift in Sources */,
 				C0B8925429CB4DEE006778EB /* CheerleadersRepositoryImpTest.swift in Sources */,

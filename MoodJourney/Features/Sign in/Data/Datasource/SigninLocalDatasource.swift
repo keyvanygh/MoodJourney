@@ -8,7 +8,7 @@
 import Foundation
 import Factory
 
-class SigninLocalDatasource {
+class SigninLocalDatasourceImp: SigninLocalDatasource {
     /// singelton database manager
     @Injected(\.dbm) var dbm: CoreDataManager
     @Injected(\.kcm) var kcm: KeychainManager
@@ -67,4 +67,20 @@ class SigninLocalDatasource {
     func setUserToACM(user: UserEntity) {
         acm.user = user
     }
+}
+
+protocol SigninLocalDatasource {
+    func signin(
+        with signinType: SigninType,
+        userID: String,
+        name: String?,
+        family: String?,
+        imageURLString: String?
+    ) throws -> UserEntity
+    func fetchUser(byID userID: String) throws -> UserEntity
+    func setUserToACM(user: UserEntity)
+    func fetchUserAccessToken() throws -> String
+    func storeAccessToken(accessToken: String) throws
+    func storeUserID(userID: String) throws
+    func fetchUserID() throws -> String
 }
