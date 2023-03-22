@@ -9,7 +9,7 @@ import Foundation
 
 struct ActivityDataModel {
     let activityID: String
-    let internalID = UUID()
+    let internalID: UUID
     let name: String
     let image: String
 }
