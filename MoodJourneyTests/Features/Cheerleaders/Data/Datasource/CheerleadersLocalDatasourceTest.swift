@@ -32,6 +32,6 @@ final class CheerleadersLocalDatasourceTest: XCTestCase {
     }
     // MARK: - Helpers
     func sut(dbm: CoreDataManager) -> CheerleadersLocalDatasource {
-        return CheerleadersLocalDatasource(dbm: dbm)
+        return CheerleadersLocalDatasourceImp(dbm: dbm)
     }
 }

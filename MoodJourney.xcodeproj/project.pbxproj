@@ -78,6 +78,8 @@
 		C0B8924D29CB3F32006778EB /* HomeRepositoryImpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8924C29CB3F32006778EB /* HomeRepositoryImpTest.swift */; };
 		C0B8925029CB485B006778EB /* MockHomeLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8924F29CB485B006778EB /* MockHomeLocalDatasource.swift */; };
 		C0B8925229CB4A56006778EB /* ActivityRepositoryImpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925129CB4A56006778EB /* ActivityRepositoryImpTest.swift */; };
+		C0B8925429CB4DEE006778EB /* CheerleadersRepositoryImpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925329CB4DEE006778EB /* CheerleadersRepositoryImpTest.swift */; };
+		C0B8925629CB501A006778EB /* MockCheerleadersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925529CB501A006778EB /* MockCheerleadersLocalDatasource.swift */; };
 		C0BA66EE29C80BBC0020565C /* ReactionLocalDatasourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66ED29C80BBC0020565C /* ReactionLocalDatasourceTest.swift */; };
 		C0BA66F429C80EFF0020565C /* FetchHomeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66F329C80EFF0020565C /* FetchHomeTest.swift */; };
 		C0BA66F829C810D20020565C /* HomeLocalDatasourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66F729C810D20020565C /* HomeLocalDatasourceTest.swift */; };
@@ -208,6 +210,8 @@
 		C0B8924C29CB3F32006778EB /* HomeRepositoryImpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryImpTest.swift; sourceTree = "<group>"; };
 		C0B8924F29CB485B006778EB /* MockHomeLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeLocalDatasource.swift; sourceTree = "<group>"; };
 		C0B8925129CB4A56006778EB /* ActivityRepositoryImpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRepositoryImpTest.swift; sourceTree = "<group>"; };
+		C0B8925329CB4DEE006778EB /* CheerleadersRepositoryImpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerleadersRepositoryImpTest.swift; sourceTree = "<group>"; };
+		C0B8925529CB501A006778EB /* MockCheerleadersLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCheerleadersLocalDatasource.swift; sourceTree = "<group>"; };
 		C0BA66ED29C80BBC0020565C /* ReactionLocalDatasourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionLocalDatasourceTest.swift; sourceTree = "<group>"; };
 		C0BA66F329C80EFF0020565C /* FetchHomeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHomeTest.swift; sourceTree = "<group>"; };
 		C0BA66F729C810D20020565C /* HomeLocalDatasourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDatasourceTest.swift; sourceTree = "<group>"; };
@@ -595,6 +599,7 @@
 		C031FECE29C6B4ED00E8D166 /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
+				C0B8925529CB501A006778EB /* MockCheerleadersLocalDatasource.swift */,
 				C031FECF29C6B58E00E8D166 /* CheerleadersLocalDatasourceTest.swift */,
 			);
 			path = Datasource;
@@ -719,6 +724,7 @@
 			children = (
 				C031FECE29C6B4ED00E8D166 /* Datasource */,
 				C09EFAE629C6998C008FAFB7 /* MockCheerleadersRepository.swift */,
+				C0B8925329CB4DEE006778EB /* CheerleadersRepositoryImpTest.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1517,6 +1523,7 @@
 				C0B0DAE329B96E800013A4F7 /* FeelingLocalDatasourceTest.swift in Sources */,
 				C0F5AF6229C7D14C00B0EEE4 /* FetchUserByIDTest.swift in Sources */,
 				C031FED029C6B58E00E8D166 /* CheerleadersLocalDatasourceTest.swift in Sources */,
+				C0B8925629CB501A006778EB /* MockCheerleadersLocalDatasource.swift in Sources */,
 				C0BA66F429C80EFF0020565C /* FetchHomeTest.swift in Sources */,
 				C0F05A96299FFCE400385F65 /* AddFeelingToActivityTest.swift in Sources */,
 				C0BA66F829C810D20020565C /* HomeLocalDatasourceTest.swift in Sources */,
@@ -1528,6 +1535,7 @@
 				C01A3753299DB9FB001856BA /* SigninWithGoogleTest.swift in Sources */,
 				C0B62D5429B99BE500A088EE /* MockActivityRepository.swift in Sources */,
 				C0C9BE7C29BA2CF400D4D266 /* ActivityLocalDatasourceTest.swift in Sources */,
+				C0B8925429CB4DEE006778EB /* CheerleadersRepositoryImpTest.swift in Sources */,
 				C09EFAE329C69843008FAFB7 /* FetchCheerleadersTest.swift in Sources */,
 				C0F5AF6429C7D84B00B0EEE4 /* FetchUserIDFromKeychainTest.swift in Sources */,
 				C09EFAE729C6998C008FAFB7 /* MockCheerleadersRepository.swift in Sources */,

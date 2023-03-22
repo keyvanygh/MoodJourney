@@ -8,7 +8,7 @@
 import Foundation
 import Factory
 
-class CheerleadersLocalDatasource {
+class CheerleadersLocalDatasourceImp: CheerleadersLocalDatasource {
     private var dbm: CoreDataManager
     init(dbm: CoreDataManager) {
         self.dbm = dbm
@@ -35,4 +35,9 @@ class CheerleadersLocalDatasource {
 //        try? dbm.save()
 //        return user
 //    }
+}
+
+protocol CheerleadersLocalDatasource {
+    func fetchCheerleaders(of user: UserEntity) throws -> [UserEntity]
+    func addCheerleader(cheerLeader: UserEntity, to user: UserEntity)
 }
