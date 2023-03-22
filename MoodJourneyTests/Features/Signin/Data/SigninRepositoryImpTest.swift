@@ -26,6 +26,23 @@ final class SigninRepositoryImpTest: XCTestCase {
             imageURL: nil)
         XCTAssert(result.isSuccess)
     }
+    func test_reciveUserID_whenFetchUserIDSuccess() throws {
+        var lds = MockSigninLocalDatasource()
+        let rds = SigninRemoteDataSource(networkManager: MockNetworkManager(willSucceed: true))
+        lds.answerWith("userID")
+        let sut = SigninRepositoryImp(rds: rds, lds: lds)
+        let result = sut.fetchUserID()
+        XCTAssert(result.isSuccess)
+    }
+    func test_reciveUser_whenfetchUserByIDSuccess() throws {
+        var lds = MockSigninLocalDatasource()
+        let rds = SigninRemoteDataSource(networkManager: MockNetworkManager(willSucceed: true))
+        let user = try XCTUnwrap(UserEntity.testUser)
+        lds.answerWith(user)
+        let sut = SigninRepositoryImp(rds: rds, lds: lds)
+        let result = sut.fetchUser(byID: "ID")
+        XCTAssert(result.isSuccess)
+    }
     func test_reciveError_whenSigninFail() throws {
         var lds = MockSigninLocalDatasource()
         let rds = SigninRemoteDataSource(networkManager: MockNetworkManager(willSucceed: true))
@@ -41,6 +58,7 @@ final class SigninRepositoryImpTest: XCTestCase {
             imageURL: nil)
         XCTAssert(!result.isSuccess)
     }
+    
 }
 
 class MockSigninLocalDatasource: SigninLocalDatasource, AnyMock {
