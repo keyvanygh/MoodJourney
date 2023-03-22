@@ -27,4 +27,27 @@ final class FeelingRepositoryImpTest: XCTestCase {
         let result = sut.fetchFeelings(of: activty)
         XCTAssert(!result.isSuccess)
     }
+    func test_reciveSuccess_whenAddFeelingSuccess() throws {
+        var mock = MockFeelingLocalDatasource()
+        let activty = try XCTUnwrap(ActivityEntity.someActivities.first)
+        let feeling = try XCTUnwrap(FeelingEntity.someFeelings.first)
+        mock.answerWith(feeling)
+        let sut = FeelingRepositoryImp(localDatasource: mock)
+        let result = sut.addFeeling(feeling: .happy,
+                                    message: "",
+                                    imageURLString: "",
+                                    to: activty)
+        XCTAssert(result.isSuccess)
+    }
+    func test_reciveError_whenAddFeelingFail() throws {
+        var mock = MockFeelingLocalDatasource()
+        let activty = try XCTUnwrap(ActivityEntity.someActivities.first)
+        mock.answerWith(AnyError.error)
+        let sut = FeelingRepositoryImp(localDatasource: mock)
+        let result = sut.addFeeling(feeling: .happy,
+                                    message: "",
+                                    imageURLString: "",
+                                    to: activty)
+        XCTAssert(!result.isSuccess)
+    }
 }
