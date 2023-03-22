@@ -15,7 +15,7 @@ class ActivityRepositoryImpTest: XCTestCase {
         let someActivities = try XCTUnwrap(ActivityEntity.someActivities)
         mock.answerWith(someActivities)
         let sut = ActivityRepositoryImp(lds: mock)
-        let user = try XCTUnwrap(UserEntity.testUser)
+        _ = try XCTUnwrap(UserEntity.testUser)
         let result = sut.fetchActivities()
         XCTAssert(result.isSuccess)
     }
@@ -23,7 +23,7 @@ class ActivityRepositoryImpTest: XCTestCase {
         var mock = MockActivityLocalDatasource()
         mock.answerWith(AnyError.error)
         let sut = ActivityRepositoryImp(lds: mock)
-        let user = try XCTUnwrap(UserEntity.testUser)
+        _ = try XCTUnwrap(UserEntity.testUser)
         let result = sut.fetchActivities()
         XCTAssert(!result.isSuccess)
     }

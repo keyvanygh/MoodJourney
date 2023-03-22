@@ -8,7 +8,7 @@
 import Foundation
 import Factory
 
-class ReactionLocalDatasource {
+class ReactionLocalDatasourceImp: ReactionLocalDatasource {
     private var dbm: CoreDataManager
     init(dbm: CoreDataManager) {
         self.dbm = dbm
@@ -25,4 +25,10 @@ class ReactionLocalDatasource {
             try dbm.save()
             return reaction
     }
+}
+protocol ReactionLocalDatasource {
+    func addReaction(
+        gifURL: URL?, emoji: String?,
+        to feeling: FeelingEntity
+    ) throws -> ReactionEntity
 }

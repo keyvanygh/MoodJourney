@@ -15,7 +15,7 @@ final class FetchUserIDFromKeychainTest: XCTestCase {
         let user = try XCTUnwrap("userID")
         mockRepository.answerWith(user)
         let sut = FetchUserIDFromKeychain(repository: mockRepository)
-        let userID = try XCTUnwrap(UserEntity.testUser?.userID)
+        _ = try XCTUnwrap(UserEntity.testUser?.userID)
         let result = sut()
         switch (result) {
         case .success(let userID):

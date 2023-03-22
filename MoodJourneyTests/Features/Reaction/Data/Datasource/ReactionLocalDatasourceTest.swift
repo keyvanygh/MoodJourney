@@ -12,7 +12,7 @@ final class ReactionLocalDatasourceTest: XCTestCase {
     
     func test() throws {
         let dbm = MockCoreDataManager()
-        let sut = ReactionLocalDatasource(dbm: dbm)
+        let sut = ReactionLocalDatasourceImp(dbm: dbm)
         let feeling = try XCTUnwrap(dbm.someFeelings.first)
         _ = try XCTUnwrap(
             sut.addReaction(
