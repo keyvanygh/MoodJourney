@@ -6,7 +6,6 @@
 //
 
 import Foundation
-@testable import MoodJourney
 
 protocol AnyMock {
     mutating func setAnswer(_ answer: Any?)
