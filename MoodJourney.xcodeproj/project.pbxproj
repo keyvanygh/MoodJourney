@@ -77,6 +77,7 @@
 		C0B834FE299D2BF7001436E8 /* MoodJourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B834FD299D2BF7001436E8 /* MoodJourneyTests.swift */; };
 		C0B8924D29CB3F32006778EB /* HomeRepositoryImpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8924C29CB3F32006778EB /* HomeRepositoryImpTest.swift */; };
 		C0B8925029CB485B006778EB /* MockHomeLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8924F29CB485B006778EB /* MockHomeLocalDatasource.swift */; };
+		C0B8925229CB4A56006778EB /* ActivityRepositoryImpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8925129CB4A56006778EB /* ActivityRepositoryImpTest.swift */; };
 		C0BA66EE29C80BBC0020565C /* ReactionLocalDatasourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66ED29C80BBC0020565C /* ReactionLocalDatasourceTest.swift */; };
 		C0BA66F429C80EFF0020565C /* FetchHomeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66F329C80EFF0020565C /* FetchHomeTest.swift */; };
 		C0BA66F829C810D20020565C /* HomeLocalDatasourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA66F729C810D20020565C /* HomeLocalDatasourceTest.swift */; };
@@ -206,6 +207,7 @@
 		C0B834FD299D2BF7001436E8 /* MoodJourneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJourneyTests.swift; sourceTree = "<group>"; };
 		C0B8924C29CB3F32006778EB /* HomeRepositoryImpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryImpTest.swift; sourceTree = "<group>"; };
 		C0B8924F29CB485B006778EB /* MockHomeLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeLocalDatasource.swift; sourceTree = "<group>"; };
+		C0B8925129CB4A56006778EB /* ActivityRepositoryImpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRepositoryImpTest.swift; sourceTree = "<group>"; };
 		C0BA66ED29C80BBC0020565C /* ReactionLocalDatasourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionLocalDatasourceTest.swift; sourceTree = "<group>"; };
 		C0BA66F329C80EFF0020565C /* FetchHomeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHomeTest.swift; sourceTree = "<group>"; };
 		C0BA66F729C810D20020565C /* HomeLocalDatasourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDatasourceTest.swift; sourceTree = "<group>"; };
@@ -744,6 +746,7 @@
 			children = (
 				C0C9BE7A29BA2C9E00D4D266 /* Datasource */,
 				C0B62D5329B99BE500A088EE /* MockActivityRepository.swift */,
+				C0B8925129CB4A56006778EB /* ActivityRepositoryImpTest.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1536,6 +1539,7 @@
 				C0B62D5629B99D9500A088EE /* ActivityEntity+extension.swift in Sources */,
 				C0BF79AA29AC581600A0A0A0 /* MockNetworkManager.swift in Sources */,
 				C0AEE83929B0589800F8E879 /* Mock.swift in Sources */,
+				C0B8925229CB4A56006778EB /* ActivityRepositoryImpTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

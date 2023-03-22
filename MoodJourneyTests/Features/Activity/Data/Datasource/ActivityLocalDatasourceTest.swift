@@ -14,20 +14,24 @@ final class ActivityLocalDatasourceTest: XCTestCase {
     func test_reciveActivities_WhenFetchActivitiesSucceed() throws {
         let mockCoreDataManager = MockCoreDataManager()
         mockCoreDataManager.addSomeActivities()
-        let sut: ActivityLocalDatasource = ActivityLocalDatasource(dbm: mockCoreDataManager)
+        let sut: ActivityLocalDatasource = ActivityLocalDatasourceImp(dbm: mockCoreDataManager)
         let result = try XCTUnwrap(sut.fetchActivies())
         XCTAssert(!result.isEmpty)
     }
     func test_reciveEmpty_WhenThereIsNoActivityToFetch() throws {
         let mockCoreDataManager = MockCoreDataManager()
-        let sut: ActivityLocalDatasource = ActivityLocalDatasource(dbm: mockCoreDataManager)
+        let sut: ActivityLocalDatasource = ActivityLocalDatasourceImp(dbm: mockCoreDataManager)
         let result = try XCTUnwrap(sut.fetchActivies())
         XCTAssert(result.isEmpty)
     }
     func test_notEmptyActvityList_WhenAddActivitySucces() throws {
         let mockCoreDataManager = MockCoreDataManager()
-        let sut: ActivityLocalDatasource = ActivityLocalDatasource(dbm: mockCoreDataManager)
-        _ = try sut.addActivity(activityID: "id", name: "tset")
+        let sut: ActivityLocalDatasource = ActivityLocalDatasourceImp(dbm: mockCoreDataManager)
+        _ = try sut.addActivity(
+            activityID: "id",
+            name: "tset",
+            imageURLString: ""
+        )
         let result = try XCTUnwrap(sut.fetchActivies())
         XCTAssert(!result.isEmpty)
     }
