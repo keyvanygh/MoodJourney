@@ -15,5 +15,5 @@ ignore:
  - MoodJourney/Core/Tabbar/*
  - MoodJourney/Core/Type/*
  - MoodJourney/Core/Manager/*
- - MoodJourney/MoodJourneyTests/*
+ - MoodJourneyTests/*
  - MoodJourney/MoodJourneyApp.swift
